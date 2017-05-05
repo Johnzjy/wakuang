@@ -5,7 +5,8 @@ import tqdm
 import os
 #import seaborn as sns
 import datetime
-
+import sys
+sys.path.append("..")
 from scr import logd
 
 log_CYQ=logd.Logger('CYQ.log')
@@ -157,8 +158,8 @@ def Draw_jetton(code_j,start_j,end_j):
     
 if __name__ == "__main__":
     code_='600362'
-    start_='2017-01-01'
-    end_='2017-05-03'
+    start_='2016-12-01'
+    end_='2017-05-04'
     log_CYQ.info('%s：from %s to %s'%(code_,start_,end_))
     Draw_jetton(code_,start_,end_)
     plt.show()
