@@ -218,8 +218,8 @@ def draw_RSI(df): # 画加权平均指数
 
 if __name__=="__main__":
     code_='sh'
-    start_='2016-01-01'
-    end_='2017-05-04'
+    start_='2015-01-01'
+    end_='2017-05-05'
     
     plt.figure(1)
     VW=VWAP(code_,start_,end_)

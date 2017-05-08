@@ -1,0 +1,7 @@
+https://github.com/jobbole/awesome-python-cn.git
+一个各种库的文档文件
+
+================================================
+
+
+cofig的标准库
