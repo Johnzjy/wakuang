@@ -158,8 +158,8 @@ def Draw_jetton(code_j,start_j,end_j):
     
 if __name__ == "__main__":
     code_='600362'
-    start_='2016-12-01'
-    end_='2017-05-04'
+    start_='2016-05-01'
+    end_='2017-05-10 '
     log_CYQ.info('%s：from %s to %s'%(code_,start_,end_))
     Draw_jetton(code_,start_,end_)
     plt.show()
