@@ -62,11 +62,20 @@ class colors(object):
     def Red(self,string):
         self.out=self.use_style(string, mode='bold',fore="red",back='default')
         return self.out
+    def Red_nor(self,string):
+        self.out=self.use_style(string, mode='normal',fore="red",back='default')
+        return self.out    
     def Yellow(self,string):
         self.out=self.use_style(string, mode='bold',fore="yellow",back='default')
         return self.out
+    def Yellow_nor(self,string):
+        self.out=self.use_style(string, mode='normal',fore="yellow",back='default')
+        return self.out
     def Blue(self,string):
         self.out=self.use_style(string, mode='bold',fore="blue",back='default')
+        return self.out
+    def Blue_nor(self,string):
+        self.out=self.use_style(string, mode='normal',fore="blue",back='default')
         return self.out
     def Cyan(self,string):# 青蓝
         self.out=self.use_style(string, mode='bold',fore="cyan",back='default')
@@ -74,16 +83,28 @@ class colors(object):
     def Green(self,string):# 青蓝
         self.out=self.use_style(string, mode='bold',fore="green",back='default')
         return self.out
+    def Green_inv(self,string):# 青蓝
+        self.out=self.use_style(string, mode='invert',fore="green",back='default')
+        return self.out
+    def Green_ul(self,string):# 青蓝
+        self.out=self.use_style(string, mode='underline',fore="green",back='default')
+        return self.out
     def Black(self,string):# 黑
         self.out=self.use_style(string, mode='bold',fore="default",back='default')
         return self.out
     def Grey(self,string):# 灰
         self.out=self.use_style(string, mode='bold',fore="black",back='default')
         return self.out
+    def Purple(self,string):# 灰
+        self.out=self.use_style(string, mode='bold',fore="purple",back='default')
+        return self.out
     def War(self,string):
         self.out=self.use_style(string, mode='bold',fore="red",back='yellow')
         return self.out
     def High_BG(self,string):
+        self.out=self.use_style(string, mode='bold',fore="blue",back='green')
+        return self.out
+    def High_YB(self,string):
         self.out=self.use_style(string, mode='bold',fore="blue",back='green')
         return self.out
     def Titel(self,string):
@@ -134,4 +155,4 @@ if __name__ == "__main__":
             for f in STYLE['fore']:
                 print(col.use_style("%s-%s-%s"%(m,f,b),mode='%s'%m,back='%s'%b,fore='%s'%f))
                 
-    print (col.grey('test'))
+    print (col.Grey('test'))
