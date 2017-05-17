@@ -8,18 +8,29 @@ import technical_indicators as ti
 import matplotlib.pyplot as plt
 from scr import colors
 import configparser
-import datetime
+
 import time
 
 today = time.strftime('%Y-%m-%d %H:%M:S %A',time.localtime(time.time()))
 flag=True
+ini_filename='user_config.ini'
 color=colors.colors()
+
 conf =configparser.ConfigParser()
-conf.readfp(open('user_config.ini'))    
-MACD = True if conf.get("INI","MACD")    == 'True'  else  False
-RSI  = True if conf.get("INI","RSI")     == 'True'  else  False
-Kline= True if conf.get("INI","Kline")   == 'True'  else  False
-BULIN= True if conf.get("INI","BULIN")   == 'True'  else  False
+conf.readfp(open(ini_filename))
+config_dict= dict(conf.items('INI'))
+
+code    = conf.get("INI","code")
+start   = conf.get("INI","start")
+end     = conf.get("INI","end")
+
+'''
+MACD = True if conf.get("INI","MACD")    == 'True'  else  False,
+RSI  = True if conf.get("INI","RSI")     == 'True'  else  False,
+Kline= True if conf.get("INI","Kline")   == 'True'  else  False,
+BULIN= True if conf.get("INI","BULIN")   == 'True'  else  False,
+'''
+
 
 #打印标题 
 def print_titel():
@@ -33,10 +44,15 @@ def print_config():
     
     print('-'*36)
     print('please check information and run code ')
-    print(color.Yellow_nor('$'),'   code     :',color.Purple('%s'%read_config('code')))
-    print(color.Yellow_nor('$'),'start_time  :',color.Purple('%s'%read_config('start')))
-    print(color.Yellow_nor('$'),' end_time   :',color.Purple('%s'%read_config('end')))
-    print()
+    print(color.Yellow_nor('$'),'   code     :',color.Purple('%s'%conf.get("INI",'code')))
+    print(color.Yellow_nor('$'),'start_time  :',color.Purple('%s'%conf.get("INI",'start')))
+    print(color.Yellow_nor('$'),' end_time   :',color.Purple('%s'%conf.get("INI",'end')))
+    print("selection the index")
+    for key_ , values_ in config_dict.items():
+        
+        if values_ == 'True':
+            
+            print('              |- ',key_)
     print('-'*16,color.Blue_nor("MEMU"),'-'*16)
     
 
@@ -47,22 +63,42 @@ def print_section(dict_config):
             
 
 def ST_band():
-    ti.draw_macd(code_,start_,end_)
+    ti.draw_macd(code,start,end)
     plt.show()
 
 def ACD():
     print ('ACD')
     
 
-def bcd():
-    print('hello world')
+def set_index(index):
+    get_trp=input(color.Red_nor("是否选择%s,Y/N:"%index)).strip()
+    quit_code(get_trp)
+    
+    if get_trp == 'y' :
+        config_dict['%s'%index]='True'
+        conf.set('INI','%s'%index,'True')
+    elif get_trp == 'n' :
+        config_dict["%s"%index]='False'
+        conf.set('INI','%s'%index,'False')
+    conf.write( open(ini_filename, 'r+') ) 
+
+def set_macd():
+    set_index('macd')
+
+def set_rsi():
+    set_index('rsi')
+def set_obv():
+    set_index('obv')
+
+        
+        
 memu = {
             'index':
                 {
                    "布林线":ST_band,
-                   "BCD":bcd,
-                   "RSI":"RSI",
-                   "OBV":"OBV"
+                   "BCD": set_macd,
+                   "RSI":set_rsi,
+                   "OBV":set_obv
                     
                  },
             "第二级":
@@ -70,12 +106,13 @@ memu = {
                     "第三级1":"123",
                     "第三级2":"112"
                     },
+            
                    
             }
 def quit_code(input_str):
     if input_str== '':
         exit_strip=input(color.Red_nor("按Y退出：")).strip()
-        if exit_strip == 'y':
+        if exit_strip == 'y'or 'Y':
             global flag
             flag = False
             return True
@@ -84,7 +121,7 @@ def quit_code(input_str):
 def go_back(input_str):
     if input_str== '':
         exit_strip=input(color.Red_nor("按Y返回：")).strip()
-        if exit_strip == 'y':
+        if exit_strip == 'y'or 'Y':
             return True
         else:
             pass
@@ -122,11 +159,12 @@ def loop_memu():
                 if go_back(get_trp_2)== True:
                     continue
                
-                elif get_trp_2 == '0':
-                    key_3=list(enumerate(memu_1))[0][1]
+                elif get_trp_2 in ['0','1','2','3','4']:
+                    num_=int(get_trp_2)
+                    key_3=list(enumerate(memu_1))[num_][1]
                     print (key_3)
                     memu_1['%s'%key_3]()
-                    
+
                     
 
             else:
@@ -134,10 +172,5 @@ def loop_memu():
 
 
 if __name__=="__main__":
-    
-    code_=read_config('code')
-    start_=read_config('start')
-    end_=read_config('end')
-    x=get_config()
-    print_section(x)
-    #loop_memu()
+    print (1)
+    loop_memu()
