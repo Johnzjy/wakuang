@@ -3,14 +3,14 @@
 import logging, os
  
 class Logger:
-    def __init__(self, path,clevel = logging.ERROR,Flevel = logging.DEBUG):
+    def __init__(self, path='../scr/logfiles.log',clevel = logging.INFO,Flevel = logging.DEBUG):
         self.logger = logging.getLogger(path)
         self.logger.setLevel(logging.DEBUG)
        # 打印格式
-        prt_fmt = logging.Formatter('[%(asctime)s] [%(levelname)s]\n %(message)s', '%Y-%m-%d %H:%M:%S')
-        #储存格式
-        fmt = logging.Formatter('%(filename)s-[%(asctime)s]-[%(levelname)s]-line:%(lineno)d\n%(message)s', '%Y-%m-%d %H:%M:%S')
-
+        #prt_fmt = logging.Formatter('[%(asctime)s] [%(levelname)s]\n %(message)s', '%Y-%m-%d %H:%M:%S')
+        prt_fmt = logging.Formatter('[%(asctime)s] [%(levelname)s]\n %(message)s', '%H:%M:%S')
+        #fmt = logging.Formatter('%(filename)s-[%(asctime)s]-[%(levelname)s]-line:%(lineno)d\n%(message)s', '%Y-%m-%d %H:%M:%S')
+        fmt = logging.Formatter('%(levelname)s-[%(asctime)s]-%(message)s', '%m-%d %H:%M:%S')
         #设置CMD日志 PRINT 屏幕
         sh = logging.StreamHandler()
         sh.setFormatter(prt_fmt)

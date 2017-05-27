@@ -4,4 +4,5 @@ https://github.com/jobbole/awesome-python-cn.git
 ================================================
 
 
-cofig的标准库
+cofig的标准库 config
+werobot 微信公共号标准库

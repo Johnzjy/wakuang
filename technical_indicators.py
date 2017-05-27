@@ -215,11 +215,60 @@ def draw_RSI(df): # 画加权平均指数
    # plt.ylim(-1, 3)
     plt.legend(loc='best')
     plt.grid(True)
+    
+def ADX(code='sh',startday='2015-01-05',enday='2016-12-21'):# ADX     
+    df=ts.get_hist_data(code,start=startday,end=enday)
+    
+    df=df.reset_index()
+    df=df.sort_index(ascending= False)# 从后倒序
+    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
+    df=df.set_index('date')
+    print(df)
+    df['ADX']=talib.ADX(high=df.high.values,low=df.low.values,close=df.close.values,timeperiod=10)
+    #多空比率净额= [（收盘价－最低价）－（最高价-收盘价）] ÷（ 最高价－最低价）×V
+    return df
+def draw_ADX(df): # 画加权平均指数
+    ax1=plt.subplot(111)      
+    plt.plot(df.index,df.close,"b")
+    x2=ax1.twinx()
+    plt.plot(df.index,df.ADX,'g',label='ADX')    
+    plt.legend(loc='best')
+    plt.grid(True)
+    
+def ADOSC(code='sh',startday='2015-01-05',enday='2016-12-21',f=5,s=30):# 量价分析资金流入流出
+    #timeperiod=1
+    # if code == 'sh':
+    #    timeperiod=10
+    
+    df=ts.get_hist_data(code,start=startday,end=enday)
+    
+    df=df.reset_index()
+    df=df.sort_index(ascending= False)# 从后倒序
+    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
+    df=df.set_index('date')
+    df['ADOSC']=talib.ADOSC(high=df.high.values,
+                          low=df.low.values,
+                          close=df.close.values,
+                          volume=df.volume.values,
+                          fastperiod=f,
+                          slowperiod=s)
 
+
+    return df
+
+
+def draw_ADOSC(df): # 画加权平均指数
+    ax1=plt.subplot(111)
+      
+    plt.plot(df.index,df.close,"b")
+    x2=ax1.twinx()
+    plt.plot(df.index,df.ADOSC,'g',label='ADOSC')    
+    plt.legend(loc='best')
+    plt.grid(True)
 if __name__=="__main__":
-    code_='600362'
-    start_='2013-01-01'
-    end_='2017-05-10'
+    code_='600871'
+    start_='2016-05-01'
+    end_='2017-05-26'
     
     plt.figure(1)
     VW=VWAP(code_,start_,end_)
@@ -236,6 +285,13 @@ if __name__=="__main__":
     plt.figure(4)
     RSI_IDEX=RSI(code_,start_,end_)
     draw_RSI(RSI_IDEX)
-   
+    
+    plt.figure(5)
+    ADX_IDEX=ADX(code_,start_,end_)
+    draw_ADX(ADX_IDEX)
+
+    plt.figure(6)
+    ADOSC_IDEX=ADOSC(code_,start_,end_)
+    draw_ADOSC(ADOSC_IDEX)   
     plt.show()
 

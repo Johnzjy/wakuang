@@ -9,12 +9,14 @@ import sys
 sys.path.append("..")
 from scr import logd
 
-log_CYQ=logd.Logger('CYQ.log')
-
+log_CYQ=logd.Logger('../scr/logfiles.log')
 log_CYQ.info('%s计算筹码分布模块%s'%('='*16,'='*16))
 
 #date='2016-12-29'
-
+'''
+计算每天筹码交易 单位（手，100股）
+返回每天交易量，交易次数
+'''
 def PQ(code,date):
     
     df = ts.get_tick_data(code,date)
@@ -39,7 +41,7 @@ def PQ(code,date):
 '''
 
    
-def CYQ(code,start,end,download= False,CYQ_rate=1,files_path='E:\\database\\'):
+def CYQ(code,start,end,download= False,CYQ_rate=1,files_path='../report/'):
     
     files_path=files_path+code
     df= ts.get_hist_data(code,start,end)
@@ -70,12 +72,14 @@ def CYQ(code,start,end,download= False,CYQ_rate=1,files_path='E:\\database\\'):
 
         try:
             turnover=datas.turnover[i]
+            
             tem_cyq.count_volume=tem_cyq.count_volume-(tem_cyq.count_volume*turnover//CYQ_rate)
         except:
             log_CYQ.war('\n计算换手率数据下载错误：%s自动计算计算'%date)
             try:
-                turnover=datas.volume[i]/outstanding*100
-                #print(turnover)
+                
+                turnover=datas.volume[i]/outstanding*100# 手数 /流通手 100 = cyq rate
+                print (datas.turnover[i],turnover)
                 tem_cyq.count_volume=tem_cyq.count_volume-(tem_cyq.count_volume*turnover//CYQ_rate)
                 
             except:
@@ -117,7 +121,7 @@ def Draw_jetton(code_j,start_j,end_j):
     df=df.sort_index(ascending= False)
     df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))#g改变日期格式 否则无法作图
     datas= df.set_index('date')
-    x=CYQ(code_j,start_j,end_j,download=False,CYQ_rate=100)
+    x=CYQ(code_j,start_j,end_j,download=True,CYQ_rate=100)
 
 
     PCT50 =x[x['PCT_SUM']>=50].index[0]
@@ -157,9 +161,9 @@ def Draw_jetton(code_j,start_j,end_j):
 
     
 if __name__ == "__main__":
-    code_='600362'
-    start_='2016-05-01'
-    end_='2017-05-10 '
+    code_='600871'
+    start_='2017-05-01'
+    end_='2017-05-23'
     log_CYQ.info('%s：from %s to %s'%(code_,start_,end_))
     Draw_jetton(code_,start_,end_)
     plt.show()

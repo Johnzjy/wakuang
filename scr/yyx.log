@@ -1,0 +1,5 @@
+DEBUG-[05-19 15:46:29]-一个debug信息
+INFO-[05-19 15:46:29]-一个info信息
+WARNING-[05-19 15:46:29]-一个warning信息
+ERROR-[05-19 15:46:29]-一个error信息
+CRITICAL-[05-19 15:46:29]-一个致命critical信息
