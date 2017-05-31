@@ -54,11 +54,11 @@ def CYQ(code,start,end,download= False,CYQ_rate=1,files_path='../report/'):
     stock_bas=ts.get_stock_basics()
     outstanding=stock_bas.loc['%s'%code,'outstanding']*10000*100#计算流通股
     #print (datas)
-    print (cyq)
+    #print (cyq)
     
     i =1
     for date in tqdm.tqdm(datas.index[1:]):
-        print (date)
+        #print (date)
         try:
             tem_cyq=PQ(code,date)
             
@@ -121,7 +121,7 @@ def Draw_jetton(code_j,start_j,end_j):
     df=df.sort_index(ascending= False)
     df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))#g改变日期格式 否则无法作图
     datas= df.set_index('date')
-    x=CYQ(code_j,start_j,end_j,download=True,CYQ_rate=100)
+    x=CYQ(code_j,start_j,end_j,download=False,CYQ_rate=100)
 
 
     PCT50 =x[x['PCT_SUM']>=50].index[0]
