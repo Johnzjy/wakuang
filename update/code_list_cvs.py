@@ -4,10 +4,8 @@
 
 import pandas as pd
 from contextlib import closing
-import shelve
 import sys
 import tushare as ts
-import dbm
 import datetime
 
 sys.path.append("..")

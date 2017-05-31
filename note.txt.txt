@@ -1,8 +1,0 @@
-https://github.com/jobbole/awesome-python-cn.git
-一个各种库的文档文件
-
-================================================
-
-
-cofig的标准库 config
-werobot 微信公共号标准库
