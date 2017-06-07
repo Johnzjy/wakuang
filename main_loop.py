@@ -20,12 +20,12 @@ color=colors.colors()
 conf =configparser.ConfigParser()
 conf.readfp(open(ini_filename))
 config_dict= dict(conf.items('INI'))
-
+'''
 code    = conf.get("INI","code")
 start   = conf.get("INI","start")
 end     = conf.get("INI","end")
 
-'''
+
 MACD = True if conf.get("INI","MACD")    == 'True'  else  False,
 RSI  = True if conf.get("INI","RSI")     == 'True'  else  False,
 Kline= True if conf.get("INI","Kline")   == 'True'  else  False,
@@ -63,9 +63,6 @@ def print_section(dict_config):
             print(key_c)
             
 
-def ST_band():
-    ti.draw_macd(code,start,end)
-    plt.show()
     
 
 def set_index(index):
@@ -73,11 +70,11 @@ def set_index(index):
     
     if get_trp in ('y','Y','yes') :
         config_dict['%s'%index]='True'
-        print(color.Red('++++++++++++已添加 %s\n'%index))
+        print(color.High_BG('++++++++++++已添加 %s\n'%index))
         conf.set('INI','%s'%index,'True')
     elif get_trp in ('n', 'N','no'):
         config_dict["%s"%index]='False'
-        print(color.Red('------------已删除 %s\n'%index))
+        print(color.High_YB('------------已删除 %s\n'%index))
         conf.set('INI','%s'%index,'False')
     else:
         print('quit')
@@ -99,37 +96,75 @@ def set_adosc():#设置 adosc
     set_index('adosc')
 
 def set_code():
-     get_trp=input(color.Red_nor("输入开始年:")).strip()
-     print (get_trp)
-def set_startime():
-     get_trp=input(color.Red_nor("输入开始年（2000-2020）:")).strip()
-     if get_trp<'2020' and get_trp>'2000':
-         
-         Y = get_trp
-     else :
-         print ('输入错误，请从新输入')
-         set_startime()
-     get_trp=input(color.Red_nor("输入开始月（01-12）:")).strip()
-     if get_trp<'12' and get_trp>'01':
-         
-         M = get_trp
-     else :
-         print ('输入错误，请从新输入')
-         set_startime()
-     get_trp=input(color.Red_nor("输入开始日(01-31):")).strip()
-     if get_trp<'31' and get_trp>'01':
-         
-         D=get_trp
-     else :
-         print ('输入错误，请从新输入')
-         set_startime()
-     time = Y+'-'+ M +'-'+D
-     print(time)
+    get_trp=input(color.Red_nor("输入code: ")).strip()
+    conf.set('INI','code',get_trp)
+    conf.write( open(ini_filename, 'r+') )
+    num=len('|设置成功，当前code为： %s |'%get_trp)
+    print(color.High_BG('——'*(num//2+4)))
+    print(color.High_BG(' 设置成功，当前code为： %s '%get_trp))
+    print(color.High_BG('——'*(num//2+4)))
     
+def set_startime():
+    get_trp=input(color.Red_nor("输入开始年（2000-2020）:")).strip()
+    if get_trp<'2021' and get_trp>'1999':
+         
+        Y = get_trp
+    else :
+        print ('输入错误，请从新输入')
+        set_startime()
+    get_trp=input(color.Red_nor("输入开始月（01-12）:")).strip()
+    if get_trp<'13' and get_trp>='01':
+         
+        M = get_trp
+    else :
+        
+        print ('输入错误，请从新输入')
+        set_startime()
+    get_trp=input(color.Red_nor("输入开始日(01-31):")).strip()
+    if get_trp<'32' and get_trp>='01':
+         
+        D=get_trp
+    else :
+        print ('输入错误，请从新输入')
+        set_startime()
+    time = Y+'-'+ M +'-'+D
+    conf.set('INI','start',time)
+    conf.write( open(ini_filename, 'r+') ) 
+    print(color.High_BG('——'*19))
+    print(color.High_BG('|设置成功，当前开始日期为： %s |'%time))
+    print(color.High_BG('——'*19))
     
 def set_endtime():
-    print('set_time2')
-      
+    
+    get_trp=input(color.Red_nor("输入结束年（2000-2020）:")).strip()
+    if get_trp<'2021' and get_trp>'1999':
+         
+        Y = get_trp
+    else :
+        print ('输入错误，请从新输入')
+        set_startime()
+    get_trp=input(color.Red_nor("输入结束月（01-12）:")).strip()
+    if get_trp<'13' and get_trp>='01':
+         
+        M = get_trp
+    else :
+        
+        print ('输入错误，请从新输入')
+        set_startime()
+    get_trp=input(color.Red_nor("输入结束日(01-31):")).strip()
+    if get_trp<'32' and get_trp>='01':
+         
+        D=get_trp
+    else :
+        print ('输入错误，请从新输入')
+        set_startime()
+    time = Y+'-'+ M +'-'+D
+    conf.set('INI','start',time)
+    conf.write( open(ini_filename, 'r+') ) 
+    print(color.High_BG('——'*19))
+    print(color.High_BG('|设置成功，当前结束日期为： %s |'%time))
+    print(color.High_BG('——'*19))
+    
 def running():#开始画图
     code_=conf.get("INI","code")
     start_  = conf.get("INI","start")
@@ -139,16 +174,25 @@ def running():#开始画图
         if values_ == 'True':
             print("现在进行构建%s\n"%key_)
             if key_ == 'macd':#run MACD
+                plt.figure('MACD')
                 ti.draw_macd(code_,start_,end_)
             elif key_ == 'rsi':
-               RSI_IDEX = ti.RSI(code_,start_,end_)
-               ti.draw_RSI(RSI_IDEX)
+                
+                plt.figure('RSI')
+                RSI_IDEX = ti.RSI(code_,start_,end_)
+                ti.draw_RSI(RSI_IDEX)
             elif key_ == 'adx':
-               ADX_IDEX=ti.ADX(code_,start_,end_)
-               ti.draw_ADX(ADX_IDEX)
+                plt.figure('ADX')
+                ADX_IDEX=ti.ADX(code_,start_,end_)
+                ti.draw_ADX(ADX_IDEX)
             elif key_ == 'adocs':
+                plt.figure('ADOSC')
                 ADOSC_IDEX=ti.ADOSC(code_,start_,end_)
                 ti.draw_ADOSC(ADOSC_IDEX)
+            elif key_ == 'bulin':
+                plt.figure('bulin')
+                ST_IDEX=ti.ST_bands(code_,start_,end_)
+                ti.draw_bands(ST_IDEX)
     plt.show()
           
 memu = {    "开始":{
@@ -220,29 +264,31 @@ def loop_memu():
         
         get_trp_1=input(color.Red_nor("请输入一级菜单号,按enter退出：")).strip()
         quit_code(get_trp_1)
-        for num_f in enumerate(memu.keys()):
-           
-            if get_trp_1 == '%s'%num_f[0]:
-                memu_1,key=get_next(memu,get_trp_1)
-                print_memu(memu_1) 
-                len_memu= len(memu_1)
-                list_str=['0','1','2','3','4','5','6','7','8','9']
-                list_trp=list_str[0:len_memu]
-                get_trp_2=input(color.Red_nor("请输入二级菜单号,按enter返回上一级：")).strip()
-                if get_trp_2 in list_trp:
-                    
-                    num_=int(get_trp_2)
-                    key_3=list(enumerate(memu_1))[num_][1]
-                    print (key_3)
-                    memu_1['%s'%key_3]()
+        if get_trp_1 == '0':
+            running()
+        else:    
+            for num_f in enumerate(memu.keys()):
+                if get_trp_1 == '%s'%num_f[0]:
+                    memu_1,key=get_next(memu,get_trp_1)
+                    print_memu(memu_1) 
+                    len_memu= len(memu_1)
+                    list_str=['0','1','2','3','4','5','6','7','8','9']
+                    list_trp=list_str[0:len_memu]
+                    get_trp_2=input(color.Red_nor("请输入二级菜单号,按enter返回上一级：")).strip()
+                    if get_trp_2 in list_trp:
+                        
+                        num_=int(get_trp_2)
+                        key_3=list(enumerate(memu_1))[num_][1]
+                        print (key_3)
+                        memu_1['%s'%key_3]()
+                    else:
+                        
+                        go_back(get_trp_2)
+    
+                        
+    
                 else:
-                    
-                    go_back(get_trp_2)
-
-                    
-
-            else:
-                pass
+                    pass
 
 
 if __name__=="__main__":

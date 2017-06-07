@@ -266,9 +266,9 @@ def draw_ADOSC(df): # 画加权平均指数
     plt.legend(loc='best')
     plt.grid(True)
 if __name__=="__main__":
-    code_='600871'
+    code_='600095'
     start_='2016-05-01'
-    end_='2017-05-26'
+    end_='2017-06-07'
     
     plt.figure(1)
     VW=VWAP(code_,start_,end_)
