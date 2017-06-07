@@ -12,6 +12,7 @@ import sys
 from numpy import nan as NaN
 sys.path.append("..")
 from scr import logd
+import json
 
 today=datetime.date.today()
 
@@ -93,7 +94,39 @@ def download_ACH_Q(year,quarter,df):
         #print (achievement.head(9))
     return Data
 
+def get_trade_date():
+    data=ts.trade_cal()
+    open_day=data[ data.isOpen>0 ]
+    open_day['Quarter']=''
+    for i in open_day.index:
+        DATE=open_day.at[i,'calendarDate']
+        
+        month=DATE[5:7]
+        if month >= '01' and month <='03':
+            Qua=DATE[2:4]+'Q1'
+        elif month >= '04' and month <='06':
+            Qua=DATE[2:4]+'Q2'
+        elif month >= '07' and month <='09':
+            Qua=DATE[2:4]+'Q3'  
+        elif month >= '10' and month <='12':
+            Qua=DATE[2:4]+'Q4'
+        
+        open_day.at[i,'Quarter']=Qua
+        
+        print(DATE,Qua)
+       
+    return open_day
+def downloading_trade_date():
+    data=get_trade_date()
+    data=data.set_index('calendarDate')    
+    import os
+    path=os.path.dirname(os.getcwd())+'\\report\\' # 存储路径
+    data.to_csv(path+'Trade_Date.csv',encoding='gbk',header=True)
+    
+    
 if __name__ == "__main__":
-    x=downloading_information(SAVE=True)
+    #x=downloading_information(SAVE=True)
+    x=downloading_trade_date()
+
     
     
