@@ -3,6 +3,9 @@
 Created on Tue Mar  7 09:54:34 2017
 
 @author: 310128142
+fuction: 
+    download imformation/下载基本信息
+    download 
 """
 
 import tushare as ts
@@ -67,7 +70,7 @@ def downloading_information(time=3,SAVE=False):
         ST_basics.to_csv(path+'Stock_Information.csv',encoding='gbk',header=True)
     return ST_basics
 
-def download_ACH_Q(year,quarter,df):
+def download_ACH_Q(year,quarter,df):#按照季度获取信息
     Data=df
     try :
         
@@ -94,7 +97,7 @@ def download_ACH_Q(year,quarter,df):
         #print (achievement.head(9))
     return Data
 
-def get_trade_date():
+def get_trade_date():# 网上获得交易日期
     data=ts.trade_cal()
     open_day=data[ data.isOpen>0 ]
     open_day['Quarter']=''
@@ -116,17 +119,27 @@ def get_trade_date():
         print(DATE,Qua)
        
     return open_day
-def downloading_trade_date():
+
+def downloading_trade_date():# 存储交易日期
     data=get_trade_date()
     data=data.set_index('calendarDate')    
     import os
     path=os.path.dirname(os.getcwd())+'\\report\\' # 存储路径
     data.to_csv(path+'Trade_Date.csv',encoding='gbk',header=True)
-    
+def trade_calendar(year=today.year):#获取一年交易日期 默认为今年
+    '''
+    item  calendarDate  isOpen Quarter
+    '''
+    data=pd.read_csv("..\\report\\Trade_Date.csv",encoding='gbk')
+    data=data[data['calendarDate']>="%s-01-01"%year]
+    data=data[data['calendarDate']<="%s-12-31"%year]
+    data=data.set_index('calendarDate')
+ 
+    return data
     
 if __name__ == "__main__":
     #x=downloading_information(SAVE=True)
-    x=downloading_trade_date()
-
+    #x=downloading_trade_date()
+    print(trade_calendar())
     
     

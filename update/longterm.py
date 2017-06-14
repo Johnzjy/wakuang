@@ -9,7 +9,11 @@ import tushare as ts
 import pandas as pd
 import matplotlib.pyplot as plt
 import tqdm
+sys.path.append("..")
+from scr import logd
 
+log_CYQ=logd.Logger('../scr/logfiles.log')
+log_CYQ.info('%s%s'%('='*16,'='*16))
 def changed_rate_stock(code,start,end):
     df=ts.get_hist_data(code,start,end)
     max_high=df.high.max()
@@ -22,13 +26,16 @@ def changed_rate_list(code_list,start,end):
     dict_code=pd.DataFrame(code_list,columns=['code'])
     dict_code['changed']=0
     dict_code=dict_code.set_index('code')
-    for code in tqdm.tqdm(code_list[0:20],leave=False):
+    for code in tqdm.tqdm(code_list,leave=False):
         pre=changed_rate_stock(code,start,end)
         dict_code.loc[code,'changed']=pre
     return dict_code
-def changed_rate_all()
-
-
+def changed_rate_all(start,end):
+    log_CYQ.info('%sDownloading_%s'%('='*16,'='*16))
+    code_list=pd.read_csv('../list/stock_code_all.csv',encoding='gbk',engine='python')
+    code_list.code=code_list.code.apply(lambda x:'%06d'%x)
+    Data=changed_rate_list(code_list.code,start,end_\)
+    Data.to_csv('../repot/base_information/all_changed-%s-%s.csv'%(start,end),encoding='gbk',header=True)
 if __name__=="__main__":
     code_='sh'
     start_='2017-01-01'

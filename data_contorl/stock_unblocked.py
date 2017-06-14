@@ -70,11 +70,12 @@ class unblock(object):
         print (datas)
         for code_ in tqdm.tqdm(datas['code']):
             item_= list(datas['code']).index(code_) # 寻找坐标
-            hist_data=ts.get_hist_data(code_)
-            price=hist_data.ma20[0:1].values[0]
+            hist_data=ts.get_realtime_quotes(code_)
+            price=hist_data.price
+            print (price)
             count_=datas.at[item_,'count']
   #          print(datas.at[item_,'amount_ma20'],count_.type(),price)
-            datas.at[item_,'amount_ma20']=float(count_)*float(price)*10000
+            datas.at[item_,'funds']=float(count_)*float(price)#单位万元
         print(datas)
       
             
