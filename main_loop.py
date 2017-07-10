@@ -64,12 +64,13 @@ def print_section(dict_config):
             
 
     
-
+#设置index
 def set_index(index):
     get_trp=input(color.Red_nor("是否选择%s,Y/N:"%index)).strip()
     
     if get_trp in ('y','Y','yes') :
         config_dict['%s'%index]='True'
+        
         print(color.High_BG('++++++++++++已添加 %s\n'%index))
         conf.set('INI','%s'%index,'True')
     elif get_trp in ('n', 'N','no'):
@@ -77,8 +78,8 @@ def set_index(index):
         print(color.High_YB('------------已删除 %s\n'%index))
         conf.set('INI','%s'%index,'False')
     else:
-        print('quit')
-        quit_code(get_trp)
+     #   print('quit')
+        go_back(get_trp)
         
     conf.write( open(ini_filename, 'r+') ) 
 
@@ -157,9 +158,9 @@ def set_endtime():
         D=get_trp
     else :
         print ('输入错误，请从新输入')
-        set_startime()
+        set_endtime()
     time = Y+'-'+ M +'-'+D
-    conf.set('INI','start',time)
+    conf.set('INI','end',time)
     conf.write( open(ini_filename, 'r+') ) 
     print(color.High_BG('——'*19))
     print(color.High_BG('|设置成功，当前结束日期为： %s |'%time))
@@ -225,18 +226,22 @@ memu = {    "开始":{
 def quit_code(input_str):
     if input_str== '':
         exit_strip=input(color.Red_nor("按Y退出：")).strip()
-        if exit_strip == 'y'or 'Y':
+       
+        if exit_strip in ('y','Y','yes') :
+            print ('QUIT')
             global flag
             flag = False
             return True
         else:
-            return False
+            loop_memu()
         
 def go_back(input_str):
     if input_str== '':
         exit_strip=input(color.Red_nor("按Y返回：")).strip()
         if exit_strip == 'y'or 'Y':
-            return True
+#            return True
+            loop_memu()
+            
         else:
             return False
 def print_memu(memu_):
@@ -261,11 +266,13 @@ def loop_memu():
             print (color.Green('->'),color.Blue_nor(num_f),'   ',color.Blue(key_f))
             memu_1=memu['%s'%key_f]
             #print(memu_1)
-        
+        get_trp_1=''
         get_trp_1=input(color.Red_nor("请输入一级菜单号,按enter退出：")).strip()
         quit_code(get_trp_1)
+        print (get_trp_1)
         if get_trp_1 == '0':
             running()
+
         else:    
             for num_f in enumerate(memu.keys()):
                 if get_trp_1 == '%s'%num_f[0]:

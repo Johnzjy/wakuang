@@ -3,6 +3,8 @@ import tushare as ts
 import time
 import sys
 import tqdm 
+import matplotlib.pyplot as plt
+import datetime
 
 print ()
 sys.path.append("..")
@@ -66,23 +68,55 @@ class unblock(object):
         return code_info
     def sum_unblocked(self,during=1):
         datas=self.update_unblocked(during)
-        datas['amount_ma20']=0.0
+        datas['funds']=0.0
         print (datas)
         for code_ in tqdm.tqdm(datas['code']):
             item_= list(datas['code']).index(code_) # 寻找坐标
-            hist_data=ts.get_realtime_quotes(code_)
-            price=hist_data.price
+            #一般取当前值，如果失败取20日均价
+            try:
+                hist_data=ts.get_realtime_quotes(code_)
+                price=hist_data.price.values.float()
+                print (price)
+            except:
+                hist_data=ts.get_k_data(code_)
+                price=ts.get_hist_data(code_ ).ma20[1:2].values
+            print (price)
+            if price==[0.0]:
+                
+                hist_data=ts.get_k_data(code_)
+                price=ts.get_hist_data(code_ ).ma20[1:2].values
+            else:
+                pass
             print (price)
             count_=datas.at[item_,'count']
   #          print(datas.at[item_,'amount_ma20'],count_.type(),price)
             datas.at[item_,'funds']=float(count_)*float(price)#单位万元
         print(datas)
-      
-            
+        return datas
+    #统计出每一日解禁的金额
+    def unblock_funds_day(self,during=1):
+        datas=self.sum_unblocked(during)
+        datas=datas.pivot_table(index=['date'])
+        datas=datas.reset_index()
+        datas.date=datas.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
+        return datas
+    def unblock_funds_week(self,during=1):
+        
+        datas=self.unblock_funds_day(during)
+        y=datas
+        datas['week']=datas.date.apply(lambda x:"%s-%s"%(datetime.datetime.isocalendar(x)[0],
+                                                         datetime.datetime.isocalendar(x)[1]))
+        week_D=datas.pivot_table(index=['week'])
+        dates
+        return datas,y
+        
+         
             
         
         
     
     
 x=unblock()
-y=x.sum_unblocked()
+z,y=x.unblock_funds_week(1)
+
+
