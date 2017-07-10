@@ -10,7 +10,20 @@ today=datetime.date.today()
 
 
 
-
+def get_date_ts(Code,startDate,endDate):#获取开始数据
+        
+    df=ts.get_k_data(Code,startDate,end=endDate)
+    
+    df=df.reset_index()
+    df=df.sort_index(ascending=True)# 从后倒序
+    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
+    df=df.set_index('date')
+    if endDate == '%s'%today:
+        realtime_price=ts.get_realtime_quotes(Code).price
+        realtime_price=float(realtime_price)
+       # print('当前价格：%s'%realtime_price)
+        df.loc['%s'%today,'close']=realtime_price
+    return df
 
 def myMACD(price, fastperiod=10, slowperiod=20, signalperiod=9):
     ewma12 = pd.ewma(price,span=fastperiod)
@@ -26,18 +39,7 @@ def myMACD(price, fastperiod=10, slowperiod=20, signalperiod=9):
 def draw_macd(code,starttime,endtime):
 
     
-    df=ts.get_hist_data(code,start=starttime,end=endtime)
-
-    df=df.reset_index()
-    df=df.sort_index(ascending= False)# 从后倒序
-    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-    df=df.set_index('date')
-    if endtime == '%s'%today:
-        print ('MACD')
-        realtime_price=ts.get_realtime_quotes(code).price
-        realtime_price=float(realtime_price)
-        print('当前价格：%s'%realtime_price)
-        df.loc['%s'%today,'close']=realtime_price
+    df=get_date_ts(code,starttime,endtime)
 
 #macd, signal, hist = talib.MACD(df['close'].values, fastperiod=12, slowperiod=26, signalperiod=9)
 
@@ -71,31 +73,16 @@ def ewma_day(code_list,days_=30): # 30day EWMA走线
     every_day=every_day.rename(columns={'close':'szzs'})
     
     for code_ in code_list[1:]:
-        datas=ts.get_hist_data(code_,start='%s'%startday,end='%s'%today)
-        
+        datas=ts.get_hist_data(code_,start='%s'%startday,end='%s'%today)    
         every_day1=datas.close
-
-        #every_day1=every_day1.reset_index()
         ewma30 = pd.ewma(every_day1.values,span=days_)
-        #print(ewma30)
         every_day1=pd.Series(data=ewma30,index=every_day1.index,name=code_)
         every_day1=every_day1.reset_index()
-        
-        
         every_day=pd.merge(every_day,every_day1,on='date',how='outer')
-        #every_day=every_day.rename(columns={'close':'%s'%code_})
-    
-    
-
 
     every_day.date=every_day.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-    every_day=every_day.set_index('date')
+    every_day=every_day.set_index('date')#设置日期轴
     every_day=every_day.sort_index(ascending= False)# 从后倒序
-    
-        
-
-
-    
 
     return every_day
 '''
@@ -106,21 +93,10 @@ def ST_bands (code,startday,enday):
     upperband   , 上轨  均线加一倍标准差
     middleband  ，中轨  均线
     lowerband   ，下轨  均线减一倍标准差
-    返回 df
-
 
     '''
     
-    df=ts.get_hist_data(code,start=startday,end=enday)
-    df=df.reset_index()
-    df=df.sort_index(ascending= False)# 从后倒序
-    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-    df=df.set_index('date')
-    if enday == '%s'%today:
-        realtime_price=ts.get_realtime_quotes(code).price
-        realtime_price=float(realtime_price)
-        print('当前价格：%s'%realtime_price)
-        df.loc['%s'%today,'close']=realtime_price
+    df=get_date_ts(code,startday,enday)
     
     upperband, middleband, lowerband = talib.BBANDS(df.close.values, timeperiod=10, nbdevup=2, nbdevdn=2, matype=0)
 
@@ -139,20 +115,17 @@ def draw_bands(df):
     plt.grid(True)
 
 
-def VWAP(code='sh',startday='2015-01-05',enday='2016-12-21'):# price 加权平均指标
+def VWAP(code='sz',startday='2015-01-05',enday='2016-12-21'):# price 加权平均指标
    
     
     
     SQ={'slower_line':24,'middler_line':6,'fast_line':2}
     if code == 'sh':
         SQ['slower_line']=12
-    
-    df=ts.get_hist_data(code,start=startday,end=enday)
+
+    df=get_date_ts(code,startday,enday)
     df['pvc']=df.close*df.volume
-    df=df.reset_index()
-    df=df.sort_index(ascending= False)# 从后倒序
-    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-    df=df.set_index('date')
+
     
     if enday == '%s'%today:
         realtime_price=ts.get_realtime_quotes(code).price
@@ -188,13 +161,7 @@ def RSI(code='sh',startday='2015-01-05',enday='2016-12-21',timeperiod=10):# pric
     #timeperiod=1
     if code == 'sh':
         timeperiod=10
-    
-    df=ts.get_hist_data(code,start=startday,end=enday)
-    
-    df=df.reset_index()
-    df=df.sort_index(ascending= False)# 从后倒序
-    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-    df=df.set_index('date')
+    df=get_date_ts(code,startday,enday)
     df['RSI']=talib.RSI(df.close.values,timeperiod)
     
     return df
@@ -216,14 +183,9 @@ def draw_RSI(df): # 画加权平均指数
     plt.legend(loc='best')
     plt.grid(True)
     
-def ADX(code='sh',startday='2015-01-05',enday='2016-12-21'):# ADX     
-    df=ts.get_hist_data(code,start=startday,end=enday)
-    
-    df=df.reset_index()
-    df=df.sort_index(ascending= False)# 从后倒序
-    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-    df=df.set_index('date')
-    print(df)
+def ADX(code='sh',startday='2015-01-05',enday='2016-12-21'):# ADX  多空占比   
+    df=get_date_ts(code,startday,enday)
+    #print(df)
     df['ADX']=talib.ADX(high=df.high.values,low=df.low.values,close=df.close.values,timeperiod=10)
     #多空比率净额= [（收盘价－最低价）－（最高价-收盘价）] ÷（ 最高价－最低价）×V
     return df
@@ -239,13 +201,8 @@ def ADOSC(code='sh',startday='2015-01-05',enday='2016-12-21',f=5,s=30):# 量价�
     #timeperiod=1
     # if code == 'sh':
     #    timeperiod=10
-    
-    df=ts.get_hist_data(code,start=startday,end=enday)
-    
-    df=df.reset_index()
-    df=df.sort_index(ascending= False)# 从后倒序
-    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-    df=df.set_index('date')
+    df=get_date_ts(code,startday,enday)
+
     df['ADOSC']=talib.ADOSC(high=df.high.values,
                           low=df.low.values,
                           close=df.close.values,
@@ -261,19 +218,18 @@ def draw_ADOSC(df): # 画加权平均指数
     ax1=plt.subplot(111)
       
     plt.plot(df.index,df.close,"b")
-    x2=ax1.twinx()
+    x2=ax1.twinx()#设立爽坐标
     plt.plot(df.index,df.ADOSC,'g',label='ADOSC')    
     plt.legend(loc='best')
     plt.grid(True)
 if __name__=="__main__":
-    code_='600095'
+    code_="600098" 
     start_='2016-05-01'
-    end_='2017-06-07'
+    end_='2017-07-10'
     
     plt.figure(1)
     VW=VWAP(code_,start_,end_)
     draw_VWAP(VW)
-    
     
     plt.figure(2)
     brand=ST_bands(code_,start_,end_)
@@ -288,10 +244,10 @@ if __name__=="__main__":
     
     plt.figure(5)
     ADX_IDEX=ADX(code_,start_,end_)
-    draw_ADX(ADX_IDEX)
+    draw_ADX(ADX_IDEX)#ADX 非相关重要信息
 
     plt.figure(6)
-    ADOSC_IDEX=ADOSC(code_,start_,end_)
+    ADOSC_IDEX=ADOSC(code_,start_,end_)#
     draw_ADOSC(ADOSC_IDEX)   
     plt.show()
 
