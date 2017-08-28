@@ -21,7 +21,7 @@ def get_date_ts(Code,startDate,endDate):#获取开始数据
     if endDate == '%s'%today:
         realtime_price=ts.get_realtime_quotes(Code).price
         realtime_price=float(realtime_price)
-       # print('当前价格：%s'%realtime_price)
+        #print('当前价格：%s'%realtime_price)
         df.loc['%s'%today,'close']=realtime_price
     return df
 
@@ -162,7 +162,7 @@ def RSI(code='sh',startday='2015-01-05',enday='2016-12-21',timeperiod=10):# pric
     if code == 'sh':
         timeperiod=10
     df=get_date_ts(code,startday,enday)
-    df['RSI']=talib.RSI(df.close.values,timeperiod)
+    df['RSI']=talib.RSI(df.close.values,timeperiod)#调用RSI函数计算RSI  因子设为10
     
     return df
 
@@ -176,11 +176,11 @@ def draw_RSI(df): # 画加权平均指数
     plt.plot(df.index,df.RSI,'g',label='RSI')    
 
 
-    plt.plot(df.index,0*df.open+30,'--')
+    plt.plot(df.index,0*df.open+20,'--')
     plt.plot(df.index,0*df.open+50,'--')
-    plt.plot(df.index,0*df.open+70,'--')
+    plt.plot(df.index,0*df.open+80,'--')
    # plt.ylim(-1, 3)
-    plt.legend(loc='best')
+    plt.legend(loc='best')#输出标签，保持在最优模式
     plt.grid(True)
     
 def ADX(code='sh',startday='2015-01-05',enday='2016-12-21'):# ADX  多空占比   
@@ -223,9 +223,22 @@ def draw_ADOSC(df): # 画加权平均指数
     plt.legend(loc='best')
     plt.grid(True)
 if __name__=="__main__":
-    code_="600098" 
-    start_='2016-05-01'
-    end_='2017-07-10'
+   #399006 
+    '''
+   INDEX_LIST = {'sh': 'sh000001', 
+                 'sz': 'sz399001',
+                 'hs300': 'sz399300',
+                 'sz50': 'sh000016',
+                 'zxb': 'sz399005', 
+                 'cyb': 'sz399006',
+                 'zx300': 'sz399008', 
+                 000976 000929 000911 000639 601139
+                 'zh500':'sh000905'}
+   
+    '''
+    code_="600200" 
+    start_='2016-08-01'
+    end_='2017-08-28'
     
     plt.figure(1)
     VW=VWAP(code_,start_,end_)
@@ -245,9 +258,8 @@ if __name__=="__main__":
     plt.figure(5)
     ADX_IDEX=ADX(code_,start_,end_)
     draw_ADX(ADX_IDEX)#ADX 非相关重要信息
-
     plt.figure(6)
-    ADOSC_IDEX=ADOSC(code_,start_,end_)#
+    ADOSC_IDEX=ADOSC(code_,start_,end_)
     draw_ADOSC(ADOSC_IDEX)   
     plt.show()
 
