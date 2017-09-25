@@ -8,6 +8,7 @@ import datetime
 import sys
 sys.path.append("..")
 from scr import logd
+import time
 
 log_CYQ=logd.Logger('../scr/logfiles.log')
 log_CYQ.info('%s计算筹码分布模块%s'%('='*16,'='*16))
@@ -58,7 +59,7 @@ def CYQ(code,start,end,download= False,CYQ_rate=1,files_path='../report/'):
     
     i =1
     for date in tqdm.tqdm(datas.index[1:]):
-        #print (date)
+        time.sleep(1)
         try:
             tem_cyq=PQ(code,date)
             
@@ -156,14 +157,14 @@ def Draw_jetton(code_j,start_j,end_j):
     plt.plot(x.PCT_SUM,x.index*0+PCT80,ls='--',linewidth=.4, color='r')
     plt.ylim(datas.close.min(),datas.close.max())
     plt.grid(True)
-
+    f1.savefig('../report/CYQ/%s-%s-%s.png'%(code_j,start_j,end_j))
 
 
     
 if __name__ == "__main__":
     code_='600871'
-    start_='2017-05-01'
-    end_='2017-05-23'
+    start_='2017-01-01'
+    end_='2017-09-25'
     log_CYQ.info('%s：from %s to %s'%(code_,start_,end_))
     Draw_jetton(code_,start_,end_)
     plt.show()
