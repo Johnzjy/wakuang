@@ -35,7 +35,7 @@ def list_input(mode='sh'):
 DataFame_list = list_input(mode = 'sh')
 list_code =list(DataFame_list.values)
 start_='2016-07-01'
-end_='2017-07-19'
+end_='2017-09-24'
 for code_name in tqdm.tqdm(list_code):
     print(code_name[0],code_name[1])
     fig = plt.figure('%s-%s'%(code_name[0],code_name[1]),figsize=(8, 8))
@@ -45,6 +45,7 @@ for code_name in tqdm.tqdm(list_code):
     except:
         continue
     fig.suptitle('%s'%code_name[1])
-    fig.savefig('report/MACD_PNG/sh/%s.png'%code_name[0])
+    fig.savefig('report/MACD_PNG/sh/%sw.png'%code_name[0])
+    plt.close(fig) 
 
 #plt.show()
