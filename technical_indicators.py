@@ -223,6 +223,7 @@ def draw_ADOSC(df): # 画加权平均指数
     plt.legend(loc='best')
     plt.grid(True)
 if __name__=="__main__":
+
    #399006 
     '''
    INDEX_LIST = {'sh': 'sh000001', 
@@ -238,8 +239,7 @@ if __name__=="__main__":
     '''
     code_="600200" 
     start_='2016-08-01'
-    end_='2017-08-28'
-    
+    end_='2017-09-26'
     plt.figure(1)
     VW=VWAP(code_,start_,end_)
     draw_VWAP(VW)
