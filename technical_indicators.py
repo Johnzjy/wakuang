@@ -260,6 +260,7 @@ if __name__=="__main__":
     draw_ADX(ADX_IDEX)#ADX 非相关重要信息
     plt.figure(6)
     ADOSC_IDEX=ADOSC(code_,start_,end_)
-    draw_ADOSC(ADOSC_IDEX)   
+    draw_ADOSC(ADOSC_IDEX)
+     
     plt.show()
 
