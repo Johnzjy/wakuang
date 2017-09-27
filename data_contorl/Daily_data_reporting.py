@@ -1,14 +1,8 @@
 import tushare as ts
 import datetime
 import os
-
-
-
 import pandas as pd
 from pandas import options
-
-
-
 todaytime=datetime.date.today()
 #todaytime= '2017-06-20'
 print(todaytime)
