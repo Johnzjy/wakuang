@@ -8,16 +8,36 @@ Created on Tue Jun 27 09:35:22 2017
 import technical_indicators as ti
 import matplotlib.pyplot as plt
 import pandas as pd
+import os
 import tqdm
+import datetime
 '''
 显示中文文件头
 '''
 from pylab import mpl
 mpl.rcParams['font.sans-serif'] = ['FangSong'] # 指定默认字体
 mpl.rcParams['axes.unicode_minus'] = False # 解决保存图像是负号'-'显示为方块的问题
-
+code_dict={'all_code':'stock_code_all',
+           'sh':'stock_code_sh',
+           'cy':'stock_code_cy',
+           'sz':'stock_code_sz',
+           }
 def list_input(mode='sh'):
+    if mode in code_dict.keys():
+        search_file=code_dict[mode]+'.csv'
+        #print (search_file)
+    else:
+        search_file=mode+'.csv'
+    print (search_file)
     
+    try:
+        f=open('list\\%s'%search_file)
+        print (f)
+        LIST_=pd.read_csv(f)
+    except IOError:
+        print('can not find files,please change mode.')
+        print(os.listdir('list'))
+    '''
     if mode == 'sh': 
         LIST_=pd.read_csv('list/stock_code_sh.csv',encoding='gbk')
     elif mode == 'sz':
@@ -27,28 +47,63 @@ def list_input(mode='sh'):
         LIST_=pd.read_csv('list/stock_code_cy.csv',encoding='gbk')
     else:
         pass
-    LIST_.code=LIST_.code.apply(lambda x:'%06d'%x)
-   # LIST_=LIST_.set_index('code')
-
+    '''
+    if LIST_ is not None:
+ #       LIST_ = LIST_.drop_duplicates('code')
+        LIST_['code'] = LIST_['code'].map(lambda x:str(x).zfill(6))
     return LIST_
 
-DataFame_list = list_input(mode = 'sz')
-list_code =list(DataFame_list.values)
-start_='2016-07-01'
-end_='2017-09-24'
-for code_name in tqdm.tqdm(list_code):
+def save_MACD_all(mode,starttime,endtime):
+    '''
+    保存所有的MACD图
+    '''
+    DataFame_list = list_input(mode)
+    list_code =list(DataFame_list.values)
+    files_path= 'report/MACD_PNG/%s'%mode
+    if os.path.exists('report/MACD_PNG') == False:
+        os.mkdir('report/MACD_PNG')
+    if os.path.exists(files_path) == False: # 判断文件是不是存在
+        os.mkdir(files_path)                # 创建目录
+    for code_name in tqdm.tqdm(list_code):    
+        print(code_name[0],code_name[1])
+        fig = plt.figure('%s-%s'%(code_name[0],code_name[1]),figsize=(8, 8))
+        fig.set_label('%s'%code_name[1])
+        try:
+            ti.draw_macd('%s'%code_name[0],starttime,endtime)
+        except:
+            continue
+        fig.suptitle('%s'%code_name[1])
 
-    print(code_name[0],code_name[1])
-    fig = plt.figure('%s-%s'%(code_name[0],code_name[1]),figsize=(8, 8))
-    fig.set_label('%s'%code_name[1])
-    try:
-        ti.draw_macd('%s'%code_name[0],start_,end_)
-    except:
-        continue
-    fig.suptitle('%s'%code_name[1])
+        fig.savefig('report/MACD_PNG/%s/%sw.png'%(mode,code_name[0]))
+        plt.close(fig) 
 
-    fig.savefig('report/MACD_PNG/sh/%sw.png'%code_name[0])
-    plt.close(fig) 
+def RSI_sorting(mode):
+    DataFame_list = list_input(mode)
+    list_code =list(DataFame_list.values)
+    RSI_df=DataFame_list.set_index('code')
+    RSI_df['RSI']=0
+    print(RSI_df)
+    endtime='%s'%datetime.date.today()
+    starttime='2016-01-01'
+    for code_name in tqdm.tqdm(list_code):
+        try:
+            rsi_=ti.RSI('%s'%code_name[0],starttime,endtime)
+            rsi_=rsi_.RSI[-1]
+            
+        except:
+            continue
+        RSI_df.loc['%s'%code_name[0],'RSI']=rsi_    
+    files_path= 'report/RSI_SORTING/%s'%mode
+    if os.path.exists('report/RSI_SORTING') == False:
+        os.mkdir('report/RSI_SORTING')
+    if os.path.exists(files_path) == False: # 判断文件是不是存在
+        os.mkdir(files_path)                # 创建目录
+    RSI_df.to_csv(files_path+'/RSI_sorting_%s.csv'%endtime)   
+    print(RSI_df)
+    return RSI_df
+if __name__=="__main__":
 
-
-#plt.show()
+    mode_='sz'
+    start_='2016-08-01'
+    end_='2017-09-27'
+    save_MACD_all(mode_,start_,end_)

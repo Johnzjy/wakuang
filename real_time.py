@@ -65,7 +65,7 @@ class real_datas:
         
      
     def draw_color(self):
-        fig_number =self.__class__.CODECNT
+         fig_number =self.__class__.CODECNT
         sub_number =self.__class__.FIG
         ax1=self.ax.set_ylim(0, fig_number)
         buy_len=self.buy / self.BID_ASD *20
