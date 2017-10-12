@@ -237,9 +237,9 @@ if __name__=="__main__":
                  'zh500':'sh000905'}
    
     '''
-    code_="600203" 
+    code_="600200" 
     start_='2016-08-01'
-    end_='2017-09-27'
+    end_='2017-10-12'
     plt.figure(1)
     VW=VWAP(code_,start_,end_)
     draw_VWAP(VW)

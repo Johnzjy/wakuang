@@ -74,9 +74,11 @@ def save_MACD_all(mode,starttime,endtime):
             continue
         fig.suptitle('%s'%code_name[1])
 
-        fig.savefig('report/MACD_PNG/%s/%sw.png'%(mode,code_name[0]))
+        fig.savefig('report/MACD_PNG/%s/%s.png'%(mode,code_name[0]))
         plt.close(fig) 
-
+'''
+存储RSI的图片
+'''
 def RSI_sorting(mode):
     DataFame_list = list_input(mode)
     list_code =list(DataFame_list.values)
