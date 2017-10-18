@@ -59,7 +59,7 @@ def CYQ(code,start,end,download= False,CYQ_rate=1,files_path='../report/'):
     
     i =1
     for date in tqdm.tqdm(datas.index[1:]):
-        time.sleep(1)
+        time.sleep(2)
         try:
             tem_cyq=PQ(code,date)
             
@@ -162,9 +162,9 @@ def Draw_jetton(code_j,start_j,end_j):
 
     
 if __name__ == "__main__":
-    code_='300300'
-    start_='2017-06-01'
-    end_='2017-09-27'
+    code_='600871'
+    start_='2016-10-18'
+    end_='2017-10-18'
     log_CYQ.info('%s：from %s to %s'%(code_,start_,end_))
     Draw_jetton(code_,start_,end_)
     plt.show()
