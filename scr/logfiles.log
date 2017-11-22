@@ -1,0 +1,2427 @@
+[11-09 15:40:27]-DEBUG-asd was called
+[11-09 16:00:26]-INFO-function : <asd> r
+[11-09 16:07:36]-INFO-Function : asd
+[11-09 16:09:40]-INFO-Function : asd
+[11-09 16:10:28]-INFO-Function : asd
+[11-09 16:10:40]-INFO-Function : asd
+[11-09 16:11:14]-INFO-Function : asd
+[11-09 16:12:15]-INFO-Function : <asd>
+[11-09 16:15:05]-INFO-Function : <asd>
+[11-09 16:15:42]-INFO-Function : <asd>
+[11-09 16:16:32]-INFO-Function : <asd>
+[11-09 16:16:50]-INFO-Function : <asd>
+[11-09 16:16:50]-INFO-Function : <asd>
+[11-09 16:16:50]-INFO-Function : <bd>
+[11-09 16:16:50]-INFO-Function : <bd>
+[11-09 16:16:50]-ERROR-There was an exception in  bd
+[11-09 16:16:50]-ERROR-There was an exception in  bd
+[11-09 16:18:04]-INFO-Function : <asd>
+[11-09 16:18:04]-INFO-Function : <asd>
+[11-09 16:18:04]-INFO-Function : <bd>
+[11-09 16:18:04]-INFO-Function : <bd>
+[11-09 16:18:04]-ERROR-There was an exception in  bd
+[11-09 16:18:04]-ERROR-There was an exception in  bd
+[11-09 16:20:44]-INFO-Function : <asd>
+[11-09 16:20:44]-INFO-Function : <asd>
+[11-09 16:20:44]-INFO-Function : <bd>
+[11-09 16:20:44]-INFO-Function : <bd>
+[11-09 16:20:44]-ERROR-There was an exception in  bd
+[11-09 16:20:44]-ERROR-There was an exception in  bd
+[11-09 16:23:30]-INFO-Function : <asd>
+[11-09 16:23:30]-INFO-Function : <asd>
+[11-09 16:23:30]-INFO-Function : <bd>
+[11-09 16:23:30]-INFO-Function : <bd>
+[11-09 16:23:30]-ERROR-There was an exception in  bd
+[11-09 16:23:30]-ERROR-There was an exception in  bd
+[11-09 16:25:27]-INFO-Function : <asd>
+[11-09 16:25:27]-INFO-Function : <asd>
+[11-09 16:25:27]-INFO-Function : <bd>
+[11-09 16:25:27]-INFO-Function : <bd>
+[11-09 16:25:27]-ERROR-There was an exception in  bd
+[11-09 16:25:27]-ERROR-There was an exception in  bd
+[11-09 16:26:07]-INFO-Function : <asd>
+[11-09 16:26:07]-INFO-Function : <asd>
+[11-09 16:26:07]-INFO-Function : <bd>
+[11-09 16:26:07]-INFO-Function : <bd>
+[11-09 16:26:07]-ERROR-There was an exception in  bd
+[11-09 16:26:07]-ERROR-There was an exception in  bd
+[11-09 16:26:31]-wrapped_function-INFO-Function : <asd>
+[11-09 16:26:31]-wrapped_function-INFO-Function : <asd>
+[11-09 16:26:31]-wrapped_function-INFO-Function : <bd>
+[11-09 16:26:31]-wrapped_function-INFO-Function : <bd>
+[11-09 16:26:31]-wrapped_function-ERROR-There was an exception in  bd
+[11-09 16:26:31]-wrapped_function-ERROR-There was an exception in  bd
+[11-09 16:33:06]-line:80-funcNamewrapped_function-INFO-Function : <asd>
+[11-09 16:33:06]-line:80-funcNamewrapped_function-INFO-Function : <asd>
+[11-09 16:33:06]-line:80-funcNamewrapped_function-INFO-Function : <bd>
+[11-09 16:33:06]-line:80-funcNamewrapped_function-INFO-Function : <bd>
+[11-09 16:33:06]-line:91-funcNamewrapped_function-ERROR-sThere was an exception in  bd
+[11-09 16:33:06]-line:91-funcNamewrapped_function-ERROR-sThere was an exception in  bd
+[11-17 11:08:17]-[line:54]-FuncName:info-(time:13268)-INFO: ================计算筹码分布模块================
+[11-17 11:08:17]-[line:54]-FuncName:info-(time:13268)-INFO: 601163：from 2016-11-17 to 2017-11-17
+[11-17 11:08:19]-[line:54]-FuncName:info-(time:15015)-INFO: the code 601163,has been done from 2016-11-17
+
+[11-17 11:08:24]-[line:54]-FuncName:info-(time:20072)-INFO: the code 601163,has been done from 2016-11-18
+
+[11-17 11:08:27]-[line:54]-FuncName:info-(time:23089)-INFO: the code 601163,has been done from 2016-11-21
+
+[11-17 11:08:30]-[line:54]-FuncName:info-(time:26066)-INFO: the code 601163,has been done from 2016-11-22
+
+[11-17 11:08:34]-[line:54]-FuncName:info-(time:29918)-INFO: the code 601163,has been done from 2016-11-23
+
+[11-17 11:08:37]-[line:54]-FuncName:info-(time:33028)-INFO: the code 601163,has been done from 2016-11-24
+
+[11-17 11:08:39]-[line:54]-FuncName:info-(time:35150)-INFO: the code 601163,has been done from 2016-11-25
+
+[11-17 11:08:39]-[line:57]-FuncName:war-(time:35150)-WARNING: 
+计算换手率数据下载错误：2016-11-25自动计算计算
+[11-17 11:08:39]-[line:60]-FuncName:error-(time:35150)-ERROR: 
+数据有问题中断本次：2016-11-25没有计算成功
+[11-17 11:08:42]-[line:54]-FuncName:info-(time:38270)-INFO: the code 601163,has been done from 2016-11-28
+
+[11-17 11:08:45]-[line:54]-FuncName:info-(time:41359)-INFO: the code 601163,has been done from 2016-11-29
+
+[11-17 11:08:48]-[line:54]-FuncName:info-(time:44323)-INFO: the code 601163,has been done from 2016-11-30
+
+[11-17 11:08:52]-[line:54]-FuncName:info-(time:47957)-INFO: the code 601163,has been done from 2016-12-01
+
+[11-17 11:08:55]-[line:54]-FuncName:info-(time:51109)-INFO: the code 601163,has been done from 2016-12-02
+
+[11-17 11:08:58]-[line:54]-FuncName:info-(time:53792)-INFO: the code 601163,has been done from 2016-12-05
+
+[11-17 11:09:00]-[line:54]-FuncName:info-(time:56524)-INFO: the code 601163,has been done from 2016-12-06
+
+[11-17 11:09:03]-[line:54]-FuncName:info-(time:59566)-INFO: the code 601163,has been done from 2016-12-07
+
+[11-17 11:09:06]-[line:54]-FuncName:info-(time:62389)-INFO: the code 601163,has been done from 2016-12-08
+
+[11-17 11:09:09]-[line:54]-FuncName:info-(time:65229)-INFO: the code 601163,has been done from 2016-12-09
+
+[11-17 11:09:13]-[line:54]-FuncName:info-(time:68754)-INFO: the code 601163,has been done from 2016-12-12
+
+[11-17 11:09:15]-[line:54]-FuncName:info-(time:71656)-INFO: the code 601163,has been done from 2016-12-13
+
+[11-17 11:09:18]-[line:54]-FuncName:info-(time:74401)-INFO: the code 601163,has been done from 2016-12-14
+
+[11-17 11:09:21]-[line:54]-FuncName:info-(time:77428)-INFO: the code 601163,has been done from 2016-12-15
+
+[11-17 11:09:25]-[line:54]-FuncName:info-(time:81078)-INFO: the code 601163,has been done from 2016-12-16
+
+[11-17 11:09:28]-[line:54]-FuncName:info-(time:84105)-INFO: the code 601163,has been done from 2016-12-19
+
+[11-17 11:09:31]-[line:54]-FuncName:info-(time:86928)-INFO: the code 601163,has been done from 2016-12-20
+
+[11-17 11:09:34]-[line:54]-FuncName:info-(time:89989)-INFO: the code 601163,has been done from 2016-12-21
+
+[11-17 11:09:37]-[line:54]-FuncName:info-(time:93405)-INFO: the code 601163,has been done from 2016-12-22
+
+[11-17 11:09:41]-[line:54]-FuncName:info-(time:97040)-INFO: the code 601163,has been done from 2016-12-23
+
+[11-17 11:09:44]-[line:54]-FuncName:info-(time:100425)-INFO: the code 601163,has been done from 2016-12-26
+
+[11-17 11:09:47]-[line:54]-FuncName:info-(time:103296)-INFO: the code 601163,has been done from 2016-12-27
+
+[11-17 11:09:50]-[line:54]-FuncName:info-(time:106459)-INFO: the code 601163,has been done from 2016-12-28
+
+[11-17 11:09:53]-[line:54]-FuncName:info-(time:109361)-INFO: the code 601163,has been done from 2016-12-29
+
+[11-17 11:09:56]-[line:54]-FuncName:info-(time:112247)-INFO: the code 601163,has been done from 2016-12-30
+
+[11-17 11:09:59]-[line:54]-FuncName:info-(time:114977)-INFO: the code 601163,has been done from 2017-01-03
+
+[11-17 11:10:02]-[line:54]-FuncName:info-(time:118035)-INFO: the code 601163,has been done from 2017-01-04
+
+[11-17 11:10:05]-[line:54]-FuncName:info-(time:121435)-INFO: the code 601163,has been done from 2017-01-05
+
+[11-17 11:10:08]-[line:54]-FuncName:info-(time:124510)-INFO: the code 601163,has been done from 2017-01-06
+
+[11-17 11:10:11]-[line:54]-FuncName:info-(time:127381)-INFO: the code 601163,has been done from 2017-01-09
+
+[11-17 11:10:14]-[line:54]-FuncName:info-(time:130127)-INFO: the code 601163,has been done from 2017-01-10
+
+[11-17 11:10:17]-[line:54]-FuncName:info-(time:133215)-INFO: the code 601163,has been done from 2017-01-11
+
+[11-17 11:10:20]-[line:54]-FuncName:info-(time:136101)-INFO: the code 601163,has been done from 2017-01-12
+
+[11-17 11:10:23]-[line:54]-FuncName:info-(time:139408)-INFO: the code 601163,has been done from 2017-01-13
+
+[11-17 11:10:27]-[line:54]-FuncName:info-(time:142716)-INFO: the code 601163,has been done from 2017-01-16
+
+[11-17 11:10:29]-[line:54]-FuncName:info-(time:145633)-INFO: the code 601163,has been done from 2017-01-17
+
+[11-17 11:10:32]-[line:54]-FuncName:info-(time:148519)-INFO: the code 601163,has been done from 2017-01-18
+
+[11-17 11:10:35]-[line:54]-FuncName:info-(time:151467)-INFO: the code 601163,has been done from 2017-01-19
+
+[11-17 11:10:38]-[line:54]-FuncName:info-(time:154369)-INFO: the code 601163,has been done from 2017-01-20
+
+[11-17 11:10:41]-[line:54]-FuncName:info-(time:157302)-INFO: the code 601163,has been done from 2017-01-23
+
+[11-17 11:10:44]-[line:54]-FuncName:info-(time:160376)-INFO: the code 601163,has been done from 2017-01-24
+
+[11-17 11:10:47]-[line:54]-FuncName:info-(time:163043)-INFO: the code 601163,has been done from 2017-01-25
+
+[11-17 11:10:50]-[line:54]-FuncName:info-(time:165742)-INFO: the code 601163,has been done from 2017-01-26
+
+[11-17 11:10:52]-[line:54]-FuncName:info-(time:168519)-INFO: the code 601163,has been done from 2017-02-03
+
+[11-17 11:10:56]-[line:54]-FuncName:info-(time:172669)-INFO: the code 601163,has been done from 2017-02-06
+
+[11-17 11:10:59]-[line:54]-FuncName:info-(time:175258)-INFO: the code 601163,has been done from 2017-02-07
+
+[11-17 11:11:02]-[line:54]-FuncName:info-(time:178503)-INFO: the code 601163,has been done from 2017-02-08
+
+[11-17 11:11:05]-[line:54]-FuncName:info-(time:181685)-INFO: the code 601163,has been done from 2017-02-09
+
+[11-17 11:11:09]-[line:54]-FuncName:info-(time:184696)-INFO: the code 601163,has been done from 2017-02-10
+
+[11-17 11:11:12]-[line:54]-FuncName:info-(time:187723)-INFO: the code 601163,has been done from 2017-02-13
+
+[11-17 11:11:15]-[line:54]-FuncName:info-(time:190765)-INFO: the code 601163,has been done from 2017-02-14
+
+[11-17 11:11:17]-[line:54]-FuncName:info-(time:193684)-INFO: the code 601163,has been done from 2017-02-15
+
+[11-17 11:11:20]-[line:54]-FuncName:info-(time:196632)-INFO: the code 601163,has been done from 2017-02-16
+
+[11-17 11:11:24]-[line:54]-FuncName:info-(time:199893)-INFO: the code 601163,has been done from 2017-02-17
+
+[11-17 11:11:27]-[line:54]-FuncName:info-(time:203358)-INFO: the code 601163,has been done from 2017-02-20
+
+[11-17 11:11:30]-[line:54]-FuncName:info-(time:206088)-INFO: the code 601163,has been done from 2017-02-21
+
+[11-17 11:11:33]-[line:54]-FuncName:info-(time:209083)-INFO: the code 601163,has been done from 2017-02-22
+
+[11-17 11:11:36]-[line:54]-FuncName:info-(time:212156)-INFO: the code 601163,has been done from 2017-02-23
+
+[11-17 11:11:39]-[line:54]-FuncName:info-(time:215214)-INFO: the code 601163,has been done from 2017-02-24
+
+[11-17 11:11:43]-[line:54]-FuncName:info-(time:219301)-INFO: the code 601163,has been done from 2017-02-27
+
+[11-17 11:11:46]-[line:54]-FuncName:info-(time:222608)-INFO: the code 601163,has been done from 2017-02-28
+
+[11-17 11:11:49]-[line:54]-FuncName:info-(time:225525)-INFO: the code 601163,has been done from 2017-03-01
+
+[11-17 11:11:54]-[line:54]-FuncName:info-(time:229693)-INFO: the code 601163,has been done from 2017-03-02
+
+[11-17 11:11:56]-[line:54]-FuncName:info-(time:232547)-INFO: the code 601163,has been done from 2017-03-03
+
+[11-17 11:11:59]-[line:54]-FuncName:info-(time:235340)-INFO: the code 601163,has been done from 2017-03-06
+
+[11-17 11:12:02]-[line:54]-FuncName:info-(time:238522)-INFO: the code 601163,has been done from 2017-03-07
+
+[11-17 11:12:06]-[line:54]-FuncName:info-(time:241970)-INFO: the code 601163,has been done from 2017-03-08
+
+[11-17 11:12:09]-[line:54]-FuncName:info-(time:244825)-INFO: the code 601163,has been done from 2017-03-09
+
+[11-17 11:12:12]-[line:54]-FuncName:info-(time:248303)-INFO: the code 601163,has been done from 2017-03-10
+
+[11-17 11:12:15]-[line:54]-FuncName:info-(time:251236)-INFO: the code 601163,has been done from 2017-03-13
+
+[11-17 11:12:18]-[line:54]-FuncName:info-(time:253997)-INFO: the code 601163,has been done from 2017-03-14
+
+[11-17 11:12:21]-[line:54]-FuncName:info-(time:257398)-INFO: the code 601163,has been done from 2017-03-15
+
+[11-17 11:12:24]-[line:54]-FuncName:info-(time:260503)-INFO: the code 601163,has been done from 2017-03-16
+
+[11-17 11:12:27]-[line:54]-FuncName:info-(time:263375)-INFO: the code 601163,has been done from 2017-03-17
+
+[11-17 11:12:30]-[line:54]-FuncName:info-(time:266308)-INFO: the code 601163,has been done from 2017-03-20
+
+[11-17 11:12:33]-[line:54]-FuncName:info-(time:269194)-INFO: the code 601163,has been done from 2017-03-21
+
+[11-17 11:12:37]-[line:54]-FuncName:info-(time:272922)-INFO: the code 601163,has been done from 2017-03-22
+
+[11-17 11:12:40]-[line:54]-FuncName:info-(time:276027)-INFO: the code 601163,has been done from 2017-03-23
+
+[11-17 11:12:43]-[line:54]-FuncName:info-(time:278866)-INFO: the code 601163,has been done from 2017-03-24
+
+[11-17 11:12:46]-[line:54]-FuncName:info-(time:281845)-INFO: the code 601163,has been done from 2017-03-27
+
+[11-17 11:12:49]-[line:54]-FuncName:info-(time:284731)-INFO: the code 601163,has been done from 2017-03-28
+
+[11-17 11:12:52]-[line:54]-FuncName:info-(time:287961)-INFO: the code 601163,has been done from 2017-03-29
+
+[11-17 11:12:55]-[line:54]-FuncName:info-(time:291096)-INFO: the code 601163,has been done from 2017-03-30
+
+[11-17 11:12:58]-[line:54]-FuncName:info-(time:293951)-INFO: the code 601163,has been done from 2017-03-31
+
+[11-17 11:13:01]-[line:54]-FuncName:info-(time:296884)-INFO: the code 601163,has been done from 2017-04-05
+
+[11-17 11:13:04]-[line:54]-FuncName:info-(time:300067)-INFO: the code 601163,has been done from 2017-04-06
+
+[11-17 11:13:07]-[line:54]-FuncName:info-(time:303000)-INFO: the code 601163,has been done from 2017-04-07
+
+[11-17 11:13:10]-[line:54]-FuncName:info-(time:306026)-INFO: the code 601163,has been done from 2017-04-10
+
+[11-17 11:13:13]-[line:54]-FuncName:info-(time:309084)-INFO: the code 601163,has been done from 2017-04-11
+
+[11-17 11:13:16]-[line:54]-FuncName:info-(time:312142)-INFO: the code 601163,has been done from 2017-04-12
+
+[11-17 11:13:19]-[line:54]-FuncName:info-(time:314778)-INFO: the code 601163,has been done from 2017-04-13
+
+[11-17 11:13:21]-[line:54]-FuncName:info-(time:317633)-INFO: the code 601163,has been done from 2017-04-14
+
+[11-17 11:13:24]-[line:54]-FuncName:info-(time:320503)-INFO: the code 601163,has been done from 2017-04-17
+
+[11-17 11:13:27]-[line:54]-FuncName:info-(time:323108)-INFO: the code 601163,has been done from 2017-04-18
+
+[11-17 11:13:30]-[line:54]-FuncName:info-(time:325916)-INFO: the code 601163,has been done from 2017-04-19
+
+[11-17 11:13:33]-[line:54]-FuncName:info-(time:328912)-INFO: the code 601163,has been done from 2017-04-20
+
+[11-17 11:13:36]-[line:54]-FuncName:info-(time:331907)-INFO: the code 601163,has been done from 2017-04-21
+
+[11-17 11:13:39]-[line:54]-FuncName:info-(time:334797)-INFO: the code 601163,has been done from 2017-04-24
+
+[11-17 11:13:41]-[line:54]-FuncName:info-(time:337683)-INFO: the code 601163,has been done from 2017-04-25
+
+[11-17 11:13:44]-[line:54]-FuncName:info-(time:340678)-INFO: the code 601163,has been done from 2017-04-26
+
+[11-17 11:13:47]-[line:54]-FuncName:info-(time:343673)-INFO: the code 601163,has been done from 2017-04-27
+
+[11-17 11:13:51]-[line:54]-FuncName:info-(time:347027)-INFO: the code 601163,has been done from 2017-04-28
+
+[11-17 11:13:54]-[line:54]-FuncName:info-(time:349773)-INFO: the code 601163,has been done from 2017-05-02
+
+[11-17 11:13:56]-[line:54]-FuncName:info-(time:352581)-INFO: the code 601163,has been done from 2017-05-03
+
+[11-17 11:13:59]-[line:54]-FuncName:info-(time:355280)-INFO: the code 601163,has been done from 2017-05-04
+
+[11-17 11:14:02]-[line:54]-FuncName:info-(time:358259)-INFO: the code 601163,has been done from 2017-05-05
+
+[11-17 11:14:05]-[line:54]-FuncName:info-(time:361052)-INFO: the code 601163,has been done from 2017-05-08
+
+[11-17 11:14:07]-[line:54]-FuncName:info-(time:363595)-INFO: the code 601163,has been done from 2017-05-09
+
+[11-17 11:14:10]-[line:54]-FuncName:info-(time:366371)-INFO: the code 601163,has been done from 2017-05-10
+
+[11-17 11:14:13]-[line:54]-FuncName:info-(time:369103)-INFO: the code 601163,has been done from 2017-05-11
+
+[11-17 11:14:16]-[line:54]-FuncName:info-(time:372395)-INFO: the code 601163,has been done from 2017-05-12
+
+[11-17 11:14:19]-[line:54]-FuncName:info-(time:374969)-INFO: the code 601163,has been done from 2017-05-15
+
+[11-17 11:14:22]-[line:54]-FuncName:info-(time:378151)-INFO: the code 601163,has been done from 2017-05-16
+
+[11-17 11:14:25]-[line:54]-FuncName:info-(time:381396)-INFO: the code 601163,has been done from 2017-05-17
+
+[11-17 11:14:28]-[line:54]-FuncName:info-(time:384173)-INFO: the code 601163,has been done from 2017-05-18
+
+[11-17 11:14:31]-[line:54]-FuncName:info-(time:386918)-INFO: the code 601163,has been done from 2017-05-19
+
+[11-17 11:14:34]-[line:54]-FuncName:info-(time:389882)-INFO: the code 601163,has been done from 2017-05-22
+
+[11-17 11:14:37]-[line:54]-FuncName:info-(time:393268)-INFO: the code 601163,has been done from 2017-05-23
+
+[11-17 11:14:40]-[line:54]-FuncName:info-(time:396169)-INFO: the code 601163,has been done from 2017-05-24
+
+[11-17 11:14:43]-[line:54]-FuncName:info-(time:399180)-INFO: the code 601163,has been done from 2017-05-25
+
+[11-17 11:14:46]-[line:54]-FuncName:info-(time:402316)-INFO: the code 601163,has been done from 2017-05-26
+
+[11-17 11:15:01]-[line:54]-FuncName:info-(time:417105)-INFO: the code 601163,has been done from 2017-05-31
+
+[11-17 11:15:04]-[line:54]-FuncName:info-(time:420023)-INFO: the code 601163,has been done from 2017-06-01
+
+[11-17 11:15:07]-[line:54]-FuncName:info-(time:423127)-INFO: the code 601163,has been done from 2017-06-02
+
+[11-17 11:15:10]-[line:54]-FuncName:info-(time:426029)-INFO: the code 601163,has been done from 2017-06-05
+
+[11-17 11:15:13]-[line:54]-FuncName:info-(time:428930)-INFO: the code 601163,has been done from 2017-06-06
+
+[11-17 11:15:16]-[line:54]-FuncName:info-(time:431941)-INFO: the code 601163,has been done from 2017-06-07
+
+[11-17 11:15:18]-[line:54]-FuncName:info-(time:434500)-INFO: the code 601163,has been done from 2017-06-08
+
+[11-17 11:15:21]-[line:54]-FuncName:info-(time:437385)-INFO: the code 601163,has been done from 2017-06-09
+
+[11-17 11:15:24]-[line:54]-FuncName:info-(time:440679)-INFO: the code 601163,has been done from 2017-06-12
+
+[11-17 11:15:28]-[line:54]-FuncName:info-(time:443768)-INFO: the code 601163,has been done from 2017-06-13
+
+[11-17 11:15:30]-[line:54]-FuncName:info-(time:446498)-INFO: the code 601163,has been done from 2017-06-14
+
+[11-17 11:15:33]-[line:54]-FuncName:info-(time:449399)-INFO: the code 601163,has been done from 2017-06-15
+
+[11-17 11:15:36]-[line:54]-FuncName:info-(time:452129)-INFO: the code 601163,has been done from 2017-06-16
+
+[11-17 11:15:39]-[line:54]-FuncName:info-(time:454703)-INFO: the code 601163,has been done from 2017-06-19
+
+[11-17 11:15:41]-[line:54]-FuncName:info-(time:457324)-INFO: the code 601163,has been done from 2017-06-20
+
+[11-17 11:15:44]-[line:54]-FuncName:info-(time:460226)-INFO: the code 601163,has been done from 2017-06-21
+
+[11-17 11:15:47]-[line:54]-FuncName:info-(time:463517)-INFO: the code 601163,has been done from 2017-06-22
+
+[11-17 11:15:50]-[line:54]-FuncName:info-(time:466435)-INFO: the code 601163,has been done from 2017-06-23
+
+[11-17 11:15:53]-[line:54]-FuncName:info-(time:469305)-INFO: the code 601163,has been done from 2017-06-26
+
+[11-17 11:15:56]-[line:54]-FuncName:info-(time:472207)-INFO: the code 601163,has been done from 2017-06-27
+
+[11-17 11:15:59]-[line:54]-FuncName:info-(time:474829)-INFO: the code 601163,has been done from 2017-06-28
+
+[11-17 11:16:01]-[line:54]-FuncName:info-(time:477450)-INFO: the code 601163,has been done from 2017-06-29
+
+[11-17 11:16:04]-[line:54]-FuncName:info-(time:480274)-INFO: the code 601163,has been done from 2017-06-30
+
+[11-17 11:16:10]-[line:54]-FuncName:info-(time:486373)-INFO: the code 601163,has been done from 2017-07-03
+
+[11-17 11:16:13]-[line:54]-FuncName:info-(time:488994)-INFO: the code 601163,has been done from 2017-07-04
+
+[11-17 11:16:16]-[line:54]-FuncName:info-(time:492629)-INFO: the code 601163,has been done from 2017-07-05
+
+[11-17 11:16:19]-[line:54]-FuncName:info-(time:495265)-INFO: the code 601163,has been done from 2017-07-06
+
+[11-17 11:16:22]-[line:54]-FuncName:info-(time:497917)-INFO: the code 601163,has been done from 2017-07-07
+
+[11-17 11:16:25]-[line:54]-FuncName:info-(time:500788)-INFO: the code 601163,has been done from 2017-07-10
+
+[11-17 11:16:27]-[line:54]-FuncName:info-(time:503533)-INFO: the code 601163,has been done from 2017-07-11
+
+[11-17 11:16:31]-[line:54]-FuncName:info-(time:506856)-INFO: the code 601163,has been done from 2017-07-12
+
+[11-17 11:16:33]-[line:54]-FuncName:info-(time:509540)-INFO: the code 601163,has been done from 2017-07-13
+
+[11-17 11:16:37]-[line:54]-FuncName:info-(time:513066)-INFO: the code 601163,has been done from 2017-07-14
+
+[11-17 11:16:42]-[line:54]-FuncName:info-(time:518276)-INFO: the code 601163,has been done from 2017-07-17
+
+[11-17 11:16:45]-[line:54]-FuncName:info-(time:521084)-INFO: the code 601163,has been done from 2017-07-18
+
+[11-17 11:16:48]-[line:54]-FuncName:info-(time:523736)-INFO: the code 601163,has been done from 2017-07-19
+
+[11-17 11:16:50]-[line:54]-FuncName:info-(time:526513)-INFO: the code 601163,has been done from 2017-07-20
+
+[11-17 11:16:53]-[line:54]-FuncName:info-(time:529384)-INFO: the code 601163,has been done from 2017-07-21
+
+[11-17 11:16:57]-[line:54]-FuncName:info-(time:533237)-INFO: the code 601163,has been done from 2017-07-24
+
+[11-17 11:17:00]-[line:54]-FuncName:info-(time:536513)-INFO: the code 601163,has been done from 2017-07-25
+
+[11-17 11:17:03]-[line:54]-FuncName:info-(time:539305)-INFO: the code 601163,has been done from 2017-07-26
+
+[11-17 11:17:07]-[line:54]-FuncName:info-(time:543003)-INFO: the code 601163,has been done from 2017-07-27
+
+[11-17 11:17:09]-[line:54]-FuncName:info-(time:545671)-INFO: the code 601163,has been done from 2017-07-28
+
+[11-17 11:17:12]-[line:54]-FuncName:info-(time:548292)-INFO: the code 601163,has been done from 2017-07-31
+
+[11-17 11:17:15]-[line:54]-FuncName:info-(time:551084)-INFO: the code 601163,has been done from 2017-08-01
+
+[11-17 11:17:18]-[line:54]-FuncName:info-(time:553721)-INFO: the code 601163,has been done from 2017-08-02
+
+[11-17 11:17:20]-[line:54]-FuncName:info-(time:556357)-INFO: the code 601163,has been done from 2017-08-03
+
+[11-17 11:17:23]-[line:54]-FuncName:info-(time:559227)-INFO: the code 601163,has been done from 2017-08-04
+
+[11-17 11:17:26]-[line:54]-FuncName:info-(time:562036)-INFO: the code 601163,has been done from 2017-08-07
+
+[11-17 11:17:29]-[line:54]-FuncName:info-(time:564828)-INFO: the code 601163,has been done from 2017-08-08
+
+[11-17 11:17:31]-[line:54]-FuncName:info-(time:567417)-INFO: the code 601163,has been done from 2017-08-09
+
+[11-17 11:17:34]-[line:54]-FuncName:info-(time:570225)-INFO: the code 601163,has been done from 2017-08-10
+
+[11-17 11:17:37]-[line:54]-FuncName:info-(time:573096)-INFO: the code 601163,has been done from 2017-08-11
+
+[11-17 11:17:39]-[line:54]-FuncName:info-(time:575670)-INFO: the code 601163,has been done from 2017-08-14
+
+[11-17 11:17:42]-[line:54]-FuncName:info-(time:578433)-INFO: the code 601163,has been done from 2017-08-15
+
+[11-17 11:17:45]-[line:54]-FuncName:info-(time:581444)-INFO: the code 601163,has been done from 2017-08-16
+
+[11-17 11:17:48]-[line:54]-FuncName:info-(time:584143)-INFO: the code 601163,has been done from 2017-08-17
+
+[11-17 11:17:50]-[line:54]-FuncName:info-(time:586685)-INFO: the code 601163,has been done from 2017-08-18
+
+[11-17 11:17:53]-[line:54]-FuncName:info-(time:589415)-INFO: the code 601163,has been done from 2017-08-21
+
+[11-17 11:17:56]-[line:54]-FuncName:info-(time:592130)-INFO: the code 601163,has been done from 2017-08-22
+
+[11-17 11:17:59]-[line:54]-FuncName:info-(time:594720)-INFO: the code 601163,has been done from 2017-08-23
+
+[11-17 11:18:01]-[line:54]-FuncName:info-(time:597434)-INFO: the code 601163,has been done from 2017-08-24
+
+[11-17 11:18:04]-[line:54]-FuncName:info-(time:600413)-INFO: the code 601163,has been done from 2017-08-25
+
+[11-17 11:18:07]-[line:54]-FuncName:info-(time:603331)-INFO: the code 601163,has been done from 2017-08-28
+
+[11-17 11:18:10]-[line:54]-FuncName:info-(time:606092)-INFO: the code 601163,has been done from 2017-08-29
+
+[11-17 11:18:13]-[line:54]-FuncName:info-(time:609056)-INFO: the code 601163,has been done from 2017-08-30
+
+[11-17 11:18:16]-[line:54]-FuncName:info-(time:611942)-INFO: the code 601163,has been done from 2017-08-31
+
+[11-17 11:18:19]-[line:54]-FuncName:info-(time:614799)-INFO: the code 601163,has been done from 2017-09-01
+
+[11-17 11:18:21]-[line:54]-FuncName:info-(time:617513)-INFO: the code 601163,has been done from 2017-09-04
+
+[11-17 11:18:24]-[line:54]-FuncName:info-(time:620290)-INFO: the code 601163,has been done from 2017-09-05
+
+[11-17 11:18:27]-[line:54]-FuncName:info-(time:623020)-INFO: the code 601163,has been done from 2017-09-06
+
+[11-17 11:18:29]-[line:54]-FuncName:info-(time:625578)-INFO: the code 601163,has been done from 2017-09-07
+
+[11-17 11:18:33]-[line:54]-FuncName:info-(time:629588)-INFO: the code 601163,has been done from 2017-09-08
+
+[11-17 11:18:38]-[line:54]-FuncName:info-(time:634392)-INFO: the code 601163,has been done from 2017-09-11
+
+[11-17 11:18:41]-[line:54]-FuncName:info-(time:637107)-INFO: the code 601163,has been done from 2017-09-12
+
+[11-17 11:18:44]-[line:54]-FuncName:info-(time:639899)-INFO: the code 601163,has been done from 2017-09-13
+
+[11-17 11:18:49]-[line:54]-FuncName:info-(time:645468)-INFO: the code 601163,has been done from 2017-09-14
+
+[11-17 11:18:52]-[line:54]-FuncName:info-(time:648042)-INFO: the code 601163,has been done from 2017-09-15
+
+[11-17 11:18:55]-[line:54]-FuncName:info-(time:650992)-INFO: the code 601163,has been done from 2017-09-18
+
+[11-17 11:18:57]-[line:54]-FuncName:info-(time:653519)-INFO: the code 601163,has been done from 2017-09-19
+
+[11-17 11:19:00]-[line:54]-FuncName:info-(time:656062)-INFO: the code 601163,has been done from 2017-09-20
+
+[11-17 11:19:03]-[line:54]-FuncName:info-(time:658870)-INFO: the code 601163,has been done from 2017-09-21
+
+[11-17 11:19:05]-[line:54]-FuncName:info-(time:661584)-INFO: the code 601163,has been done from 2017-09-22
+
+[11-17 11:19:08]-[line:54]-FuncName:info-(time:664205)-INFO: the code 601163,has been done from 2017-09-25
+
+[11-17 11:19:11]-[line:54]-FuncName:info-(time:666857)-INFO: the code 601163,has been done from 2017-09-26
+
+[11-17 11:19:14]-[line:54]-FuncName:info-(time:669727)-INFO: the code 601163,has been done from 2017-09-27
+
+[11-17 11:19:16]-[line:54]-FuncName:info-(time:672442)-INFO: the code 601163,has been done from 2017-09-28
+
+[11-17 11:19:19]-[line:54]-FuncName:info-(time:675125)-INFO: the code 601163,has been done from 2017-09-29
+
+[11-17 11:19:22]-[line:54]-FuncName:info-(time:678104)-INFO: the code 601163,has been done from 2017-10-09
+
+[11-17 11:19:25]-[line:54]-FuncName:info-(time:681006)-INFO: the code 601163,has been done from 2017-10-10
+
+[11-17 11:19:27]-[line:54]-FuncName:info-(time:683565)-INFO: the code 601163,has been done from 2017-10-11
+
+[11-17 11:19:30]-[line:54]-FuncName:info-(time:686181)-INFO: the code 601163,has been done from 2017-10-12
+
+[11-17 11:19:33]-[line:54]-FuncName:info-(time:688786)-INFO: the code 601163,has been done from 2017-10-13
+
+[11-17 11:19:36]-[line:54]-FuncName:info-(time:691750)-INFO: the code 601163,has been done from 2017-10-16
+
+[11-17 11:19:38]-[line:54]-FuncName:info-(time:694371)-INFO: the code 601163,has been done from 2017-10-17
+
+[11-17 11:19:41]-[line:54]-FuncName:info-(time:696976)-INFO: the code 601163,has been done from 2017-10-18
+
+[11-17 11:19:43]-[line:54]-FuncName:info-(time:699675)-INFO: the code 601163,has been done from 2017-10-19
+
+[11-17 11:19:46]-[line:54]-FuncName:info-(time:702202)-INFO: the code 601163,has been done from 2017-10-20
+
+[11-17 11:19:48]-[line:54]-FuncName:info-(time:704651)-INFO: the code 601163,has been done from 2017-10-23
+
+[11-17 11:19:51]-[line:54]-FuncName:info-(time:707256)-INFO: the code 601163,has been done from 2017-10-24
+
+[11-17 11:19:55]-[line:54]-FuncName:info-(time:710922)-INFO: the code 601163,has been done from 2017-10-25
+
+[11-17 11:19:57]-[line:54]-FuncName:info-(time:713465)-INFO: the code 601163,has been done from 2017-10-26
+
+[11-17 11:20:00]-[line:54]-FuncName:info-(time:716023)-INFO: the code 601163,has been done from 2017-10-27
+
+[11-17 11:20:03]-[line:54]-FuncName:info-(time:719005)-INFO: the code 601163,has been done from 2017-10-30
+
+[11-17 11:20:06]-[line:54]-FuncName:info-(time:722063)-INFO: the code 601163,has been done from 2017-10-31
+
+[11-17 11:20:09]-[line:54]-FuncName:info-(time:724886)-INFO: the code 601163,has been done from 2017-11-01
+
+[11-17 11:20:11]-[line:54]-FuncName:info-(time:727569)-INFO: the code 601163,has been done from 2017-11-02
+
+[11-17 11:20:14]-[line:54]-FuncName:info-(time:730346)-INFO: the code 601163,has been done from 2017-11-03
+
+[11-17 11:20:17]-[line:54]-FuncName:info-(time:732920)-INFO: the code 601163,has been done from 2017-11-06
+
+[11-17 11:20:19]-[line:54]-FuncName:info-(time:735401)-INFO: the code 601163,has been done from 2017-11-07
+
+[11-17 11:20:22]-[line:54]-FuncName:info-(time:738053)-INFO: the code 601163,has been done from 2017-11-08
+
+[11-17 11:20:25]-[line:54]-FuncName:info-(time:740751)-INFO: the code 601163,has been done from 2017-11-09
+
+[11-17 11:20:27]-[line:54]-FuncName:info-(time:743653)-INFO: the code 601163,has been done from 2017-11-10
+
+[11-17 11:20:31]-[line:54]-FuncName:info-(time:746757)-INFO: the code 601163,has been done from 2017-11-13
+
+[11-17 11:20:33]-[line:54]-FuncName:info-(time:749690)-INFO: the code 601163,has been done from 2017-11-14
+
+[11-17 11:20:38]-[line:54]-FuncName:info-(time:754340)-INFO: the code 601163,has been done from 2017-11-15
+
+[11-17 11:20:41]-[line:54]-FuncName:info-(time:757039)-INFO: the code 601163,has been done from 2017-11-16
+
+[11-17 12:55:13]-[line:54]-FuncName:info-(time:12394)-INFO: ================计算筹码分布模块================
+[11-17 12:55:13]-[line:54]-FuncName:info-(time:12394)-INFO: 000564：from 2016-11-17 to 2017-11-17
+[11-17 12:57:30]-[line:54]-FuncName:info-(time:4436)-INFO: ================计算筹码分布模块================
+[11-17 12:57:30]-[line:54]-FuncName:info-(time:4452)-INFO: 600416：from 2016-11-17 to 2017-11-17
+[11-17 12:57:31]-[line:54]-FuncName:info-(time:5607)-INFO: the code 600416,has been done from 2016-11-17
+
+[11-17 12:57:34]-[line:54]-FuncName:info-(time:9102)-INFO: the code 600416,has been done from 2016-11-18
+
+[11-17 12:57:37]-[line:54]-FuncName:info-(time:11770)-INFO: the code 600416,has been done from 2016-11-21
+
+[11-17 12:57:40]-[line:54]-FuncName:info-(time:14470)-INFO: the code 600416,has been done from 2016-11-22
+
+[11-17 12:57:42]-[line:54]-FuncName:info-(time:16966)-INFO: the code 600416,has been done from 2016-11-23
+
+[11-17 12:57:45]-[line:54]-FuncName:info-(time:19463)-INFO: the code 600416,has been done from 2016-11-24
+
+[11-17 12:57:47]-[line:54]-FuncName:info-(time:21616)-INFO: the code 600416,has been done from 2016-11-25
+
+[11-17 12:57:47]-[line:57]-FuncName:war-(time:21616)-WARNING: 
+计算换手率数据下载错误：2016-11-25自动计算计算
+[11-17 12:57:47]-[line:60]-FuncName:error-(time:21616)-ERROR: 
+数据有问题中断本次：2016-11-25没有计算成功
+[11-17 12:57:50]-[line:54]-FuncName:info-(time:24519)-INFO: the code 600416,has been done from 2016-11-28
+
+[11-17 12:57:52]-[line:54]-FuncName:info-(time:27109)-INFO: the code 600416,has been done from 2016-11-29
+
+[11-17 12:57:55]-[line:54]-FuncName:info-(time:29793)-INFO: the code 600416,has been done from 2016-11-30
+
+[11-17 12:57:58]-[line:54]-FuncName:info-(time:32430)-INFO: the code 600416,has been done from 2016-12-01
+
+[11-17 12:58:00]-[line:54]-FuncName:info-(time:35004)-INFO: the code 600416,has been done from 2016-12-02
+
+[11-17 12:58:03]-[line:54]-FuncName:info-(time:37532)-INFO: the code 600416,has been done from 2016-12-05
+
+[11-17 12:58:05]-[line:54]-FuncName:info-(time:40123)-INFO: the code 600416,has been done from 2016-12-06
+
+[11-17 12:58:08]-[line:54]-FuncName:info-(time:43118)-INFO: the code 600416,has been done from 2016-12-07
+
+[11-17 12:58:11]-[line:54]-FuncName:info-(time:45990)-INFO: the code 600416,has been done from 2016-12-09
+
+[11-17 12:58:15]-[line:54]-FuncName:info-(time:49172)-INFO: the code 600416,has been done from 2016-12-12
+
+[11-17 12:58:19]-[line:54]-FuncName:info-(time:53345)-INFO: the code 600416,has been done from 2016-12-13
+
+[11-17 12:58:22]-[line:54]-FuncName:info-(time:56308)-INFO: the code 600416,has been done from 2016-12-14
+
+[11-17 12:58:25]-[line:54]-FuncName:info-(time:59214)-INFO: the code 600416,has been done from 2016-12-15
+
+[11-17 12:58:28]-[line:54]-FuncName:info-(time:62511)-INFO: the code 600416,has been done from 2016-12-16
+
+[11-17 12:58:31]-[line:54]-FuncName:info-(time:65840)-INFO: the code 600416,has been done from 2016-12-19
+
+[11-17 12:58:34]-[line:54]-FuncName:info-(time:68946)-INFO: the code 600416,has been done from 2016-12-20
+
+[11-17 12:58:38]-[line:54]-FuncName:info-(time:72581)-INFO: the code 600416,has been done from 2016-12-21
+
+[11-17 12:58:41]-[line:54]-FuncName:info-(time:75484)-INFO: the code 600416,has been done from 2016-12-22
+
+[11-17 12:58:44]-[line:54]-FuncName:info-(time:78698)-INFO: the code 600416,has been done from 2016-12-23
+
+[11-17 12:58:47]-[line:54]-FuncName:info-(time:81772)-INFO: the code 600416,has been done from 2016-12-26
+
+[11-17 12:58:50]-[line:54]-FuncName:info-(time:84862)-INFO: the code 600416,has been done from 2016-12-27
+
+[11-17 12:58:53]-[line:54]-FuncName:info-(time:87811)-INFO: the code 600416,has been done from 2016-12-28
+
+[11-17 12:58:56]-[line:54]-FuncName:info-(time:90666)-INFO: the code 600416,has been done from 2016-12-29
+
+[11-17 12:58:59]-[line:54]-FuncName:info-(time:93569)-INFO: the code 600416,has been done from 2016-12-30
+
+[11-17 12:59:02]-[line:54]-FuncName:info-(time:96767)-INFO: the code 600416,has been done from 2017-01-03
+
+[11-17 12:59:06]-[line:54]-FuncName:info-(time:100481)-INFO: the code 600416,has been done from 2017-01-04
+
+[11-17 12:59:09]-[line:54]-FuncName:info-(time:103679)-INFO: the code 600416,has been done from 2017-01-05
+
+[11-17 12:59:12]-[line:54]-FuncName:info-(time:106863)-INFO: the code 600416,has been done from 2017-01-06
+
+[11-17 12:59:15]-[line:54]-FuncName:info-(time:110061)-INFO: the code 600416,has been done from 2017-01-09
+
+[11-17 12:59:19]-[line:54]-FuncName:info-(time:113323)-INFO: the code 600416,has been done from 2017-01-10
+
+[11-17 12:59:22]-[line:54]-FuncName:info-(time:116194)-INFO: the code 600416,has been done from 2017-01-11
+
+[11-17 12:59:24]-[line:54]-FuncName:info-(time:119127)-INFO: the code 600416,has been done from 2017-01-12
+
+[11-17 12:59:28]-[line:54]-FuncName:info-(time:122498)-INFO: the code 600416,has been done from 2017-01-13
+
+[11-17 12:59:31]-[line:54]-FuncName:info-(time:125603)-INFO: the code 600416,has been done from 2017-01-16
+
+[11-17 12:59:34]-[line:54]-FuncName:info-(time:128380)-INFO: the code 600416,has been done from 2017-01-17
+
+[11-17 12:59:37]-[line:54]-FuncName:info-(time:131486)-INFO: the code 600416,has been done from 2017-01-18
+
+[11-17 12:59:40]-[line:54]-FuncName:info-(time:134372)-INFO: the code 600416,has been done from 2017-01-19
+
+[11-17 12:59:43]-[line:54]-FuncName:info-(time:137201)-INFO: the code 600416,has been done from 2017-01-20
+
+[11-17 12:59:46]-[line:54]-FuncName:info-(time:140197)-INFO: the code 600416,has been done from 2017-01-23
+
+[11-17 12:59:48]-[line:54]-FuncName:info-(time:143052)-INFO: the code 600416,has been done from 2017-01-24
+
+[11-17 12:59:51]-[line:54]-FuncName:info-(time:145596)-INFO: the code 600416,has been done from 2017-01-25
+
+[11-17 12:59:54]-[line:54]-FuncName:info-(time:148170)-INFO: the code 600416,has been done from 2017-01-26
+
+[11-17 12:59:57]-[line:54]-FuncName:info-(time:151556)-INFO: the code 600416,has been done from 2017-02-03
+
+[11-17 13:00:00]-[line:54]-FuncName:info-(time:155130)-INFO: the code 600416,has been done from 2017-02-06
+
+[11-17 13:00:04]-[line:54]-FuncName:info-(time:158300)-INFO: the code 600416,has been done from 2017-02-07
+
+[11-17 13:00:09]-[line:54]-FuncName:info-(time:163708)-INFO: the code 600416,has been done from 2017-02-08
+
+[11-17 13:00:13]-[line:54]-FuncName:info-(time:167578)-INFO: the code 600416,has been done from 2017-02-09
+
+[11-17 13:00:16]-[line:54]-FuncName:info-(time:170917)-INFO: the code 600416,has been done from 2017-02-10
+
+[11-17 13:00:20]-[line:54]-FuncName:info-(time:174380)-INFO: the code 600416,has been done from 2017-02-13
+
+[11-17 13:00:23]-[line:54]-FuncName:info-(time:177360)-INFO: the code 600416,has been done from 2017-02-14
+
+[11-17 13:00:26]-[line:54]-FuncName:info-(time:180683)-INFO: the code 600416,has been done from 2017-02-15
+
+[11-17 13:00:29]-[line:54]-FuncName:info-(time:183772)-INFO: the code 600416,has been done from 2017-02-16
+
+[11-17 13:00:32]-[line:54]-FuncName:info-(time:186817)-INFO: the code 600416,has been done from 2017-02-17
+
+[11-17 13:00:36]-[line:54]-FuncName:info-(time:190522)-INFO: the code 600416,has been done from 2017-02-20
+
+[11-17 13:00:39]-[line:54]-FuncName:info-(time:193666)-INFO: the code 600416,has been done from 2017-02-21
+
+[11-17 13:00:42]-[line:54]-FuncName:info-(time:196653)-INFO: the code 600416,has been done from 2017-02-22
+
+[11-17 13:00:45]-[line:54]-FuncName:info-(time:199648)-INFO: the code 600416,has been done from 2017-02-23
+
+[11-17 13:00:48]-[line:54]-FuncName:info-(time:202659)-INFO: the code 600416,has been done from 2017-02-24
+
+[11-17 13:00:51]-[line:54]-FuncName:info-(time:205389)-INFO: the code 600416,has been done from 2017-02-27
+
+[11-17 13:00:57]-[line:54]-FuncName:info-(time:211864)-INFO: the code 600416,has been done from 2017-02-28
+
+[11-17 13:01:01]-[line:54]-FuncName:info-(time:215515)-INFO: the code 600416,has been done from 2017-03-01
+
+[11-17 13:01:04]-[line:54]-FuncName:info-(time:218779)-INFO: the code 600416,has been done from 2017-03-02
+
+[11-17 13:01:07]-[line:54]-FuncName:info-(time:221918)-INFO: the code 600416,has been done from 2017-03-03
+
+[11-17 13:01:11]-[line:54]-FuncName:info-(time:225296)-INFO: the code 600416,has been done from 2017-03-06
+
+[11-17 13:01:13]-[line:60]-FuncName:error-(time:227362)-ERROR: 
+数据：2017-03-07没有计算成功
+[11-17 13:01:18]-[line:60]-FuncName:error-(time:232729)-ERROR: 
+数据：2017-03-08没有计算成功
+[11-17 13:01:22]-[line:54]-FuncName:info-(time:236863)-INFO: the code 600416,has been done from 2017-03-09
+
+[11-17 13:01:27]-[line:54]-FuncName:info-(time:241258)-INFO: the code 600416,has been done from 2017-03-10
+
+[11-17 13:01:31]-[line:54]-FuncName:info-(time:246119)-INFO: the code 600416,has been done from 2017-03-13
+
+[11-17 13:01:35]-[line:54]-FuncName:info-(time:249317)-INFO: the code 600416,has been done from 2017-03-14
+
+[11-17 13:01:38]-[line:54]-FuncName:info-(time:252172)-INFO: the code 600416,has been done from 2017-03-15
+
+[11-17 13:01:41]-[line:54]-FuncName:info-(time:255747)-INFO: the code 600416,has been done from 2017-03-16
+
+[11-17 13:01:45]-[line:54]-FuncName:info-(time:259506)-INFO: the code 600416,has been done from 2017-03-17
+
+[11-17 13:01:48]-[line:54]-FuncName:info-(time:262548)-INFO: the code 600416,has been done from 2017-03-20
+
+[11-17 13:01:51]-[line:54]-FuncName:info-(time:265559)-INFO: the code 600416,has been done from 2017-03-21
+
+[11-17 13:01:54]-[line:54]-FuncName:info-(time:268695)-INFO: the code 600416,has been done from 2017-03-22
+
+[11-17 13:01:58]-[line:54]-FuncName:info-(time:272192)-INFO: the code 600416,has been done from 2017-03-23
+
+[11-17 13:02:01]-[line:54]-FuncName:info-(time:275530)-INFO: the code 600416,has been done from 2017-03-24
+
+[11-17 13:02:04]-[line:54]-FuncName:info-(time:278775)-INFO: the code 600416,has been done from 2017-03-27
+
+[11-17 13:02:07]-[line:54]-FuncName:info-(time:281786)-INFO: the code 600416,has been done from 2017-03-28
+
+[11-17 13:02:10]-[line:54]-FuncName:info-(time:284485)-INFO: the code 600416,has been done from 2017-03-29
+
+[11-17 13:02:13]-[line:54]-FuncName:info-(time:287870)-INFO: the code 600416,has been done from 2017-03-30
+
+[11-17 13:02:16]-[line:54]-FuncName:info-(time:291021)-INFO: the code 600416,has been done from 2017-03-31
+
+[11-17 13:02:21]-[line:54]-FuncName:info-(time:295171)-INFO: the code 600416,has been done from 2017-04-05
+
+[11-17 13:02:24]-[line:54]-FuncName:info-(time:298931)-INFO: the code 600416,has been done from 2017-04-06
+
+[11-17 13:02:44]-[line:60]-FuncName:error-(time:318886)-ERROR: 
+数据：2017-04-07没有计算成功
+[11-17 13:02:46]-[line:60]-FuncName:error-(time:320892)-ERROR: 
+数据：2017-04-10没有计算成功
+[11-17 13:02:48]-[line:60]-FuncName:error-(time:322953)-ERROR: 
+数据：2017-04-11没有计算成功
+[11-17 13:02:50]-[line:60]-FuncName:error-(time:325012)-ERROR: 
+数据：2017-04-12没有计算成功
+[11-17 13:02:52]-[line:60]-FuncName:error-(time:327071)-ERROR: 
+数据：2017-04-13没有计算成功
+[11-17 13:02:54]-[line:60]-FuncName:error-(time:329131)-ERROR: 
+数据：2017-04-14没有计算成功
+[11-17 13:02:57]-[line:60]-FuncName:error-(time:331190)-ERROR: 
+数据：2017-04-17没有计算成功
+[11-17 13:02:59]-[line:60]-FuncName:error-(time:333249)-ERROR: 
+数据：2017-04-18没有计算成功
+[11-17 13:03:01]-[line:60]-FuncName:error-(time:335308)-ERROR: 
+数据：2017-04-19没有计算成功
+[11-17 13:03:03]-[line:60]-FuncName:error-(time:337367)-ERROR: 
+数据：2017-04-20没有计算成功
+[11-17 13:03:05]-[line:60]-FuncName:error-(time:339427)-ERROR: 
+数据：2017-04-21没有计算成功
+[11-17 13:03:07]-[line:60]-FuncName:error-(time:341486)-ERROR: 
+数据：2017-04-24没有计算成功
+[11-17 13:03:09]-[line:60]-FuncName:error-(time:343545)-ERROR: 
+数据：2017-04-25没有计算成功
+[11-17 13:03:11]-[line:60]-FuncName:error-(time:345604)-ERROR: 
+数据：2017-04-26没有计算成功
+[11-17 13:03:44]-[line:60]-FuncName:error-(time:379086)-ERROR: 
+数据：2017-04-27没有计算成功
+[11-17 13:04:17]-[line:60]-FuncName:error-(time:411155)-ERROR: 
+数据：2017-04-28没有计算成功
+[11-17 13:04:49]-[line:60]-FuncName:error-(time:443395)-ERROR: 
+数据：2017-05-02没有计算成功
+[11-17 13:05:13]-[line:60]-FuncName:error-(time:467504)-ERROR: 
+数据：2017-05-03没有计算成功
+[11-17 13:05:15]-[line:60]-FuncName:error-(time:469561)-ERROR: 
+数据：2017-05-04没有计算成功
+[11-17 13:05:17]-[line:60]-FuncName:error-(time:471618)-ERROR: 
+数据：2017-05-05没有计算成功
+[11-17 13:05:19]-[line:60]-FuncName:error-(time:473675)-ERROR: 
+数据：2017-05-08没有计算成功
+[11-17 13:05:21]-[line:60]-FuncName:error-(time:475732)-ERROR: 
+数据：2017-05-09没有计算成功
+[11-17 13:05:45]-[line:60]-FuncName:error-(time:500028)-ERROR: 
+数据：2017-05-10没有计算成功
+[11-17 13:05:47]-[line:60]-FuncName:error-(time:502086)-ERROR: 
+数据：2017-05-11没有计算成功
+[11-17 13:05:49]-[line:60]-FuncName:error-(time:504144)-ERROR: 
+数据：2017-05-12没有计算成功
+[11-17 13:06:16]-[line:60]-FuncName:error-(time:530872)-ERROR: 
+数据：2017-05-15没有计算成功
+[11-17 13:06:18]-[line:60]-FuncName:error-(time:532931)-ERROR: 
+数据：2017-05-16没有计算成功
+[11-17 13:06:20]-[line:60]-FuncName:error-(time:534989)-ERROR: 
+数据：2017-05-17没有计算成功
+[11-17 13:06:22]-[line:60]-FuncName:error-(time:537047)-ERROR: 
+数据：2017-05-18没有计算成功
+[11-17 13:06:24]-[line:60]-FuncName:error-(time:539105)-ERROR: 
+数据：2017-05-19没有计算成功
+[11-17 13:06:39]-[line:60]-FuncName:error-(time:553220)-ERROR: 
+数据：2017-05-22没有计算成功
+[11-17 13:06:41]-[line:60]-FuncName:error-(time:555278)-ERROR: 
+数据：2017-05-23没有计算成功
+[11-17 13:06:43]-[line:60]-FuncName:error-(time:557336)-ERROR: 
+数据：2017-05-24没有计算成功
+[11-17 13:06:45]-[line:60]-FuncName:error-(time:559410)-ERROR: 
+数据：2017-05-25没有计算成功
+[11-17 13:06:47]-[line:60]-FuncName:error-(time:561468)-ERROR: 
+数据：2017-05-26没有计算成功
+[11-17 13:06:49]-[line:60]-FuncName:error-(time:563527)-ERROR: 
+数据：2017-05-31没有计算成功
+[11-17 13:06:51]-[line:60]-FuncName:error-(time:565585)-ERROR: 
+数据：2017-06-01没有计算成功
+[11-17 13:06:55]-[line:54]-FuncName:info-(time:569530)-INFO: the code 600416,has been done from 2017-06-02
+
+[11-17 13:06:58]-[line:54]-FuncName:info-(time:572181)-INFO: the code 600416,has been done from 2017-06-05
+
+[11-17 13:07:01]-[line:54]-FuncName:info-(time:575954)-INFO: the code 600416,has been done from 2017-06-06
+
+[11-17 13:07:04]-[line:54]-FuncName:info-(time:579057)-INFO: the code 600416,has been done from 2017-06-07
+
+[11-17 13:07:07]-[line:54]-FuncName:info-(time:581646)-INFO: the code 600416,has been done from 2017-06-08
+
+[11-17 13:07:10]-[line:54]-FuncName:info-(time:584281)-INFO: the code 600416,has been done from 2017-06-09
+
+[11-17 13:07:12]-[line:54]-FuncName:info-(time:587072)-INFO: the code 600416,has been done from 2017-06-12
+
+[11-17 13:07:15]-[line:54]-FuncName:info-(time:589925)-INFO: the code 600416,has been done from 2017-06-13
+
+[11-17 13:07:18]-[line:54]-FuncName:info-(time:592623)-INFO: the code 600416,has been done from 2017-06-14
+
+[11-17 13:07:21]-[line:54]-FuncName:info-(time:595367)-INFO: the code 600416,has been done from 2017-06-15
+
+[11-17 13:07:25]-[line:54]-FuncName:info-(time:599780)-INFO: the code 600416,has been done from 2017-06-16
+
+[11-17 13:07:28]-[line:54]-FuncName:info-(time:602447)-INFO: the code 600416,has been done from 2017-06-19
+
+[11-17 13:07:31]-[line:54]-FuncName:info-(time:605944)-INFO: the code 600416,has been done from 2017-06-20
+
+[11-17 13:07:34]-[line:54]-FuncName:info-(time:609001)-INFO: the code 600416,has been done from 2017-06-21
+
+[11-17 13:07:37]-[line:54]-FuncName:info-(time:611858)-INFO: the code 600416,has been done from 2017-06-22
+
+[11-17 13:07:40]-[line:54]-FuncName:info-(time:614701)-INFO: the code 600416,has been done from 2017-06-23
+
+[11-17 13:07:43]-[line:54]-FuncName:info-(time:617414)-INFO: the code 600416,has been done from 2017-06-26
+
+[11-17 13:07:46]-[line:54]-FuncName:info-(time:620330)-INFO: the code 600416,has been done from 2017-06-27
+
+[11-17 13:07:48]-[line:54]-FuncName:info-(time:622888)-INFO: the code 600416,has been done from 2017-06-28
+
+[11-17 13:07:51]-[line:54]-FuncName:info-(time:625679)-INFO: the code 600416,has been done from 2017-06-29
+
+[11-17 13:07:54]-[line:54]-FuncName:info-(time:628563)-INFO: the code 600416,has been done from 2017-06-30
+
+[11-17 13:07:57]-[line:54]-FuncName:info-(time:631386)-INFO: the code 600416,has been done from 2017-07-03
+
+[11-17 13:08:00]-[line:54]-FuncName:info-(time:634297)-INFO: the code 600416,has been done from 2017-07-04
+
+[11-17 13:08:03]-[line:54]-FuncName:info-(time:637242)-INFO: the code 600416,has been done from 2017-07-05
+
+[11-17 13:08:07]-[line:54]-FuncName:info-(time:641440)-INFO: the code 600416,has been done from 2017-07-06
+
+[11-17 13:08:10]-[line:54]-FuncName:info-(time:644175)-INFO: the code 600416,has been done from 2017-07-07
+
+[11-17 13:08:12]-[line:54]-FuncName:info-(time:646884)-INFO: the code 600416,has been done from 2017-07-10
+
+[11-17 13:08:15]-[line:54]-FuncName:info-(time:649760)-INFO: the code 600416,has been done from 2017-07-11
+
+[11-17 13:08:18]-[line:54]-FuncName:info-(time:652639)-INFO: the code 600416,has been done from 2017-07-12
+
+[11-17 13:08:21]-[line:54]-FuncName:info-(time:655240)-INFO: the code 600416,has been done from 2017-07-13
+
+[11-17 13:08:23]-[line:54]-FuncName:info-(time:658035)-INFO: the code 600416,has been done from 2017-07-14
+
+[11-17 13:08:26]-[line:54]-FuncName:info-(time:661108)-INFO: the code 600416,has been done from 2017-07-17
+
+[11-17 13:08:40]-[line:60]-FuncName:error-(time:674232)-ERROR: 
+数据：2017-07-18没有计算成功
+[11-17 13:08:43]-[line:54]-FuncName:info-(time:677892)-INFO: the code 600416,has been done from 2017-07-19
+
+[11-17 13:08:47]-[line:54]-FuncName:info-(time:681490)-INFO: the code 600416,has been done from 2017-07-20
+
+[11-17 13:08:50]-[line:54]-FuncName:info-(time:684948)-INFO: the code 600416,has been done from 2017-07-21
+
+[11-17 13:08:53]-[line:54]-FuncName:info-(time:687629)-INFO: the code 600416,has been done from 2017-07-24
+
+[11-17 13:08:56]-[line:54]-FuncName:info-(time:690598)-INFO: the code 600416,has been done from 2017-07-25
+
+[11-17 13:08:59]-[line:54]-FuncName:info-(time:693787)-INFO: the code 600416,has been done from 2017-07-26
+
+[11-17 13:09:01]-[line:60]-FuncName:error-(time:695812)-ERROR: 
+数据：2017-07-27没有计算成功
+[11-17 13:09:03]-[line:60]-FuncName:error-(time:697893)-ERROR: 
+数据：2017-07-28没有计算成功
+[11-17 13:09:05]-[line:60]-FuncName:error-(time:699905)-ERROR: 
+数据：2017-07-31没有计算成功
+[11-17 13:09:07]-[line:60]-FuncName:error-(time:701916)-ERROR: 
+数据：2017-08-01没有计算成功
+[11-17 13:09:40]-[line:60]-FuncName:error-(time:734181)-ERROR: 
+数据：2017-08-02没有计算成功
+[11-17 13:10:12]-[line:60]-FuncName:error-(time:766244)-ERROR: 
+数据：2017-08-03没有计算成功
+[11-17 13:10:44]-[line:60]-FuncName:error-(time:798464)-ERROR: 
+数据：2017-08-04没有计算成功
+[11-17 13:11:16]-[line:60]-FuncName:error-(time:830674)-ERROR: 
+数据：2017-08-07没有计算成功
+[11-17 13:11:48]-[line:60]-FuncName:error-(time:863042)-ERROR: 
+数据：2017-08-08没有计算成功
+[11-17 13:12:20]-[line:60]-FuncName:error-(time:895122)-ERROR: 
+数据：2017-08-09没有计算成功
+[11-17 13:12:53]-[line:60]-FuncName:error-(time:927578)-ERROR: 
+数据：2017-08-10没有计算成功
+[11-17 13:13:25]-[line:60]-FuncName:error-(time:959768)-ERROR: 
+数据：2017-08-11没有计算成功
+[11-17 13:13:57]-[line:60]-FuncName:error-(time:992006)-ERROR: 
+数据：2017-08-14没有计算成功
+[11-17 13:14:30]-[line:60]-FuncName:error-(time:1024184)-ERROR: 
+数据：2017-08-15没有计算成功
+[11-17 13:15:02]-[line:60]-FuncName:error-(time:1056677)-ERROR: 
+数据：2017-08-16没有计算成功
+[11-17 13:15:34]-[line:60]-FuncName:error-(time:1088780)-ERROR: 
+数据：2017-08-17没有计算成功
+[11-17 13:16:06]-[line:60]-FuncName:error-(time:1121148)-ERROR: 
+数据：2017-08-18没有计算成功
+[11-17 13:16:39]-[line:60]-FuncName:error-(time:1153318)-ERROR: 
+数据：2017-08-21没有计算成功
+[11-17 13:17:11]-[line:60]-FuncName:error-(time:1185533)-ERROR: 
+数据：2017-08-22没有计算成功
+[11-17 13:17:43]-[line:60]-FuncName:error-(time:1217688)-ERROR: 
+数据：2017-08-23没有计算成功
+[11-17 13:18:15]-[line:60]-FuncName:error-(time:1250043)-ERROR: 
+数据：2017-08-24没有计算成功
+[11-17 13:18:47]-[line:60]-FuncName:error-(time:1282102)-ERROR: 
+数据：2017-08-25没有计算成功
+[11-17 13:19:20]-[line:60]-FuncName:error-(time:1314459)-ERROR: 
+数据：2017-08-28没有计算成功
+[11-17 13:19:52]-[line:60]-FuncName:error-(time:1346556)-ERROR: 
+数据：2017-08-29没有计算成功
+[11-17 13:20:24]-[line:60]-FuncName:error-(time:1379082)-ERROR: 
+数据：2017-08-30没有计算成功
+[11-17 13:20:57]-[line:60]-FuncName:error-(time:1411186)-ERROR: 
+数据：2017-08-31没有计算成功
+[11-17 13:21:29]-[line:60]-FuncName:error-(time:1443733)-ERROR: 
+数据：2017-09-01没有计算成功
+[11-17 13:22:01]-[line:60]-FuncName:error-(time:1475780)-ERROR: 
+数据：2017-09-04没有计算成功
+[11-17 13:22:34]-[line:60]-FuncName:error-(time:1508165)-ERROR: 
+数据：2017-09-05没有计算成功
+[11-17 13:23:06]-[line:60]-FuncName:error-(time:1540225)-ERROR: 
+数据：2017-09-06没有计算成功
+[11-17 13:23:38]-[line:60]-FuncName:error-(time:1572439)-ERROR: 
+数据：2017-09-07没有计算成功
+[11-17 13:24:10]-[line:60]-FuncName:error-(time:1604600)-ERROR: 
+数据：2017-09-08没有计算成功
+[11-17 13:24:42]-[line:60]-FuncName:error-(time:1636794)-ERROR: 
+数据：2017-09-11没有计算成功
+[11-17 13:25:14]-[line:60]-FuncName:error-(time:1669014)-ERROR: 
+数据：2017-09-12没有计算成功
+[11-17 13:25:47]-[line:60]-FuncName:error-(time:1701300)-ERROR: 
+数据：2017-09-13没有计算成功
+[11-17 13:26:19]-[line:60]-FuncName:error-(time:1733330)-ERROR: 
+数据：2017-09-14没有计算成功
+[11-17 13:26:52]-[line:60]-FuncName:error-(time:1766812)-ERROR: 
+数据：2017-09-15没有计算成功
+[11-17 13:27:24]-[line:60]-FuncName:error-(time:1799003)-ERROR: 
+数据：2017-09-18没有计算成功
+[11-17 13:27:57]-[line:60]-FuncName:error-(time:1831572)-ERROR: 
+数据：2017-09-19没有计算成功
+[11-17 13:28:29]-[line:60]-FuncName:error-(time:1863710)-ERROR: 
+数据：2017-09-20没有计算成功
+[11-17 13:29:01]-[line:60]-FuncName:error-(time:1895818)-ERROR: 
+数据：2017-09-21没有计算成功
+[11-17 13:29:33]-[line:60]-FuncName:error-(time:1927959)-ERROR: 
+数据：2017-09-22没有计算成功
+[11-17 13:30:06]-[line:60]-FuncName:error-(time:1960239)-ERROR: 
+数据：2017-09-25没有计算成功
+[11-17 13:30:38]-[line:60]-FuncName:error-(time:1992366)-ERROR: 
+数据：2017-09-26没有计算成功
+[11-17 13:31:10]-[line:60]-FuncName:error-(time:2024588)-ERROR: 
+数据：2017-09-27没有计算成功
+[11-17 13:31:42]-[line:60]-FuncName:error-(time:2056768)-ERROR: 
+数据：2017-09-28没有计算成功
+[11-17 13:32:14]-[line:60]-FuncName:error-(time:2089058)-ERROR: 
+数据：2017-09-29没有计算成功
+[11-17 13:32:47]-[line:60]-FuncName:error-(time:2121300)-ERROR: 
+数据：2017-10-09没有计算成功
+[11-17 13:33:19]-[line:60]-FuncName:error-(time:2153666)-ERROR: 
+数据：2017-10-10没有计算成功
+[11-17 13:33:51]-[line:60]-FuncName:error-(time:2185806)-ERROR: 
+数据：2017-10-11没有计算成功
+[11-17 13:34:24]-[line:60]-FuncName:error-(time:2218318)-ERROR: 
+数据：2017-10-12没有计算成功
+[11-17 13:34:56]-[line:60]-FuncName:error-(time:2250515)-ERROR: 
+数据：2017-10-13没有计算成功
+[11-17 13:35:28]-[line:60]-FuncName:error-(time:2282852)-ERROR: 
+数据：2017-10-16没有计算成功
+[11-17 13:36:00]-[line:60]-FuncName:error-(time:2315026)-ERROR: 
+数据：2017-10-17没有计算成功
+[11-17 13:36:33]-[line:60]-FuncName:error-(time:2347213)-ERROR: 
+数据：2017-10-18没有计算成功
+[11-17 13:37:05]-[line:60]-FuncName:error-(time:2379293)-ERROR: 
+数据：2017-10-19没有计算成功
+[11-17 13:37:37]-[line:60]-FuncName:error-(time:2411718)-ERROR: 
+数据：2017-10-20没有计算成功
+[11-17 13:38:09]-[line:60]-FuncName:error-(time:2443859)-ERROR: 
+数据：2017-10-23没有计算成功
+[11-17 13:38:42]-[line:60]-FuncName:error-(time:2476224)-ERROR: 
+数据：2017-10-24没有计算成功
+[11-17 13:39:14]-[line:60]-FuncName:error-(time:2508385)-ERROR: 
+数据：2017-10-25没有计算成功
+[11-17 13:39:46]-[line:60]-FuncName:error-(time:2540595)-ERROR: 
+数据：2017-10-26没有计算成功
+[11-17 13:40:18]-[line:60]-FuncName:error-(time:2572733)-ERROR: 
+数据：2017-10-27没有计算成功
+[11-17 13:40:50]-[line:60]-FuncName:error-(time:2605021)-ERROR: 
+数据：2017-10-30没有计算成功
+[11-17 13:41:23]-[line:60]-FuncName:error-(time:2637175)-ERROR: 
+数据：2017-10-31没有计算成功
+[11-17 13:41:55]-[line:60]-FuncName:error-(time:2669484)-ERROR: 
+数据：2017-11-01没有计算成功
+[11-17 13:42:27]-[line:60]-FuncName:error-(time:2701697)-ERROR: 
+数据：2017-11-02没有计算成功
+[11-17 13:42:59]-[line:60]-FuncName:error-(time:2734033)-ERROR: 
+数据：2017-11-03没有计算成功
+[11-17 13:43:31]-[line:60]-FuncName:error-(time:2766100)-ERROR: 
+数据：2017-11-06没有计算成功
+[11-17 13:44:04]-[line:60]-FuncName:error-(time:2798383)-ERROR: 
+数据：2017-11-07没有计算成功
+[11-17 13:44:36]-[line:60]-FuncName:error-(time:2830455)-ERROR: 
+数据：2017-11-08没有计算成功
+[11-17 13:45:08]-[line:60]-FuncName:error-(time:2862975)-ERROR: 
+数据：2017-11-09没有计算成功
+[11-17 13:45:40]-[line:60]-FuncName:error-(time:2895015)-ERROR: 
+数据：2017-11-10没有计算成功
+[11-17 13:46:13]-[line:60]-FuncName:error-(time:2927620)-ERROR: 
+数据：2017-11-13没有计算成功
+[11-17 13:46:58]-[line:60]-FuncName:error-(time:2972667)-ERROR: 
+数据：2017-11-14没有计算成功
+[11-17 13:47:00]-[line:60]-FuncName:error-(time:2974960)-ERROR: 
+数据：2017-11-15没有计算成功
+[11-17 13:47:02]-[line:60]-FuncName:error-(time:2977019)-ERROR: 
+数据：2017-11-16没有计算成功
+[11-17 14:29:10]-[line:54]-FuncName:info-(time:5912)-INFO: ================计算筹码分布模块================
+[11-17 14:29:10]-[line:54]-FuncName:info-(time:5912)-INFO: sh：from 2016-11-17 to 2017-11-17
+[11-17 15:54:37]-[line:54]-FuncName:info-(time:4404)-INFO: ================计算筹码分布模块================
+[11-17 15:54:37]-[line:54]-FuncName:info-(time:4404)-INFO: 600200：from 2016-11-17 to 2017-11-17
+[11-17 15:54:38]-[line:54]-FuncName:info-(time:5606)-INFO: the code 600200,has been done from 2016-11-17
+
+[11-17 15:54:43]-[line:54]-FuncName:info-(time:10567)-INFO: the code 600200,has been done from 2016-11-18
+
+[11-17 15:54:46]-[line:54]-FuncName:info-(time:13312)-INFO: the code 600200,has been done from 2016-11-21
+
+[11-17 15:54:49]-[line:54]-FuncName:info-(time:15964)-INFO: the code 600200,has been done from 2016-11-22
+
+[11-17 15:54:51]-[line:54]-FuncName:info-(time:18538)-INFO: the code 600200,has been done from 2016-11-23
+
+[11-17 15:54:54]-[line:54]-FuncName:info-(time:21253)-INFO: the code 600200,has been done from 2016-11-24
+
+[11-17 15:54:56]-[line:54]-FuncName:info-(time:23464)-INFO: the code 600200,has been done from 2016-11-25
+
+[11-17 15:54:56]-[line:57]-FuncName:war-(time:23464)-WARNING: 
+计算换手率数据下载错误：2016-11-25自动计算计算
+[11-17 15:54:56]-[line:60]-FuncName:error-(time:23464)-ERROR: 
+数据有问题中断本次：2016-11-25没有计算成功
+[11-17 15:54:59]-[line:54]-FuncName:info-(time:26011)-INFO: the code 600200,has been done from 2016-11-28
+
+[11-17 15:55:01]-[line:54]-FuncName:info-(time:28626)-INFO: the code 600200,has been done from 2016-11-29
+
+[11-17 15:55:04]-[line:54]-FuncName:info-(time:31340)-INFO: the code 600200,has been done from 2016-11-30
+
+[11-17 15:55:07]-[line:54]-FuncName:info-(time:33973)-INFO: the code 600200,has been done from 2016-12-01
+
+[11-17 15:55:09]-[line:54]-FuncName:info-(time:36625)-INFO: the code 600200,has been done from 2016-12-02
+
+[11-17 15:55:12]-[line:54]-FuncName:info-(time:39308)-INFO: the code 600200,has been done from 2016-12-05
+
+[11-17 15:55:15]-[line:54]-FuncName:info-(time:41929)-INFO: the code 600200,has been done from 2016-12-06
+
+[11-17 15:55:17]-[line:54]-FuncName:info-(time:44749)-INFO: the code 600200,has been done from 2016-12-07
+
+[11-17 15:55:20]-[line:54]-FuncName:info-(time:47578)-INFO: the code 600200,has been done from 2016-12-08
+
+[11-17 15:55:23]-[line:54]-FuncName:info-(time:50308)-INFO: the code 600200,has been done from 2016-12-09
+
+[11-17 15:55:26]-[line:54]-FuncName:info-(time:53132)-INFO: the code 600200,has been done from 2016-12-12
+
+[11-17 15:55:28]-[line:54]-FuncName:info-(time:55831)-INFO: the code 600200,has been done from 2016-12-13
+
+[11-17 15:55:31]-[line:54]-FuncName:info-(time:58452)-INFO: the code 600200,has been done from 2016-12-14
+
+[11-17 15:55:34]-[line:54]-FuncName:info-(time:61665)-INFO: the code 600200,has been done from 2016-12-15
+
+[11-17 15:55:37]-[line:54]-FuncName:info-(time:64567)-INFO: the code 600200,has been done from 2016-12-16
+
+[11-17 15:55:40]-[line:54]-FuncName:info-(time:67672)-INFO: the code 600200,has been done from 2016-12-19
+
+[11-17 15:55:43]-[line:54]-FuncName:info-(time:70636)-INFO: the code 600200,has been done from 2016-12-20
+
+[11-17 15:55:46]-[line:54]-FuncName:info-(time:73569)-INFO: the code 600200,has been done from 2016-12-21
+
+[11-17 15:55:49]-[line:54]-FuncName:info-(time:76283)-INFO: the code 600200,has been done from 2016-12-22
+
+[11-17 15:55:52]-[line:54]-FuncName:info-(time:79091)-INFO: the code 600200,has been done from 2016-12-23
+
+[11-17 15:55:54]-[line:54]-FuncName:info-(time:81899)-INFO: the code 600200,has been done from 2016-12-26
+
+[11-17 15:55:59]-[line:54]-FuncName:info-(time:86547)-INFO: the code 600200,has been done from 2016-12-27
+
+[11-17 15:56:02]-[line:54]-FuncName:info-(time:89542)-INFO: the code 600200,has been done from 2016-12-28
+
+[11-17 15:56:05]-[line:54]-FuncName:info-(time:92256)-INFO: the code 600200,has been done from 2016-12-29
+
+[11-17 15:56:08]-[line:54]-FuncName:info-(time:95046)-INFO: the code 600200,has been done from 2016-12-30
+
+[11-17 15:56:10]-[line:54]-FuncName:info-(time:97760)-INFO: the code 600200,has been done from 2017-01-03
+
+[11-17 15:56:13]-[line:54]-FuncName:info-(time:100600)-INFO: the code 600200,has been done from 2017-01-04
+
+[11-17 15:56:16]-[line:54]-FuncName:info-(time:103689)-INFO: the code 600200,has been done from 2017-01-05
+
+[11-17 15:56:19]-[line:54]-FuncName:info-(time:106294)-INFO: the code 600200,has been done from 2017-01-06
+
+[11-17 15:56:22]-[line:54]-FuncName:info-(time:108993)-INFO: the code 600200,has been done from 2017-01-09
+
+[11-17 15:56:24]-[line:54]-FuncName:info-(time:111910)-INFO: the code 600200,has been done from 2017-01-10
+
+[11-17 15:56:27]-[line:54]-FuncName:info-(time:114457)-INFO: the code 600200,has been done from 2017-01-11
+
+[11-17 15:56:30]-[line:54]-FuncName:info-(time:117015)-INFO: the code 600200,has been done from 2017-01-12
+
+[11-17 15:56:32]-[line:54]-FuncName:info-(time:119839)-INFO: the code 600200,has been done from 2017-01-13
+
+[11-17 15:56:36]-[line:54]-FuncName:info-(time:123053)-INFO: the code 600200,has been done from 2017-01-16
+
+[11-17 15:56:38]-[line:54]-FuncName:info-(time:125799)-INFO: the code 600200,has been done from 2017-01-17
+
+[11-17 15:56:41]-[line:54]-FuncName:info-(time:128483)-INFO: the code 600200,has been done from 2017-01-18
+
+[11-17 15:56:44]-[line:54]-FuncName:info-(time:131052)-INFO: the code 600200,has been done from 2017-01-19
+
+[11-17 15:56:47]-[line:54]-FuncName:info-(time:134128)-INFO: the code 600200,has been done from 2017-01-20
+
+[11-17 15:56:50]-[line:54]-FuncName:info-(time:137045)-INFO: the code 600200,has been done from 2017-01-23
+
+[11-17 15:56:52]-[line:54]-FuncName:info-(time:139838)-INFO: the code 600200,has been done from 2017-01-24
+
+[11-17 15:56:55]-[line:54]-FuncName:info-(time:142537)-INFO: the code 600200,has been done from 2017-01-25
+
+[11-17 15:56:58]-[line:54]-FuncName:info-(time:145113)-INFO: the code 600200,has been done from 2017-01-26
+
+[11-17 15:57:13]-[line:54]-FuncName:info-(time:159959)-INFO: the code 600200,has been done from 2017-02-03
+
+[11-17 15:57:15]-[line:54]-FuncName:info-(time:162579)-INFO: the code 600200,has been done from 2017-02-06
+
+[11-17 15:57:18]-[line:54]-FuncName:info-(time:165122)-INFO: the code 600200,has been done from 2017-02-07
+
+[11-17 15:57:20]-[line:54]-FuncName:info-(time:167728)-INFO: the code 600200,has been done from 2017-02-08
+
+[11-17 15:57:23]-[line:54]-FuncName:info-(time:170395)-INFO: the code 600200,has been done from 2017-02-09
+
+[11-17 15:57:26]-[line:54]-FuncName:info-(time:173172)-INFO: the code 600200,has been done from 2017-02-10
+
+[11-17 15:57:28]-[line:54]-FuncName:info-(time:175748)-INFO: the code 600200,has been done from 2017-02-13
+
+[11-17 15:57:31]-[line:54]-FuncName:info-(time:178338)-INFO: the code 600200,has been done from 2017-02-14
+
+[11-17 15:57:34]-[line:54]-FuncName:info-(time:181105)-INFO: the code 600200,has been done from 2017-02-15
+
+[11-17 15:57:36]-[line:54]-FuncName:info-(time:183663)-INFO: the code 600200,has been done from 2017-02-16
+
+[11-17 15:57:39]-[line:54]-FuncName:info-(time:186300)-INFO: the code 600200,has been done from 2017-02-17
+
+[11-17 15:57:41]-[line:54]-FuncName:info-(time:188858)-INFO: the code 600200,has been done from 2017-02-20
+
+[11-17 15:57:45]-[line:54]-FuncName:info-(time:192010)-INFO: the code 600200,has been done from 2017-02-21
+
+[11-17 15:57:47]-[line:54]-FuncName:info-(time:194552)-INFO: the code 600200,has been done from 2017-02-22
+
+[11-17 15:57:50]-[line:54]-FuncName:info-(time:197002)-INFO: the code 600200,has been done from 2017-02-23
+
+[11-17 15:57:53]-[line:54]-FuncName:info-(time:200028)-INFO: the code 600200,has been done from 2017-02-24
+
+[11-17 15:57:55]-[line:54]-FuncName:info-(time:202758)-INFO: the code 600200,has been done from 2017-02-27
+
+[11-17 15:57:58]-[line:54]-FuncName:info-(time:205272)-INFO: the code 600200,has been done from 2017-02-28
+
+[11-17 15:58:00]-[line:54]-FuncName:info-(time:207862)-INFO: the code 600200,has been done from 2017-03-01
+
+[11-17 15:58:03]-[line:54]-FuncName:info-(time:210483)-INFO: the code 600200,has been done from 2017-03-02
+
+[11-17 15:58:06]-[line:54]-FuncName:info-(time:213509)-INFO: the code 600200,has been done from 2017-03-03
+
+[11-17 15:58:09]-[line:54]-FuncName:info-(time:216083)-INFO: the code 600200,has been done from 2017-03-06
+
+[11-17 15:58:11]-[line:54]-FuncName:info-(time:218642)-INFO: the code 600200,has been done from 2017-03-07
+
+[11-17 15:58:15]-[line:54]-FuncName:info-(time:221986)-INFO: the code 600200,has been done from 2017-03-08
+
+[11-17 15:58:17]-[line:54]-FuncName:info-(time:224747)-INFO: the code 600200,has been done from 2017-03-09
+
+[11-17 15:58:20]-[line:54]-FuncName:info-(time:227259)-INFO: the code 600200,has been done from 2017-03-10
+
+[11-17 15:58:23]-[line:54]-FuncName:info-(time:230129)-INFO: the code 600200,has been done from 2017-03-13
+
+[11-17 15:58:26]-[line:54]-FuncName:info-(time:232937)-INFO: the code 600200,has been done from 2017-03-14
+
+[11-17 15:58:28]-[line:54]-FuncName:info-(time:235452)-INFO: the code 600200,has been done from 2017-03-15
+
+[11-17 15:58:31]-[line:54]-FuncName:info-(time:237995)-INFO: the code 600200,has been done from 2017-03-16
+
+[11-17 15:58:33]-[line:54]-FuncName:info-(time:240912)-INFO: the code 600200,has been done from 2017-03-17
+
+[11-17 15:58:37]-[line:54]-FuncName:info-(time:243960)-INFO: the code 600200,has been done from 2017-03-20
+
+[11-17 15:58:39]-[line:54]-FuncName:info-(time:246549)-INFO: the code 600200,has been done from 2017-03-21
+
+[11-17 15:58:42]-[line:54]-FuncName:info-(time:249326)-INFO: the code 600200,has been done from 2017-03-22
+
+[11-17 15:58:45]-[line:54]-FuncName:info-(time:252088)-INFO: the code 600200,has been done from 2017-03-23
+
+[11-17 15:58:47]-[line:54]-FuncName:info-(time:254911)-INFO: the code 600200,has been done from 2017-03-24
+
+[11-17 15:58:50]-[line:54]-FuncName:info-(time:257345)-INFO: the code 600200,has been done from 2017-03-27
+
+[11-17 15:58:53]-[line:54]-FuncName:info-(time:260018)-INFO: the code 600200,has been done from 2017-03-28
+
+[11-17 15:58:56]-[line:54]-FuncName:info-(time:263297)-INFO: the code 600200,has been done from 2017-03-29
+
+[11-17 15:58:59]-[line:54]-FuncName:info-(time:266126)-INFO: the code 600200,has been done from 2017-03-30
+
+[11-17 15:59:01]-[line:54]-FuncName:info-(time:268672)-INFO: the code 600200,has been done from 2017-03-31
+
+[11-17 15:59:04]-[line:54]-FuncName:info-(time:271439)-INFO: the code 600200,has been done from 2017-04-05
+
+[11-17 15:59:07]-[line:54]-FuncName:info-(time:274106)-INFO: the code 600200,has been done from 2017-04-06
+
+[11-17 15:59:10]-[line:54]-FuncName:info-(time:276979)-INFO: the code 600200,has been done from 2017-04-07
+
+[11-17 15:59:12]-[line:54]-FuncName:info-(time:279772)-INFO: the code 600200,has been done from 2017-04-10
+
+[11-17 15:59:15]-[line:54]-FuncName:info-(time:282445)-INFO: the code 600200,has been done from 2017-04-11
+
+[11-17 15:59:18]-[line:54]-FuncName:info-(time:285229)-INFO: the code 600200,has been done from 2017-04-12
+
+[11-17 15:59:20]-[line:54]-FuncName:info-(time:287809)-INFO: the code 600200,has been done from 2017-04-13
+
+[11-17 15:59:23]-[line:54]-FuncName:info-(time:290561)-INFO: the code 600200,has been done from 2017-04-14
+
+[11-17 15:59:26]-[line:54]-FuncName:info-(time:293484)-INFO: the code 600200,has been done from 2017-04-17
+
+[11-17 15:59:30]-[line:54]-FuncName:info-(time:297207)-INFO: the code 600200,has been done from 2017-04-18
+
+[11-17 15:59:33]-[line:54]-FuncName:info-(time:299984)-INFO: the code 600200,has been done from 2017-04-19
+
+[11-17 15:59:35]-[line:54]-FuncName:info-(time:302652)-INFO: the code 600200,has been done from 2017-04-20
+
+[11-17 15:59:38]-[line:54]-FuncName:info-(time:305679)-INFO: the code 600200,has been done from 2017-04-21
+
+[11-17 15:59:41]-[line:54]-FuncName:info-(time:308580)-INFO: the code 600200,has been done from 2017-04-24
+
+[11-17 15:59:44]-[line:54]-FuncName:info-(time:311560)-INFO: the code 600200,has been done from 2017-04-25
+
+[11-17 15:59:47]-[line:54]-FuncName:info-(time:314602)-INFO: the code 600200,has been done from 2017-04-26
+
+[11-17 15:59:50]-[line:54]-FuncName:info-(time:317285)-INFO: the code 600200,has been done from 2017-04-27
+
+[11-17 15:59:53]-[line:54]-FuncName:info-(time:320094)-INFO: the code 600200,has been done from 2017-04-28
+
+[11-17 15:59:56]-[line:54]-FuncName:info-(time:323151)-INFO: the code 600200,has been done from 2017-05-02
+
+[11-17 15:59:58]-[line:54]-FuncName:info-(time:325760)-INFO: the code 600200,has been done from 2017-05-03
+
+[11-17 16:00:01]-[line:54]-FuncName:info-(time:328552)-INFO: the code 600200,has been done from 2017-05-04
+
+[11-17 16:00:04]-[line:54]-FuncName:info-(time:331313)-INFO: the code 600200,has been done from 2017-05-05
+
+[11-17 16:00:08]-[line:54]-FuncName:info-(time:335557)-INFO: the code 600200,has been done from 2017-05-08
+
+[11-17 16:00:11]-[line:54]-FuncName:info-(time:338334)-INFO: the code 600200,has been done from 2017-05-09
+
+[11-17 16:00:14]-[line:54]-FuncName:info-(time:341157)-INFO: the code 600200,has been done from 2017-05-10
+
+[11-17 16:00:17]-[line:54]-FuncName:info-(time:343997)-INFO: the code 600200,has been done from 2017-05-11
+
+[11-17 16:00:19]-[line:54]-FuncName:info-(time:346649)-INFO: the code 600200,has been done from 2017-05-12
+
+[11-17 16:00:22]-[line:54]-FuncName:info-(time:349715)-INFO: the code 600200,has been done from 2017-05-15
+
+[11-17 16:00:25]-[line:54]-FuncName:info-(time:352897)-INFO: the code 600200,has been done from 2017-05-16
+
+[11-17 16:00:28]-[line:54]-FuncName:info-(time:355598)-INFO: the code 600200,has been done from 2017-05-17
+
+[11-17 16:00:31]-[line:54]-FuncName:info-(time:358385)-INFO: the code 600200,has been done from 2017-05-18
+
+[11-17 16:00:34]-[line:54]-FuncName:info-(time:361380)-INFO: the code 600200,has been done from 2017-05-19
+
+[11-17 16:00:38]-[line:54]-FuncName:info-(time:365243)-INFO: the code 600200,has been done from 2017-05-22
+
+[11-17 16:00:43]-[line:54]-FuncName:info-(time:370563)-INFO: the code 600200,has been done from 2017-05-23
+
+[11-17 16:00:47]-[line:54]-FuncName:info-(time:374894)-INFO: the code 600200,has been done from 2017-05-24
+
+[11-17 16:00:51]-[line:54]-FuncName:info-(time:378410)-INFO: the code 600200,has been done from 2017-05-25
+
+[11-17 16:00:54]-[line:54]-FuncName:info-(time:381095)-INFO: the code 600200,has been done from 2017-05-26
+
+[11-17 16:01:03]-[line:54]-FuncName:info-(time:390917)-INFO: the code 600200,has been done from 2017-05-31
+
+[11-17 16:01:13]-[line:54]-FuncName:info-(time:400542)-INFO: the code 600200,has been done from 2017-06-01
+
+[11-17 16:01:16]-[line:54]-FuncName:info-(time:403273)-INFO: the code 600200,has been done from 2017-06-02
+
+[11-17 16:01:24]-[line:54]-FuncName:info-(time:411322)-INFO: the code 600200,has been done from 2017-06-05
+
+[11-17 16:01:27]-[line:54]-FuncName:info-(time:414086)-INFO: the code 600200,has been done from 2017-06-06
+
+[11-17 16:01:29]-[line:54]-FuncName:info-(time:416630)-INFO: the code 600200,has been done from 2017-06-07
+
+[11-17 16:01:33]-[line:54]-FuncName:info-(time:420873)-INFO: the code 600200,has been done from 2017-06-08
+
+[11-17 16:01:36]-[line:54]-FuncName:info-(time:423432)-INFO: the code 600200,has been done from 2017-06-09
+
+[11-17 16:01:39]-[line:54]-FuncName:info-(time:425975)-INFO: the code 600200,has been done from 2017-06-12
+
+[11-17 16:01:41]-[line:54]-FuncName:info-(time:428533)-INFO: the code 600200,has been done from 2017-06-13
+
+[11-17 16:01:44]-[line:54]-FuncName:info-(time:431092)-INFO: the code 600200,has been done from 2017-06-14
+
+[11-17 16:01:46]-[line:54]-FuncName:info-(time:433822)-INFO: the code 600200,has been done from 2017-06-15
+
+[11-17 16:01:49]-[line:54]-FuncName:info-(time:436318)-INFO: the code 600200,has been done from 2017-06-16
+
+[11-17 16:01:52]-[line:54]-FuncName:info-(time:438923)-INFO: the code 600200,has been done from 2017-06-19
+
+[11-17 16:01:57]-[line:54]-FuncName:info-(time:444384)-INFO: the code 600200,has been done from 2017-06-20
+
+[11-17 16:01:59]-[line:54]-FuncName:info-(time:446850)-INFO: the code 600200,has been done from 2017-06-21
+
+[11-17 16:02:03]-[line:54]-FuncName:info-(time:450158)-INFO: the code 600200,has been done from 2017-06-22
+
+[11-17 16:02:05]-[line:54]-FuncName:info-(time:452872)-INFO: the code 600200,has been done from 2017-06-23
+
+[11-17 16:02:15]-[line:54]-FuncName:info-(time:462625)-INFO: the code 600200,has been done from 2017-06-26
+
+[11-17 16:02:18]-[line:54]-FuncName:info-(time:465683)-INFO: the code 600200,has been done from 2017-06-27
+
+[11-17 16:02:21]-[line:54]-FuncName:info-(time:468304)-INFO: the code 600200,has been done from 2017-06-28
+
+[11-17 16:02:23]-[line:54]-FuncName:info-(time:470831)-INFO: the code 600200,has been done from 2017-06-29
+
+[11-17 16:02:26]-[line:54]-FuncName:info-(time:473639)-INFO: the code 600200,has been done from 2017-06-30
+
+[11-17 16:02:29]-[line:54]-FuncName:info-(time:476073)-INFO: the code 600200,has been done from 2017-07-03
+
+[11-17 16:02:31]-[line:54]-FuncName:info-(time:478509)-INFO: the code 600200,has been done from 2017-07-04
+
+[11-17 16:02:34]-[line:54]-FuncName:info-(time:481223)-INFO: the code 600200,has been done from 2017-07-05
+
+[11-17 16:02:37]-[line:54]-FuncName:info-(time:484000)-INFO: the code 600200,has been done from 2017-07-06
+
+[11-17 16:02:39]-[line:54]-FuncName:info-(time:486465)-INFO: the code 600200,has been done from 2017-07-07
+
+[11-17 16:02:42]-[line:54]-FuncName:info-(time:489039)-INFO: the code 600200,has been done from 2017-07-10
+
+[11-17 16:02:44]-[line:54]-FuncName:info-(time:491894)-INFO: the code 600200,has been done from 2017-07-11
+
+[11-17 16:02:47]-[line:54]-FuncName:info-(time:494624)-INFO: the code 600200,has been done from 2017-07-12
+
+[11-17 16:02:50]-[line:54]-FuncName:info-(time:497432)-INFO: the code 600200,has been done from 2017-07-13
+
+[11-17 16:02:53]-[line:54]-FuncName:info-(time:500178)-INFO: the code 600200,has been done from 2017-07-14
+
+[11-17 16:02:56]-[line:54]-FuncName:info-(time:503205)-INFO: the code 600200,has been done from 2017-07-17
+
+[11-17 16:02:59]-[line:54]-FuncName:info-(time:506871)-INFO: the code 600200,has been done from 2017-07-18
+
+[11-17 16:03:02]-[line:54]-FuncName:info-(time:509852)-INFO: the code 600200,has been done from 2017-07-19
+
+[11-17 16:03:05]-[line:54]-FuncName:info-(time:512513)-INFO: the code 600200,has been done from 2017-07-20
+
+[11-17 16:03:08]-[line:54]-FuncName:info-(time:515133)-INFO: the code 600200,has been done from 2017-07-21
+
+[11-17 16:03:10]-[line:54]-FuncName:info-(time:517708)-INFO: the code 600200,has been done from 2017-07-24
+
+[11-17 16:03:13]-[line:54]-FuncName:info-(time:520672)-INFO: the code 600200,has been done from 2017-07-25
+
+[11-17 16:03:16]-[line:54]-FuncName:info-(time:523308)-INFO: the code 600200,has been done from 2017-07-26
+
+[11-17 16:03:19]-[line:54]-FuncName:info-(time:525929)-INFO: the code 600200,has been done from 2017-07-27
+
+[11-17 16:03:21]-[line:54]-FuncName:info-(time:528519)-INFO: the code 600200,has been done from 2017-07-28
+
+[11-17 16:03:24]-[line:54]-FuncName:info-(time:531514)-INFO: the code 600200,has been done from 2017-07-31
+
+[11-17 16:03:27]-[line:54]-FuncName:info-(time:534338)-INFO: the code 600200,has been done from 2017-08-01
+
+[11-17 16:03:30]-[line:54]-FuncName:info-(time:536928)-INFO: the code 600200,has been done from 2017-08-02
+
+[11-17 16:03:32]-[line:54]-FuncName:info-(time:539644)-INFO: the code 600200,has been done from 2017-08-03
+
+[11-17 16:03:35]-[line:54]-FuncName:info-(time:542421)-INFO: the code 600200,has been done from 2017-08-04
+
+[11-17 16:03:38]-[line:54]-FuncName:info-(time:545089)-INFO: the code 600200,has been done from 2017-08-07
+
+[11-17 16:03:40]-[line:54]-FuncName:info-(time:547585)-INFO: the code 600200,has been done from 2017-08-08
+
+[11-17 16:03:43]-[line:54]-FuncName:info-(time:550159)-INFO: the code 600200,has been done from 2017-08-09
+
+[11-17 16:03:46]-[line:54]-FuncName:info-(time:553123)-INFO: the code 600200,has been done from 2017-08-10
+
+[11-17 16:03:48]-[line:54]-FuncName:info-(time:555666)-INFO: the code 600200,has been done from 2017-08-11
+
+[11-17 16:03:51]-[line:54]-FuncName:info-(time:558178)-INFO: the code 600200,has been done from 2017-08-14
+
+[11-17 16:03:53]-[line:54]-FuncName:info-(time:560767)-INFO: the code 600200,has been done from 2017-08-15
+
+[11-17 16:03:56]-[line:54]-FuncName:info-(time:563513)-INFO: the code 600200,has been done from 2017-08-16
+
+[11-17 16:03:59]-[line:54]-FuncName:info-(time:566056)-INFO: the code 600200,has been done from 2017-08-17
+
+[11-17 16:04:02]-[line:54]-FuncName:info-(time:569755)-INFO: the code 600200,has been done from 2017-08-18
+
+[11-17 16:04:05]-[line:54]-FuncName:info-(time:572516)-INFO: the code 600200,has been done from 2017-08-21
+
+[11-17 16:04:08]-[line:54]-FuncName:info-(time:575153)-INFO: the code 600200,has been done from 2017-08-22
+
+[11-17 16:04:10]-[line:54]-FuncName:info-(time:577899)-INFO: the code 600200,has been done from 2017-08-23
+
+[11-17 16:04:13]-[line:54]-FuncName:info-(time:580598)-INFO: the code 600200,has been done from 2017-08-24
+
+[11-17 16:04:23]-[line:54]-FuncName:info-(time:590270)-INFO: the code 600200,has been done from 2017-08-25
+
+[11-17 16:04:26]-[line:54]-FuncName:info-(time:593109)-INFO: the code 600200,has been done from 2017-08-28
+
+[11-17 16:04:31]-[line:54]-FuncName:info-(time:598741)-INFO: the code 600200,has been done from 2017-08-29
+
+[11-17 16:04:34]-[line:54]-FuncName:info-(time:601317)-INFO: the code 600200,has been done from 2017-08-30
+
+[11-17 16:04:37]-[line:54]-FuncName:info-(time:603922)-INFO: the code 600200,has been done from 2017-08-31
+
+[11-17 16:04:40]-[line:54]-FuncName:info-(time:607011)-INFO: the code 600200,has been done from 2017-09-01
+
+[11-17 16:04:43]-[line:54]-FuncName:info-(time:610038)-INFO: the code 600200,has been done from 2017-09-04
+
+[11-17 16:04:52]-[line:54]-FuncName:info-(time:619507)-INFO: the code 600200,has been done from 2017-09-05
+
+[11-17 16:04:55]-[line:54]-FuncName:info-(time:622518)-INFO: the code 600200,has been done from 2017-09-06
+
+[11-17 16:04:58]-[line:54]-FuncName:info-(time:625405)-INFO: the code 600200,has been done from 2017-09-07
+
+[11-17 16:05:01]-[line:54]-FuncName:info-(time:628166)-INFO: the code 600200,has been done from 2017-09-08
+
+[11-17 16:05:05]-[line:54]-FuncName:info-(time:632120)-INFO: the code 600200,has been done from 2017-09-11
+
+[11-17 16:05:07]-[line:54]-FuncName:info-(time:634772)-INFO: the code 600200,has been done from 2017-09-12
+
+[11-17 16:05:10]-[line:54]-FuncName:info-(time:637315)-INFO: the code 600200,has been done from 2017-09-13
+
+[11-17 16:05:13]-[line:54]-FuncName:info-(time:640045)-INFO: the code 600200,has been done from 2017-09-14
+
+[11-17 16:05:15]-[line:54]-FuncName:info-(time:642791)-INFO: the code 600200,has been done from 2017-09-15
+
+[11-17 16:05:18]-[line:54]-FuncName:info-(time:645396)-INFO: the code 600200,has been done from 2017-09-18
+
+[11-17 16:05:20]-[line:54]-FuncName:info-(time:647908)-INFO: the code 600200,has been done from 2017-09-19
+
+[11-17 16:05:23]-[line:54]-FuncName:info-(time:650560)-INFO: the code 600200,has been done from 2017-09-20
+
+[11-17 16:05:26]-[line:54]-FuncName:info-(time:653118)-INFO: the code 600200,has been done from 2017-09-21
+
+[11-17 16:05:28]-[line:54]-FuncName:info-(time:655723)-INFO: the code 600200,has been done from 2017-09-22
+
+[11-17 16:05:31]-[line:54]-FuncName:info-(time:658220)-INFO: the code 600200,has been done from 2017-09-25
+
+[11-17 16:05:37]-[line:54]-FuncName:info-(time:664680)-INFO: the code 600200,has been done from 2017-09-26
+
+[11-17 16:05:40]-[line:54]-FuncName:info-(time:667130)-INFO: the code 600200,has been done from 2017-09-27
+
+[11-17 16:05:42]-[line:54]-FuncName:info-(time:669906)-INFO: the code 600200,has been done from 2017-09-28
+
+[11-17 16:05:45]-[line:54]-FuncName:info-(time:672668)-INFO: the code 600200,has been done from 2017-09-29
+
+[11-17 16:05:52]-[line:54]-FuncName:info-(time:679191)-INFO: the code 600200,has been done from 2017-10-09
+
+[11-17 16:05:56]-[line:54]-FuncName:info-(time:683501)-INFO: the code 600200,has been done from 2017-10-10
+
+[11-17 16:05:59]-[line:54]-FuncName:info-(time:686243)-INFO: the code 600200,has been done from 2017-10-11
+
+[11-17 16:06:01]-[line:54]-FuncName:info-(time:688849)-INFO: the code 600200,has been done from 2017-10-12
+
+[11-17 16:06:04]-[line:54]-FuncName:info-(time:691544)-INFO: the code 600200,has been done from 2017-10-13
+
+[11-17 16:06:07]-[line:54]-FuncName:info-(time:694524)-INFO: the code 600200,has been done from 2017-10-16
+
+[11-17 16:06:10]-[line:54]-FuncName:info-(time:697005)-INFO: the code 600200,has been done from 2017-10-17
+
+[11-17 16:06:12]-[line:54]-FuncName:info-(time:699610)-INFO: the code 600200,has been done from 2017-10-18
+
+[11-17 16:06:15]-[line:54]-FuncName:info-(time:702240)-INFO: the code 600200,has been done from 2017-10-19
+
+[11-17 16:06:17]-[line:54]-FuncName:info-(time:704864)-INFO: the code 600200,has been done from 2017-10-20
+
+[11-17 16:06:20]-[line:54]-FuncName:info-(time:707345)-INFO: the code 600200,has been done from 2017-10-23
+
+[11-17 16:06:23]-[line:54]-FuncName:info-(time:709981)-INFO: the code 600200,has been done from 2017-10-24
+
+[11-17 16:06:25]-[line:54]-FuncName:info-(time:712789)-INFO: the code 600200,has been done from 2017-10-25
+
+[11-17 16:06:28]-[line:54]-FuncName:info-(time:715379)-INFO: the code 600200,has been done from 2017-10-26
+
+[11-17 16:06:30]-[line:54]-FuncName:info-(time:717828)-INFO: the code 600200,has been done from 2017-10-27
+
+[11-17 16:06:33]-[line:54]-FuncName:info-(time:720714)-INFO: the code 600200,has been done from 2017-10-30
+
+[11-17 16:06:36]-[line:54]-FuncName:info-(time:723493)-INFO: the code 600200,has been done from 2017-10-31
+
+[11-17 16:06:39]-[line:54]-FuncName:info-(time:725958)-INFO: the code 600200,has been done from 2017-11-01
+
+[11-17 16:06:41]-[line:54]-FuncName:info-(time:728454)-INFO: the code 600200,has been done from 2017-11-02
+
+[11-17 16:06:44]-[line:54]-FuncName:info-(time:731122)-INFO: the code 600200,has been done from 2017-11-03
+
+[11-17 16:06:46]-[line:54]-FuncName:info-(time:733899)-INFO: the code 600200,has been done from 2017-11-06
+
+[11-17 16:06:49]-[line:54]-FuncName:info-(time:736442)-INFO: the code 600200,has been done from 2017-11-07
+
+[11-17 16:06:52]-[line:54]-FuncName:info-(time:738944)-INFO: the code 600200,has been done from 2017-11-08
+
+[11-17 16:06:54]-[line:54]-FuncName:info-(time:741518)-INFO: the code 600200,has been done from 2017-11-09
+
+[11-17 16:06:57]-[line:54]-FuncName:info-(time:743952)-INFO: the code 600200,has been done from 2017-11-10
+
+[11-17 16:06:59]-[line:54]-FuncName:info-(time:746424)-INFO: the code 600200,has been done from 2017-11-13
+
+[11-17 16:07:02]-[line:54]-FuncName:info-(time:748952)-INFO: the code 600200,has been done from 2017-11-14
+
+[11-17 16:07:04]-[line:54]-FuncName:info-(time:751466)-INFO: the code 600200,has been done from 2017-11-15
+
+[11-17 16:07:07]-[line:54]-FuncName:info-(time:754040)-INFO: the code 600200,has been done from 2017-11-16
+
+[11-17 16:07:09]-[line:54]-FuncName:info-(time:756161)-INFO: the code 600200,has been done from 2017-11-17
+
+[11-17 16:07:09]-[line:57]-FuncName:war-(time:756161)-WARNING: 
+计算换手率数据下载错误：2017-11-17自动计算计算
+[11-17 16:07:09]-[line:60]-FuncName:error-(time:756161)-ERROR: 
+数据有问题中断本次：2017-11-17没有计算成功
+[11-21 14:53:01]-[line:54]-FuncName:info-(time:86816)-INFO: ================计算筹码分布模块================
+[11-21 14:53:01]-[line:54]-FuncName:info-(time:86831)-INFO: 600200：from 2016-12-31 to 2017-11-20
+[11-21 14:53:02]-[line:54]-FuncName:info-(time:88267)-INFO: the code 600200,has been done from 2016-12-31
+
+[11-21 14:53:06]-[line:54]-FuncName:info-(time:92053)-INFO: the code 600200,has been done from 2017-01-04
+
+[11-21 14:53:09]-[line:54]-FuncName:info-(time:94877)-INFO: the code 600200,has been done from 2017-01-05
+
+[11-21 14:53:12]-[line:54]-FuncName:info-(time:97690)-INFO: the code 600200,has been done from 2017-01-06
+
+[11-21 14:53:15]-[line:54]-FuncName:info-(time:101158)-INFO: the code 600200,has been done from 2017-01-09
+
+[11-21 14:53:19]-[line:54]-FuncName:info-(time:104360)-INFO: the code 600200,has been done from 2017-01-10
+
+[11-21 14:53:21]-[line:54]-FuncName:info-(time:107180)-INFO: the code 600200,has been done from 2017-01-11
+
+[11-21 14:53:24]-[line:54]-FuncName:info-(time:110103)-INFO: the code 600200,has been done from 2017-01-12
+
+[11-21 14:53:28]-[line:54]-FuncName:info-(time:113793)-INFO: the code 600200,has been done from 2017-01-13
+
+[11-21 14:53:32]-[line:54]-FuncName:info-(time:117496)-INFO: the code 600200,has been done from 2017-01-16
+
+[11-21 14:53:35]-[line:54]-FuncName:info-(time:120408)-INFO: the code 600200,has been done from 2017-01-17
+
+[11-21 14:53:40]-[line:54]-FuncName:info-(time:125336)-INFO: the code 600200,has been done from 2017-01-18
+
+[11-21 14:53:42]-[line:54]-FuncName:info-(time:128065)-INFO: the code 600200,has been done from 2017-01-19
+
+[11-21 14:53:46]-[line:54]-FuncName:info-(time:131359)-INFO: the code 600200,has been done from 2017-01-20
+
+[11-21 14:53:49]-[line:54]-FuncName:info-(time:134461)-INFO: the code 600200,has been done from 2017-01-23
+
+[11-21 14:53:51]-[line:54]-FuncName:info-(time:137319)-INFO: the code 600200,has been done from 2017-01-24
+
+[11-21 14:53:54]-[line:54]-FuncName:info-(time:140237)-INFO: the code 600200,has been done from 2017-01-25
+
+[11-21 14:53:57]-[line:54]-FuncName:info-(time:142972)-INFO: the code 600200,has been done from 2017-01-26
+
+[11-21 14:54:00]-[line:54]-FuncName:info-(time:145708)-INFO: the code 600200,has been done from 2017-02-03
+
+[11-21 14:54:03]-[line:54]-FuncName:info-(time:148818)-INFO: the code 600200,has been done from 2017-02-06
+
+[11-21 14:54:06]-[line:54]-FuncName:info-(time:151982)-INFO: the code 600200,has been done from 2017-02-07
+
+[11-21 14:54:09]-[line:54]-FuncName:info-(time:154883)-INFO: the code 600200,has been done from 2017-02-08
+
+[11-21 14:54:12]-[line:54]-FuncName:info-(time:158206)-INFO: the code 600200,has been done from 2017-02-09
+
+[11-21 14:54:17]-[line:54]-FuncName:info-(time:162325)-INFO: the code 600200,has been done from 2017-02-10
+
+[11-21 14:54:19]-[line:54]-FuncName:info-(time:165277)-INFO: the code 600200,has been done from 2017-02-13
+
+[11-21 14:54:23]-[line:54]-FuncName:info-(time:168522)-INFO: the code 600200,has been done from 2017-02-14
+
+[11-21 14:54:25]-[line:54]-FuncName:info-(time:171288)-INFO: the code 600200,has been done from 2017-02-15
+
+[11-21 14:54:29]-[line:54]-FuncName:info-(time:174358)-INFO: the code 600200,has been done from 2017-02-16
+
+[11-21 14:54:32]-[line:54]-FuncName:info-(time:178118)-INFO: the code 600200,has been done from 2017-02-17
+
+[11-21 14:54:35]-[line:54]-FuncName:info-(time:181279)-INFO: the code 600200,has been done from 2017-02-20
+
+[11-21 14:54:38]-[line:54]-FuncName:info-(time:184090)-INFO: the code 600200,has been done from 2017-02-21
+
+[11-21 14:54:41]-[line:54]-FuncName:info-(time:186867)-INFO: the code 600200,has been done from 2017-02-22
+
+[11-21 14:54:44]-[line:54]-FuncName:info-(time:190002)-INFO: the code 600200,has been done from 2017-02-23
+
+[11-21 14:54:47]-[line:54]-FuncName:info-(time:192654)-INFO: the code 600200,has been done from 2017-02-24
+
+[11-21 14:54:50]-[line:54]-FuncName:info-(time:195681)-INFO: the code 600200,has been done from 2017-02-27
+
+[11-21 14:54:53]-[line:54]-FuncName:info-(time:198536)-INFO: the code 600200,has been done from 2017-02-28
+
+[11-21 14:54:56]-[line:54]-FuncName:info-(time:201500)-INFO: the code 600200,has been done from 2017-03-01
+
+[11-21 14:54:58]-[line:54]-FuncName:info-(time:204201)-INFO: the code 600200,has been done from 2017-03-02
+
+[11-21 14:55:01]-[line:54]-FuncName:info-(time:207103)-INFO: the code 600200,has been done from 2017-03-03
+
+[11-21 14:55:06]-[line:54]-FuncName:info-(time:211923)-INFO: the code 600200,has been done from 2017-03-06
+
+[11-21 14:55:09]-[line:54]-FuncName:info-(time:214638)-INFO: the code 600200,has been done from 2017-03-07
+
+[11-21 14:55:12]-[line:54]-FuncName:info-(time:217383)-INFO: the code 600200,has been done from 2017-03-08
+
+[11-21 14:55:16]-[line:54]-FuncName:info-(time:221855)-INFO: the code 600200,has been done from 2017-03-09
+
+[11-21 14:55:20]-[line:54]-FuncName:info-(time:225340)-INFO: the code 600200,has been done from 2017-03-10
+
+[11-21 14:55:22]-[line:54]-FuncName:info-(time:228151)-INFO: the code 600200,has been done from 2017-03-13
+
+[11-21 14:55:25]-[line:54]-FuncName:info-(time:231031)-INFO: the code 600200,has been done from 2017-03-14
+
+[11-21 14:55:28]-[line:54]-FuncName:info-(time:233902)-INFO: the code 600200,has been done from 2017-03-15
+
+[11-21 14:55:31]-[line:54]-FuncName:info-(time:236960)-INFO: the code 600200,has been done from 2017-03-16
+
+[11-21 14:55:34]-[line:54]-FuncName:info-(time:240236)-INFO: the code 600200,has been done from 2017-03-17
+
+[11-21 14:55:37]-[line:54]-FuncName:info-(time:243197)-INFO: the code 600200,has been done from 2017-03-20
+
+[11-21 14:55:41]-[line:54]-FuncName:info-(time:246362)-INFO: the code 600200,has been done from 2017-03-21
+
+[11-21 14:55:44]-[line:54]-FuncName:info-(time:249984)-INFO: the code 600200,has been done from 2017-03-22
+
+[11-21 14:55:47]-[line:54]-FuncName:info-(time:253057)-INFO: the code 600200,has been done from 2017-03-23
+
+[11-21 14:55:50]-[line:54]-FuncName:info-(time:256302)-INFO: the code 600200,has been done from 2017-03-24
+
+[11-21 14:55:53]-[line:54]-FuncName:info-(time:259282)-INFO: the code 600200,has been done from 2017-03-27
+
+[11-21 14:55:56]-[line:54]-FuncName:info-(time:262215)-INFO: the code 600200,has been done from 2017-03-28
+
+[11-21 14:55:59]-[line:54]-FuncName:info-(time:265147)-INFO: the code 600200,has been done from 2017-03-29
+
+[11-21 14:56:03]-[line:54]-FuncName:info-(time:268985)-INFO: the code 600200,has been done from 2017-03-30
+
+[11-21 14:56:06]-[line:54]-FuncName:info-(time:272074)-INFO: the code 600200,has been done from 2017-03-31
+
+[11-21 14:56:09]-[line:54]-FuncName:info-(time:274929)-INFO: the code 600200,has been done from 2017-04-05
+
+[11-21 14:56:12]-[line:54]-FuncName:info-(time:278189)-INFO: the code 600200,has been done from 2017-04-06
+
+[11-21 14:56:15]-[line:54]-FuncName:info-(time:280951)-INFO: the code 600200,has been done from 2017-04-07
+
+[11-21 14:56:18]-[line:54]-FuncName:info-(time:283775)-INFO: the code 600200,has been done from 2017-04-10
+
+[11-21 14:56:21]-[line:54]-FuncName:info-(time:287179)-INFO: the code 600200,has been done from 2017-04-11
+
+[11-21 14:56:25]-[line:54]-FuncName:info-(time:290616)-INFO: the code 600200,has been done from 2017-04-12
+
+[11-21 14:56:28]-[line:54]-FuncName:info-(time:293588)-INFO: the code 600200,has been done from 2017-04-13
+
+[11-21 14:56:31]-[line:54]-FuncName:info-(time:297207)-INFO: the code 600200,has been done from 2017-04-14
+
+[11-21 14:56:38]-[line:54]-FuncName:info-(time:304223)-INFO: the code 600200,has been done from 2017-04-17
+
+[11-21 14:56:42]-[line:54]-FuncName:info-(time:307593)-INFO: the code 600200,has been done from 2017-04-18
+
+[11-21 14:56:45]-[line:54]-FuncName:info-(time:310838)-INFO: the code 600200,has been done from 2017-04-19
+
+[11-21 14:56:50]-[line:54]-FuncName:info-(time:316204)-INFO: the code 600200,has been done from 2017-04-20
+
+[11-21 14:56:54]-[line:54]-FuncName:info-(time:319761)-INFO: the code 600200,has been done from 2017-04-21
+
+[11-21 14:56:57]-[line:54]-FuncName:info-(time:323240)-INFO: the code 600200,has been done from 2017-04-24
+
+[11-21 14:57:02]-[line:54]-FuncName:info-(time:328216)-INFO: the code 600200,has been done from 2017-04-25
+
+[11-21 14:57:09]-[line:54]-FuncName:info-(time:334378)-INFO: the code 600200,has been done from 2017-04-26
+
+[11-21 14:57:12]-[line:54]-FuncName:info-(time:337967)-INFO: the code 600200,has been done from 2017-04-27
+
+[11-21 14:57:16]-[line:54]-FuncName:info-(time:341399)-INFO: the code 600200,has been done from 2017-04-28
+
+[11-21 14:57:19]-[line:54]-FuncName:info-(time:344425)-INFO: the code 600200,has been done from 2017-05-02
+
+[11-21 14:57:22]-[line:54]-FuncName:info-(time:347748)-INFO: the code 600200,has been done from 2017-05-03
+
+[11-21 14:57:31]-[line:54]-FuncName:info-(time:357061)-INFO: the code 600200,has been done from 2017-05-04
+
+[11-21 14:57:35]-[line:54]-FuncName:info-(time:360337)-INFO: the code 600200,has been done from 2017-05-05
+
+[11-21 14:57:39]-[line:54]-FuncName:info-(time:364581)-INFO: the code 600200,has been done from 2017-05-08
+
+[11-21 14:57:42]-[line:54]-FuncName:info-(time:367589)-INFO: the code 600200,has been done from 2017-05-09
+
+[11-21 14:57:46]-[line:54]-FuncName:info-(time:371575)-INFO: the code 600200,has been done from 2017-05-10
+
+[11-21 14:57:49]-[line:54]-FuncName:info-(time:374971)-INFO: the code 600200,has been done from 2017-05-11
+
+[11-21 14:57:52]-[line:54]-FuncName:info-(time:377997)-INFO: the code 600200,has been done from 2017-05-12
+
+[11-21 14:57:55]-[line:54]-FuncName:info-(time:380930)-INFO: the code 600200,has been done from 2017-05-15
+
+[11-21 14:57:58]-[line:54]-FuncName:info-(time:384293)-INFO: the code 600200,has been done from 2017-05-16
+
+[11-21 14:58:01]-[line:54]-FuncName:info-(time:387179)-INFO: the code 600200,has been done from 2017-05-17
+
+[11-21 14:58:05]-[line:54]-FuncName:info-(time:390845)-INFO: the code 600200,has been done from 2017-05-18
+
+[11-21 14:58:08]-[line:54]-FuncName:info-(time:393934)-INFO: the code 600200,has been done from 2017-05-19
+
+[11-21 14:58:11]-[line:54]-FuncName:info-(time:397116)-INFO: the code 600200,has been done from 2017-05-22
+
+[11-21 14:58:15]-[line:54]-FuncName:info-(time:400860)-INFO: the code 600200,has been done from 2017-05-23
+
+[11-21 14:58:19]-[line:54]-FuncName:info-(time:405260)-INFO: the code 600200,has been done from 2017-05-24
+
+[11-21 14:58:23]-[line:54]-FuncName:info-(time:408801)-INFO: the code 600200,has been done from 2017-05-25
+
+[11-21 14:58:26]-[line:54]-FuncName:info-(time:411905)-INFO: the code 600200,has been done from 2017-05-26
+
+[11-21 14:58:29]-[line:54]-FuncName:info-(time:414861)-INFO: the code 600200,has been done from 2017-05-31
+
+[11-21 14:58:33]-[line:54]-FuncName:info-(time:418340)-INFO: the code 600200,has been done from 2017-06-01
+
+[11-21 14:58:37]-[line:54]-FuncName:info-(time:422583)-INFO: the code 600200,has been done from 2017-06-02
+
+[11-21 14:58:40]-[line:54]-FuncName:info-(time:426203)-INFO: the code 600200,has been done from 2017-06-05
+
+[11-21 14:58:44]-[line:54]-FuncName:info-(time:429572)-INFO: the code 600200,has been done from 2017-06-06
+
+[11-21 14:58:47]-[line:54]-FuncName:info-(time:432677)-INFO: the code 600200,has been done from 2017-06-07
+
+[11-21 14:58:50]-[line:54]-FuncName:info-(time:435485)-INFO: the code 600200,has been done from 2017-06-08
+
+[11-21 14:58:53]-[line:54]-FuncName:info-(time:438418)-INFO: the code 600200,has been done from 2017-06-09
+
+[11-21 14:58:56]-[line:54]-FuncName:info-(time:441756)-INFO: the code 600200,has been done from 2017-06-12
+
+[11-21 14:58:59]-[line:54]-FuncName:info-(time:444642)-INFO: the code 600200,has been done from 2017-06-13
+
+[11-21 14:59:04]-[line:54]-FuncName:info-(time:449790)-INFO: the code 600200,has been done from 2017-06-14
+
+[11-21 14:59:07]-[line:54]-FuncName:info-(time:452633)-INFO: the code 600200,has been done from 2017-06-15
+
+[11-21 14:59:10]-[line:54]-FuncName:info-(time:455504)-INFO: the code 600200,has been done from 2017-06-16
+
+[11-21 14:59:13]-[line:54]-FuncName:info-(time:458561)-INFO: the code 600200,has been done from 2017-06-19
+
+[11-21 14:59:16]-[line:54]-FuncName:info-(time:461619)-INFO: the code 600200,has been done from 2017-06-20
+
+[11-21 14:59:18]-[line:54]-FuncName:info-(time:464302)-INFO: the code 600200,has been done from 2017-06-21
+
+[11-21 14:59:22]-[line:54]-FuncName:info-(time:467797)-INFO: the code 600200,has been done from 2017-06-22
+
+[11-21 14:59:26]-[line:54]-FuncName:info-(time:471915)-INFO: the code 600200,has been done from 2017-06-23
+
+[11-21 14:59:29]-[line:54]-FuncName:info-(time:474866)-INFO: the code 600200,has been done from 2017-06-26
+
+[11-21 14:59:32]-[line:54]-FuncName:info-(time:477908)-INFO: the code 600200,has been done from 2017-06-27
+
+[11-21 14:59:35]-[line:54]-FuncName:info-(time:480935)-INFO: the code 600200,has been done from 2017-06-28
+
+[11-21 14:59:38]-[line:54]-FuncName:info-(time:483571)-INFO: the code 600200,has been done from 2017-06-29
+
+[11-21 14:59:41]-[line:54]-FuncName:info-(time:487035)-INFO: the code 600200,has been done from 2017-06-30
+
+[11-21 14:59:44]-[line:54]-FuncName:info-(time:490014)-INFO: the code 600200,has been done from 2017-07-03
+
+[11-21 14:59:47]-[line:54]-FuncName:info-(time:492635)-INFO: the code 600200,has been done from 2017-07-04
+
+[11-21 14:59:50]-[line:54]-FuncName:info-(time:495377)-INFO: the code 600200,has been done from 2017-07-05
+
+[11-21 14:59:53]-[line:54]-FuncName:info-(time:498348)-INFO: the code 600200,has been done from 2017-07-06
+
+[11-21 14:59:56]-[line:54]-FuncName:info-(time:501699)-INFO: the code 600200,has been done from 2017-07-07
+
+[11-21 14:59:59]-[line:54]-FuncName:info-(time:504451)-INFO: the code 600200,has been done from 2017-07-10
+
+[11-21 15:00:02]-[line:54]-FuncName:info-(time:507775)-INFO: the code 600200,has been done from 2017-07-11
+
+[11-21 15:00:21]-[line:54]-FuncName:info-(time:526357)-INFO: the code 600200,has been done from 2017-07-12
+
+[11-21 15:00:31]-[line:54]-FuncName:info-(time:536765)-INFO: the code 600200,has been done from 2017-07-13
+
+[11-21 15:00:54]-[line:54]-FuncName:info-(time:559932)-INFO: the code 600200,has been done from 2017-07-14
+
+[11-21 15:00:57]-[line:54]-FuncName:info-(time:563262)-INFO: the code 600200,has been done from 2017-07-17
+
+[11-21 15:01:04]-[line:54]-FuncName:info-(time:569342)-INFO: the code 600200,has been done from 2017-07-18
+
+[11-21 15:01:16]-[line:54]-FuncName:info-(time:581775)-INFO: the code 600200,has been done from 2017-07-19
+
+[11-21 15:01:20]-[line:54]-FuncName:info-(time:585800)-INFO: the code 600200,has been done from 2017-07-20
+
+[11-21 15:01:23]-[line:54]-FuncName:info-(time:589107)-INFO: the code 600200,has been done from 2017-07-21
+
+[11-21 15:01:27]-[line:54]-FuncName:info-(time:593226)-INFO: the code 600200,has been done from 2017-07-24
+
+[11-21 15:01:33]-[line:54]-FuncName:info-(time:599232)-INFO: the code 600200,has been done from 2017-07-25
+
+[11-21 15:01:38]-[line:54]-FuncName:info-(time:604064)-INFO: the code 600200,has been done from 2017-07-26
+
+[11-21 15:01:42]-[line:54]-FuncName:info-(time:607995)-INFO: the code 600200,has been done from 2017-07-27
+
+[11-21 15:01:46]-[line:54]-FuncName:info-(time:611505)-INFO: the code 600200,has been done from 2017-07-28
+
+[11-21 15:01:49]-[line:54]-FuncName:info-(time:614438)-INFO: the code 600200,has been done from 2017-07-31
+
+[11-21 15:01:52]-[line:54]-FuncName:info-(time:617746)-INFO: the code 600200,has been done from 2017-08-01
+
+[11-21 15:01:56]-[line:54]-FuncName:info-(time:621770)-INFO: the code 600200,has been done from 2017-08-02
+
+[11-21 15:01:59]-[line:54]-FuncName:info-(time:624672)-INFO: the code 600200,has been done from 2017-08-03
+
+[11-21 15:02:02]-[line:54]-FuncName:info-(time:628245)-INFO: the code 600200,has been done from 2017-08-04
+
+[11-21 15:02:07]-[line:54]-FuncName:info-(time:632893)-INFO: the code 600200,has been done from 2017-08-07
+
+[11-21 15:02:11]-[line:54]-FuncName:info-(time:636528)-INFO: the code 600200,has been done from 2017-08-08
+
+[11-21 15:02:17]-[line:54]-FuncName:info-(time:642802)-INFO: the code 600200,has been done from 2017-08-09
+
+[11-21 15:02:21]-[line:54]-FuncName:info-(time:646593)-INFO: the code 600200,has been done from 2017-08-10
+
+[11-21 15:02:24]-[line:54]-FuncName:info-(time:649947)-INFO: the code 600200,has been done from 2017-08-11
+
+[11-21 15:02:27]-[line:54]-FuncName:info-(time:653004)-INFO: the code 600200,has been done from 2017-08-14
+
+[11-21 15:02:30]-[line:54]-FuncName:info-(time:656078)-INFO: the code 600200,has been done from 2017-08-15
+
+[11-21 15:02:33]-[line:54]-FuncName:info-(time:659089)-INFO: the code 600200,has been done from 2017-08-16
+
+[11-21 15:02:36]-[line:54]-FuncName:info-(time:662271)-INFO: the code 600200,has been done from 2017-08-17
+
+[11-21 15:02:43]-[line:54]-FuncName:info-(time:668609)-INFO: the code 600200,has been done from 2017-08-18
+
+[11-21 15:02:48]-[line:54]-FuncName:info-(time:673741)-INFO: the code 600200,has been done from 2017-08-21
+
+[11-21 15:02:51]-[line:54]-FuncName:info-(time:676959)-INFO: the code 600200,has been done from 2017-08-22
+
+[11-21 15:02:55]-[line:54]-FuncName:info-(time:680377)-INFO: the code 600200,has been done from 2017-08-23
+
+[11-21 15:02:58]-[line:54]-FuncName:info-(time:683723)-INFO: the code 600200,has been done from 2017-08-24
+
+[11-21 15:03:01]-[line:54]-FuncName:info-(time:686510)-INFO: the code 600200,has been done from 2017-08-25
+
+[11-21 15:03:05]-[line:54]-FuncName:info-(time:690682)-INFO: the code 600200,has been done from 2017-08-28
+
+[11-21 15:03:08]-[line:54]-FuncName:info-(time:693427)-INFO: the code 600200,has been done from 2017-08-29
+
+[11-21 15:03:10]-[line:54]-FuncName:info-(time:696110)-INFO: the code 600200,has been done from 2017-08-30
+
+[11-21 15:03:14]-[line:54]-FuncName:info-(time:699862)-INFO: the code 600200,has been done from 2017-08-31
+
+[11-21 15:03:17]-[line:54]-FuncName:info-(time:703058)-INFO: the code 600200,has been done from 2017-09-01
+
+[11-21 15:03:26]-[line:54]-FuncName:info-(time:711990)-INFO: the code 600200,has been done from 2017-09-04
+
+[11-21 15:03:32]-[line:54]-FuncName:info-(time:717658)-INFO: the code 600200,has been done from 2017-09-05
+
+[11-21 15:03:39]-[line:54]-FuncName:info-(time:724324)-INFO: the code 600200,has been done from 2017-09-06
+
+[11-21 15:03:42]-[line:54]-FuncName:info-(time:727912)-INFO: the code 600200,has been done from 2017-09-07
+
+[11-21 15:03:47]-[line:54]-FuncName:info-(time:732623)-INFO: the code 600200,has been done from 2017-09-08
+
+[11-21 15:03:52]-[line:54]-FuncName:info-(time:737366)-INFO: the code 600200,has been done from 2017-09-11
+
+[11-21 15:03:58]-[line:54]-FuncName:info-(time:743481)-INFO: the code 600200,has been done from 2017-09-12
+
+[11-21 15:04:02]-[line:54]-FuncName:info-(time:748176)-INFO: the code 600200,has been done from 2017-09-13
+
+[11-21 15:04:07]-[line:54]-FuncName:info-(time:752428)-INFO: the code 600200,has been done from 2017-09-14
+
+[11-21 15:04:12]-[line:54]-FuncName:info-(time:758293)-INFO: the code 600200,has been done from 2017-09-15
+
+[11-21 15:04:19]-[line:54]-FuncName:info-(time:765288)-INFO: the code 600200,has been done from 2017-09-18
+
+[11-21 15:04:23]-[line:54]-FuncName:info-(time:768677)-INFO: the code 600200,has been done from 2017-09-19
+
+[11-21 15:04:27]-[line:54]-FuncName:info-(time:772465)-INFO: the code 600200,has been done from 2017-09-20
+
+[11-21 15:04:30]-[line:54]-FuncName:info-(time:776116)-INFO: the code 600200,has been done from 2017-09-21
+
+[11-21 15:04:36]-[line:54]-FuncName:info-(time:782262)-INFO: the code 600200,has been done from 2017-09-22
+
+[11-21 15:04:40]-[line:54]-FuncName:info-(time:785491)-INFO: the code 600200,has been done from 2017-09-25
+
+[11-21 15:04:44]-[line:54]-FuncName:info-(time:789345)-INFO: the code 600200,has been done from 2017-09-26
+
+[11-21 15:04:46]-[line:54]-FuncName:info-(time:792184)-INFO: the code 600200,has been done from 2017-09-27
+
+[11-21 15:04:50]-[line:54]-FuncName:info-(time:796131)-INFO: the code 600200,has been done from 2017-09-28
+
+[11-21 15:04:54]-[line:54]-FuncName:info-(time:799360)-INFO: the code 600200,has been done from 2017-09-29
+
+[11-21 15:04:59]-[line:54]-FuncName:info-(time:805085)-INFO: the code 600200,has been done from 2017-10-09
+
+[11-21 15:05:03]-[line:54]-FuncName:info-(time:808689)-INFO: the code 600200,has been done from 2017-10-10
+
+[11-21 15:05:07]-[line:54]-FuncName:info-(time:812776)-INFO: the code 600200,has been done from 2017-10-11
+
+[11-21 15:05:12]-[line:54]-FuncName:info-(time:817534)-INFO: the code 600200,has been done from 2017-10-12
+
+[11-21 15:05:16]-[line:54]-FuncName:info-(time:821668)-INFO: the code 600200,has been done from 2017-10-13
+
+[11-21 15:05:21]-[line:54]-FuncName:info-(time:826582)-INFO: the code 600200,has been done from 2017-10-16
+
+[11-21 15:05:24]-[line:54]-FuncName:info-(time:829858)-INFO: the code 600200,has been done from 2017-10-17
+
+[11-21 15:05:27]-[line:54]-FuncName:info-(time:832698)-INFO: the code 600200,has been done from 2017-10-18
+
+[11-21 15:05:31]-[line:54]-FuncName:info-(time:836410)-INFO: the code 600200,has been done from 2017-10-19
+
+[11-21 15:05:37]-[line:54]-FuncName:info-(time:843009)-INFO: the code 600200,has been done from 2017-10-20
+
+[11-21 15:05:40]-[line:54]-FuncName:info-(time:845677)-INFO: the code 600200,has been done from 2017-10-23
+
+[11-21 15:05:44]-[line:54]-FuncName:info-(time:849330)-INFO: the code 600200,has been done from 2017-10-24
+
+[11-21 15:05:46]-[line:54]-FuncName:info-(time:852060)-INFO: the code 600200,has been done from 2017-10-25
+
+[11-21 15:05:51]-[line:54]-FuncName:info-(time:856881)-INFO: the code 600200,has been done from 2017-10-26
+
+[11-21 15:05:55]-[line:54]-FuncName:info-(time:860422)-INFO: the code 600200,has been done from 2017-10-27
+
+[11-21 15:05:58]-[line:54]-FuncName:info-(time:864072)-INFO: the code 600200,has been done from 2017-10-30
+
+[11-21 15:06:01]-[line:54]-FuncName:info-(time:866943)-INFO: the code 600200,has been done from 2017-10-31
+
+[11-21 15:06:05]-[line:54]-FuncName:info-(time:870624)-INFO: the code 600200,has been done from 2017-11-01
+
+[11-21 15:06:08]-[line:54]-FuncName:info-(time:873713)-INFO: the code 600200,has been done from 2017-11-02
+
+[11-21 15:06:22]-[line:54]-FuncName:info-(time:888159)-INFO: the code 600200,has been done from 2017-11-03
+
+[11-21 15:06:25]-[line:54]-FuncName:info-(time:891263)-INFO: the code 600200,has been done from 2017-11-06
+
+[11-21 15:06:28]-[line:54]-FuncName:info-(time:893931)-INFO: the code 600200,has been done from 2017-11-07
+
+[11-21 15:06:31]-[line:54]-FuncName:info-(time:896646)-INFO: the code 600200,has been done from 2017-11-08
+
+[11-21 15:06:34]-[line:54]-FuncName:info-(time:899422)-INFO: the code 600200,has been done from 2017-11-09
+
+[11-21 15:06:44]-[line:54]-FuncName:info-(time:910290)-INFO: the code 600200,has been done from 2017-11-10
+
+[11-21 15:06:48]-[line:54]-FuncName:info-(time:913633)-INFO: the code 600200,has been done from 2017-11-13
+
+[11-21 15:06:53]-[line:54]-FuncName:info-(time:918563)-INFO: the code 600200,has been done from 2017-11-14
+
+[11-21 15:06:56]-[line:54]-FuncName:info-(time:921371)-INFO: the code 600200,has been done from 2017-11-15
+
+[11-21 15:06:59]-[line:54]-FuncName:info-(time:924597)-INFO: the code 600200,has been done from 2017-11-16
+
+[11-21 15:07:02]-[line:54]-FuncName:info-(time:927548)-INFO: the code 600200,has been done from 2017-11-17
+
+[11-21 15:07:05]-[line:54]-FuncName:info-(time:931322)-INFO: the code 600200,has been done from 2017-11-20
+
+[11-21 16:47:12]-[line:54]-FuncName:info-(time:3109)-INFO: ================计算筹码分布模块================
+[11-21 16:47:12]-[line:54]-FuncName:info-(time:3109)-INFO: 601163：from 2016-12-31 to 2017-11-21
+[11-21 16:48:25]-[line:54]-FuncName:info-(time:2246)-INFO: ================计算筹码分布模块================
+[11-21 16:48:25]-[line:54]-FuncName:info-(time:2246)-INFO: 601163：from 2016-12-31 to 2017-11-21
+[11-21 16:48:26]-[line:54]-FuncName:info-(time:3244)-INFO: the code 601163,has been done from 2016-12-31
+
+[11-21 16:48:29]-[line:54]-FuncName:info-(time:6614)-INFO: the code 601163,has been done from 2017-01-04
+
+[11-21 16:48:32]-[line:54]-FuncName:info-(time:9328)-INFO: the code 601163,has been done from 2017-01-05
+
+[11-21 16:48:35]-[line:54]-FuncName:info-(time:12511)-INFO: the code 601163,has been done from 2017-01-06
+
+[11-21 16:48:38]-[line:54]-FuncName:info-(time:15350)-INFO: the code 601163,has been done from 2017-01-09
+
+[11-21 16:48:41]-[line:54]-FuncName:info-(time:18002)-INFO: the code 601163,has been done from 2017-01-10
+
+[11-21 16:48:44]-[line:54]-FuncName:info-(time:20904)-INFO: the code 601163,has been done from 2017-01-11
+
+[11-21 16:48:47]-[line:54]-FuncName:info-(time:23774)-INFO: the code 601163,has been done from 2017-01-12
+
+[11-21 16:48:49]-[line:54]-FuncName:info-(time:26613)-INFO: the code 601163,has been done from 2017-01-13
+
+[11-21 16:48:52]-[line:54]-FuncName:info-(time:29577)-INFO: the code 601163,has been done from 2017-01-16
+
+[11-21 16:48:56]-[line:54]-FuncName:info-(time:32760)-INFO: the code 601163,has been done from 2017-01-17
+
+[11-21 16:48:58]-[line:54]-FuncName:info-(time:35459)-INFO: the code 601163,has been done from 2017-01-18
+
+[11-21 16:49:01]-[line:54]-FuncName:info-(time:38204)-INFO: the code 601163,has been done from 2017-01-19
+
+[11-21 16:49:04]-[line:54]-FuncName:info-(time:41090)-INFO: the code 601163,has been done from 2017-01-20
+
+[11-21 16:49:07]-[line:54]-FuncName:info-(time:44148)-INFO: the code 601163,has been done from 2017-01-23
+
+[11-21 16:49:10]-[line:54]-FuncName:info-(time:46769)-INFO: the code 601163,has been done from 2017-01-24
+
+[11-21 16:49:12]-[line:54]-FuncName:info-(time:49390)-INFO: the code 601163,has been done from 2017-01-25
+
+[11-21 16:49:15]-[line:54]-FuncName:info-(time:52120)-INFO: the code 601163,has been done from 2017-01-26
+
+[11-21 16:49:18]-[line:54]-FuncName:info-(time:54912)-INFO: the code 601163,has been done from 2017-02-03
+
+[11-21 16:49:20]-[line:54]-FuncName:info-(time:57595)-INFO: the code 601163,has been done from 2017-02-06
+
+[11-21 16:49:23]-[line:54]-FuncName:info-(time:60435)-INFO: the code 601163,has been done from 2017-02-07
+
+[11-21 16:49:26]-[line:54]-FuncName:info-(time:63524)-INFO: the code 601163,has been done from 2017-02-08
+
+[11-21 16:49:29]-[line:54]-FuncName:info-(time:66254)-INFO: the code 601163,has been done from 2017-02-09
+
+[11-21 16:49:32]-[line:54]-FuncName:info-(time:68937)-INFO: the code 601163,has been done from 2017-02-10
+
+[11-21 16:49:35]-[line:54]-FuncName:info-(time:71916)-INFO: the code 601163,has been done from 2017-02-13
+
+[11-21 16:49:38]-[line:54]-FuncName:info-(time:75021)-INFO: the code 601163,has been done from 2017-02-14
+
+[11-21 16:49:40]-[line:54]-FuncName:info-(time:77720)-INFO: the code 601163,has been done from 2017-02-15
+
+[11-21 16:49:43]-[line:54]-FuncName:info-(time:80637)-INFO: the code 601163,has been done from 2017-02-16
+
+[11-21 16:49:47]-[line:54]-FuncName:info-(time:83944)-INFO: the code 601163,has been done from 2017-02-17
+
+[11-21 16:49:50]-[line:54]-FuncName:info-(time:87127)-INFO: the code 601163,has been done from 2017-02-20
+
+[11-21 16:49:53]-[line:54]-FuncName:info-(time:90013)-INFO: the code 601163,has been done from 2017-02-21
+
+[11-21 16:49:56]-[line:54]-FuncName:info-(time:92805)-INFO: the code 601163,has been done from 2017-02-22
+
+[11-21 16:49:59]-[line:54]-FuncName:info-(time:95832)-INFO: the code 601163,has been done from 2017-02-23
+
+[11-21 16:50:01]-[line:54]-FuncName:info-(time:98702)-INFO: the code 601163,has been done from 2017-02-24
+
+[11-21 16:50:04]-[line:54]-FuncName:info-(time:101713)-INFO: the code 601163,has been done from 2017-02-27
+
+[11-21 16:50:07]-[line:54]-FuncName:info-(time:104677)-INFO: the code 601163,has been done from 2017-02-28
+
+[11-21 16:50:10]-[line:54]-FuncName:info-(time:107360)-INFO: the code 601163,has been done from 2017-03-01
+
+[11-21 16:50:13]-[line:54]-FuncName:info-(time:110340)-INFO: the code 601163,has been done from 2017-03-02
+
+[11-21 16:50:16]-[line:54]-FuncName:info-(time:113257)-INFO: the code 601163,has been done from 2017-03-03
+
+[11-21 16:50:19]-[line:54]-FuncName:info-(time:115909)-INFO: the code 601163,has been done from 2017-03-06
+
+[11-21 16:50:22]-[line:54]-FuncName:info-(time:118873)-INFO: the code 601163,has been done from 2017-03-07
+
+[11-21 16:50:25]-[line:54]-FuncName:info-(time:121775)-INFO: the code 601163,has been done from 2017-03-08
+
+[11-21 16:50:28]-[line:54]-FuncName:info-(time:124817)-INFO: the code 601163,has been done from 2017-03-09
+
+[11-21 16:50:30]-[line:54]-FuncName:info-(time:127500)-INFO: the code 601163,has been done from 2017-03-10
+
+[11-21 16:50:33]-[line:54]-FuncName:info-(time:130386)-INFO: the code 601163,has been done from 2017-03-13
+
+[11-21 16:50:36]-[line:54]-FuncName:info-(time:133444)-INFO: the code 601163,has been done from 2017-03-14
+
+[11-21 16:50:39]-[line:54]-FuncName:info-(time:136158)-INFO: the code 601163,has been done from 2017-03-15
+
+[11-21 16:50:42]-[line:54]-FuncName:info-(time:138935)-INFO: the code 601163,has been done from 2017-03-16
+
+[11-21 16:50:45]-[line:54]-FuncName:info-(time:141930)-INFO: the code 601163,has been done from 2017-03-17
+
+[11-21 16:50:48]-[line:54]-FuncName:info-(time:144785)-INFO: the code 601163,has been done from 2017-03-20
+
+[11-21 16:50:50]-[line:54]-FuncName:info-(time:147515)-INFO: the code 601163,has been done from 2017-03-21
+
+[11-21 16:50:53]-[line:54]-FuncName:info-(time:150417)-INFO: the code 601163,has been done from 2017-03-22
+
+[11-21 16:50:57]-[line:54]-FuncName:info-(time:154285)-INFO: the code 601163,has been done from 2017-03-23
+
+[11-21 16:51:00]-[line:54]-FuncName:info-(time:157234)-INFO: the code 601163,has been done from 2017-03-24
+
+[11-21 16:51:03]-[line:54]-FuncName:info-(time:160260)-INFO: the code 601163,has been done from 2017-03-27
+
+[11-21 16:51:06]-[line:54]-FuncName:info-(time:163318)-INFO: the code 601163,has been done from 2017-03-28
+
+[11-21 16:51:09]-[line:54]-FuncName:info-(time:166376)-INFO: the code 601163,has been done from 2017-03-29
+
+[11-21 16:51:12]-[line:54]-FuncName:info-(time:169199)-INFO: the code 601163,has been done from 2017-03-30
+
+[11-21 16:51:15]-[line:54]-FuncName:info-(time:172070)-INFO: the code 601163,has been done from 2017-03-31
+
+[11-21 16:51:18]-[line:54]-FuncName:info-(time:174909)-INFO: the code 601163,has been done from 2017-04-05
+
+[11-21 16:51:20]-[line:54]-FuncName:info-(time:177639)-INFO: the code 601163,has been done from 2017-04-06
+
+[11-21 16:51:23]-[line:54]-FuncName:info-(time:180463)-INFO: the code 601163,has been done from 2017-04-07
+
+[11-21 16:51:26]-[line:54]-FuncName:info-(time:183489)-INFO: the code 601163,has been done from 2017-04-10
+
+[11-21 16:51:30]-[line:54]-FuncName:info-(time:186921)-INFO: the code 601163,has been done from 2017-04-11
+
+[11-21 16:51:33]-[line:54]-FuncName:info-(time:189745)-INFO: the code 601163,has been done from 2017-04-12
+
+[11-21 16:51:35]-[line:54]-FuncName:info-(time:192412)-INFO: the code 601163,has been done from 2017-04-13
+
+[11-21 16:51:38]-[line:54]-FuncName:info-(time:195345)-INFO: the code 601163,has been done from 2017-04-14
+
+[11-21 16:51:41]-[line:54]-FuncName:info-(time:197966)-INFO: the code 601163,has been done from 2017-04-17
+
+[11-21 16:51:44]-[line:54]-FuncName:info-(time:201117)-INFO: the code 601163,has been done from 2017-04-18
+
+[11-21 16:51:47]-[line:54]-FuncName:info-(time:204128)-INFO: the code 601163,has been done from 2017-04-19
+
+[11-21 16:51:50]-[line:54]-FuncName:info-(time:206811)-INFO: the code 601163,has been done from 2017-04-20
+
+[11-21 16:51:53]-[line:54]-FuncName:info-(time:209900)-INFO: the code 601163,has been done from 2017-04-21
+
+[11-21 16:51:56]-[line:54]-FuncName:info-(time:212833)-INFO: the code 601163,has been done from 2017-04-24
+
+[11-21 16:51:58]-[line:54]-FuncName:info-(time:215547)-INFO: the code 601163,has been done from 2017-04-25
+
+[11-21 16:52:01]-[line:54]-FuncName:info-(time:218309)-INFO: the code 601163,has been done from 2017-04-26
+
+[11-21 16:52:04]-[line:54]-FuncName:info-(time:221366)-INFO: the code 601163,has been done from 2017-04-27
+
+[11-21 16:52:07]-[line:54]-FuncName:info-(time:224096)-INFO: the code 601163,has been done from 2017-04-28
+
+[11-21 16:52:10]-[line:54]-FuncName:info-(time:226748)-INFO: the code 601163,has been done from 2017-05-02
+
+[11-21 16:52:12]-[line:54]-FuncName:info-(time:229338)-INFO: the code 601163,has been done from 2017-05-03
+
+[11-21 16:52:15]-[line:54]-FuncName:info-(time:232240)-INFO: the code 601163,has been done from 2017-05-04
+
+[11-21 16:52:18]-[line:54]-FuncName:info-(time:235032)-INFO: the code 601163,has been done from 2017-05-05
+
+[11-21 16:52:20]-[line:54]-FuncName:info-(time:237669)-INFO: the code 601163,has been done from 2017-05-08
+
+[11-21 16:52:23]-[line:54]-FuncName:info-(time:240383)-INFO: the code 601163,has been done from 2017-05-09
+
+[11-21 16:52:26]-[line:54]-FuncName:info-(time:243144)-INFO: the code 601163,has been done from 2017-05-10
+
+[11-21 16:52:29]-[line:54]-FuncName:info-(time:245921)-INFO: the code 601163,has been done from 2017-05-11
+
+[11-21 16:52:31]-[line:54]-FuncName:info-(time:248635)-INFO: the code 601163,has been done from 2017-05-12
+
+[11-21 16:52:34]-[line:54]-FuncName:info-(time:251319)-INFO: the code 601163,has been done from 2017-05-15
+
+[11-21 16:52:38]-[line:54]-FuncName:info-(time:254860)-INFO: the code 601163,has been done from 2017-05-16
+
+[11-21 16:52:41]-[line:54]-FuncName:info-(time:257746)-INFO: the code 601163,has been done from 2017-05-17
+
+[11-21 16:52:43]-[line:54]-FuncName:info-(time:260679)-INFO: the code 601163,has been done from 2017-05-18
+
+[11-21 16:52:46]-[line:54]-FuncName:info-(time:263565)-INFO: the code 601163,has been done from 2017-05-19
+
+[11-21 16:52:49]-[line:54]-FuncName:info-(time:266509)-INFO: the code 601163,has been done from 2017-05-22
+
+[11-21 16:52:52]-[line:54]-FuncName:info-(time:269317)-INFO: the code 601163,has been done from 2017-05-23
+
+[11-21 16:52:55]-[line:54]-FuncName:info-(time:272125)-INFO: the code 601163,has been done from 2017-05-24
+
+[11-21 16:52:58]-[line:54]-FuncName:info-(time:275120)-INFO: the code 601163,has been done from 2017-05-25
+
+[11-21 16:53:01]-[line:54]-FuncName:info-(time:277850)-INFO: the code 601163,has been done from 2017-05-26
+
+[11-21 16:53:03]-[line:54]-FuncName:info-(time:280658)-INFO: the code 601163,has been done from 2017-05-31
+
+[11-21 16:53:06]-[line:54]-FuncName:info-(time:283638)-INFO: the code 601163,has been done from 2017-06-01
+
+[11-21 16:53:09]-[line:54]-FuncName:info-(time:286508)-INFO: the code 601163,has been done from 2017-06-02
+
+[11-21 16:53:12]-[line:54]-FuncName:info-(time:289270)-INFO: the code 601163,has been done from 2017-06-05
+
+[11-21 16:53:15]-[line:54]-FuncName:info-(time:292046)-INFO: the code 601163,has been done from 2017-06-06
+
+[11-21 16:53:18]-[line:54]-FuncName:info-(time:294979)-INFO: the code 601163,has been done from 2017-06-07
+
+[11-21 16:53:20]-[line:54]-FuncName:info-(time:297569)-INFO: the code 601163,has been done from 2017-06-08
+
+[11-21 16:53:23]-[line:54]-FuncName:info-(time:300283)-INFO: the code 601163,has been done from 2017-06-09
+
+[11-21 16:53:26]-[line:54]-FuncName:info-(time:303154)-INFO: the code 601163,has been done from 2017-06-12
+
+[11-21 16:53:29]-[line:54]-FuncName:info-(time:305931)-INFO: the code 601163,has been done from 2017-06-13
+
+[11-21 16:53:31]-[line:54]-FuncName:info-(time:308567)-INFO: the code 601163,has been done from 2017-06-14
+
+[11-21 16:53:34]-[line:54]-FuncName:info-(time:311375)-INFO: the code 601163,has been done from 2017-06-15
+
+[11-21 16:53:37]-[line:54]-FuncName:info-(time:314090)-INFO: the code 601163,has been done from 2017-06-16
+
+[11-21 16:53:39]-[line:54]-FuncName:info-(time:316570)-INFO: the code 601163,has been done from 2017-06-19
+
+[11-21 16:53:42]-[line:54]-FuncName:info-(time:319128)-INFO: the code 601163,has been done from 2017-06-20
+
+[11-21 16:53:45]-[line:54]-FuncName:info-(time:321858)-INFO: the code 601163,has been done from 2017-06-21
+
+[11-21 16:53:48]-[line:54]-FuncName:info-(time:324854)-INFO: the code 601163,has been done from 2017-06-22
+
+[11-21 16:53:50]-[line:54]-FuncName:info-(time:327615)-INFO: the code 601163,has been done from 2017-06-23
+
+[11-21 16:53:53]-[line:54]-FuncName:info-(time:330392)-INFO: the code 601163,has been done from 2017-06-26
+
+[11-21 16:53:56]-[line:54]-FuncName:info-(time:333091)-INFO: the code 601163,has been done from 2017-06-27
+
+[11-21 16:53:59]-[line:54]-FuncName:info-(time:335743)-INFO: the code 601163,has been done from 2017-06-28
+
+[11-21 16:54:01]-[line:54]-FuncName:info-(time:338301)-INFO: the code 601163,has been done from 2017-06-29
+
+[11-21 16:54:04]-[line:54]-FuncName:info-(time:341047)-INFO: the code 601163,has been done from 2017-06-30
+
+[11-21 16:54:06]-[line:54]-FuncName:info-(time:343714)-INFO: the code 601163,has been done from 2017-07-03
+
+[11-21 16:54:09]-[line:54]-FuncName:info-(time:346288)-INFO: the code 601163,has been done from 2017-07-04
+
+[11-21 16:54:12]-[line:54]-FuncName:info-(time:348878)-INFO: the code 601163,has been done from 2017-07-05
+
+[11-21 16:54:14]-[line:54]-FuncName:info-(time:351499)-INFO: the code 601163,has been done from 2017-07-06
+
+[11-21 16:54:17]-[line:54]-FuncName:info-(time:354213)-INFO: the code 601163,has been done from 2017-07-07
+
+[11-21 16:54:20]-[line:54]-FuncName:info-(time:356756)-INFO: the code 601163,has been done from 2017-07-10
+
+[11-21 16:54:22]-[line:54]-FuncName:info-(time:359361)-INFO: the code 601163,has been done from 2017-07-11
+
+[11-21 16:54:25]-[line:54]-FuncName:info-(time:362169)-INFO: the code 601163,has been done from 2017-07-12
+
+[11-21 16:54:28]-[line:54]-FuncName:info-(time:365492)-INFO: the code 601163,has been done from 2017-07-13
+
+[11-21 16:54:31]-[line:54]-FuncName:info-(time:368004)-INFO: the code 601163,has been done from 2017-07-14
+
+[11-21 16:54:34]-[line:54]-FuncName:info-(time:370968)-INFO: the code 601163,has been done from 2017-07-17
+
+[11-21 16:54:37]-[line:54]-FuncName:info-(time:373854)-INFO: the code 601163,has been done from 2017-07-18
+
+[11-21 16:54:39]-[line:54]-FuncName:info-(time:376506)-INFO: the code 601163,has been done from 2017-07-19
+
+[11-21 16:54:42]-[line:54]-FuncName:info-(time:379096)-INFO: the code 601163,has been done from 2017-07-20
+
+[11-21 16:54:45]-[line:54]-FuncName:info-(time:381732)-INFO: the code 601163,has been done from 2017-07-21
+
+[11-21 16:54:47]-[line:54]-FuncName:info-(time:384618)-INFO: the code 601163,has been done from 2017-07-24
+
+[11-21 16:54:50]-[line:54]-FuncName:info-(time:387098)-INFO: the code 601163,has been done from 2017-07-25
+
+[11-21 16:54:52]-[line:54]-FuncName:info-(time:389657)-INFO: the code 601163,has been done from 2017-07-26
+
+[11-21 16:54:55]-[line:54]-FuncName:info-(time:392418)-INFO: the code 601163,has been done from 2017-07-27
+
+[11-21 16:54:58]-[line:54]-FuncName:info-(time:395211)-INFO: the code 601163,has been done from 2017-07-28
+
+[11-21 16:55:01]-[line:54]-FuncName:info-(time:398097)-INFO: the code 601163,has been done from 2017-07-31
+
+[11-21 16:55:04]-[line:54]-FuncName:info-(time:400873)-INFO: the code 601163,has been done from 2017-08-01
+
+[11-21 16:55:07]-[line:54]-FuncName:info-(time:403822)-INFO: the code 601163,has been done from 2017-08-02
+
+[11-21 16:55:09]-[line:54]-FuncName:info-(time:406458)-INFO: the code 601163,has been done from 2017-08-03
+
+[11-21 16:55:12]-[line:54]-FuncName:info-(time:409064)-INFO: the code 601163,has been done from 2017-08-04
+
+[11-21 16:55:16]-[line:54]-FuncName:info-(time:413026)-INFO: the code 601163,has been done from 2017-08-07
+
+[11-21 16:55:18]-[line:54]-FuncName:info-(time:415678)-INFO: the code 601163,has been done from 2017-08-08
+
+[11-21 16:55:21]-[line:54]-FuncName:info-(time:418299)-INFO: the code 601163,has been done from 2017-08-09
+
+[11-21 16:55:24]-[line:54]-FuncName:info-(time:421107)-INFO: the code 601163,has been done from 2017-08-10
+
+[11-21 16:55:27]-[line:54]-FuncName:info-(time:423853)-INFO: the code 601163,has been done from 2017-08-11
+
+[11-21 16:55:29]-[line:54]-FuncName:info-(time:426442)-INFO: the code 601163,has been done from 2017-08-14
+
+[11-21 16:55:32]-[line:54]-FuncName:info-(time:428985)-INFO: the code 601163,has been done from 2017-08-15
+
+[11-21 16:55:35]-[line:54]-FuncName:info-(time:431871)-INFO: the code 601163,has been done from 2017-08-16
+
+[11-21 16:55:38]-[line:54]-FuncName:info-(time:434726)-INFO: the code 601163,has been done from 2017-08-17
+
+[11-21 16:55:40]-[line:54]-FuncName:info-(time:437269)-INFO: the code 601163,has been done from 2017-08-18
+
+[11-21 16:55:43]-[line:54]-FuncName:info-(time:439858)-INFO: the code 601163,has been done from 2017-08-21
+
+[11-21 16:55:45]-[line:54]-FuncName:info-(time:442510)-INFO: the code 601163,has been done from 2017-08-22
+
+[11-21 16:55:48]-[line:54]-FuncName:info-(time:445178)-INFO: the code 601163,has been done from 2017-08-23
+
+[11-21 16:55:50]-[line:54]-FuncName:info-(time:447721)-INFO: the code 601163,has been done from 2017-08-24
+
+[11-21 16:55:53]-[line:54]-FuncName:info-(time:450420)-INFO: the code 601163,has been done from 2017-08-25
+
+[11-21 16:55:56]-[line:54]-FuncName:info-(time:453243)-INFO: the code 601163,has been done from 2017-08-28
+
+[11-21 16:55:59]-[line:54]-FuncName:info-(time:455989)-INFO: the code 601163,has been done from 2017-08-29
+
+[11-21 16:56:01]-[line:54]-FuncName:info-(time:458594)-INFO: the code 601163,has been done from 2017-08-30
+
+[11-21 16:56:04]-[line:54]-FuncName:info-(time:461324)-INFO: the code 601163,has been done from 2017-08-31
+
+[11-21 16:56:07]-[line:54]-FuncName:info-(time:464210)-INFO: the code 601163,has been done from 2017-09-01
+
+[11-21 16:56:10]-[line:54]-FuncName:info-(time:466956)-INFO: the code 601163,has been done from 2017-09-04
+
+[11-21 16:56:12]-[line:54]-FuncName:info-(time:469686)-INFO: the code 601163,has been done from 2017-09-05
+
+[11-21 16:56:15]-[line:54]-FuncName:info-(time:472400)-INFO: the code 601163,has been done from 2017-09-06
+
+[11-21 16:56:18]-[line:54]-FuncName:info-(time:475115)-INFO: the code 601163,has been done from 2017-09-07
+
+[11-21 16:56:20]-[line:54]-FuncName:info-(time:477720)-INFO: the code 601163,has been done from 2017-09-08
+
+[11-21 16:56:23]-[line:54]-FuncName:info-(time:480372)-INFO: the code 601163,has been done from 2017-09-11
+
+[11-21 16:56:26]-[line:54]-FuncName:info-(time:483071)-INFO: the code 601163,has been done from 2017-09-12
+
+[11-21 16:56:29]-[line:54]-FuncName:info-(time:485926)-INFO: the code 601163,has been done from 2017-09-13
+
+[11-21 16:56:31]-[line:54]-FuncName:info-(time:488515)-INFO: the code 601163,has been done from 2017-09-14
+
+[11-21 16:56:34]-[line:54]-FuncName:info-(time:491183)-INFO: the code 601163,has been done from 2017-09-15
+
+[11-21 16:56:37]-[line:54]-FuncName:info-(time:494287)-INFO: the code 601163,has been done from 2017-09-18
+
+[11-21 16:56:40]-[line:54]-FuncName:info-(time:496924)-INFO: the code 601163,has been done from 2017-09-19
+
+[11-21 16:56:42]-[line:54]-FuncName:info-(time:499451)-INFO: the code 601163,has been done from 2017-09-20
+
+[11-21 16:56:45]-[line:54]-FuncName:info-(time:502244)-INFO: the code 601163,has been done from 2017-09-21
+
+[11-21 16:56:48]-[line:54]-FuncName:info-(time:504911)-INFO: the code 601163,has been done from 2017-09-22
+
+[11-21 16:56:50]-[line:54]-FuncName:info-(time:507516)-INFO: the code 601163,has been done from 2017-09-25
+
+[11-21 16:56:53]-[line:54]-FuncName:info-(time:510044)-INFO: the code 601163,has been done from 2017-09-26
+
+[11-21 16:56:55]-[line:54]-FuncName:info-(time:512696)-INFO: the code 601163,has been done from 2017-09-27
+
+[11-21 16:56:58]-[line:54]-FuncName:info-(time:515473)-INFO: the code 601163,has been done from 2017-09-28
+
+[11-21 16:57:01]-[line:54]-FuncName:info-(time:518078)-INFO: the code 601163,has been done from 2017-09-29
+
+[11-21 16:57:03]-[line:54]-FuncName:info-(time:520652)-INFO: the code 601163,has been done from 2017-10-09
+
+[11-21 16:57:06]-[line:54]-FuncName:info-(time:523538)-INFO: the code 601163,has been done from 2017-10-10
+
+[11-21 16:57:09]-[line:54]-FuncName:info-(time:526221)-INFO: the code 601163,has been done from 2017-10-11
+
+[11-21 16:57:12]-[line:54]-FuncName:info-(time:528748)-INFO: the code 601163,has been done from 2017-10-12
+
+[11-21 16:57:14]-[line:54]-FuncName:info-(time:531447)-INFO: the code 601163,has been done from 2017-10-13
+
+[11-21 16:57:17]-[line:54]-FuncName:info-(time:534240)-INFO: the code 601163,has been done from 2017-10-16
+
+[11-21 16:57:20]-[line:54]-FuncName:info-(time:536860)-INFO: the code 601163,has been done from 2017-10-17
+
+[11-21 16:57:22]-[line:54]-FuncName:info-(time:539341)-INFO: the code 601163,has been done from 2017-10-18
+
+[11-21 16:57:25]-[line:54]-FuncName:info-(time:542071)-INFO: the code 601163,has been done from 2017-10-19
+
+[11-21 16:57:27]-[line:54]-FuncName:info-(time:544598)-INFO: the code 601163,has been done from 2017-10-20
+
+[11-21 16:57:30]-[line:54]-FuncName:info-(time:547032)-INFO: the code 601163,has been done from 2017-10-23
+
+[11-21 16:57:32]-[line:54]-FuncName:info-(time:549512)-INFO: the code 601163,has been done from 2017-10-24
+
+[11-21 16:57:35]-[line:54]-FuncName:info-(time:552102)-INFO: the code 601163,has been done from 2017-10-25
+
+[11-21 16:57:40]-[line:54]-FuncName:info-(time:557655)-INFO: the code 601163,has been done from 2017-10-26
+
+[11-21 16:57:43]-[line:54]-FuncName:info-(time:560167)-INFO: the code 601163,has been done from 2017-10-27
+
+[11-21 16:57:46]-[line:54]-FuncName:info-(time:562944)-INFO: the code 601163,has been done from 2017-10-30
+
+[11-21 16:57:48]-[line:54]-FuncName:info-(time:565534)-INFO: the code 601163,has been done from 2017-10-31
+
+[11-21 16:57:51]-[line:54]-FuncName:info-(time:567967)-INFO: the code 601163,has been done from 2017-11-01
+
+[11-21 16:57:53]-[line:54]-FuncName:info-(time:570448)-INFO: the code 601163,has been done from 2017-11-02
+
+[11-21 16:57:56]-[line:54]-FuncName:info-(time:573178)-INFO: the code 601163,has been done from 2017-11-03
+
+[11-21 16:57:59]-[line:54]-FuncName:info-(time:575845)-INFO: the code 601163,has been done from 2017-11-06
+
+[11-21 16:58:02]-[line:54]-FuncName:info-(time:578934)-INFO: the code 601163,has been done from 2017-11-07
+
+[11-21 16:58:04]-[line:54]-FuncName:info-(time:581539)-INFO: the code 601163,has been done from 2017-11-08
+
+[11-21 16:58:07]-[line:54]-FuncName:info-(time:584176)-INFO: the code 601163,has been done from 2017-11-09
+
+[11-21 16:58:10]-[line:54]-FuncName:info-(time:587483)-INFO: the code 601163,has been done from 2017-11-10
+
+[11-21 16:58:13]-[line:54]-FuncName:info-(time:590509)-INFO: the code 601163,has been done from 2017-11-13
+
+[11-21 16:58:16]-[line:54]-FuncName:info-(time:593364)-INFO: the code 601163,has been done from 2017-11-14
+
+[11-21 16:58:19]-[line:54]-FuncName:info-(time:596094)-INFO: the code 601163,has been done from 2017-11-15
+
+[11-21 16:58:22]-[line:54]-FuncName:info-(time:598731)-INFO: the code 601163,has been done from 2017-11-16
+
+[11-21 16:58:25]-[line:54]-FuncName:info-(time:601742)-INFO: the code 601163,has been done from 2017-11-17
+
+[11-21 16:58:27]-[line:54]-FuncName:info-(time:604565)-INFO: the code 601163,has been done from 2017-11-20
+
+[11-21 16:58:30]-[line:54]-FuncName:info-(time:606780)-INFO: the code 601163,has been done from 2017-11-21
+
+[11-21 16:58:30]-[line:57]-FuncName:war-(time:606780)-WARNING: 
+计算换手率数据下载错误：2017-11-21自动计算计算
+[11-21 16:58:30]-[line:60]-FuncName:error-(time:606780)-ERROR: 
+数据有问题中断本次：2017-11-21没有计算成功

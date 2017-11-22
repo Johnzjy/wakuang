@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu May  4 16:04:22 2017
-
-@author: 310128142
-"""
-
 import sys
 from qtpy.QtWidgets import QTreeWidgetItem,QMenu,QApplication,QAction,QMainWindow,QWidget
 from qtpy import QtGui,QtWidgets,QtCore
@@ -153,7 +146,8 @@ class Ui_MainWindow(object):
         self.main_Layout.setObjectName(_fromUtf8("main_Layout"))
         self.small_layout=QtWidgets.QGridLayout()
         self.small_layout.setObjectName(_fromUtf8("main_Layout"))
-        self.main_Layout.addLayout(self.small_layout)
+
+        
         
         self.main_Layout.setStretch(0,1)
         self.main_Layout.setStretch(1,1)
