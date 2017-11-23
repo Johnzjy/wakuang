@@ -84,17 +84,22 @@ def RSI_sorting(mode):
     list_code =list(DataFame_list.values)
     RSI_df=DataFame_list.set_index('code')
     RSI_df['RSI']=0
-    print(RSI_df)
+   
     endtime='%s'%datetime.date.today()
     starttime='2016-01-01'
     for code_name in tqdm.tqdm(list_code):
         try:
             rsi_=ti.RSI('%s'%code_name[0],starttime,endtime)
-            rsi_=rsi_.RSI[-1]
-            
+            rsi_=rsi_['RSI']
+          
+            #print(rsi_)
         except:
             continue
-        RSI_df.loc['%s'%code_name[0],'RSI']=rsi_    
+        for time_f,data in rsi_.iteritems():
+            time_str=str(time_f)[0:10]
+            
+            RSI_df.loc['%s'%code_name[0],time_str]=data
+        
     files_path= 'report/RSI_SORTING/%s'%mode
     if os.path.exists('report/RSI_SORTING') == False:
         os.mkdir('report/RSI_SORTING')
@@ -106,6 +111,7 @@ def RSI_sorting(mode):
 if __name__=="__main__":
 
     mode_='sz'
-    start_='2016-08-01'
-    end_='2017-09-27'
-    save_MACD_all(mode_,start_,end_)
+    start_='2016-10-01'
+    end_='2017-11-23'
+    #save_MACD_all(mode_,start_,end_)
+    RSI_sorting(mode_)
