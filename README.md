@@ -1,13 +1,13 @@
 wakuang
 =======
 wakuang 是一个平台包，支持python3.6
-#所需要的第三方库：
-`tushare`
-`TA-lib`
-`pandas`
-`PYQT4`
-`tqdm`
-`wechat-sdk`
+所需要的第三方库：
+    `tushare`
+    `TA-lib`
+    `pandas`
+    `PYQT4`
+    `tqdm`
+    `wechat-sdk`
 功能介绍
 --------
   data_contorl|
