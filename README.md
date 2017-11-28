@@ -30,7 +30,8 @@ wakuang 是一个平台包，支持python3.6.引入tuling API('http://www.tuling
             .. wechat_tuling.py ：微信和图灵机  
             .. Graph.py         ：GUI绘图  
             .. layout.py        ：GUIlayout  
-            .. logd.py          ：log文件 建立装饰包  
+            .. logd.py          ：log文件 建立装饰包 
+            
 版本             
 ---
 **0.0**
