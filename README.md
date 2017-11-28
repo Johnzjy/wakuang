@@ -10,7 +10,7 @@ wakuang 是一个平台包，支持python3.6.引入tuling API('http://www.tuling
     .. `PYQT4`  
     .. `tqdm`  
     .. `wechat-sdk`  
-    
+    .. `gmsdk-2.9.9-py3-none-any`(http://www.myquant.cn/gm2/downloads/)  
     
 功能介绍
 --------
