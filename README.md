@@ -10,12 +10,12 @@ wakuang 是一个平台包，支持python3.6
 `wechat-sdk`
 功能介绍
 --------
-data_contorl|
+  data_contorl|
             --CYQ.py :计算筹码分布
             --Daily_data_reporting.py :统计每天龙虎榜，机构大单 买入卖出情况 分5 日，15日，30日
             --Daily business hall.py  ：处理Daily_data_reporting中的数据
             --stock_unblocked.py  ：下载解禁股票
-scr         |
+  scr         |
             --Action_main.py   ：GUI下的执行文件
             --colors.py        ：字体颜色文件
             --config.py        ：config文件
