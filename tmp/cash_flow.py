@@ -10,34 +10,55 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 import numpy as np
+from pylab import * 
+mpl.rcParams['font.sans-serif'] = ['SimHei'] #显示中文
 today=datetime.date.today()
 
+Cash_item_dic={11:'management_cf',#经营活动产生的现金流量净额
+               24:'investment_cf',#投资活动产生的现金流量净额
+               37:'financing_cf'#融资活动产生的现金流量净额
+               }
+
+    
+    
 class Cash_flow(object):
-    def __init__(self,figSN=1):
+    def __init__(self,code_="600111",start_='2016-12-31',end_='2017-11-28'  ):
         
         self.today=datetime.date.today()
-        self.code="sh" 
-        self.startDate='2016-12-31'
-        
-        self.endDate='2017-11-28'       
-        self.fig=figSN  # this is show which figure 
+        self.code=code_
+        self.startDate=start_
+        self.endDate=end_   
+        self.fig=1  # this is show which figure 
         self.SN_plt=0  # show how many 
-        self.df=pd.DataFrame(self.get_date_ts())
-    def get_cf_data(self):
-        self.start_strp=datetime.datetime.strptime(self.startDate,"%Y-%m-%d")
-        self.cf_data=ts.get_cash_flow(self.code)
-        management_cf=self.cf_data.iloc[11]#经营活动产生的现金流量净额 (yuan)
-        management_cf=management_cf[1::]
-        management_cf.index=management_cf.index.map(lambda x:datetime.datetime.strptime(x,"%Y%m%d"))
-        investment_cf=self.cf_data.iloc[24]
-        investment_cf=investment_cf[1::]
-        investment_cf.index=investment_cf.index.map(lambda x:datetime.datetime.strptime(x,"%Y%m%d"))
-        financing_cf=self.cf_data.iloc[37]#筹资活动产生的现金流量净额
-        financing_cf=financing_cf[1::]
-        financing_cf.index=financing_cf.index.map(lambda x:datetime.datetime.strptime(x,"%Y%m%d"))
+        self.get_date_ts()
+     
         
         
+    def get_cf_data(self,Item_cf):
+        cash_name=Cash_item_dic[Item_cf] #get the item name from dict cash folw 
+        print (cash_name)
+        self.start_strp=datetime.datetime.strptime(self.startDate,"%Y-%m-%d")# deal datetime to strp
+        self.cf_data=ts.get_cash_flow(self.code) #get cash flow data
         
+        cash_flow_amount=self.cf_data.iloc[Item_cf]#经营活动产生的现金流量净额 (yuan)
+        cash_flow_amount=cash_flow_amount[1::] # pass title 
+        cash_flow_amount.index=cash_flow_amount.index.map(lambda x:datetime.datetime.strptime(x,"%Y%m%d"))# deal time
+        cash_flow_amount_temp=cash_flow_amount[cash_flow_amount.index>=self.start_strp]# 切片一段时间内的 cash flow 数据
+        self.MCF_last=cash_flow_amount[cash_flow_amount.index<self.start_strp].values[0]# 获取最后开始时候的cash flow
+        cash_flow_amount_temp=cash_flow_amount_temp.rename('%s_temp'%cash_name)#rename Item
+        self.code_data=self.code_data.join(cash_flow_amount_temp)# 将 cash flow  数据加入 总数据
+        self.code_data=self.code_data.fillna(value=0) # 去除 NAN 改成 0 方便判断
+        self.code_data[cash_name]=self.code_data['%s_temp'%cash_name].apply(lambda x :self.fill_zero(x)) # 除零 填数
+    
+    def fill_zero(self,x):
+         
+            if x==0:
+                
+                return self.MCF_last 
+            else:
+                self.MCF_last =x
+                return x
+            
         
     def get_date_ts(self):#获取开始数据
         
@@ -60,61 +81,23 @@ class Cash_flow(object):
             self.code_data.loc['%s'%self.today,'high']='%s'%realtime_high
             self.code_data.loc['%s'%self.today,'low']='%s'%realtime_low
             self.code_data.loc['%s'%self.today,'close']=realtime_price
+if __name__=="__main__":
+            
 
+    code="600362" 
+    startDate='2012-12-20'
+    endDate='2017-12-22' 
+    x=Cash_flow(code,startDate,endDate)
+    x.get_cf_data(11)
+    x.get_cf_data(24)
+    x.get_cf_data(37)
+    ax1=plt.subplot(111)
+          
+    plt.plot(x.code_data.index,x.code_data.close,"g")
     
-code='600111'
-start='2010-12-22'
-end='2017-12-12'
-start_strp=datetime.datetime.strptime(start,"%Y-%m-%d")
-pd=ts.get_cash_flow(code)
-pd.to_csv('cash.csv')
-item_name=pd['报表日期']
-year=pd.columns[1::]
-year=year.map(lambda x:datetime.datetime.strptime(x,"%Y%m%d"))
-management_cf=pd.iloc[11]#经营活动产生的现金流量净额 (yuan)
-management_cf=management_cf[1::]
-management_cf.index=management_cf.index.map(lambda x:datetime.datetime.strptime(x,"%Y%m%d"))
-investment_cf=pd.iloc[24]#投资活动产生的现金流量净额
-investment_cf=investment_cf[1::]
-investment_cf.index=investment_cf.index.map(lambda x:datetime.datetime.strptime(x,"%Y%m%d"))
-financing_cf=pd.iloc[37]#筹资活动产生的现金流量净额
-financing_cf=financing_cf[1::]
-financing_cf.index=financing_cf.index.map(lambda x:datetime.datetime.strptime(x,"%Y%m%d"))
-
-def get_date_ts(Code,startDate,endDate):#获取开始数据
-        
-    df=ts.get_k_data(Code,startDate,end=endDate)
-    
-    df=df.reset_index()
-    df=df.sort_index(ascending=True)# 从后倒序
-    df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-    df=df.set_index('date')
-    if endDate == '%s'%today:
-        realtime_price=ts.get_realtime_quotes(Code).price
-        realtime_price=float(realtime_price)
-        #print('当前价格：%s'%realtime_price)
-        df.loc['%s'%today,'close']=realtime_price
-    return df
-
-data=get_date_ts(code,start,end)
-z=management_cf[management_cf.index>=start_strp]
-LAST_NUMBER=management_cf[management_cf.index<start_strp].values[0]
-z=z.rename('management_cf_temp')
-b=data.join(z)
-b=b.fillna(value=0)
-def xxxmen(x):
-    global LAST_NUMBER
- 
-    if x==0:
-        
-        return LAST_NUMBER 
-    else:
-        LAST_NUMBER =x
-        return x
-
-b['management_cf']=b.management_cf_temp.apply(lambda x :xxxmen(x))
-ax1=plt.subplot(111)
-      
-plt.plot(b.index,b.close,"g")
-x2=ax1.twinx()#设立爽坐标
-plt.plot(b.index,b.management_cf,'r',label='Hilbert')
+    x2=ax1.twinx()#设立爽坐标
+    plt.plot(x.code_data.index,x.code_data.management_cf,'r',label=u'经营活动')
+    plt.plot(x.code_data.index,x.code_data.investment_cf,'b',label=u'投资活动')
+    plt.plot(x.code_data.index,x.code_data.financing_cf,'y',label=u'融资活动')
+    plt.legend(loc='best')
+    plt.show()
