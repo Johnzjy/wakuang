@@ -302,7 +302,7 @@ def draw_SAR(df): # 画加权平均指数
     plt.legend(loc='best')
     plt.grid(True)
 if __name__=="__main__":
-
+    plt.close()
    #399006 
     '''
    INDEX_LIST = {'sh': 'sh000001', 
@@ -316,11 +316,11 @@ if __name__=="__main__":
                  'zh500':'sh000905'}
    
     '''
-    code_='601212' 
-    start_='2016-10-31'
-    end_='2017-11-23'
+    code_="600111" 
+    start_='2016-10-01'
+    end_='2017-12-12'
     plt.figure(1)
-    VW=VWAP(code_,start_,end_)
+    VW=VWAP(code_,start_,end_) 
     draw_VWAP(VW)
     
     plt.figure(2)

@@ -112,6 +112,6 @@ if __name__=="__main__":
 
     mode_='sz'
     start_='2016-10-01'
-    end_='2017-11-23'
+    end_='2017-12-07'
     #save_MACD_all(mode_,start_,end_)
     RSI_sorting(mode_)

@@ -19,7 +19,7 @@ class My_index(object):
         
         self.today=datetime.date.today()
         self.code="sh" 
-        self.startDate='2017-10-31'
+        self.startDate='2016-12-31'
         self.endDate='2017-11-28'       
         self.MACD_fastperiod=10 #MACD快速参数
         self.MACD_slowperiod=20#MACD慢速参数

@@ -24,9 +24,9 @@ def remove_file(path,days=3):
     if duration > (days*24*360):
          print('this folder creat in %s,clear it!'%time.ctime(folder_status.st_ctime))
          shutil.rmtree(path)
-         print('   *'*14)
-         print('   *clear done!!*')
-         print('   *'*14)
+         print('      '+'*'*14)
+         print('      *clear done!!*')
+         print('      '+'*'*14)
     else :
         print('this object creation time less than %s days'%days)
     
@@ -43,9 +43,8 @@ def clear_macd():
             print('start clear, ----->[  %s  ]'%child_name)
             print('')
             remove_file(PATH_LV2,days=0)
-        print('干净')
     else:
-        print('干净')
+        pass
 if __name__=="__main__":
     clear_macd()
     

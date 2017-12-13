@@ -8,7 +8,7 @@ Created on Mon Nov 27 10:15:07 2017
 import itchat
 # tuling plugin can be get here:
 # https://github.com/littlecodersh/EasierLife/tree/master/Plugins/Tuling
-from tuling import get_response
+#from tuling import get_response
 import requests
 import json
 def talks_robot(info = '你叫什么名字'):
