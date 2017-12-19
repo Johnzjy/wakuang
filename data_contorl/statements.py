@@ -22,7 +22,7 @@ class Statements(object):
         
         self.set_year=y
      
-        self.set_quarter =q
+        self.set_quarter=q
 
 
 
@@ -142,9 +142,10 @@ class Statements(object):
         result_down=self.check_files()
         if result_down == False:
             self.performance()
-            print ('%s - %s downloading has done'%(self.set_year,self.set_quarter))
+       #     print ('%s - %s downloading has done'%(self.set_year,self.set_quarter))
         elif result_down == True:
-            print ('%s - %s already downloading'%(self.set_year,self.set_quarter))
+            pass
+        #    print ('%s - %s already downloading'%(self.set_year,self.set_quarter))
         data=pd.read_csv('../report/base_information/perfprmance_%s-%s.csv'%(self.set_year,self.set_quarter),encoding='gbk')
         data.code=data.code.map(lambda x:str(x).zfill(6))
 
