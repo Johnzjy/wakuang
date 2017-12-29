@@ -25,7 +25,7 @@ data_contorl
 * Daily_data_reporting.py : 统计每天龙虎榜，机构大单 买入卖出情况 分5 日，15日，30日  
 * Daily business hall.py ：处理Daily_data_reporting中的数据  #
 * stock_unblocked.py ：下载解禁股票
-* [technical_indicators](#technical_indicators)  
+* [technical_indicators](#technical_indicators)：技术指标
 scr           
 
 * Action_main.py   		：GUI下的执行文件  
@@ -41,23 +41,24 @@ Fun
 ### technical_indicators
 	* get_date_ts(Code,startDate,endDate):获取数据
 		* parameter
-			 >
 			 > Return:Dateframe
-			 > 
-			 > myMACD 
+			 > Code:代码
+			 > startDate:开始日期
+			 > endDate:结束日期
+			 
 To Do List
 ----------
-- [x]已做
-- [ ]未做做
-- Travis CI integration
-- Mail events：specify kinds of events
-- Gray released：specify servers
-- Websocket instead of poll
-- [ ]A manager of static source
-- [ ]Configure variables
-- [ ]Support Docker
-- [ ]Open api
-- [ ]Command line
+- [x] 已做
+- [ ] 未做做
+- [ ] Travis CI integration
+- [ ] Mail events：specify kinds of events
+- [ ] Gray released：specify servers
+- [ ] Websocket instead of poll
+- [ ] A manager of static source
+- [ ] Configure variables
+- [ ] Support Docker
+- [ ] Open api
+- [ ] Command line
 版本             
 ---
 **0.0**
