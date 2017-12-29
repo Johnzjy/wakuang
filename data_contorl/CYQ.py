@@ -115,7 +115,7 @@ def CYQ(code,start,end,download= False,CYQ_rate=1,files_path='../report/'):
 
     return cyq
 
-def Draw_jetton(code_j,start_j,end_j):
+def Draw_CYQ(code_j,start_j,end_j):
 
     df= ts.get_hist_data(code_j,start_j,end_j)
     df=df.reset_index()
@@ -166,6 +166,6 @@ if __name__ == "__main__":
     start_='2016-12-31'
     end_='2017-12-07'
     log_CYQ.info('%s：from %s to %s'%(code_,start_,end_))
-    Draw_jetton(code_,start_,end_)
+    Draw_CYQ(code_,start_,end_)
     plt.show()
 
