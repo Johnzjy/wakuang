@@ -1,13 +1,17 @@
 # ![wakuang][WK]  
-WaKuang(挖矿 by John zhang)
+WaKuang(挖矿 by John zhang)[![email](https://img.shields.io/badge/email-aprzephyr%40163.com-ff69b4.svg)](http://shields.io/) 
 =======
 [![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://travis-ci.org/meolu/walle-web)
 [![John.zhang](https://img.shields.io/badge/Powered_by-John_Zhang-green.svg?style=flat)](http://www.yiiframework.com/)
+[![PY Version](https://img.shields.io/pypi/pyversions/Django.svg)](http://shields.io/) 
+[![code size](https://img.shields.io/badge/code%20size-355k-orange.svg)](http://shields.io/) 
 
+### Installation
+------------
 Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金官方主页](https://www.myquant.cn/) 
 通过大数据处理，分析和挖掘二级市场波动变化。亦可以编写量化交易策略，引入Decision Tree等机器学习算法。
 
-### 所需要的第三方库：  
+##### 所需要的第三方库：  
     .. `tushare`  
     .. `TA-lib`  
     .. `pandas`  
