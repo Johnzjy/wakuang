@@ -1,21 +1,21 @@
 #! /usr/bin/env python
-#coding=gbk
+#-*- coding:utf-8 -*-
 import logging, os
+from functools import wraps
  
-class Logger:
-    def __init__(self, path='../scr/logfiles.log',clevel = logging.INFO,Flevel = logging.DEBUG):
+class Logger(object):
+    def __init__(self, path='../scr/logfiles.log',clevel = logging.WARNING,Flevel = logging.DEBUG):
         self.logger = logging.getLogger(path)
         self.logger.setLevel(logging.DEBUG)
-       # ´òÓ¡¸ñÊ½
         #prt_fmt = logging.Formatter('[%(asctime)s] [%(levelname)s]\n %(message)s', '%Y-%m-%d %H:%M:%S')
-        prt_fmt = logging.Formatter('[%(asctime)s] [%(levelname)s]\n %(message)s', '%H:%M:%S')
-        #fmt = logging.Formatter('%(filename)s-[%(asctime)s]-[%(levelname)s]-line:%(lineno)d\n%(message)s', '%Y-%m-%d %H:%M:%S')
-        fmt = logging.Formatter('%(levelname)s-[%(asctime)s]-%(message)s', '%m-%d %H:%M:%S')
-        #ÉèÖÃCMDÈÕÖ¾ PRINT ÆÁÄ»
+        prt_fmt = logging.Formatter('[%(asctime)s]-%(funcName)s-[%(levelname)s]\n %(message)s', '%H:%M:%S')
+        #log file to debug for delang
+        fmt = logging.Formatter('[%(asctime)s]-[line:%(lineno)d]-FuncName:%(funcName)s-(time:%(relativeCreated)d)-%(levelname)s: %(message)s', '%m-%d %H:%M:%S')
+     
         sh = logging.StreamHandler()
         sh.setFormatter(prt_fmt)
         sh.setLevel(clevel)
-        #ÉèÖÃÎÄ¼şÈÕÖ¾ ½¨Á¢ÎÄ¼ş¼Ğ
+     
         fh = logging.FileHandler(path)
         fh.setFormatter(fmt)
         fh.setLevel(Flevel)
@@ -23,8 +23,33 @@ class Logger:
         self.logger.addHandler(fh)
  
     def debug(self,message):
+        
         self.logger.debug(message)
- 
+    #è£…é¥°å™¨
+    def debug_fun(self,func):
+
+        @wraps(func)
+        def wrapped_function(*args, **kwargs):
+            log_string = "RUNNING <{}>".format(func.__name__)
+            #print(log_string)
+            self.logger.info(log_string)
+            
+# ç°åœ¨ï¼Œå‘é€ä¸€ä¸ªé€šçŸ¥
+            #self.notify()
+            try:
+
+                return func(*args, **kwargs)
+            except:
+                # log the exception
+                err = "There was an exception in "
+                err += func.__name__
+                self.logger.error(err)
+     
+                # re-raise the exception
+                raise
+
+        return wrapped_function
+    
     def info(self,message):
         self.logger.info(message)
  
@@ -35,11 +60,68 @@ class Logger:
         self.logger.error(message)
     def cri(self,message):
         self.logger.critical(message)
+        
+class logit(object):
+    def __init__(self, path='logfiles.log',clevel = logging.WARNING,Flevel = logging.DEBUG):
+        self.logger = logging.getLogger(path)
+        self.logger.setLevel(logging.DEBUG)
+        #prt_fmt = logging.Formatter('[%(asctime)s] [%(levelname)s]\n %(message)s', '%Y-%m-%d %H:%M:%S')
+        prt_fmt = logging.Formatter('[%(asctime)s]-%(funcName)s-[%(levelname)s]\n %(message)s', '%H:%M:%S')
+        #log file to debug for delang
+        fmt = logging.Formatter('[%(asctime)s]-%(funcName)s-%(levelname)s:%(message)s', '%m-%d %H:%M:%S')
+     
+        sh = logging.StreamHandler()
+        sh.setFormatter(prt_fmt)
+        sh.setLevel(clevel)
+     
+        fh = logging.FileHandler(path)
+        fh.setFormatter(fmt)
+        fh.setLevel(Flevel)
+        self.logger.addHandler(sh)
+        self.logger.addHandler(fh)
+    def __call__(self, func):
+        @wraps(func)
+        def wrapped_function(*args, **kwargs):
+            log_string = "Function  <{}>".format(func.__name__)
+            print(log_string)
+            self.logger.info(log_string)
+            
+# ç°åœ¨ï¼Œå‘é€ä¸€ä¸ªé€šçŸ¥
+            self.notify()
+            try:
+
+                return func(*args, **kwargs)
+            except:
+                # log the exception
+                err = "sThere was an exception in  "
+                err += func.__name__
+                self.logger.error(err)
+     
+                # re-raise the exception
+                raise
+
+        return wrapped_function
+    def notify(self):
+# logitåªæ‰“æ—¥å¿—ï¼Œä¸åšåˆ«çš„
+        pass
+
+  
  
-if __name__ =='__main__':
- logyyx = Logger('yyx.log',logging.INFO,logging.DEBUG)
- logyyx.debug('Ò»¸ödebugĞÅÏ¢')
- logyyx.info('Ò»¸öinfoĞÅÏ¢')
- logyyx.war('Ò»¸öwarningĞÅÏ¢')
- logyyx.error('Ò»¸öerrorĞÅÏ¢')
- logyyx.cri('Ò»¸öÖÂÃücriticalĞÅÏ¢')
+if __name__=="__main__":
+    logyyx = Logger('yyx.log',logging.ERROR,logging.DEBUG)
+    logyyx.debug('ä¸€ä¸ªdebugä¿¡æ¯')
+    logyyx.info('ä¸€ä¸ªinfoä¿¡æ¯')
+    logyyx.war('ä¸€ä¸ªwarningä¿¡æ¯')
+    logyyx.error('ä¸€ä¸ªerrorä¿¡æ¯')
+    logyyx.cri('ä¸€ä¸ªè‡´å‘½criticalä¿¡æ¯')
+    @logyyx.debug_fun
+    def asd(a=0,b=1,v=2):
+        logyyx.logger.error('TEST ERROR')
+        pass 
+    #@logyyx.debug_fun
+    #def bd():
+        
+    #    1/0    
+    
+    x=asd()
+    #y=bd()

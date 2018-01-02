@@ -1,9 +1,11 @@
+
 import talib
 import tushare as ts
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 import time
+
 #import st_imformation as sti
 
 today=datetime.date.today()
@@ -21,7 +23,7 @@ def get_date_ts(Code,startDate,endDate):#获取开始数据
     if endDate == '%s'%today:
         realtime_price=ts.get_realtime_quotes(Code).price
         realtime_price=float(realtime_price)
-       # print('当前价格：%s'%realtime_price)
+        #print('当前价格：%s'%realtime_price)
         df.loc['%s'%today,'close']=realtime_price
     return df
 
@@ -162,25 +164,25 @@ def RSI(code='sh',startday='2015-01-05',enday='2016-12-21',timeperiod=10):# pric
     if code == 'sh':
         timeperiod=10
     df=get_date_ts(code,startday,enday)
-    df['RSI']=talib.RSI(df.close.values,timeperiod)
+    df['RSI']=talib.RSI(df.close.values,timeperiod)#调用RSI函数计算RSI  因子设为10
     
     return df
 
 def draw_RSI(df): # 画加权平均指数
     ax1=plt.subplot(111)
       
-    plt.plot(df.index,df.close,"b")
+    plt.plot(df.index,df.close,"k")
     #plt.ylim(df.close.min()-3, df.close.max()+1)
     ax2=ax1.twinx()
 
-    plt.plot(df.index,df.RSI,'g',label='RSI')    
+    plt.plot(df.index,df.RSI,'-',c='y',label='RSI')    
 
 
-    plt.plot(df.index,0*df.open+30,'--')
+    plt.plot(df.index,0*df.open+20,'--')
     plt.plot(df.index,0*df.open+50,'--')
-    plt.plot(df.index,0*df.open+70,'--')
+    plt.plot(df.index,0*df.open+80,'--')
    # plt.ylim(-1, 3)
-    plt.legend(loc='best')
+    plt.legend(loc='best')#输出标签，保持在最优模式
     plt.grid(True)
     
 def ADX(code='sh',startday='2015-01-05',enday='2016-12-21'):# ADX  多空占比   
@@ -222,13 +224,103 @@ def draw_ADOSC(df): # 画加权平均指数
     plt.plot(df.index,df.ADOSC,'g',label='ADOSC')    
     plt.legend(loc='best')
     plt.grid(True)
-if __name__=="__main__":
-    code_="601212" 
-    start_='2016-05-01'
-    end_='2017-09-18'
     
+'''
+CCI
+顺势指标，不明确
+有效，不明确
+'''
+def CCI(code='sh',startday='2015-01-05',enday='2016-12-21',day=14):#顺势指标
+    df=get_date_ts(code,startday,enday)
+    df['CCI']=talib.CCI(high=df.high.values,
+                          low=df.low.values,
+                          close=df.close.values,
+                          timeperiod=day)
+    return df
+def draw_CCI(df): # 画加权平均指数
+    ax1=plt.subplot(111)
+      
+    plt.plot(df.index,df.close,"b")
+    x2=ax1.twinx()#设立爽坐标
+    plt.plot(df.index,df.CCI,'r',label='CCI')    
+    plt.legend(loc='best')
+    plt.grid(True)
+'''
+MFI - Money Flow Index
+Such as RSI, to comput the volume. 
+有效，不明确
+'''
+def MFI(code='sh',startday='2015-01-05',enday='2016-12-21',day=14):# MFI - Money Flow Index 
+    df=get_date_ts(code,startday,enday)
+    df['MFI']=talib.MFI(high=df.high.values,
+                          low=df.low.values,
+                          close=df.close.values,
+                          volume=df.volume.values,
+                          timeperiod=day)
+    return df
+def draw_MFI(df): # 画加权平均指数
+    ax1=plt.subplot(111)
+      
+    plt.plot(df.index,df.close,"b")
+    x2=ax1.twinx()#设立爽坐标
+    plt.plot(df.index,df.MFI,'r',label='CCI')    
+    plt.legend(loc='best')
+    plt.grid(True)
+    
+'''
+Hilbert Transform - HT_TRENDLINE 
+Such as K LINE, to comput the volume. 
+有效，不明确
+'''
+def Hilbert(code='sh',startday='2015-01-05',enday='2016-12-21'):# MFI - Money Flow Index 
+    df=get_date_ts(code,startday,enday)
+    df['Hilbert']=talib.HT_TRENDMODE(df.close.values)
+    return df
+def draw_Hilbert(df): # 画加权平均指数
+    ax1=plt.subplot(111)
+      
+    plt.plot(df.index,df.close,"g")
+    x2=ax1.twinx()#设立爽坐标
+    plt.plot(df.index,df.Hilbert,'r',label='Hilbert')    
+    plt.legend(loc='best')
+    plt.grid(True)
+'''
+Parabolic SAR
+Such as K LINE, to comput the volume. 
+有效，不明确
+'''
+def SAR(code='sh',startday='2015-01-05',enday='2016-12-21'):# MFI - Money Flow Index 
+    df=get_date_ts(code,startday,enday)
+    df['SAR']=talib.SAR(df.high.values,df.low.values,acceleration=0.02, maximum=0.2)
+    return df
+def draw_SAR(df): # 画加权平均指数
+    ax1=plt.subplot(111)
+      
+    plt.plot(df.index,df.close,"g")
+  #  x2=ax1.twinx()#设立爽坐标
+    plt.plot(df.index,df.SAR,'r',label='Parabolic SAR')    
+    plt.legend(loc='best')
+    plt.grid(True)
+if __name__=="__main__":
+    plt.close()
+   #399006 
+    '''
+   INDEX_LIST = {'sh': 'sh000001', 
+                 'sz': 'sz399001',
+                 'hs300': 'sz399300',
+                 'sz50': 'sh000016',
+                 'zxb': 'sz399005', 
+                 'cyb': 'sz399006',
+                 'zx300': 'sz399008', 
+                 000976 000929 000911 000639 601139
+                 'zh500':'sh000905'}
+   
+    '''
+    code_="600111" 
+    start_='2016-10-01'
+    end_='2017-12-12'
     plt.figure(1)
-    VW=VWAP(code_,start_,end_)
+    VW=VWAP(code_,start_,end_) 
     draw_VWAP(VW)
     
     plt.figure(2)
@@ -237,17 +329,17 @@ if __name__=="__main__":
     
     plt.figure(3)
     draw_macd(code_,start_,end_)
-    
     plt.figure(4)
     RSI_IDEX=RSI(code_,start_,end_)
     draw_RSI(RSI_IDEX)
-    
-    plt.figure(5)
-    ADX_IDEX=ADX(code_,start_,end_)
-    draw_ADX(ADX_IDEX)#ADX 非相关重要信息
 
-    plt.figure(6)
-    ADOSC_IDEX=ADOSC(code_,start_,end_)#
-    draw_ADOSC(ADOSC_IDEX)   
+
+  #  plt.figure(5)
+  #  ADX_IDEX=ADX(code_,start_,end_)
+  #  draw_ADX(ADX_IDEX)#ADX 非相关重要信息
+  #  plt.figure(6)
+  #  ADOSC_IDEX=ADOSC(code_,start_,end_)
+  #  draw_ADOSC(ADOSC_IDEX)
+     
     plt.show()
 

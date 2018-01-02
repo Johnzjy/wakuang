@@ -75,10 +75,24 @@ def download_org_top(time ):
         with pd.ExcelWriter(files_path+'/%s_org_top%sD_xlx.xlsx'%(time,i)) as writer:
             Datas_b.to_excel(writer, sheet_name='Sheet1')
         print('\n%s %s机构席位 have been saved'%(time,i))
+        
+'''
+获取最近一个交易日机构席位成交明细统计数据
+'''       
+def download_Orgday(time ):
 
+    Datas_b=  ts.inst_detail()
+    files_path = '../report/Brokerage/%s'%time
+    if os.path.exists(files_path) == False: # 判断文件是不是存在
+        os.mkdir(files_path)                # 创建目录
+    Datas_b.to_csv(files_path+'/%s_Orgday_csv.csv'%(time))
+    with pd.ExcelWriter(files_path+'/%s_Orgday_xlx.xlsx'%(time)) as writer:
+        Datas_b.to_excel(writer, sheet_name='Sheet1')
+    print('\n%s %s机构席位一天 have been saved'%(time,i))
+        
 def download_top_list(time):
 
-    Datas_b=  ts.top_list(time)
+    Datas_b= ts.top_list(time)
 
     files_path = '../report/Brokerage/%s'%todaytime
     if os.path.exists(files_path) == False: # 判断文件是不是存在
@@ -111,9 +125,11 @@ if __name__ == "__main__":
     #for ladays in tims.Fworkday(2):
 
      #   download_datas_ST1D('600221',ladays)
+    #todaytime=
 
-
-    download_brokerage(todaytime)
-    download_org_top(todaytime)
-    download_top_list('%s'%(todaytime))
+  #  download_brokerage(todaytime)
+    #download_org_top(todaytime)
+    download_Orgday(todaytime)
+ 
+ #   download_top_list(None)
     #get_1by1_data(1,2)
