@@ -9,10 +9,15 @@ Created on Wed Nov  8 09:47:46 2017
 import talib
 import tushare as ts
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button, RadioButtons
+import pyqtgraph as pg
+from pyqtgraph.Qt import QtGui, QtCore
 import datetime
 import time
+import numpy as np
+import sys
 
 class My_index(object):
     def __init__(self,figSN=1):
@@ -31,9 +36,11 @@ class My_index(object):
     def get_date_ts(self):#获取开始数据
         
         self.code_data=ts.get_k_data(self.code,self.startDate,end=self.endDate)
-        self.code_data=self.code_data.reset_index()
+
         self.code_data=self.code_data.sort_index(ascending=True)# 从后倒序
+    
         self.code_data.date=self.code_data.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
+        #self.code_data.date=self.code_data.date.apply(lambda x:matplotlib.dates.date2num(x))
         self.code_data=self.code_data.set_index('date')
         if self.endDate == '%s'%self.today:
             todat_realtime=ts.get_realtime_quotes(self.code)
@@ -50,6 +57,7 @@ class My_index(object):
             self.code_data.loc['%s'%self.today,'low']='%s'%realtime_low
             self.code_data.loc['%s'%self.today,'close']=realtime_price
         return self.code_data
+    '''
     def plot_init(self):
         self.SN_plt=self.SN_plt+1
         print(self.SN_plt)
@@ -70,12 +78,8 @@ class My_index(object):
         self.samp = Slider(axamp, 'Amp', 0.1, 10.0, valinit=a0)
         self.sfreq.on_changed(self.update)
         self.samp.on_changed(self.update) 
-        
-    def update(self,fig,val,):
-        amp = self.samp.val
-        freq = self.sfreq.val
-        #l.set_ydata(amp*np.sin(2*np.pi*freq*t))
-        fig.canvas.draw_idle()
+        '''       
+
  
     def myMACD(self):
         price=self.df['close'].values
@@ -218,8 +222,91 @@ class My_index(object):
         plt.legend(loc='best')
         plt.grid(True) 
     '''
+    
+class My_plot(pg.GraphItem):
+    def __init__(self,parent=None):
+        super(My_plot,self).__init__()
+        self.win = pg.GraphicsWindow(title="技术指标")
+        self.win.resize(1000,600)
+        self.win.setWindowTitle('技术指标: Plotting')
+        self.data=My_index()
+        pg.setConfigOptions(antialias=True)
+    def macd_plotting(self):
+        macd, signal, hist = self.data.myMACD()
+        
+        #numd=self.data.df.reset_index()
+        numd=self.data.df.reset_index()
+        x=numd.date.apply(lambda x:datetime.datetime.strftime(x,"%Y-%m-%d"))
+        xdict=dict(x) #转换成字符串字典
+
+        #stringaxis = pg.AxisItem(orientation='bottom')
+        stringaxis = pg.AxisItem(orientation='bottom') #设置横轴
+        stringaxis.setTicks([xdict.items()])
+        stringaxis.setGrid(255)
+        stringaxis.setLabel( text='Dates' )
+        stringaxis.setTickSpacing(100,1)
+        self.macd_plot = self.win.addPlot(row=1,col=0,title="kline",axisItems={'bottom': stringaxis})
+        
+        self.y=numd.close
+        self.macd_plot.plot(list(xdict.keys()), self.y)
+        
+        self.macd_plot.showGrid(x=True, y=True)
+        self.region = pg.LinearRegionItem()
+        self.region.setZValue(10)
+        self.region.setRegion([10, 200])
+        # Add the LinearRegionItem to the ViewBox, but tell the ViewBox to exclude this 
+        # item when doing auto-range calculations.
+        self.macd_plot.addItem(self.region , ignoreBounds=True)
+ 
+    def update_plotting(self):  
+        self.update_plot = self.win.addPlot(row=2,col=0,title="Multiple curves")
+        self.update_plot.setAutoVisible(y=True)
+        self.update_plot.plot(x=self.y.index,y=self.y.values)
+        self.region.sigRegionChanged.connect(self.update)
+        self.update_plot.sigRangeChanged.connect(self.updateRegion)
+        print('1')
+        self.region.setRegion([100, 200])
+        #self.RSI_plot.plot(np.random.normal(size=100), pen=(255,0,0), name="Red curve")
+        #self.RSI_plot.plot(np.random.normal(size=110)+5, pen=(0,255,0), name="Green curve")
+        #self.RSI_plot.plot(np.random.normal(size=120)+10, pen=(0,0,255), name="Blue curve")
+        #cross hair
+        
+        self.vLine = pg.InfiniteLine(angle=90, movable=False)
+        self.hLine = pg.InfiniteLine(angle=0, movable=False)
+        self.update_plot.addItem(self.vLine, ignoreBounds=True)
+        self.update_plot.addItem(self.hLine, ignoreBounds=True)
+        self.vb = self.update_plot.vb
+        self.proxy = pg.SignalProxy(self.update_plot.scene().sigMouseMoved, rateLimit=60, slot=self.mouseMoved)
+    def mouseMoved(self,evt):
+        pos = evt[0]  ## using signal proxy turns original arguments into a tuple
+        if self.update_plot.sceneBoundingRect().contains(pos):
+            mousePoint = self.vb.mapSceneToView(pos)
+            index = int(mousePoint.x())
+            if index > 0 and index < len(self.y.values):
+                label.setText("<span style='font-size: 12pt'>x=%0.1f,   <span style='color: red'>y1=%0.1f</span>,   <span style='color: green'>y2=%0.1f</span>" % (mousePoint.x(), data1[index], data2[index]))
+            self.vLine.setPos(mousePoint.x())
+            self.hLine.setPos(mousePoint.y())
+
+               
+
+
+   # def update(self):
+    #    self.update_plot.setXRange(self.region.getRegion(), padding=0)
+    def update(self):
+        self.region.setZValue(10)
+        minX, maxX = self.region.getRegion()
+        self.update_plot.setXRange(minX, maxX, padding=0)   
+
+    def updateRegion(self):
+        self.region.setRegion(self.update_plot.getViewBox().viewRange()[0])
+    
 if __name__=="__main__":
-    index=My_index(1)
-    #index.draw_macd()
-    index.draw_RSI()
-    #index.VWAP()
+    app = QtGui.QApplication(sys.argv)
+    p_=My_plot()
+    p_.macd_plotting()
+    p_.update_plotting()
+
+    #p_.RSI_plotting()
+    app.show()
+    if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
+        QtGui.QApplication.exec_()
