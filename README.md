@@ -1,5 +1,5 @@
-# ![wakuang][WK]  
-WaKuang(挖矿 by John zhang)[![email](https://img.shields.io/badge/email-aprzephyr%40163.com-ff69b4.svg)](http://shields.io/) 
+﻿# ![wakuang][WK]  
+WaKuang(挖矿 by John zhang) 
 =======
 [![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://travis-ci.org/meolu/walle-web)
 [![John.zhang](https://img.shields.io/badge/Powered_by-John_Zhang-green.svg?style=flat)](http://www.yiiframework.com/)
@@ -12,10 +12,12 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 通过大数据处理，分析和挖掘二级市场波动变化。亦可以编写量化交易策略，引入Decision Tree等机器学习算法。
 
 ##### 所需要的第三方库：  
-    .. `tushare`  
+    .. `tushare`
+    .. `pyqtgraph` 绘图工具
     .. `TA-lib`  
     .. `pandas`  
-    .. `PYQT4`  
+    .. `PYQT5`  
+    .. `wechat-sdk`  
     .. `tqdm`  
     .. `wechat-sdk`  
     .. `gmsdk-2.9.9-py3-none-any`(http://www.myquant.cn/gm2/downloads/)  
@@ -32,6 +34,8 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 * [x] stock_unblocked.py ：下载解禁股票
 * [ ] DuPontAnalysis:杜邦分析法
 * [ ] forecast:现金流评估
+* [ ] GUI_2: 软件界面  调用 technical_indicators2
+
 
 
 ## scr           
@@ -44,7 +48,8 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 * [x] wechat_tuling.py 		：微信和图灵机  
 * [x] Graph.py       		：GUI绘图  
 * [x] layout.py      		：GUIlayout  
-* [x] logd.py       		：log文件 建立装饰包 
+* [x] logd.py       		：log文件 建立装饰包  
+
 ##Fun
 
 ### technical_indicators
@@ -95,7 +100,7 @@ To Do List
 - [x] 已做
 - [ ] 未做做
 - [ ] build cash flow display
-- [ ] completed GUI
+- [x] completed GUI_2 （the frist version compeled）
 - [ ] Mail events：specify kinds of events
 - [ ] Wechat events
 - [ ] Open api
@@ -104,6 +109,7 @@ To Do List
 ---
 **0.0**
 =======
+[![email](https://img.shields.io/badge/email-aprzephyr%40163.com-ff69b4.svg)](http://shields.io/)  
 
 ### history
 2017年12月29日16:58:06 对README.MD 框架完成修订  @author: John zhang 

@@ -25,7 +25,7 @@ class My_index(object):
         self.today=datetime.date.today()
         self.code="sh" 
         self.startDate='2016-12-31'
-        self.endDate='2017-11-28'       
+        self.endDate=datetime.datetime.strftime(datetime.datetime.today(),'%Y-%m-%d')      
         self.MACD_fastperiod=10 #MACD快速参数
         self.MACD_slowperiod=20#MACD慢速参数
         self.MACD_signalperiod=9#MACD 权重
@@ -56,6 +56,7 @@ class My_index(object):
             self.code_data.loc['%s'%self.today,'high']='%s'%realtime_high
             self.code_data.loc['%s'%self.today,'low']='%s'%realtime_low
             self.code_data.loc['%s'%self.today,'close']=realtime_price
+        self.df=self.code_data  
         return self.code_data
     '''
     def plot_init(self):
@@ -82,6 +83,7 @@ class My_index(object):
 
  
     def myMACD(self):
+        self.df=self.df 
         price=self.df['close'].values
         ewma12 = pd.ewma(price,span=self.MACD_fastperiod)
         ewma60 = pd.ewma(price,span=self.MACD_slowperiod)
@@ -91,6 +93,7 @@ class My_index(object):
         #print(bar)#有些地方的bar = (dif-dea)*2，但是talib中MACD的计算是bar = (dif-dea)*1
         return dif,dea,bar
     def myMACD2(self):
+        self.df=self.df
         price=self.df['close'].values
         ewma12 = pd.Series(price).rolling(window=self.MACD_fastperiod).mean()
         ewma60 = pd.Series(price).rolling(window=self.MACD_slowperiod).mean()
@@ -223,90 +226,97 @@ class My_index(object):
         plt.grid(True) 
     '''
     
-class My_plot(pg.GraphItem):
-    def __init__(self,parent=None):
+class My_plot(QtGui.QWindow):
+    def __init__(self,):
         super(My_plot,self).__init__()
         self.win = pg.GraphicsWindow(title="技术指标")
-        self.win.resize(1000,600)
+        #self.win.resize(1000,600)
         self.win.setWindowTitle('技术指标: Plotting')
         self.data=My_index()
         pg.setConfigOptions(antialias=True)
-    def macd_plotting(self):
-        macd, signal, hist = self.data.myMACD()
+    #设置
+    def setCodeDate(self,**kwds):
+        for kwd,value in kwds.items():
+          
+            if kwd in ('Code', 'start', 'end'):
+                if not isinstance(value, str):
+                    raise ValueError("Argument '%s' must be int" % kwd)
+            
+            if kwd == 'code':
+                    self.data.code = value
+            if kwd == 'start':
+                    self.data.startDate = value            
+            if kwd == 'end':
+                    self.data.endDate = value
+        self.data.get_date_ts()
+        
+        
+    def Kline_plotting(self):
         
         #numd=self.data.df.reset_index()
         numd=self.data.df.reset_index()
         x=numd.date.apply(lambda x:datetime.datetime.strftime(x,"%Y-%m-%d"))
         xdict=dict(x) #转换成字符串字典
-
+        # LABEL 10个图标
+        self.maxRegion=len(numd.index)
+        t=len(numd.index)//5
+        #提取坐标点
+        axis_date = [(i,list(x)[i]) for i in range(0,len(numd.index),t)]
+ 
         #stringaxis = pg.AxisItem(orientation='bottom')
         stringaxis = pg.AxisItem(orientation='bottom') #设置横轴
-        stringaxis.setTicks([xdict.items()])
+        stringaxis.setTicks([axis_date,xdict.items()])
         stringaxis.setGrid(255)
         stringaxis.setLabel( text='Dates' )
-        stringaxis.setTickSpacing(100,1)
-        self.macd_plot = self.win.addPlot(row=1,col=0,title="kline",axisItems={'bottom': stringaxis})
+        #stringaxis.setTickSpacing(100,1)
+        self.k_plot = self.win.addPlot(row=1,col=0,title="kline",axisItems={'bottom': stringaxis})
         
         self.y=numd.close
-        self.macd_plot.plot(list(xdict.keys()), self.y)
+        self.k_plot.plot(x=list(xdict.keys()), y=self.y.values)
         
-        self.macd_plot.showGrid(x=True, y=True)
+        self.k_plot.showGrid(x=True, y=True)
         self.region = pg.LinearRegionItem()
         self.region.setZValue(10)
-        self.region.setRegion([10, 200])
-        # Add the LinearRegionItem to the ViewBox, but tell the ViewBox to exclude this 
-        # item when doing auto-range calculations.
-        self.macd_plot.addItem(self.region , ignoreBounds=True)
+        self.region.setRegion([10, self.maxRegion])
+        self.k_plot.addItem(self.region , ignoreBounds=True)
+     
  
-    def update_plotting(self):  
-        self.update_plot = self.win.addPlot(row=2,col=0,title="Multiple curves")
+    def update_plotting(self):
+        
+        self.update_plot = self.win.addPlot(row=2,col=0,title="局部放大 k")
         self.update_plot.setAutoVisible(y=True)
         self.update_plot.plot(x=self.y.index,y=self.y.values)
         self.region.sigRegionChanged.connect(self.update)
         self.update_plot.sigRangeChanged.connect(self.updateRegion)
-        print('1')
-        self.region.setRegion([100, 200])
-        #self.RSI_plot.plot(np.random.normal(size=100), pen=(255,0,0), name="Red curve")
-        #self.RSI_plot.plot(np.random.normal(size=110)+5, pen=(0,255,0), name="Green curve")
-        #self.RSI_plot.plot(np.random.normal(size=120)+10, pen=(0,0,255), name="Blue curve")
-        #cross hair
+        self.region.setRegion([10, self.maxRegion])
+    def macd_plotting(self):
+        self.macd_plot = self.win.addPlot(row=1,col=1,title="MACD")
+        macd, signal, hist = self.data.myMACD2()
+        self.macd_plot.plot(x=self.y.index,y=macd.values,pen='r')
+        self.macd_plot.plot(x=self.y.index,y=signal.values,pen='b',fillLevel=2, fillBrush=(255,255,255,50))
+        self.macd_plot.plot(x=self.y.index,y=self.y.index*0,pen='w')
+        self.macd_plot.setXLink(self.update_plot)
         
-        self.vLine = pg.InfiniteLine(angle=90, movable=False)
-        self.hLine = pg.InfiniteLine(angle=0, movable=False)
-        self.update_plot.addItem(self.vLine, ignoreBounds=True)
-        self.update_plot.addItem(self.hLine, ignoreBounds=True)
-        self.vb = self.update_plot.vb
-        self.proxy = pg.SignalProxy(self.update_plot.scene().sigMouseMoved, rateLimit=60, slot=self.mouseMoved)
-    def mouseMoved(self,evt):
-        pos = evt[0]  ## using signal proxy turns original arguments into a tuple
-        if self.update_plot.sceneBoundingRect().contains(pos):
-            mousePoint = self.vb.mapSceneToView(pos)
-            index = int(mousePoint.x())
-            if index > 0 and index < len(self.y.values):
-                label.setText("<span style='font-size: 12pt'>x=%0.1f,   <span style='color: red'>y1=%0.1f</span>,   <span style='color: green'>y2=%0.1f</span>" % (mousePoint.x(), data1[index], data2[index]))
-            self.vLine.setPos(mousePoint.x())
-            self.hLine.setPos(mousePoint.y())
-
-               
-
-
-   # def update(self):
-    #    self.update_plot.setXRange(self.region.getRegion(), padding=0)
     def update(self):
         self.region.setZValue(10)
         minX, maxX = self.region.getRegion()
-        self.update_plot.setXRange(minX, maxX, padding=0)   
+        self.update_plot.setXRange(minX, maxX, padding=0)  
 
     def updateRegion(self):
         self.region.setRegion(self.update_plot.getViewBox().viewRange()[0])
-    
+    def remove_plot(self):
+        self.win.removeItem(self.macd_plot )
+        self.win.removeItem(self.update_plot)
+        self.win.removeItem(self.k_plot)
 if __name__=="__main__":
     app = QtGui.QApplication(sys.argv)
     p_=My_plot()
-    p_.macd_plotting()
+    p_.setCodeDate(code='sh',start='2017-11-01',end='2018-01-04')
+    p_.Kline_plotting()
     p_.update_plotting()
-
+    p_.macd_plotting()
+    #p_.remove_plot()
     #p_.RSI_plotting()
-    app.show()
+    p_.win.show()
     if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
         QtGui.QApplication.exec_()
