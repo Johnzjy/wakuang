@@ -9,10 +9,15 @@ Created on Wed Nov  8 09:47:46 2017
 import talib
 import tushare as ts
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button, RadioButtons
+import pyqtgraph as pg
+from pyqtgraph.Qt import QtGui, QtCore
 import datetime
 import time
+import numpy as np
+import sys
 
 class My_index(object):
     def __init__(self,figSN=1):
@@ -20,7 +25,7 @@ class My_index(object):
         self.today=datetime.date.today()
         self.code="sh" 
         self.startDate='2016-12-31'
-        self.endDate='2017-11-28'       
+        self.endDate=datetime.datetime.strftime(datetime.datetime.today(),'%Y-%m-%d')      
         self.MACD_fastperiod=10 #MACD快速参数
         self.MACD_slowperiod=20#MACD慢速参数
         self.MACD_signalperiod=9#MACD 权重
@@ -31,9 +36,11 @@ class My_index(object):
     def get_date_ts(self):#获取开始数据
         
         self.code_data=ts.get_k_data(self.code,self.startDate,end=self.endDate)
-        self.code_data=self.code_data.reset_index()
+
         self.code_data=self.code_data.sort_index(ascending=True)# 从后倒序
+    
         self.code_data.date=self.code_data.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
+        #self.code_data.date=self.code_data.date.apply(lambda x:matplotlib.dates.date2num(x))
         self.code_data=self.code_data.set_index('date')
         if self.endDate == '%s'%self.today:
             todat_realtime=ts.get_realtime_quotes(self.code)
@@ -49,7 +56,9 @@ class My_index(object):
             self.code_data.loc['%s'%self.today,'high']='%s'%realtime_high
             self.code_data.loc['%s'%self.today,'low']='%s'%realtime_low
             self.code_data.loc['%s'%self.today,'close']=realtime_price
+        self.df=self.code_data  
         return self.code_data
+    '''
     def plot_init(self):
         self.SN_plt=self.SN_plt+1
         print(self.SN_plt)
@@ -70,14 +79,11 @@ class My_index(object):
         self.samp = Slider(axamp, 'Amp', 0.1, 10.0, valinit=a0)
         self.sfreq.on_changed(self.update)
         self.samp.on_changed(self.update) 
-        
-    def update(self,fig,val,):
-        amp = self.samp.val
-        freq = self.sfreq.val
-        #l.set_ydata(amp*np.sin(2*np.pi*freq*t))
-        fig.canvas.draw_idle()
+        '''       
+
  
     def myMACD(self):
+        self.df=self.df 
         price=self.df['close'].values
         ewma12 = pd.ewma(price,span=self.MACD_fastperiod)
         ewma60 = pd.ewma(price,span=self.MACD_slowperiod)
@@ -87,6 +93,7 @@ class My_index(object):
         #print(bar)#有些地方的bar = (dif-dea)*2，但是talib中MACD的计算是bar = (dif-dea)*1
         return dif,dea,bar
     def myMACD2(self):
+        self.df=self.df
         price=self.df['close'].values
         ewma12 = pd.Series(price).rolling(window=self.MACD_fastperiod).mean()
         ewma60 = pd.Series(price).rolling(window=self.MACD_slowperiod).mean()
@@ -218,8 +225,98 @@ class My_index(object):
         plt.legend(loc='best')
         plt.grid(True) 
     '''
+    
+class My_plot(QtGui.QWindow):
+    def __init__(self,):
+        super(My_plot,self).__init__()
+        self.win = pg.GraphicsWindow(title="技术指标")
+        #self.win.resize(1000,600)
+        self.win.setWindowTitle('技术指标: Plotting')
+        self.data=My_index()
+        pg.setConfigOptions(antialias=True)
+    #设置
+    def setCodeDate(self,**kwds):
+        for kwd,value in kwds.items():
+          
+            if kwd in ('Code', 'start', 'end'):
+                if not isinstance(value, str):
+                    raise ValueError("Argument '%s' must be int" % kwd)
+            
+            if kwd == 'code':
+                    self.data.code = value
+            if kwd == 'start':
+                    self.data.startDate = value            
+            if kwd == 'end':
+                    self.data.endDate = value
+        self.data.get_date_ts()
+        
+        
+    def Kline_plotting(self):
+        
+        #numd=self.data.df.reset_index()
+        numd=self.data.df.reset_index()
+        x=numd.date.apply(lambda x:datetime.datetime.strftime(x,"%Y-%m-%d"))
+        xdict=dict(x) #转换成字符串字典
+        # LABEL 10个图标
+        self.maxRegion=len(numd.index)
+        t=len(numd.index)//5
+        #提取坐标点
+        axis_date = [(i,list(x)[i]) for i in range(0,len(numd.index),t)]
+ 
+        #stringaxis = pg.AxisItem(orientation='bottom')
+        stringaxis = pg.AxisItem(orientation='bottom') #设置横轴
+        stringaxis.setTicks([axis_date,xdict.items()])
+        stringaxis.setGrid(255)
+        stringaxis.setLabel( text='Dates' )
+        #stringaxis.setTickSpacing(100,1)
+        self.k_plot = self.win.addPlot(row=1,col=0,title="kline",axisItems={'bottom': stringaxis})
+        
+        self.y=numd.close
+        self.k_plot.plot(x=list(xdict.keys()), y=self.y.values)
+        
+        self.k_plot.showGrid(x=True, y=True)
+        self.region = pg.LinearRegionItem()
+        self.region.setZValue(10)
+        self.region.setRegion([10, self.maxRegion])
+        self.k_plot.addItem(self.region , ignoreBounds=True)
+     
+ 
+    def update_plotting(self):
+        
+        self.update_plot = self.win.addPlot(row=2,col=0,title="局部放大 k")
+        self.update_plot.setAutoVisible(y=True)
+        self.update_plot.plot(x=self.y.index,y=self.y.values)
+        self.region.sigRegionChanged.connect(self.update)
+        self.update_plot.sigRangeChanged.connect(self.updateRegion)
+        self.region.setRegion([10, self.maxRegion])
+    def macd_plotting(self):
+        self.macd_plot = self.win.addPlot(row=1,col=1,title="MACD")
+        macd, signal, hist = self.data.myMACD2()
+        self.macd_plot.plot(x=self.y.index,y=macd.values,pen='r')
+        self.macd_plot.plot(x=self.y.index,y=signal.values,pen='b',fillLevel=2, fillBrush=(255,255,255,50))
+        self.macd_plot.plot(x=self.y.index,y=self.y.index*0,pen='w')
+        self.macd_plot.setXLink(self.update_plot)
+        
+    def update(self):
+        self.region.setZValue(10)
+        minX, maxX = self.region.getRegion()
+        self.update_plot.setXRange(minX, maxX, padding=0)  
+
+    def updateRegion(self):
+        self.region.setRegion(self.update_plot.getViewBox().viewRange()[0])
+    def remove_plot(self):
+        self.win.removeItem(self.macd_plot )
+        self.win.removeItem(self.update_plot)
+        self.win.removeItem(self.k_plot)
 if __name__=="__main__":
-    index=My_index(1)
-    #index.draw_macd()
-    index.draw_RSI()
-    #index.VWAP()
+    app = QtGui.QApplication(sys.argv)
+    p_=My_plot()
+    p_.setCodeDate(code='sh',start='2017-11-01',end='2018-01-04')
+    p_.Kline_plotting()
+    p_.update_plotting()
+    p_.macd_plotting()
+    #p_.remove_plot()
+    #p_.RSI_plotting()
+    p_.win.show()
+    if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
+        QtGui.QApplication.exec_()

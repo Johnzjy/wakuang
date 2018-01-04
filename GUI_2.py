@@ -11,6 +11,7 @@ from scr.layout import Ui_MainWindow
 from scr import Action_main,logd
 from pandas import DataFrame as df
 import MACD_RUNNING_ALL as ma
+import technical_indicators2 as t2
 import pandas as pd
 import tushare as ts
 import pickle 
@@ -76,8 +77,17 @@ class mywindow(QMainWindow):
         self.ui.treeWidget.setContextMenuPolicy(Qt.CustomContextMenu)
         self.ui.treeWidget.customContextMenuRequested.connect(self.openMenu)
    
-
-        self.ui.widget.setGeometry(QtCore.QRect(0, 30,1550, 861))
+        '''
+        导入graph
+        '''
+        #引用 T2
+        self.K_graph=t2.My_plot()
+        #加入列表
+        self.ui.verticalLayout.addWidget(self.K_graph.win,0,0,10,10)
+        self.K_graph.setCodeDate(code='sh',start='2017-11-01',end='2018-01-04')
+        self.K_graph.Kline_plotting()
+        self.K_graph.update_plotting()
+        self.K_graph.macd_plotting()
         '''
         no useful
         file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "render.html")) #path to read html file
@@ -117,25 +127,46 @@ class mywindow(QMainWindow):
         #self.ui.toolbutton.clicked.connect(lambda action: self.graphmerge(action, CombineKeyword))
         self.ui.combobox.currentIndexChanged.connect(self.modifycombo)
         self.initUI()
-    @LOG.debug_fun
+    #@LOG.debug_fun
     def run_drawing(self):
         LOG.logger.info('drawing_window for stock')
-        code=Action_main.check_code(self.ui.code_edit.text())
-        if code == False:
+        code_input=Action_main.check_code(self.ui.code_edit.text())
+        #code_input=self.ui.code_edit.text()
+        print(code_input)
+       #time.sleep(10)
+        if code_input == False:
             self.ui.code_edit.clear()
             self.ui.code_edit.setPlaceholderText('请重新输入code')
         else:
-            self.graphicscene = QtWidgets.QGraphicsScene()
-            self.graphicscene.addWidget(Action_main.PlotCanvas())
-            self.ui.widget.setScene(self.graphicscene)
-            print(self.ui.code_edit.text())
-        
+
+            
+            self.K_graph.remove_plot()
+            self.K_graph.setCodeDate(code=code_input,start='2017-11-01',end='2018-01-04')
+            self.K_graph.Kline_plotting()
+            self.K_graph.update_plotting()
+            self.K_graph.macd_plotting()
+            
+    '''
+    动作：双击列表
+    reload
+    '''    
     def DoubleClicked_code_edit(self):#点击TreeWidget inportCODE bar
         getSelected = self.ui.treeWidget.currentItem().text(0)
-        code=getSelected[0:6]
+        code_select=getSelected[0:6]
         name=getSelected[7:11]# unused
-        self.ui.code_edit.setText('%s'%code)
-
+        self.ui.code_edit.setText('%s'%code_select)
+      
+    
+    '''
+    输入完成后重新加载图片
+    '''
+    def reload_graph(self,code_load,start_load,end_load):
+        self.K_graph.remove_plot()
+        self.K_graph.setCodeDate(code=code_load,start=start_load,end=end_load)
+        self.K_graph.Kline_plotting()
+        self.K_graph.update_plotting()
+        self.K_graph.macd_plotting()
+        
     def initUI(self):
         LOG.logger.info('show the UI')
         self.show()

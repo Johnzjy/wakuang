@@ -51,7 +51,7 @@ class Ui_MainWindow(object):
 
     @LOG.debug_fun
     def create_kline_page(self, MainWindow):
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget = QtWidgets.QWidget(MainWindow) #主框
         self.centralwidget.setEnabled(True)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         #main window
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         
         
         
-        self.bottomLayout=QtWidgets.QHBoxLayout()
+        self.bottomLayout=QtWidgets.QHBoxLayout() # 底层layout 设置 框 包括gridLayout
         self.bottomLayout.setObjectName(_fromUtf8("bottomLayout"))
         self.mainLayout.addLayout(self.bottomLayout,1,0)
         
@@ -142,13 +142,19 @@ class Ui_MainWindow(object):
         self.treeWidget_2.setSizePolicy(sizePolicy)#Shows what graphs are selected
         self.treeWidget_2.setObjectName(_fromUtf8("treeWidget_2"))
         self.treeWidget_2.headerItem().setText(0, _fromUtf8("绘图项"))
-        self.gridLayout.addWidget(self.treeWidget_2, 5, 0, 1, 3)
+        self.gridLayout.addWidget(self.treeWidget_2, 5, 0, 1, 3)# 左侧列表 绘图项
         self.gridLayout.setColumnStretch(0, 60)
         self.gridLayout.setColumnStretch(1, 20)
         self.gridLayout.setColumnStretch(2, 20)
         self.bottomLayout.addLayout(self.gridLayout)
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+        
+        
+        
+        self.verticalLayout = QtWidgets.QGridLayout()#
+        self.verticalLayout.setObjectName(_fromUtf8("grph"))
+        
+        
+        
         self.widget = QtWidgets.QGraphicsView(self.centralwidget)#设置输入图画
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
@@ -182,7 +188,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        
+    #顶层 layout
     def topLayout(self,layout,x=0,y=0):
         self.topGrid=QtWidgets.QGridLayout()
         self.topGrid.setObjectName(_fromUtf8("topGrid"))
@@ -220,6 +226,7 @@ class Ui_MainWindow(object):
         #self.searchButton.setStyleSheet("border: 0px")
         lineGrid.addWidget(self.searchButton,0,1)
         return lineGrid
+    #设置时钟UI
     def clockui(self):
         self.lcd=QtWidgets.QLCDNumber()
         self.lcd.setDigitCount(10)
@@ -229,6 +236,7 @@ class Ui_MainWindow(object):
         self.timer.setInterval(1000)       
         self.timer.start()
         self.timer.timeout.connect(self.onTimerOut)
+    #LED aydispl
     def onTimerOut(self):  
         self.lcd.display(time.strftime("%X",time.localtime()))
     def retranslateUi(self, MainWindow):
