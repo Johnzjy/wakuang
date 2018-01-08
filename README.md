@@ -34,7 +34,7 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 * [x] stock_unblocked.py ：下载解禁股票
 * [ ] DuPontAnalysis:杜邦分析法
 * [ ] forecast:现金流评估
-* [ ] GUI_2: 软件界面  调用 technical_indicators2
+* [ ] GUI_2: 软件界面  调用 technical_indicators2 （2018-1-4 23:27:02）
 
 
 
