@@ -6,7 +6,7 @@ from qtpy.QtWidgets import QTreeWidgetItem,QMenu,QApplication,QAction,QMainWindo
 from qtpy import QtGui,QtWidgets,QtCore
 from qtpy.QtCore import Qt,QUrl,QDate
 from scr import Graph,layout
-from scr.Graph import graphpage
+#from scr.Graph import graphpage
 from scr.layout import Ui_MainWindow
 from scr import Action_main,logd
 from pandas import DataFrame as df
@@ -84,7 +84,7 @@ class mywindow(QMainWindow):
         self.K_graph=t2.My_plot()
         #加入列表
         self.ui.verticalLayout.addWidget(self.K_graph.win,0,0,10,10)
-        self.K_graph.setCodeDate(code='sh',start='2017-11-01',end='2018-01-04')
+        self.K_graph.setCodeDate(code='sh',start='2016-11-01',end='2018-01-08')
         self.K_graph.Kline_plotting()
         self.K_graph.update_plotting()
         self.K_graph.macd_plotting()
@@ -318,7 +318,7 @@ class mywindow(QMainWindow):
         items = ([x.encode("utf-8") for x in labels])
         width = self.ui.widget.width()#give width and height of user's screen so that graphs can be generated with dynamic size
         height = self.ui.widget.height()
-        graphpage(labels, startdate,enddate,option,width, height)#labels:复权ork线or分笔 option:hfq, qfq or 15, 30, D, etc
+#        graphpage(labels, startdate,enddate,option,width, height)#labels:复权ork线or分笔 option:hfq, qfq or 15, 30, D, etc
         self.ui.widget.reload()#refreshes webengine
         self.ui.widget.repaint()
         self.ui.widget.update()

@@ -169,7 +169,7 @@ class My_index(object):
     
     '''
         
-    def RSI(self,timeperiod=10):# price 加权平均指标    
+    def RSI_cal(self,timeperiod=10):# price 加权平均指标    
         #timeperiod=1
         if self.code == 'sh':
             timeperiod=10
@@ -179,7 +179,7 @@ class My_index(object):
     
     
     def draw_RSI(self): # 画加权平均指数
-        self.RSI(self)
+        self.RSI_cal(self)
         fig,ax1=self.plot_init()  
 
         
@@ -296,7 +296,12 @@ class My_plot(QtGui.QWindow):
         self.macd_plot.plot(x=self.y.index,y=signal.values,pen='b',fillLevel=2, fillBrush=(255,255,255,50))
         self.macd_plot.plot(x=self.y.index,y=self.y.index*0,pen='w')
         self.macd_plot.setXLink(self.update_plot)
-        
+    def RSI_plotting(self):
+        self.RSI_plot = self.win.addPlot(row=2,col=1,title="RSI")
+        self.data.RSI_cal()
+        RSI_values=self.data.df.RSI.values
+        self.RSI_plot.plot(x=self.y.index,y=RSI_values)
+        self.RSI_plot.setXLink(self.update_plot)
     def update(self):
         self.region.setZValue(10)
         minX, maxX = self.region.getRegion()
@@ -311,10 +316,11 @@ class My_plot(QtGui.QWindow):
 if __name__=="__main__":
     app = QtGui.QApplication(sys.argv)
     p_=My_plot()
-    p_.setCodeDate(code='sh',start='2017-11-01',end='2018-01-04')
+    p_.setCodeDate(code='sh',start='2017-01-01',end='2018-01-04')
     p_.Kline_plotting()
     p_.update_plotting()
     p_.macd_plotting()
+    p_.RSI_plotting()
     #p_.remove_plot()
     #p_.RSI_plotting()
     p_.win.show()
