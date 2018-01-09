@@ -34,30 +34,34 @@ class My_index(object):
         self.df=pd.DataFrame(self.get_date_ts())
         
     def get_date_ts(self):#获取开始数据
-        
-        self.code_data=ts.get_k_data(self.code,self.startDate,end=self.endDate)
+        try:
+            self.code_data=ts.get_k_data(self.code,self.startDate,end=self.endDate)
 
-        self.code_data=self.code_data.sort_index(ascending=True)# 从后倒序
-    
-        self.code_data.date=self.code_data.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-        #self.code_data.date=self.code_data.date.apply(lambda x:matplotlib.dates.date2num(x))
-        self.code_data=self.code_data.set_index('date')
-        if self.endDate == '%s'%self.today:
-            todat_realtime=ts.get_realtime_quotes(self.code)
-            realtime_price=float(todat_realtime.price)
-            realtime_high=float(todat_realtime.high)
-            realtime_low=float(todat_realtime.low)
-            realtime_open=float(todat_realtime.open)
-            realtime_volume=float(todat_realtime.volume)
+        except ValueError:
             
-            self.code_data.loc['%s'%self.today,'code']='%s'%self.code
-            self.code_data.loc['%s'%self.today,'volume']='%s'%realtime_volume
-            self.code_data.loc['%s'%self.today,'open']='%s'%realtime_open
-            self.code_data.loc['%s'%self.today,'high']='%s'%realtime_high
-            self.code_data.loc['%s'%self.today,'low']='%s'%realtime_low
-            self.code_data.loc['%s'%self.today,'close']=realtime_price
-        self.df=self.code_data  
-        return self.code_data
+            print('Input code is wrong/输入代码错误.')
+        else:
+            self.code_data=self.code_data.sort_index(ascending=True)# 从后倒序
+        
+            self.code_data.date=self.code_data.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
+            #self.code_data.date=self.code_data.date.apply(lambda x:matplotlib.dates.date2num(x))
+            self.code_data=self.code_data.set_index('date')
+            if self.endDate == '%s'%self.today:
+                todat_realtime=ts.get_realtime_quotes(self.code)
+                realtime_price=float(todat_realtime.price)
+                realtime_high=float(todat_realtime.high)
+                realtime_low=float(todat_realtime.low)
+                realtime_open=float(todat_realtime.open)
+                realtime_volume=float(todat_realtime.volume)
+                
+                self.code_data.loc['%s'%self.today,'code']='%s'%self.code
+                self.code_data.loc['%s'%self.today,'volume']='%s'%realtime_volume
+                self.code_data.loc['%s'%self.today,'open']='%s'%realtime_open
+                self.code_data.loc['%s'%self.today,'high']='%s'%realtime_high
+                self.code_data.loc['%s'%self.today,'low']='%s'%realtime_low
+                self.code_data.loc['%s'%self.today,'close']=realtime_price
+            self.df=self.code_data  
+            return self.code_data
     '''
     def plot_init(self):
         self.SN_plt=self.SN_plt+1
@@ -248,36 +252,37 @@ class My_plot(QtGui.QWindow):
                     self.data.startDate = value            
             if kwd == 'end':
                     self.data.endDate = value
-        self.data.get_date_ts()
-        
+
+            self.data.get_date_ts()
+
         
     def Kline_plotting(self):
         
         #numd=self.data.df.reset_index()
-        numd=self.data.df.reset_index()
-        x=numd.date.apply(lambda x:datetime.datetime.strftime(x,"%Y-%m-%d"))
-        xdict=dict(x) #转换成字符串字典
+        self.numd=self.data.df.reset_index()
+        x=self.numd.date.apply(lambda x:datetime.datetime.strftime(x,"%Y-%m-%d"))
+        self.xdict=dict(x) #转换成字符串字典
         # LABEL 10个图标
-        self.maxRegion=len(numd.index)
-        t=len(numd.index)//5
+        self.maxRegion=len(self.numd.index)
+        t=len(self.numd.index)//5
         #提取坐标点
-        axis_date = [(i,list(x)[i]) for i in range(0,len(numd.index),t)]
+        axis_date = [(i,list(x)[i]) for i in range(0,len(self.numd.index),t)]
  
         #stringaxis = pg.AxisItem(orientation='bottom')
         stringaxis = pg.AxisItem(orientation='bottom') #设置横轴
-        stringaxis.setTicks([axis_date,xdict.items()])
+        stringaxis.setTicks([axis_date, self.xdict.items()])
         stringaxis.setGrid(255)
         stringaxis.setLabel( text='Dates' )
         #stringaxis.setTickSpacing(100,1)
         self.k_plot = self.win.addPlot(row=1,col=0,title="kline",axisItems={'bottom': stringaxis})
         
-        self.y=numd.close
-        self.k_plot.plot(x=list(xdict.keys()), y=self.y.values)
+        self.y=self.numd.close
+        self.k_plot.plot(x=list( self.xdict.keys()), y=self.y.values)
         
         self.k_plot.showGrid(x=True, y=True)
         self.region = pg.LinearRegionItem()
-        self.region.setZValue(10)
-        self.region.setRegion([10, self.maxRegion])
+        self.region.setZValue(self.maxRegion/4*3)
+        self.region.setRegion([self.maxRegion/4*3, self.maxRegion])
         self.k_plot.addItem(self.region , ignoreBounds=True)
      
  
@@ -288,20 +293,42 @@ class My_plot(QtGui.QWindow):
         self.update_plot.plot(x=self.y.index,y=self.y.values)
         self.region.sigRegionChanged.connect(self.update)
         self.update_plot.sigRangeChanged.connect(self.updateRegion)
-        self.region.setRegion([10, self.maxRegion])
+        self.region.setRegion([self.maxRegion//4*2, self.maxRegion])
     def macd_plotting(self):
-        self.macd_plot = self.win.addPlot(row=1,col=1,title="MACD")
+        t=len(self.numd.index)//10
+ 
+        axis_date = [(i,list(self.xdict.values())[i]) for i in range(0,len(self.numd.index),t)]
+        stringaxis = pg.AxisItem(orientation='bottom') #设置横轴
+        stringaxis.setTicks([axis_date, self.xdict.items()])
+       #stringaxis.setGrid(255)
+        stringaxis.setLabel( text='Dates' )
+        self.macd_plot = self.win.addPlot(row=1,col=1,title="MACD",axisItems={'bottom': stringaxis})
         macd, signal, hist = self.data.myMACD2()
-        self.macd_plot.plot(x=self.y.index,y=macd.values,pen='r')
-        self.macd_plot.plot(x=self.y.index,y=signal.values,pen='b',fillLevel=2, fillBrush=(255,255,255,50))
+        self.macd_plot.plot(x=self.y.index,y=macd.values,pen='r',fillLevel=0, fillBrush=(255,0,0,50))
+        self.macd_plot.plot(x=self.y.index,y=signal.values,pen='b',fillLevel=0,fillBrush=(0,125,255,126))
         self.macd_plot.plot(x=self.y.index,y=self.y.index*0,pen='w')
         self.macd_plot.setXLink(self.update_plot)
+        self.macd_plot.showGrid(x=True, y=True)
+ 
     def RSI_plotting(self):
-        self.RSI_plot = self.win.addPlot(row=2,col=1,title="RSI")
+        t=len(self.numd.index)//10
+ 
+        axis_date = [(i,list(self.xdict.values())[i]) for i in range(0,len(self.numd.index),t)]
+        stringaxis = pg.AxisItem(orientation='bottom') #设置横轴
+        stringaxis.setTicks([axis_date, self.xdict.items()])
+       # stringaxis.setGrid(255)
+        stringaxis.setLabel( text='Dates' )
+    
+        self.RSI_plot = self.win.addPlot(row=2,col=1,title="RSI",axisItems={'bottom': stringaxis}) #计算 RSI
         self.data.RSI_cal()
         RSI_values=self.data.df.RSI.values
-        self.RSI_plot.plot(x=self.y.index,y=RSI_values)
-        self.RSI_plot.setXLink(self.update_plot)
+        pen_RSI=pg.mkPen(color=(255, 0, 0),width=2)
+        self.RSI_plot.plot(x=self.y.index,y=RSI_values,pen=pen_RSI)
+        self.RSI_plot.plot(x=self.y.index,y=RSI_values*0+20,pen=(255,255,0))
+        self.RSI_plot.plot(x=self.y.index,y=RSI_values*0+80,pen=(255,255,0))
+        self.RSI_plot.showGrid(x=True, y=True)
+        self.RSI_plot.setXLink(self.update_plot)# 关联到放大图
+
     def update(self):
         self.region.setZValue(10)
         minX, maxX = self.region.getRegion()
@@ -313,10 +340,11 @@ class My_plot(QtGui.QWindow):
         self.win.removeItem(self.macd_plot )
         self.win.removeItem(self.update_plot)
         self.win.removeItem(self.k_plot)
+        self.win.removeItem(self.RSI_plot)
 if __name__=="__main__":
     app = QtGui.QApplication(sys.argv)
     p_=My_plot()
-    p_.setCodeDate(code='sh',start='2017-01-01',end='2018-01-04')
+    p_.setCodeDate(code='sh',start='2017-01-01',end='2018-01-09')
     p_.Kline_plotting()
     p_.update_plotting()
     p_.macd_plotting()

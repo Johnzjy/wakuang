@@ -88,6 +88,7 @@ class mywindow(QMainWindow):
         self.K_graph.Kline_plotting()
         self.K_graph.update_plotting()
         self.K_graph.macd_plotting()
+        self.K_graph.RSI_plotting()
         '''
         no useful
         file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "render.html")) #path to read html file
@@ -131,21 +132,27 @@ class mywindow(QMainWindow):
     def run_drawing(self):
         LOG.logger.info('drawing_window for stock')
         code_input=Action_main.check_code(self.ui.code_edit.text())
+        
         #code_input=self.ui.code_edit.text()
         print(code_input)
-       #time.sleep(10)
+      
         if code_input == False:
+            print(code_input)
             self.ui.code_edit.clear()
             self.ui.code_edit.setPlaceholderText('请重新输入code')
         else:
 
             
             self.K_graph.remove_plot()
-            self.K_graph.setCodeDate(code=code_input,start='2017-11-01',end='2018-01-04')
-            self.K_graph.Kline_plotting()
-            self.K_graph.update_plotting()
-            self.K_graph.macd_plotting()
-            
+            try:
+                self.K_graph.setCodeDate(code=code_input,start='2016-11-01',end='2018-01-04')
+            except ValueError:
+                    print('Input code is wrong/输入代码错误.')
+            else:
+                self.K_graph.Kline_plotting()
+                self.K_graph.update_plotting()
+                self.K_graph.macd_plotting()
+                self.K_graph.RSI_plotting()
     '''
     动作：双击列表
     reload
