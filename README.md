@@ -100,11 +100,35 @@ To Do List
 - [x] 已做
 - [ ] 未做做
 - [ ] build cash flow display
-- [x] completed GUI_2 （the frist version compeled）
+- [x] completed GUI_2 （the frist version compeled，add RSI）
 - [ ] Mail events：specify kinds of events
 - [ ] Wechat events
 - [ ] Open api
 - [ ] Command line
+```
+神奇公式
+核心指标之一：选取便宜的股票，也就是选取息税前盈余／企业价值（EBIT/EV）高的股票，其中EV = market value of equity + net interest-bearing debt，即企业价值=市值+净有息债务
+
+核心指标之二：选取好的业务，也就是选取有形资本回报率（Return on Capital）高的股票，其中Return on Capital = EBIT / (Net WorkingCapital + Net Fixed Assets)，即资本回报率 = 息税前利润 /（净流动资本 + 净固定资产）
+
+GARP的核心主要是PEG
+
+策略说明：
+
+1、公司的资产负债率小于等于 25%
+这一条对公司的负债水平做出了要求。较低的资产负债率可以让公司灵活的应对各种突发事件可能对公司带来的冲击。
+
+2、公司每股净现金大于 0
+公司的每股现金流为正值，表示公司处于建康的营运状态中，每股收益的含金量很高。
+
+3、当前股价与每股自由现金流量比小于 10(市现率)
+这一规则对股票的估值水平提出了要求，并以公司的财务灵活性指标作为估值的基准。
+
+4、市盈率在所有股票中在30%以下(首先PE必须大于0)
+
+5、PEG=市盈率/盈利增长率<0.5
+这一规则说明市盈率的增长不及盈利的增长，股票价格处于相对低位，体现了彼得.林奇偏好成长兼具价值股票的
+```
 版本             
 ---
 **0.0**

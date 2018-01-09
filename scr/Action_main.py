@@ -27,7 +27,11 @@ def check_code(code):
     if code == 'sz':
         return code
     elif str(code).isdigit()==True:
-        return code
+        if len(code)== 6:
+            
+            return code
+        else :
+            return False
     else:
         return False
     
