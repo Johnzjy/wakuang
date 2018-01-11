@@ -36,7 +36,7 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(943, 851)
+        MainWindow.resize(1600,800)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -81,6 +81,7 @@ class Ui_MainWindow(object):
         self.dateEdit_2.setSizePolicy(sizePolicy)
         self.dateEdit_2.setObjectName(_fromUtf8("dateEdit_2"))
         self.gridLayout.addWidget(self.dateEdit_2, 4, 1, 1, 1)
+        
         self.label = QtWidgets.QLabel(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
@@ -89,6 +90,7 @@ class Ui_MainWindow(object):
         self.label.setSizePolicy(sizePolicy)
         self.label.setObjectName(_fromUtf8("label"))
         self.gridLayout.addWidget(self.label, 3, 0, 1, 1)
+        
         self.dateEdit = QtWidgets.QDateEdit(self.centralwidget)#Start date
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -117,15 +119,14 @@ class Ui_MainWindow(object):
         self.treeWidget.headerItem().setText(0, _fromUtf8("历史数据"))
         self.verticalLayout_3.addWidget(self.treeWidget)
         self.gridLayout.addLayout(self.verticalLayout_3, 1, 0, 1, 3)
-        self.commandLinkButton = QtWidgets.QCommandLinkButton(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.commandLinkButton.sizePolicy().hasHeightForWidth())
-        self.commandLinkButton.setSizePolicy(sizePolicy)
-        self.commandLinkButton.setText(_fromUtf8(""))
-        self.commandLinkButton.setObjectName(_fromUtf8("commandLinkButton"))
-        self.gridLayout.addWidget(self.commandLinkButton, 4, 2, 1, 1)
+        '''
+        设置日期按钮
+        '''
+        self.DateLinkButton = QtWidgets.QPushButton(self.centralwidget)
+        self.DateButtonATT()
+        self.gridLayout.addWidget(self.DateLinkButton, 4, 2, 1, 1)
+        
+        
         self.comboBox = QtWidgets.QComboBox(self.centralwidget) #Combobox for Selecting type of graph
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -189,6 +190,23 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     #顶层 layout
+    '''
+    设置日期按钮属性定义
+    '''
+    def DateButtonATT(self):
+        self.DateLinkButton.setObjectName(_fromUtf8("SetDate"))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.DateLinkButton.sizePolicy().hasHeightForWidth())
+        self.DateLinkButton.setSizePolicy(sizePolicy)
+        self.DateLinkButton.setText(_fromUtf8(""))
+        self.DateLinkButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/date_r.ico')))
+        self.DateLinkButton.setFlat(True)
+        self.DateLinkButton.setIconSize(QtCore.QSize(20,20))
+        
+        #self.DateLinkButton.released.connect(self.DateLinkButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/date_r.ico'))))
+        
     def topLayout(self,layout,x=0,y=0):
         self.topGrid=QtWidgets.QGridLayout()
         self.topGrid.setObjectName(_fromUtf8("topGrid"))
@@ -206,10 +224,20 @@ class Ui_MainWindow(object):
         
         self.code_line=self.code_layout('code')
         self.topGrid.addLayout(self.code_line,0,3)
+
+        #self.startButton=QtWidgets.QPushButton('Run')
+        #self.topGrid.addWidget(self.startButton,0,0)
         
-        self.startButton=QtWidgets.QPushButton('Run')
-        self.topGrid.addWidget(self.startButton,0,0)
-      
+        self.codelabel = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.codelabel.sizePolicy().hasHeightForWidth())
+        self.codelabel.setSizePolicy(sizePolicy)
+        self.codelabel.setObjectName(_fromUtf8("label"))
+        self.codelabel.setText(_translate("MainWindow", "上海", None))
+        self.topGrid.addWidget(self.codelabel, 0,0)
+        
     def code_layout(self,name):
         lineGrid=QtWidgets.QGridLayout()
         
@@ -219,7 +247,7 @@ class Ui_MainWindow(object):
         lineGrid.addWidget(self.code_edit,0,0)
         self.searchButton=QtWidgets.QPushButton()
    
-        self.searchButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/monitor.ico')))
+        self.searchButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/search_r.ico')))
         self.searchButton.setFlat(True)
 
         self.searchButton.setIconSize(QtCore.QSize(20,20))

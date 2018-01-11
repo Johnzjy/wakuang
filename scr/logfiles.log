@@ -912,3 +912,345 @@
 
 [12-07 11:06:29]-[line:54]-FuncName:info-(time:661407)-INFO: the code 601163,has been done from 2017-12-06
 
+[01-09 14:02:40]-[line:54]-FuncName:info-(time:9579)-INFO: ================计算筹码分布模块================
+[01-09 14:02:40]-[line:54]-FuncName:info-(time:9579)-INFO: 002093：from 2016-12-31 to 2018-01-09
+[01-09 14:02:41]-[line:54]-FuncName:info-(time:10391)-INFO: the code 002093,has been done from 2016-12-31
+
+[01-09 14:02:45]-[line:54]-FuncName:info-(time:14828)-INFO: the code 002093,has been done from 2017-01-04
+
+[01-09 14:02:48]-[line:54]-FuncName:info-(time:17404)-INFO: the code 002093,has been done from 2017-01-05
+
+[01-09 14:02:50]-[line:54]-FuncName:info-(time:20281)-INFO: the code 002093,has been done from 2017-01-06
+
+[01-09 14:02:53]-[line:54]-FuncName:info-(time:22752)-INFO: the code 002093,has been done from 2017-01-09
+
+[01-09 14:02:56]-[line:54]-FuncName:info-(time:26172)-INFO: the code 002093,has been done from 2017-01-10
+
+[01-09 14:02:59]-[line:54]-FuncName:info-(time:28718)-INFO: the code 002093,has been done from 2017-01-11
+
+[01-09 14:03:02]-[line:54]-FuncName:info-(time:31704)-INFO: the code 002093,has been done from 2017-01-12
+
+[01-09 14:03:05]-[line:54]-FuncName:info-(time:34376)-INFO: the code 002093,has been done from 2017-01-13
+
+[01-09 14:03:07]-[line:54]-FuncName:info-(time:37062)-INFO: the code 002093,has been done from 2017-01-16
+
+[01-09 14:03:10]-[line:54]-FuncName:info-(time:39892)-INFO: the code 002093,has been done from 2017-01-17
+
+[01-09 14:03:13]-[line:54]-FuncName:info-(time:42390)-INFO: the code 002093,has been done from 2017-01-18
+
+[01-09 14:03:16]-[line:54]-FuncName:info-(time:45812)-INFO: the code 002093,has been done from 2017-01-19
+
+[01-09 14:03:19]-[line:54]-FuncName:info-(time:48751)-INFO: the code 002093,has been done from 2017-01-20
+
+[01-09 14:03:22]-[line:54]-FuncName:info-(time:52189)-INFO: the code 002093,has been done from 2017-01-23
+
+[01-09 14:03:25]-[line:54]-FuncName:info-(time:54644)-INFO: the code 002093,has been done from 2017-01-24
+
+[01-09 14:03:29]-[line:54]-FuncName:info-(time:58297)-INFO: the code 002093,has been done from 2017-01-25
+
+[01-09 14:03:31]-[line:54]-FuncName:info-(time:61171)-INFO: the code 002093,has been done from 2017-01-26
+
+[01-09 14:03:34]-[line:54]-FuncName:info-(time:63388)-INFO: the code 002093,has been done from 2017-02-02
+
+[01-09 14:03:34]-[line:57]-FuncName:war-(time:63388)-WARNING: 
+计算换手率数据下载错误：2017-02-02自动计算计算
+[01-09 14:03:34]-[line:60]-FuncName:error-(time:63419)-ERROR: 
+数据有问题中断本次：2017-02-02没有计算成功
+[01-09 14:03:36]-[line:54]-FuncName:info-(time:65897)-INFO: the code 002093,has been done from 2017-02-03
+
+[01-09 14:03:39]-[line:54]-FuncName:info-(time:68814)-INFO: the code 002093,has been done from 2017-02-06
+
+[01-09 14:03:41]-[line:54]-FuncName:info-(time:71265)-INFO: the code 002093,has been done from 2017-02-07
+
+[01-09 14:03:44]-[line:54]-FuncName:info-(time:73827)-INFO: the code 002093,has been done from 2017-02-08
+
+[01-09 14:03:47]-[line:54]-FuncName:info-(time:76767)-INFO: the code 002093,has been done from 2017-02-09
+
+[01-09 14:03:50]-[line:54]-FuncName:info-(time:79428)-INFO: the code 002093,has been done from 2017-02-10
+
+[01-09 14:03:52]-[line:54]-FuncName:info-(time:81890)-INFO: the code 002093,has been done from 2017-02-13
+
+[01-09 14:03:55]-[line:54]-FuncName:info-(time:84481)-INFO: the code 002093,has been done from 2017-02-14
+
+[01-09 14:03:57]-[line:54]-FuncName:info-(time:87110)-INFO: the code 002093,has been done from 2017-02-15
+
+[01-09 14:04:00]-[line:54]-FuncName:info-(time:89504)-INFO: the code 002093,has been done from 2017-02-16
+
+[01-09 14:04:02]-[line:54]-FuncName:info-(time:91986)-INFO: the code 002093,has been done from 2017-02-17
+
+[01-09 14:04:06]-[line:54]-FuncName:info-(time:95368)-INFO: the code 002093,has been done from 2017-02-20
+
+[01-09 14:04:09]-[line:54]-FuncName:info-(time:98454)-INFO: the code 002093,has been done from 2017-02-21
+
+[01-09 14:04:12]-[line:54]-FuncName:info-(time:101584)-INFO: the code 002093,has been done from 2017-02-22
+
+[01-09 14:04:15]-[line:54]-FuncName:info-(time:104620)-INFO: the code 002093,has been done from 2017-02-23
+
+[01-09 14:04:17]-[line:54]-FuncName:info-(time:107265)-INFO: the code 002093,has been done from 2017-02-24
+
+[01-09 14:04:20]-[line:54]-FuncName:info-(time:110255)-INFO: the code 002093,has been done from 2017-02-27
+
+[01-09 14:04:24]-[line:54]-FuncName:info-(time:113340)-INFO: the code 002093,has been done from 2017-02-28
+
+[01-09 14:04:26]-[line:54]-FuncName:info-(time:116034)-INFO: the code 002093,has been done from 2017-03-01
+
+[01-09 14:04:29]-[line:54]-FuncName:info-(time:118666)-INFO: the code 002093,has been done from 2017-03-02
+
+[01-09 14:04:32]-[line:54]-FuncName:info-(time:121705)-INFO: the code 002093,has been done from 2017-03-03
+
+[01-09 14:04:35]-[line:54]-FuncName:info-(time:124378)-INFO: the code 002093,has been done from 2017-03-06
+
+[01-09 14:04:37]-[line:54]-FuncName:info-(time:127134)-INFO: the code 002093,has been done from 2017-03-07
+
+[01-09 14:04:40]-[line:54]-FuncName:info-(time:129831)-INFO: the code 002093,has been done from 2017-03-08
+
+[01-09 14:04:43]-[line:54]-FuncName:info-(time:133224)-INFO: the code 002093,has been done from 2017-03-09
+
+[01-09 14:04:47]-[line:54]-FuncName:info-(time:136504)-INFO: the code 002093,has been done from 2017-03-10
+
+[01-09 14:04:50]-[line:54]-FuncName:info-(time:139442)-INFO: the code 002093,has been done from 2017-03-13
+
+[01-09 14:04:52]-[line:54]-FuncName:info-(time:142131)-INFO: the code 002093,has been done from 2017-03-14
+
+[01-09 14:04:56]-[line:54]-FuncName:info-(time:145301)-INFO: the code 002093,has been done from 2017-03-15
+
+[01-09 14:04:59]-[line:54]-FuncName:info-(time:148518)-INFO: the code 002093,has been done from 2017-03-16
+
+[01-09 14:05:19]-[line:54]-FuncName:info-(time:2293)-INFO: ================计算筹码分布模块================
+[01-09 14:05:19]-[line:54]-FuncName:info-(time:2293)-INFO: 002093：from 2016-12-31 to 2018-01-09
+[01-09 14:05:23]-[line:54]-FuncName:info-(time:6010)-INFO: the code 002093,has been done from 2016-12-31
+
+[01-09 14:05:30]-[line:54]-FuncName:info-(time:13542)-INFO: the code 002093,has been done from 2017-01-04
+
+[01-09 14:05:34]-[line:54]-FuncName:info-(time:16558)-INFO: the code 002093,has been done from 2017-01-05
+
+[01-09 14:05:36]-[line:54]-FuncName:info-(time:19084)-INFO: the code 002093,has been done from 2017-01-06
+
+[01-09 14:05:39]-[line:54]-FuncName:info-(time:21554)-INFO: the code 002093,has been done from 2017-01-09
+
+[01-09 14:05:42]-[line:54]-FuncName:info-(time:24950)-INFO: the code 002093,has been done from 2017-01-10
+
+[01-09 14:05:44]-[line:54]-FuncName:info-(time:27510)-INFO: the code 002093,has been done from 2017-01-11
+
+[01-09 14:05:49]-[line:54]-FuncName:info-(time:31959)-INFO: the code 002093,has been done from 2017-01-12
+
+[01-09 14:05:52]-[line:54]-FuncName:info-(time:34980)-INFO: the code 002093,has been done from 2017-01-13
+
+[01-09 14:05:55]-[line:54]-FuncName:info-(time:38215)-INFO: the code 002093,has been done from 2017-01-16
+
+[01-09 14:05:58]-[line:54]-FuncName:info-(time:41341)-INFO: the code 002093,has been done from 2017-01-17
+
+[01-09 14:06:01]-[line:54]-FuncName:info-(time:44480)-INFO: the code 002093,has been done from 2017-01-18
+
+[01-09 14:06:04]-[line:54]-FuncName:info-(time:47324)-INFO: the code 002093,has been done from 2017-01-19
+
+[01-09 14:06:07]-[line:54]-FuncName:info-(time:50301)-INFO: the code 002093,has been done from 2017-01-20
+
+[01-09 14:06:10]-[line:54]-FuncName:info-(time:52666)-INFO: the code 002093,has been done from 2017-01-23
+
+[01-09 14:06:12]-[line:54]-FuncName:info-(time:55496)-INFO: the code 002093,has been done from 2017-01-24
+
+[01-09 14:06:15]-[line:54]-FuncName:info-(time:57943)-INFO: the code 002093,has been done from 2017-01-25
+
+[01-09 14:06:17]-[line:54]-FuncName:info-(time:60296)-INFO: the code 002093,has been done from 2017-01-26
+
+[01-09 14:06:19]-[line:54]-FuncName:info-(time:62392)-INFO: the code 002093,has been done from 2017-02-02
+
+[01-09 14:06:19]-[line:57]-FuncName:war-(time:62392)-WARNING: 
+计算换手率数据下载错误：2017-02-02自动计算计算
+[01-09 14:06:19]-[line:60]-FuncName:error-(time:62408)-ERROR: 
+数据有问题中断本次：2017-02-02没有计算成功
+[01-09 14:06:22]-[line:54]-FuncName:info-(time:64744)-INFO: the code 002093,has been done from 2017-02-03
+
+[01-09 14:06:24]-[line:54]-FuncName:info-(time:67246)-INFO: the code 002093,has been done from 2017-02-06
+
+[01-09 14:06:27]-[line:54]-FuncName:info-(time:69704)-INFO: the code 002093,has been done from 2017-02-07
+
+[01-09 14:06:29]-[line:54]-FuncName:info-(time:72386)-INFO: the code 002093,has been done from 2017-02-08
+
+[01-09 14:06:32]-[line:54]-FuncName:info-(time:75310)-INFO: the code 002093,has been done from 2017-02-09
+
+[01-09 14:06:35]-[line:54]-FuncName:info-(time:78315)-INFO: the code 002093,has been done from 2017-02-10
+
+[01-09 14:06:38]-[line:54]-FuncName:info-(time:80770)-INFO: the code 002093,has been done from 2017-02-13
+
+[01-09 14:06:40]-[line:54]-FuncName:info-(time:83198)-INFO: the code 002093,has been done from 2017-02-14
+
+[01-09 14:06:43]-[line:54]-FuncName:info-(time:85609)-INFO: the code 002093,has been done from 2017-02-15
+
+[01-09 14:06:45]-[line:54]-FuncName:info-(time:88075)-INFO: the code 002093,has been done from 2017-02-16
+
+[01-09 14:06:48]-[line:54]-FuncName:info-(time:91095)-INFO: the code 002093,has been done from 2017-02-17
+
+[01-09 14:06:51]-[line:54]-FuncName:info-(time:93557)-INFO: the code 002093,has been done from 2017-02-20
+
+[01-09 14:06:53]-[line:54]-FuncName:info-(time:96153)-INFO: the code 002093,has been done from 2017-02-21
+
+[01-09 14:06:56]-[line:54]-FuncName:info-(time:99372)-INFO: the code 002093,has been done from 2017-02-22
+
+[01-09 14:06:59]-[line:54]-FuncName:info-(time:102080)-INFO: the code 002093,has been done from 2017-02-23
+
+[01-09 14:07:02]-[line:54]-FuncName:info-(time:104575)-INFO: the code 002093,has been done from 2017-02-24
+
+[01-09 14:07:05]-[line:54]-FuncName:info-(time:107758)-INFO: the code 002093,has been done from 2017-02-27
+
+[01-09 14:07:07]-[line:54]-FuncName:info-(time:110276)-INFO: the code 002093,has been done from 2017-02-28
+
+[01-09 14:07:11]-[line:54]-FuncName:info-(time:113607)-INFO: the code 002093,has been done from 2017-03-01
+
+[01-09 14:07:14]-[line:54]-FuncName:info-(time:117343)-INFO: the code 002093,has been done from 2017-03-02
+
+[01-09 14:07:17]-[line:54]-FuncName:info-(time:119929)-INFO: the code 002093,has been done from 2017-03-03
+
+[01-09 14:07:19]-[line:54]-FuncName:info-(time:122405)-INFO: the code 002093,has been done from 2017-03-06
+
+[01-09 14:07:22]-[line:54]-FuncName:info-(time:124967)-INFO: the code 002093,has been done from 2017-03-07
+
+[01-09 14:07:26]-[line:54]-FuncName:info-(time:128772)-INFO: the code 002093,has been done from 2017-03-08
+
+[01-09 14:07:28]-[line:54]-FuncName:info-(time:131524)-INFO: the code 002093,has been done from 2017-03-09
+
+[01-09 14:07:31]-[line:54]-FuncName:info-(time:134281)-INFO: the code 002093,has been done from 2017-03-10
+
+[01-09 14:07:34]-[line:54]-FuncName:info-(time:137095)-INFO: the code 002093,has been done from 2017-03-13
+
+[01-09 14:07:37]-[line:54]-FuncName:info-(time:139930)-INFO: the code 002093,has been done from 2017-03-14
+
+[01-09 14:07:40]-[line:54]-FuncName:info-(time:142921)-INFO: the code 002093,has been done from 2017-03-15
+
+[01-09 14:07:42]-[line:54]-FuncName:info-(time:145425)-INFO: the code 002093,has been done from 2017-03-16
+
+[01-09 14:07:46]-[line:54]-FuncName:info-(time:149213)-INFO: the code 002093,has been done from 2017-03-17
+
+[01-09 14:07:49]-[line:54]-FuncName:info-(time:151848)-INFO: the code 002093,has been done from 2017-03-20
+
+[01-09 14:07:51]-[line:54]-FuncName:info-(time:154436)-INFO: the code 002093,has been done from 2017-03-21
+
+[01-09 14:07:54]-[line:54]-FuncName:info-(time:157122)-INFO: the code 002093,has been done from 2017-03-22
+
+[01-09 14:07:57]-[line:54]-FuncName:info-(time:159795)-INFO: the code 002093,has been done from 2017-03-23
+
+[01-09 14:07:59]-[line:54]-FuncName:info-(time:162389)-INFO: the code 002093,has been done from 2017-03-24
+
+[01-09 14:08:02]-[line:54]-FuncName:info-(time:164852)-INFO: the code 002093,has been done from 2017-03-27
+
+[01-09 14:08:04]-[line:54]-FuncName:info-(time:167483)-INFO: the code 002093,has been done from 2017-03-28
+
+[01-09 14:08:07]-[line:54]-FuncName:info-(time:170083)-INFO: the code 002093,has been done from 2017-03-29
+
+[01-09 14:08:10]-[line:54]-FuncName:info-(time:172738)-INFO: the code 002093,has been done from 2017-03-30
+
+[01-09 14:08:12]-[line:54]-FuncName:info-(time:175122)-INFO: the code 002093,has been done from 2017-03-31
+
+[01-09 14:08:15]-[line:54]-FuncName:info-(time:177892)-INFO: the code 002093,has been done from 2017-04-05
+
+[01-09 14:08:17]-[line:54]-FuncName:info-(time:180452)-INFO: the code 002093,has been done from 2017-04-06
+
+[01-09 14:08:20]-[line:54]-FuncName:info-(time:182857)-INFO: the code 002093,has been done from 2017-04-07
+
+[01-09 14:08:22]-[line:54]-FuncName:info-(time:185316)-INFO: the code 002093,has been done from 2017-04-10
+
+[01-09 14:08:25]-[line:54]-FuncName:info-(time:188237)-INFO: the code 002093,has been done from 2017-04-11
+
+[01-09 14:08:28]-[line:54]-FuncName:info-(time:190974)-INFO: the code 002093,has been done from 2017-04-12
+
+[01-09 14:08:31]-[line:54]-FuncName:info-(time:193893)-INFO: the code 002093,has been done from 2017-04-13
+
+[01-09 14:08:33]-[line:54]-FuncName:info-(time:196433)-INFO: the code 002093,has been done from 2017-04-14
+
+[01-09 14:08:36]-[line:54]-FuncName:info-(time:199001)-INFO: the code 002093,has been done from 2017-04-17
+
+[01-09 14:08:39]-[line:54]-FuncName:info-(time:201865)-INFO: the code 002093,has been done from 2017-04-18
+
+[01-09 14:08:41]-[line:54]-FuncName:info-(time:204354)-INFO: the code 002093,has been done from 2017-04-19
+
+[01-09 14:08:44]-[line:54]-FuncName:info-(time:206859)-INFO: the code 002093,has been done from 2017-04-20
+
+[01-09 14:08:46]-[line:60]-FuncName:error-(time:209328)-ERROR: 
+数据：2017-04-21没有计算成功
+[01-09 14:08:52]-[line:60]-FuncName:error-(time:214702)-ERROR: 
+数据：2017-04-24没有计算成功
+[01-09 14:08:55]-[line:60]-FuncName:error-(time:217952)-ERROR: 
+数据：2017-04-25没有计算成功
+[01-09 14:08:57]-[line:60]-FuncName:error-(time:220406)-ERROR: 
+数据：2017-04-26没有计算成功
+[01-09 14:09:00]-[line:60]-FuncName:error-(time:222689)-ERROR: 
+数据：2017-04-27没有计算成功
+[01-09 14:09:04]-[line:60]-FuncName:error-(time:227095)-ERROR: 
+数据：2017-04-28没有计算成功
+[01-09 14:09:07]-[line:60]-FuncName:error-(time:229562)-ERROR: 
+数据：2017-05-02没有计算成功
+[01-09 14:09:10]-[line:60]-FuncName:error-(time:233067)-ERROR: 
+数据：2017-05-03没有计算成功
+[01-09 14:09:12]-[line:60]-FuncName:error-(time:235378)-ERROR: 
+数据：2017-05-04没有计算成功
+[01-09 14:09:15]-[line:60]-FuncName:error-(time:237921)-ERROR: 
+数据：2017-05-05没有计算成功
+[01-09 14:09:22]-[line:60]-FuncName:error-(time:245409)-ERROR: 
+数据：2017-05-08没有计算成功
+[01-09 14:09:25]-[line:60]-FuncName:error-(time:247943)-ERROR: 
+数据：2017-05-09没有计算成功
+[01-09 14:09:27]-[line:60]-FuncName:error-(time:250445)-ERROR: 
+数据：2017-05-10没有计算成功
+[01-09 14:09:30]-[line:60]-FuncName:error-(time:252754)-ERROR: 
+数据：2017-05-11没有计算成功
+[01-09 14:09:32]-[line:60]-FuncName:error-(time:255109)-ERROR: 
+数据：2017-05-12没有计算成功
+[01-09 14:09:35]-[line:60]-FuncName:error-(time:257596)-ERROR: 
+数据：2017-05-15没有计算成功
+[01-09 14:09:37]-[line:60]-FuncName:error-(time:260095)-ERROR: 
+数据：2017-05-16没有计算成功
+[01-09 14:09:39]-[line:60]-FuncName:error-(time:262508)-ERROR: 
+数据：2017-05-17没有计算成功
+[01-09 14:09:42]-[line:60]-FuncName:error-(time:264805)-ERROR: 
+数据：2017-05-18没有计算成功
+[01-09 14:09:44]-[line:60]-FuncName:error-(time:267262)-ERROR: 
+数据：2017-05-19没有计算成功
+[01-09 14:09:47]-[line:60]-FuncName:error-(time:269702)-ERROR: 
+数据：2017-05-22没有计算成功
+[01-09 14:09:49]-[line:60]-FuncName:error-(time:272094)-ERROR: 
+数据：2017-05-23没有计算成功
+[01-09 14:09:51]-[line:60]-FuncName:error-(time:274408)-ERROR: 
+数据：2017-05-24没有计算成功
+[01-09 14:09:54]-[line:60]-FuncName:error-(time:276973)-ERROR: 
+数据：2017-05-25没有计算成功
+[01-09 14:09:56]-[line:60]-FuncName:error-(time:279455)-ERROR: 
+数据：2017-05-26没有计算成功
+[01-09 14:09:59]-[line:60]-FuncName:error-(time:281860)-ERROR: 
+数据：2017-05-31没有计算成功
+[01-09 14:10:01]-[line:60]-FuncName:error-(time:284146)-ERROR: 
+数据：2017-06-01没有计算成功
+[01-09 14:10:03]-[line:60]-FuncName:error-(time:286487)-ERROR: 
+数据：2017-06-02没有计算成功
+[01-09 14:10:06]-[line:60]-FuncName:error-(time:288942)-ERROR: 
+数据：2017-06-05没有计算成功
+[01-09 14:10:11]-[line:60]-FuncName:error-(time:294409)-ERROR: 
+数据：2017-06-06没有计算成功
+[01-09 14:10:14]-[line:60]-FuncName:error-(time:296853)-ERROR: 
+数据：2017-06-07没有计算成功
+[01-09 14:10:16]-[line:60]-FuncName:error-(time:299357)-ERROR: 
+数据：2017-06-08没有计算成功
+[01-09 14:10:22]-[line:60]-FuncName:error-(time:304766)-ERROR: 
+数据：2017-06-09没有计算成功
+[01-09 14:10:24]-[line:60]-FuncName:error-(time:307297)-ERROR: 
+数据：2017-06-12没有计算成功
+[01-09 14:10:27]-[line:60]-FuncName:error-(time:309784)-ERROR: 
+数据：2017-06-13没有计算成功
+[01-09 14:10:29]-[line:60]-FuncName:error-(time:312069)-ERROR: 
+数据：2017-06-14没有计算成功
+[01-09 14:10:31]-[line:60]-FuncName:error-(time:314370)-ERROR: 
+数据：2017-06-15没有计算成功
+[01-09 14:10:34]-[line:60]-FuncName:error-(time:316874)-ERROR: 
+数据：2017-06-16没有计算成功
+[01-09 14:10:36]-[line:60]-FuncName:error-(time:319378)-ERROR: 
+数据：2017-06-19没有计算成功
+[01-09 14:10:39]-[line:60]-FuncName:error-(time:321818)-ERROR: 
+数据：2017-06-20没有计算成功
+[01-09 14:10:41]-[line:60]-FuncName:error-(time:324100)-ERROR: 
+数据：2017-06-21没有计算成功
+[01-09 14:10:43]-[line:60]-FuncName:error-(time:326448)-ERROR: 
+数据：2017-06-22没有计算成功
+[01-09 14:10:46]-[line:60]-FuncName:error-(time:329026)-ERROR: 
+数据：2017-06-23没有计算成功
+[01-09 14:10:49]-[line:60]-FuncName:error-(time:331585)-ERROR: 
+数据：2017-06-26没有计算成功

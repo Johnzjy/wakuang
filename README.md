@@ -100,7 +100,7 @@ To Do List
 - [x] 已做
 - [ ] 未做做
 - [ ] build cash flow display
-- [x] completed GUI_2 （the frist version compeled）
+- [x] completed GUI_2 （the frist version compeled，add RSI）
 - [ ] Mail events：specify kinds of events
 - [ ] Wechat events
 - [ ] Open api

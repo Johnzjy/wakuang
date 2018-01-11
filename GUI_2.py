@@ -25,12 +25,16 @@ class mywindow(QMainWindow):
         self.ui=Ui_MainWindow()
         self.ui.setupUi(self)
         
-        curdate = time.strftime("%Y/%m/%d") #gets current time to put into dateedit
-        dateobj = datetime.strptime(curdate, "%Y/%m/%d")#converts to datetime object
-        past = dateobj - timedelta(days = 7)  #minus a week to start date
-        pasttime = datetime.strftime(past, "%Y/%m/%d")
-        QPast = QDate.fromString(pasttime,"yyyy/MM/dd") #convert to qtime so that widget accepts the values
-        Qcurdate = QDate.fromString(curdate,"yyyy/MM/dd")
+        curdate = time.strftime("%Y-%m-%d") #gets current time to put into dateedit
+        dateobj = datetime.strptime(curdate, "%Y-%m-%d")#converts to datetime object
+        past = dateobj - timedelta(days = 365)  #minus a week to start date
+        pasttime = datetime.strftime(past, "%Y-%m-%d")
+
+        self.QPast = QDate.fromString(pasttime,"yyyy-MM-dd") #convert to qtime so that widget accepts the values
+        self.Qcurdate = QDate.fromString(curdate,"yyyy-MM-dd")
+        self.startdate=pasttime
+        self.enddate=curdate
+        
         zsparent = QTreeWidgetItem(self.ui.treeWidget)
         zsparent.setText(0, "股票指数")
         zsparent.setIcon(0, QtGui.QIcon('scr/ico/internet.png'))
@@ -43,9 +47,10 @@ class mywindow(QMainWindow):
         zsparent2.setText(0,"上海")
         zsparent2.setIcon(0, QtGui.QIcon('scr/ico/batman.png'))
         
-        shanghai=ma.list_input('sh')
+        self.shanghai=ma.list_input('sh')
+        print (self.shanghai)
         
-        list_name=list(shanghai.values)
+        list_name=list(self.shanghai.values)
         for code in list_name:
             child = QTreeWidgetItem(zsparent2)
             child.setText(0, '%s %s'%(code[0],code[1]))
@@ -57,8 +62,8 @@ class mywindow(QMainWindow):
         zsparent_sz.setText(0,"深圳")
         zsparent_sz.setIcon(0, QtGui.QIcon('scr/ico/greenman.png'))
         
-        shanghai=ma.list_input('sz')
-        list_name=list(shanghai.values)
+        self.shenzhen=ma.list_input('sz')
+        list_name=list(self.shenzhen.values)
         i=0
         for code in list_name:
             i+=1
@@ -69,7 +74,9 @@ class mywindow(QMainWindow):
         '''
         连接 edit line 和searchButton
         '''
-        self.ui.searchButton.clicked.connect(self.run_drawing)
+        self.ui.searchButton.clicked.connect(self.ClickedSearchButton)
+        self.ui.searchButton.pressed.connect(self.PressSearchButton)
+        self.ui.searchButton.released.connect(self.ReleasedSearchButton)
             
         #print(shanghai)
       
@@ -84,22 +91,19 @@ class mywindow(QMainWindow):
         self.K_graph=t2.My_plot()
         #加入列表
         self.ui.verticalLayout.addWidget(self.K_graph.win,0,0,10,10)
-        self.K_graph.setCodeDate(code='sh',start='2016-11-01',end='2018-01-08')
+        self.K_graph.setCodeDate(code='sh',start='%s'%self.startdate,end='%s'%self.enddate)
         self.K_graph.Kline_plotting()
         self.K_graph.update_plotting()
         self.K_graph.macd_plotting()
         self.K_graph.RSI_plotting()
         '''
         no useful
-        file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "render.html")) #path to read html file
-        local_url = QUrl.fromLocalFile(file_path)
-        self.ui.widget.load(local_url)
         #self.ui.commandLinkButton.clicked.connect(self.classify)  #when the arrow button is clicked, trigger events
         '''
-        self.ui.commandLinkButton.setFixedSize(50, 50)
-
-
-
+        self.ui.DateLinkButton.setFixedSize(50, 50)
+        self.ui.DateLinkButton.clicked.connect(self.ClickedDateButton)
+        self.ui.DateLinkButton.pressed.connect(self.PressDateButton)
+        self.ui.DateLinkButton.released.connect(self.ReleasedDateButton)
         #self.ui.commandLinkButton.clicked.connect(lambda action: self.classify(action, self.ui.treewidget))
         #  QSizePolicy
         try:
@@ -117,8 +121,8 @@ class mywindow(QMainWindow):
 
 
 
-        self.ui.dateEdit.setDate(QPast)
-        self.ui.dateEdit_2.setDate(Qcurdate)#populate widgets
+        self.ui.dateEdit.setDate(self.QPast)
+        self.ui.dateEdit_2.setDate(self.Qcurdate)#populate widgets
         self.ui.dateEdit.setCalendarPopup(True)
         self.ui.dateEdit_2.setCalendarPopup(True)
         self.ui.comboBox.addItems(["D", "W", "M", "5", "15", "30", "60"])
@@ -129,12 +133,12 @@ class mywindow(QMainWindow):
         self.ui.combobox.currentIndexChanged.connect(self.modifycombo)
         self.initUI()
     #@LOG.debug_fun
-    def run_drawing(self):
+    def ClickedSearchButton(self):
         LOG.logger.info('drawing_window for stock')
         code_input=Action_main.check_code(self.ui.code_edit.text())
-        
+        self.SetLable(code_input)
         #code_input=self.ui.code_edit.text()
-        print(code_input)
+
       
         if code_input == False:
             print(code_input)
@@ -145,7 +149,7 @@ class mywindow(QMainWindow):
             
             self.K_graph.remove_plot()
             try:
-                self.K_graph.setCodeDate(code=code_input,start='2016-11-01',end='2018-01-04')
+                self.K_graph.setCodeDate(code=code_input,start='%s'%self.startdate,end='%s'%self.enddate)
             except ValueError:
                     print('Input code is wrong/输入代码错误.')
             else:
@@ -153,6 +157,11 @@ class mywindow(QMainWindow):
                 self.K_graph.update_plotting()
                 self.K_graph.macd_plotting()
                 self.K_graph.RSI_plotting()
+    def PressSearchButton(self):
+      
+        self.ui.searchButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/search_r.ico')))
+    def ReleasedSearchButton(self):  
+        self.ui.searchButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/search_p.ico')))
     '''
     动作：双击列表
     reload
@@ -278,20 +287,45 @@ class mywindow(QMainWindow):
             #item = self.ui.treewidget.takeItem(self.ui.treewidget.currentRow())
             sip.delete(x)
             #item.delete'
+    def SetLable(self,code_in):
+        
+ 
 
-            
-            
+        list_name=list(self.shanghai.values)
+        for code in list_name:
+            if code_in == code[0]:
+                self.ui.codelabel.setText('上海 %s %s'%(code[0],code[1]))
+                return 
+            else:
+                pass
+        list_name=list(self.shenzhen.values)
+        for code in list_name:
+            if code_in == code[0]:
+                self.ui.codelabel.setText('深圳 %s %s'%(code[0],code[1]))
+                return
+            else:
+                pass 
+        self.ui.codelabel.setText(code_in)
+        
+        
+        
+    def ClickedDateButton(self): #设置日期
+        self.startdate = self.ui.dateEdit.date()
+        self.startdate = self.startdate.toPyDate()
+        self.startdate = self.startdate.strftime("%Y-%m-%d")#converts date from dateedit to tushare readable date
+        self.enddate = self.ui.dateEdit_2.date()
+        self.enddate = self.enddate.toPyDate()
+        self.enddate = self.enddate.strftime("%Y-%m-%d")
+    def PressDateButton(self):    
+        self.ui.DateLinkButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/date_p.ico')))
+    def ReleasedDateButton(self):  
+        self.ui.DateLinkButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/date_r.ico')))
     def classify(self, folder):
         
         items = []
-        startdate = self.ui.dateEdit.date()
-        startdate = startdate.toPyDate()
-        startdate = startdate.strftime("%Y/%m/%d")#converts date from dateedit to tushare readable date
-        enddate = self.ui.dateEdit_2.date()
-        enddate = enddate.toPyDate()
-        enddate = enddate.strftime("%Y/%m/%d")
+        self.enddate = self.enddate.strftime("%Y-%m-%d")
         option = self.ui.comboBox.currentText()
-        print(startdate,enddate,option)
+  
         option = str(option)
         #if (self.ui.treewidget) == 0:
             #self.ui.label.setText("Need to select at least one query")

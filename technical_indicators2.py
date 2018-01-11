@@ -277,7 +277,7 @@ class My_plot(QtGui.QWindow):
         self.k_plot = self.win.addPlot(row=1,col=0,title="kline",axisItems={'bottom': stringaxis})
         
         self.y=self.numd.close
-        self.k_plot.plot(x=list( self.xdict.keys()), y=self.y.values)
+        self.k_plot.plot(x=list( self.xdict.keys()), y=self.y.values,pen=(0,255,255))
         
         self.k_plot.showGrid(x=True, y=True)
         self.region = pg.LinearRegionItem()
@@ -288,11 +288,21 @@ class My_plot(QtGui.QWindow):
  
     def update_plotting(self):
         
-        self.update_plot = self.win.addPlot(row=2,col=0,title="局部放大 k")
+        self.update_plot = self.win.addPlot(row=2,col=0,title="布林线")
         self.update_plot.setAutoVisible(y=True)
-        self.update_plot.plot(x=self.y.index,y=self.y.values)
+        self.data.ST_bands()
+        upprband=self.data.df.upperband
+        middleband=self.data.df.middleband
+        lowerband=self.data.df.lowerband
+        pen_band=pg.mkPen(color=(255, 0, 0),width=2)
+        
+        self.update_plot.plot(x=self.y.index,y=upprband.values,pen=pen_band)
+        self.update_plot.plot(x=self.y.index,y=middleband.values,pen='w')
+        self.update_plot.plot(x=self.y.index,y=lowerband.values,pen=pen_band)
+        self.update_plot.plot(x=self.y.index,y=self.y.values,pen=(0,255,255))
         self.region.sigRegionChanged.connect(self.update)
         self.update_plot.sigRangeChanged.connect(self.updateRegion)
+        self.update_plot.showGrid(x=True, y=True)
         self.region.setRegion([self.maxRegion//4*2, self.maxRegion])
     def macd_plotting(self):
         t=len(self.numd.index)//10
