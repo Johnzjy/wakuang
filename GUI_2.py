@@ -22,6 +22,7 @@ LOG= logd.Logger('./scr/GUI.log')
 class mywindow(QMainWindow):
     def __init__(self):
         super(mywindow,self).__init__()
+        self.GraphEnable= False # 绘图开关
         self.ui=Ui_MainWindow()
         self.ui.setupUi(self)
         
@@ -36,7 +37,7 @@ class mywindow(QMainWindow):
         self.enddate=curdate
         
         zsparent = QTreeWidgetItem(self.ui.treeWidget)
-        zsparent.setText(0, "股票指数")
+        zsparent.setText(0, "index")
         zsparent.setIcon(0, QtGui.QIcon('scr/ico/internet.png'))
         zsnames = ["上证指数-sh", "深圳成指-sz", "沪深300指数-hs300", "上证50-sz50", "中小板-zxb", "创业板-cyb"]
         #股票列表
@@ -44,7 +45,7 @@ class mywindow(QMainWindow):
             child = QTreeWidgetItem(zsparent)
             child.setText(0, k)
         zsparent2 = QTreeWidgetItem(self.ui.treeWidget)    
-        zsparent2.setText(0,"上海")
+        zsparent2.setText(0,"SH")
         zsparent2.setIcon(0, QtGui.QIcon('scr/ico/batman.png'))
         
         self.shanghai=ma.list_input('sh')
@@ -59,7 +60,7 @@ class mywindow(QMainWindow):
             
 
         zsparent_sz = QTreeWidgetItem(self.ui.treeWidget)    
-        zsparent_sz.setText(0,"深圳")
+        zsparent_sz.setText(0,"SZ")
         zsparent_sz.setIcon(0, QtGui.QIcon('scr/ico/greenman.png'))
         
         self.shenzhen=ma.list_input('sz')
@@ -89,16 +90,25 @@ class mywindow(QMainWindow):
         '''
         #引用 T2
         self.K_graph=t2.My_plot()
+
         #加入列表
         self.ui.verticalLayout.addWidget(self.K_graph.win,0,0,10,10)
-        self.K_graph.setCodeDate(code='sh',start='%s'%self.startdate,end='%s'%self.enddate)
-        self.K_graph.Kline_plotting()
-        self.K_graph.update_plotting()
-        self.K_graph.macd_plotting()
-        self.K_graph.RSI_plotting()
+        if self.GraphEnable == True:
+            self.ui.pbar.setRange(0,5)
+            self.K_graph.setCodeDate(code='sh',start='%s'%self.startdate,end='%s'%self.enddate)
+            self.ui.pbar.setValue(1)
+            self.K_graph.Kline_plotting()
+            self.ui.pbar.setValue(2)
+            self.K_graph.update_plotting()
+            self.ui.pbar.setValue(3)
+            self.K_graph.macd_plotting()
+            self.ui.pbar.setValue(4)
+            self.K_graph.RSI_plotting()
+            self.ui.pbar.setValue(5)
+        else:
+            pass 
         '''
-        no useful
-        #self.ui.commandLinkButton.clicked.connect(self.classify)  #when the arrow button is clicked, trigger events
+        self.ui.DateLinkButton 日期设置 
         '''
         self.ui.DateLinkButton.setFixedSize(50, 50)
         self.ui.DateLinkButton.clicked.connect(self.ClickedDateButton)
@@ -135,6 +145,7 @@ class mywindow(QMainWindow):
     #@LOG.debug_fun
     def ClickedSearchButton(self):
         LOG.logger.info('drawing_window for stock')
+        self.ui.pbar.reset()
         code_input=Action_main.check_code(self.ui.code_edit.text())
         self.SetLable(code_input)
         #code_input=self.ui.code_edit.text()
@@ -153,10 +164,15 @@ class mywindow(QMainWindow):
             except ValueError:
                     print('Input code is wrong/输入代码错误.')
             else:
+                self.ui.pbar.setRange(0,4)
                 self.K_graph.Kline_plotting()
+                self.ui.pbar.setValue(1)
                 self.K_graph.update_plotting()
+                self.ui.pbar.setValue(2)
                 self.K_graph.macd_plotting()
+                self.ui.pbar.setValue(3)
                 self.K_graph.RSI_plotting()
+                self.ui.pbar.setValue(4)
     def PressSearchButton(self):
       
         self.ui.searchButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/search_r.ico')))
