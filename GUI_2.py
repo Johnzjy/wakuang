@@ -8,7 +8,7 @@ from qtpy.QtCore import Qt,QUrl,QDate
 from scr import Graph,layout
 #from scr.Graph import graphpage
 from scr.layout import Ui_MainWindow
-from scr import Action_main,logd
+from scr import Action_main,logd,Top10shareholder
 from pandas import DataFrame as df
 import MACD_RUNNING_ALL as ma
 import technical_indicators2 as t2
@@ -22,7 +22,7 @@ LOG= logd.Logger('./scr/GUI.log')
 class mywindow(QMainWindow):
     def __init__(self):
         super(mywindow,self).__init__()
-        self.GraphEnable= False # 绘图开关
+        self.GraphEnable= True # 绘图开关
         self.ui=Ui_MainWindow()
         self.ui.setupUi(self)
         
@@ -49,7 +49,7 @@ class mywindow(QMainWindow):
         zsparent2.setIcon(0, QtGui.QIcon('scr/ico/batman.png'))
         
         self.shanghai=ma.list_input('sh')
-        print (self.shanghai)
+        #print (self.shanghai)
         
         list_name=list(self.shanghai.values)
         for code in list_name:
@@ -89,24 +89,8 @@ class mywindow(QMainWindow):
         导入graph
         '''
         #引用 T2
-        self.K_graph=t2.My_plot()
+        self.GraphInit()
 
-        #加入列表
-        self.ui.verticalLayout.addWidget(self.K_graph.win,0,0,10,10)
-        if self.GraphEnable == True:
-            self.ui.pbar.setRange(0,5)
-            self.K_graph.setCodeDate(code='sh',start='%s'%self.startdate,end='%s'%self.enddate)
-            self.ui.pbar.setValue(1)
-            self.K_graph.Kline_plotting()
-            self.ui.pbar.setValue(2)
-            self.K_graph.update_plotting()
-            self.ui.pbar.setValue(3)
-            self.K_graph.macd_plotting()
-            self.ui.pbar.setValue(4)
-            self.K_graph.RSI_plotting()
-            self.ui.pbar.setValue(5)
-        else:
-            pass 
         '''
         self.ui.DateLinkButton 日期设置 
         '''
@@ -136,13 +120,37 @@ class mywindow(QMainWindow):
         self.ui.dateEdit.setCalendarPopup(True)
         self.ui.dateEdit_2.setCalendarPopup(True)
         self.ui.comboBox.addItems(["D", "W", "M", "5", "15", "30", "60"])
-        self.ui.treeWidget_2.setDragDropMode(self.ui.treeWidget_2.InternalMove)
-        self.ui.treeWidget_2.setContextMenuPolicy(Qt.CustomContextMenu)
-        self.ui.treeWidget_2.customContextMenuRequested.connect(self.openWidgetMenu)
+
         #self.ui.toolbutton.clicked.connect(lambda action: self.graphmerge(action, CombineKeyword))
         self.ui.combobox.currentIndexChanged.connect(self.modifycombo)
         self.initUI()
     #@LOG.debug_fun
+    
+    def GraphInit(self):
+        self.K_graph=t2.My_plot()
+        #加入列表
+        self.K_lineTab=self.ui.GraphTab.insertTab(0,self.K_graph.win,'graph')
+        if self.GraphEnable == True:
+            self.ui.pbar.setRange(0,5)
+            self.K_graph.setCodeDate(code='sh',start='%s'%self.startdate,end='%s'%self.enddate)
+            self.ui.pbar.setValue(1)
+            self.K_graph.Kline_plotting()
+            self.ui.pbar.setValue(2)
+            self.K_graph.update_plotting()
+            self.ui.pbar.setValue(3)
+            self.K_graph.macd_plotting()
+            self.ui.pbar.setValue(4)
+            self.K_graph.RSI_plotting()
+            self.ui.pbar.setValue(5)
+      
+        else:
+            pass
+        #self.Top10H=Top10shareholder.Top10Holder
+        file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\Wakuang.html")) 
+    
+        local_url = QUrl.fromLocalFile(file_path)
+        self.ui.webView.load(local_url)
+        
     def ClickedSearchButton(self):
         LOG.logger.info('drawing_window for stock')
         self.ui.pbar.reset()
@@ -163,8 +171,10 @@ class mywindow(QMainWindow):
                 self.K_graph.setCodeDate(code=code_input,start='%s'%self.startdate,end='%s'%self.enddate)
             except ValueError:
                     print('Input code is wrong/输入代码错误.')
+                    top10flag=False
+            
             else:
-                self.ui.pbar.setRange(0,4)
+                self.ui.pbar.setRange(0,5)
                 self.K_graph.Kline_plotting()
                 self.ui.pbar.setValue(1)
                 self.K_graph.update_plotting()
@@ -173,6 +183,22 @@ class mywindow(QMainWindow):
                 self.ui.pbar.setValue(3)
                 self.K_graph.RSI_plotting()
                 self.ui.pbar.setValue(4)
+                self.reload_chart()
+                self.ui.pbar.setValue(5)
+                top10=Top10shareholder.Top10Holder(code_input,self.startdate)
+                file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\top10.html")) 
+                top10.render(path=file_path)
+                top10flag=True
+            
+            if top10flag ==True:
+                file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\top10.html")) 
+                local_url = QUrl.fromLocalFile(file_path)
+                self.ui.webView.load(local_url)
+            else:
+                file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\Wakuang.html")) 
+                local_url = QUrl.fromLocalFile(file_path)
+                self.ui.webView.load(local_url)
+    
     def PressSearchButton(self):
       
         self.ui.searchButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/search_r.ico')))
@@ -189,8 +215,17 @@ class mywindow(QMainWindow):
         self.ui.code_edit.setText('%s'%code_select)
       
     
-    '''
+    ''' 
     输入完成后重新加载图片
+    '''
+    def reload_chart(self):
+        file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\render.html")) 
+        print(file_path)
+        local_url = QUrl.fromLocalFile(file_path)
+        self.ui.webView.load(local_url)
+        return
+    '''
+    没用
     '''
     def reload_graph(self,code_load,start_load,end_load):
         self.K_graph.remove_plot()
@@ -209,32 +244,32 @@ class mywindow(QMainWindow):
             self.ui.comboBox.show()
             self.ui.comboBox.clear()
             self.ui.comboBox.addItems(["hfq", "qfq"])
-            self.ui.treeWidget_2.clear()
+    
         if self.ui.combobox.currentText()==u"K线":
             self.ui.label_2.show()
             self.ui.dateEdit_2.show()
             self.ui.comboBox.show()
             self.ui.comboBox.clear()
             self.ui.comboBox.addItems(["D", "W", "M", "5", "15", "30", "60"])#same as above
-            self.ui.treeWidget_2.clear()
+
         if self.ui.combobox.currentText()==u"分笔数据":
             self.ui.comboBox.hide()
             self.ui.label_2.hide()
             self.ui.dateEdit_2.hide()
-            self.ui.treeWidget_2.clear()
+          
         if self.ui.combobox.currentText()==u"历史分钟":
             self.ui.comboBox.show()
             self.ui.comboBox.clear()
             self.ui.comboBox.addItems(["1min","5min","15min","30min","60min"])
             self.ui.label_2.hide()
             self.ui.dateEdit_2.hide()
-            self.ui.treeWidget_2.clear()
+
 
         if self.ui.combobox.currentText()==u"十大股东":
             self.ui.comboBox.hide()
             self.ui.label_2.hide()
             self.ui.dateEdit_2.hide()
-            self.ui.treeWidget_2.clear()
+
 
     def graphmerge(self, combineKeyword):
         sth = ""
@@ -253,21 +288,6 @@ class mywindow(QMainWindow):
         return 0
 
 
-    def openWidgetMenu(self,position):
-        indexes = self.ui.treeWidget_2.selectedIndexes()
-        item = self.ui.treeWidget_2.itemAt(position)
-        if item == None:
-            return
-        #item = self.ui.listWidget.itemAt(position)
-        if len(indexes) > 0:
-            menu = QMenu()
-            menu.addAction(QAction("Delete", menu,checkable = True))#This function is perhaps useless
-            #menu.triggered.connect(self.eraseItem)
-            item = self.ui.treeWidget_2.itemAt(position)
-            #collec = str(item.text())
-            menu.triggered.connect(lambda action: self.ListMethodSelected(action, item))
-        menu.exec_(self.ui.treeWidget_2.viewport().mapToGlobal(position))
-
 
     def ListMethodSelected(self, action, item):
         if action.text() == "Delete":
@@ -281,28 +301,8 @@ class mywindow(QMainWindow):
             self.eraseItem()
 
 
-    def methodSelected(self, action, collec):
-        #print(action.text()) #Choice
-        #if (self.ui.treewidget.count() == 5):
-         #   self.ui.label.setText("Maximum number of queries")
-         #   return
-        #self.ui.label.setText("")
-        Choice = action.text()
-        Stock = collec
-        #print(collec)  #Stock Name
-        #print(db_origin)  #DataBase name
-        #list1 = [self.tr(Stock+"-"+Choice+"-"+db_origin)]
-        #self.ui.treewidget.addItems(list1)
-        parent = QTreeWidgetItem(self.ui.treeWidget_2)
-        parent.setText(0, Stock.decode("utf-8")+"-"+Choice)
-        font = QtGui.QFont("Times", 12, QtGui.QFont.Bold)
-        self.ui.treeWidget_2.setFont(font)
 
-    def eraseItem(self):
-        for x in self.ui.treeWidget_2.selectedItems():#delete with write click menu
-            #item = self.ui.treewidget.takeItem(self.ui.treewidget.currentRow())
-            sip.delete(x)
-            #item.delete'
+
     def SetLable(self,code_in):
         
  
@@ -336,49 +336,7 @@ class mywindow(QMainWindow):
         self.ui.DateLinkButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/date_p.ico')))
     def ReleasedDateButton(self):  
         self.ui.DateLinkButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/date_r.ico')))
-    def classify(self, folder):
-        
-        items = []
-        self.enddate = self.enddate.strftime("%Y-%m-%d")
-        option = self.ui.comboBox.currentText()
-  
-        option = str(option)
-        #if (self.ui.treewidget) == 0:
-            #self.ui.label.setText("Need to select at least one query")
-            #return
-        root = self.ui.treeWidget_2.invisibleRootItem()# This is for iterating child items
-        child_count = root.childCount()
-        if child_count==0:
-            return
-        for i in range(child_count):
-            if root.child(i).child(0):
-                array = []
-                temp = root.child(i)
-                #mergelist = self.recurse(temp,array)
-                #print(mergelist)
-                parent = root.child(i).text(0)
-                mergelist = []
-                for j in range(temp.childCount()):
-                    while temp.child(j).childCount()!=0:
-                        #self.ui.label.setText("Error: Invalid Tree!")
-                        return
-                    txt = temp.child(j).text(0)
-                    mergelist.append(txt)
-                mergelist.insert(0,parent)
-                url = self.graphmerge(mergelist)
-                items.append(url)
-            else:
-                item = root.child(i)
-                url = item.text(0)
-                items.append(url)
-        labels = [k for k in items]
-        items = ([x.encode("utf-8") for x in labels])
-        width = self.ui.widget.width()#give width and height of user's screen so that graphs can be generated with dynamic size
-        height = self.ui.widget.height()
-#        graphpage(labels, startdate,enddate,option,width, height)#labels:复权ork线or分笔 option:hfq, qfq or 15, 30, D, etc
-        self.ui.widget.reload()#refreshes webengine
-        self.ui.widget.repaint()
-        self.ui.widget.update()
+
 
     def openMenu(self,position):
         indexes = self.ui.treeWidget.selectedIndexes()
