@@ -8,7 +8,7 @@ import time
 
 #import st_imformation as sti
 
-today=datetime.date.today()
+today=datetime.date.today()   
 
 
 
@@ -306,7 +306,7 @@ if __name__=="__main__":
    #399006 
     '''
    INDEX_LIST = {'sh': 'sh000001', 
-                 'sz': 'sz399001',
+                 'sz': 'sz399z001',
                  'hs300': 'sz399300',
                  'sz50': 'sh000016',
                  'zxb': 'sz399005', 
@@ -316,9 +316,9 @@ if __name__=="__main__":
                  'zh500':'sh000905'}
    
     '''
-    code_="600111" 
+    code_="601163" 
     start_='2016-10-01'
-    end_='2017-12-12'
+    end_='2018-01-16' 
     plt.figure(1)
     VW=VWAP(code_,start_,end_) 
     draw_VWAP(VW)

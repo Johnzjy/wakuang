@@ -305,6 +305,7 @@ class My_plot(QtGui.QWindow):
         self.update_plot.showGrid(x=True, y=True)
         self.region.setRegion([self.maxRegion//4*2, self.maxRegion])
     def macd_plotting(self):
+        
         t=len(self.numd.index)//10
  
         axis_date = [(i,list(self.xdict.values())[i]) for i in range(0,len(self.numd.index),t)]
@@ -313,12 +314,33 @@ class My_plot(QtGui.QWindow):
        #stringaxis.setGrid(255)
         stringaxis.setLabel( text='Dates' )
         self.macd_plot = self.win.addPlot(row=1,col=1,title="MACD",axisItems={'bottom': stringaxis})
-        macd, signal, hist = self.data.myMACD2()
-        self.macd_plot.plot(x=self.y.index,y=macd.values,pen='r',fillLevel=0, fillBrush=(255,0,0,50))
-        self.macd_plot.plot(x=self.y.index,y=signal.values,pen='b',fillLevel=0,fillBrush=(0,125,255,126))
+  
+            
+        macd, signal, hist = self.data.myMACD()
+        self.macd_plot.plot(x=self.y.index,y=macd,pen='r',fillLevel=0, fillBrush=(255,0,0,50))
+        self.macd_plot.plot(x=self.y.index,y=signal,pen='b',fillLevel=0,fillBrush=(0,125,255,126))
         self.macd_plot.plot(x=self.y.index,y=self.y.index*0,pen='w')
+  
         self.macd_plot.setXLink(self.update_plot)
         self.macd_plot.showGrid(x=True, y=True)
+    def macd_plotting2(self):
+        self.macd_type=1
+        t=len(self.numd.index)//10
+ 
+        axis_date = [(i,list(self.xdict.values())[i]) for i in range(0,len(self.numd.index),t)]
+        stringaxis = pg.AxisItem(orientation='bottom') #设置横轴
+        stringaxis.setTicks([axis_date, self.xdict.items()])
+       #stringaxis.setGrid(255)
+        stringaxis.setLabel( text='Dates' )
+        self.macd_plot2 = self.win.addPlot(row=2,col=1,title="MACD2",axisItems={'bottom': stringaxis})
+
+  
+        macd, signal, hist = self.data.myMACD2()
+        self.macd_plot2.plot(x=self.y.index,y=macd.values,pen='r',fillLevel=0, fillBrush=(255,0,0,50))
+        self.macd_plot2.plot(x=self.y.index,y=signal.values,pen='b',fillLevel=0,fillBrush=(0,125,255,126))
+        self.macd_plot2.plot(x=self.y.index,y=self.y.index*0,pen='w')    
+        self.macd_plot2.setXLink(self.update_plot)
+        self.macd_plot2.showGrid(x=True, y=True)    
  
     def RSI_plotting(self):
         t=len(self.numd.index)//10
@@ -354,10 +376,11 @@ class My_plot(QtGui.QWindow):
 if __name__=="__main__":
     app = QtGui.QApplication(sys.argv)
     p_=My_plot()
-    p_.setCodeDate(code='sh',start='2017-01-01',end='2018-01-09')
+    p_.setCodeDate(code='601163',start='2015-01-01',end='2018-01-16')
     p_.Kline_plotting()
     p_.update_plotting()
     p_.macd_plotting()
+    #p_.macd_plotting2()
     p_.RSI_plotting()
     #p_.remove_plot()
     #p_.RSI_plotting()

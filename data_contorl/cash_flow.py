@@ -11,6 +11,9 @@ import matplotlib.pyplot as plt
 import datetime
 import numpy as np
 from pylab import * 
+import pyqtgraph as pg
+from pyqtgraph.Qt import QtGui, QtCore
+
 mpl.rcParams['font.sans-serif'] = ['SimHei'] #显示中文
 today=datetime.date.today()
 
@@ -81,9 +84,88 @@ class Cash_flow(object):
             self.code_data.loc['%s'%self.today,'high']='%s'%realtime_high
             self.code_data.loc['%s'%self.today,'low']='%s'%realtime_low
             self.code_data.loc['%s'%self.today,'close']=realtime_price
-if __name__=="__main__":
+class My_CF_plot(QtGui.QWindow):
+    def __init__(self,):
+        super(My_CF_plot,self).__init__()
+        self.win = pg.GraphicsWindow(title="现金流")
+        #self.win.resize(1000,600)
+        self.win.setWindowTitle('现金流: Plotting')
+        self.data=Cash_flow()
+        pg.setConfigOptions(antialias=True)
+    #设置
+    def setCodeDate(self,**kwds):
+        for kwd,value in kwds.items():
+          
+            if kwd in ('Code', 'start', 'end'):
+                if not isinstance(value, str):
+                    raise ValueError("Argument '%s' must be int" % kwd)
             
+            if kwd == 'code':
+                    self.data.code = value
+            if kwd == 'start':
+                    self.data.startDate = value            
+            if kwd == 'end':
+                    self.data.endDate = value
+        self.data.get_date_ts() 
+        self.data.get_cf_data(11)
+        self.data.get_cf_data(24)
+        self.data.get_cf_data(37)
 
+    def Kline_plotting(self):
+        
+        #numd=self.data.df.reset_index()
+        self.numd=self.data.code_data.reset_index()
+        x=self.numd.date.apply(lambda x:datetime.datetime.strftime(x,"%Y-%m-%d"))
+        self.xdict=dict(x) #转换成字符串字典
+        # LABEL 10个图标
+        self.maxRegion=len(self.numd.index)
+        t=len(self.numd.index)//5
+        #提取坐标点
+        axis_date = [(i,list(x)[i]) for i in range(0,len(self.numd.index),t)]
+ 
+        #stringaxis = pg.AxisItem(orientation='bottom')
+        stringaxis = pg.AxisItem(orientation='bottom') #设置横轴
+        stringaxis.setTicks([axis_date, self.xdict.items()])
+        stringaxis.setGrid(255)
+        stringaxis.setLabel( text='Dates' )
+        #stringaxis.setTickSpacing(100,1)
+        self.k_plot = self.win.addPlot(row=1,col=0,title="kline",axisItems={'bottom': stringaxis})
+        
+        self.y=self.numd.close
+        self.k_plot.plot(x=list( self.xdict.keys()), y=self.y.values,pen=(0,255,255))
+        
+        self.k_plot.showGrid(x=True, y=True)
+        self.region = pg.LinearRegionItem()
+        self.region.setZValue(self.maxRegion/4*3)
+        self.region.setRegion([self.maxRegion/4*3, self.maxRegion])
+        self.k_plot.addItem(self.region , ignoreBounds=True)
+    def ThreePlot(self):
+        mg=self.data.code_data.management_cf
+        mg=mg.reset_index()
+        iv=self.data.code_data.investment_cf
+        fn=self.data.code_data.financing_cf
+        print(mg,iv,fn)
+        bg1 = pg.BarGraphItem(x=mg.index, height=mg.management_cf, width=0.3, brush='r')
+        self.win.addItem(bg1)
+        
+         
+         
+
+if __name__=="__main__":
+    app = QtGui.QApplication(sys.argv)
+    p_=My_CF_plot()
+    p_.setCodeDate(code='600362',start='2017-01-01',end='2018-01-09')
+    #p_.Kline_plotting()
+    p_.ThreePlot()
+
+    #p_.remove_plot()
+    #p_.RSI_plotting()
+    p_.win.show()
+    if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
+        QtGui.QApplication.exec_()
+    
+            
+'''
     code="600362" 
     startDate='2012-12-20'
     endDate='2017-12-22' 
@@ -101,3 +183,4 @@ if __name__=="__main__":
     plt.plot(x.code_data.index,x.code_data.financing_cf,'y',label=u'融资活动')
     plt.legend(loc='best')
     plt.show()
+'''    
