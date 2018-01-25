@@ -11,10 +11,12 @@ WaKuang(挖矿 by John zhang)
 Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金官方主页](https://www.myquant.cn/) 
 通过大数据处理，分析和挖掘二级市场波动变化。亦可以编写量化交易策略，引入Decision Tree等机器学习算法。
 
+
 ##### 所需要的第三方库：  
     .. `tushare`
     .. `pyqtgraph` 绘图工具
     .. `TA-lib`  
+    .. `pyecharts` 图表绘图工具
     .. `pandas`  
     .. `PYQT5`  
     .. `wechat-sdk`  
@@ -30,7 +32,8 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 * [x] [technical_indicators](#technical_indicators)：技术指标
 * [x] [CYQ](#CYQ) : 计算筹码分布  
 * [x] Daily_data_reporting.py : 统计每天龙虎榜，机构大单 买入卖出情况 分5 日，15日，30日  
-* [x] Daily business hall.py ：处理Daily_data_reporting中的数据  
+* [x] Daily business hall.py ：处理Daily_data_reporting中的数据
+* [x] Top10shareholder.py ：查询个股top10流通股持有率    
 * [x] stock_unblocked.py ：下载解禁股票
 * [ ] DuPontAnalysis:杜邦分析法
 * [ ] forecast:现金流评估
@@ -105,11 +108,12 @@ To Do List
 - [ ] Wechat events
 - [ ] Open api
 - [ ] Command line
+- [ ] 准备调研的接口[安妮信息](http://smartanni.com/ )
 ```
 神奇公式
-核心指标之一：选取便宜的股票，也就是选取息税前盈余／企业价值（EBIT/EV）高的股票，其中EV = market value of equity + net interest-bearing debt，即企业价值=市值+净有息债务
+- [ ]核心指标之一：选取便宜的股票，也就是选取息税前盈余／企业价值（EBIT/EV）高的股票，其中EV = market value of equity + net interest-bearing debt，即企业价值=市值+净有息债务
 
-核心指标之二：选取好的业务，也就是选取有形资本回报率（Return on Capital）高的股票，其中Return on Capital = EBIT / (Net WorkingCapital + Net Fixed Assets)，即资本回报率 = 息税前利润 /（净流动资本 + 净固定资产）
+- [x]核心指标之二：选取好的业务，也就是选取有形资本回报率（Return on Capital）高的股票，其中Return on Capital = EBIT / (Net WorkingCapital + Net Fixed Assets)，即资本回报率 = 息税前利润 /（净流动资本 + 净固定资产）
 
 GARP的核心主要是PEG
 
@@ -128,6 +132,9 @@ GARP的核心主要是PEG
 
 5、PEG=市盈率/盈利增长率<0.5
 这一规则说明市盈率的增长不及盈利的增长，股票价格处于相对低位，体现了彼得.林奇偏好成长兼具价值股票的
+
+
+
 ```
 版本             
 ---

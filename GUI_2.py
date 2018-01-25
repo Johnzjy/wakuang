@@ -8,7 +8,7 @@ from qtpy.QtCore import Qt,QUrl,QDate
 from scr import Graph,layout
 #from scr.Graph import graphpage
 from scr.layout import Ui_MainWindow
-from scr import Action_main,logd
+from scr import Action_main,logd,Top10shareholder
 from pandas import DataFrame as df
 import MACD_RUNNING_ALL as ma
 import technical_indicators2 as t2
@@ -49,7 +49,7 @@ class mywindow(QMainWindow):
         zsparent2.setIcon(0, QtGui.QIcon('scr/ico/batman.png'))
         
         self.shanghai=ma.list_input('sh')
-        print (self.shanghai)
+        #print (self.shanghai)
         
         list_name=list(self.shanghai.values)
         for code in list_name:
@@ -89,26 +89,8 @@ class mywindow(QMainWindow):
         导入graph
         '''
         #引用 T2
-        self.K_graph=t2.My_plot()
-        #加入列表
-        self.K_lineTab=self.ui.GraphTab.insertTab(0,self.K_graph.win,'graph')
-       
-        
-        if self.GraphEnable == True:
-            self.ui.pbar.setRange(0,5)
-            self.K_graph.setCodeDate(code='sh',start='%s'%self.startdate,end='%s'%self.enddate)
-            self.ui.pbar.setValue(1)
-            self.K_graph.Kline_plotting()
-            self.ui.pbar.setValue(2)
-            self.K_graph.update_plotting()
-            self.ui.pbar.setValue(3)
-            self.K_graph.macd_plotting()
-            self.ui.pbar.setValue(4)
-            self.K_graph.RSI_plotting()
-            self.ui.pbar.setValue(5)
-          
-        else:
-            pass 
+        self.GraphInit()
+
         '''
         self.ui.DateLinkButton 日期设置 
         '''
@@ -143,6 +125,32 @@ class mywindow(QMainWindow):
         self.ui.combobox.currentIndexChanged.connect(self.modifycombo)
         self.initUI()
     #@LOG.debug_fun
+    
+    def GraphInit(self):
+        self.K_graph=t2.My_plot()
+        #加入列表
+        self.K_lineTab=self.ui.GraphTab.insertTab(0,self.K_graph.win,'graph')
+        if self.GraphEnable == True:
+            self.ui.pbar.setRange(0,5)
+            self.K_graph.setCodeDate(code='sh',start='%s'%self.startdate,end='%s'%self.enddate)
+            self.ui.pbar.setValue(1)
+            self.K_graph.Kline_plotting()
+            self.ui.pbar.setValue(2)
+            self.K_graph.update_plotting()
+            self.ui.pbar.setValue(3)
+            self.K_graph.macd_plotting()
+            self.ui.pbar.setValue(4)
+            self.K_graph.RSI_plotting()
+            self.ui.pbar.setValue(5)
+      
+        else:
+            pass
+        #self.Top10H=Top10shareholder.Top10Holder
+        file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\Wakuang.html")) 
+    
+        local_url = QUrl.fromLocalFile(file_path)
+        self.ui.webView.load(local_url)
+        
     def ClickedSearchButton(self):
         LOG.logger.info('drawing_window for stock')
         self.ui.pbar.reset()
@@ -163,8 +171,10 @@ class mywindow(QMainWindow):
                 self.K_graph.setCodeDate(code=code_input,start='%s'%self.startdate,end='%s'%self.enddate)
             except ValueError:
                     print('Input code is wrong/输入代码错误.')
+                    top10flag=False
+            
             else:
-                self.ui.pbar.setRange(0,4)
+                self.ui.pbar.setRange(0,5)
                 self.K_graph.Kline_plotting()
                 self.ui.pbar.setValue(1)
                 self.K_graph.update_plotting()
@@ -173,6 +183,22 @@ class mywindow(QMainWindow):
                 self.ui.pbar.setValue(3)
                 self.K_graph.RSI_plotting()
                 self.ui.pbar.setValue(4)
+                self.reload_chart()
+                self.ui.pbar.setValue(5)
+                top10=Top10shareholder.Top10Holder(code_input,self.startdate)
+                file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\top10.html")) 
+                top10.render(path=file_path)
+                top10flag=True
+            
+            if top10flag ==True:
+                file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\top10.html")) 
+                local_url = QUrl.fromLocalFile(file_path)
+                self.ui.webView.load(local_url)
+            else:
+                file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\Wakuang.html")) 
+                local_url = QUrl.fromLocalFile(file_path)
+                self.ui.webView.load(local_url)
+    
     def PressSearchButton(self):
       
         self.ui.searchButton.setIcon(QtGui.QIcon(QtGui.QPixmap('scr/ico/search_r.ico')))
@@ -189,8 +215,17 @@ class mywindow(QMainWindow):
         self.ui.code_edit.setText('%s'%code_select)
       
     
-    '''
+    ''' 
     输入完成后重新加载图片
+    '''
+    def reload_chart(self):
+        file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "scr\\render.html")) 
+        print(file_path)
+        local_url = QUrl.fromLocalFile(file_path)
+        self.ui.webView.load(local_url)
+        return
+    '''
+    没用
     '''
     def reload_graph(self,code_load,start_load,end_load):
         self.K_graph.remove_plot()
