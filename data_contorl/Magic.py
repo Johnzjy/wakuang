@@ -61,14 +61,13 @@ def list_input(mode='sh'):
 
 def get_all_magic():
     CodeList=list_input('all')
-    
-    #print(CodeList)
     i=2
     df=get_magic(CodeList.code[i*50])
     df=df.sort_index(ascending =False)
     for code_ in tqdm.tqdm_gui(CodeList.code[i*50+1:i*50+50]):
         time.sleep(3)
         print(code_)
+
         mg=get_magic(code_)
 
         mg.name=code_
