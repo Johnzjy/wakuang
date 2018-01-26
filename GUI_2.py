@@ -109,7 +109,7 @@ class mywindow(QMainWindow):
             self.ui.comboBox.setSizePolicy(retain_size)
             retain_size = self.ui.label_2.sizePolicy()
             retain_size.setRetainSizeWhenHidden(True)
-            self.ui.label_2.setSizePolicy(retain_size)
+            self.ui.label_2.setSizePolicy(retain_size) 
         except AttributeError:
             print("No PYQT5 Binding! Widgets might be deformed")
 
