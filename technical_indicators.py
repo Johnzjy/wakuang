@@ -90,7 +90,7 @@ def ewma_day(code_list,days_=30): # 30day EWMA走线
 '''
 布林线上下轨
 '''
-def ST_bands (code,startday,enday):
+def ST_bands (code,startday,enday,tp=14):
     '''
     upperband   , 上轨  均线加一倍标准差
     middleband  ，中轨  均线
@@ -100,7 +100,7 @@ def ST_bands (code,startday,enday):
     
     df=get_date_ts(code,startday,enday)
     
-    upperband, middleband, lowerband = talib.BBANDS(df.close.values, timeperiod=10, nbdevup=2, nbdevdn=2, matype=0)
+    upperband, middleband, lowerband = talib.BBANDS(df.close.values, timeperiod=tp, nbdevup=2, nbdevdn=2, matype=0)
 
     df['upperband']=upperband
     df['middleband']=middleband
@@ -314,11 +314,10 @@ if __name__=="__main__":
                  'zx300': 'sz399008', 
                  000976 000929 000911 000639 601139
                  'zh500':'sh000905'}
-   
     '''
-    code_="601163" 
-    start_='2016-10-01'
-    end_='2018-01-16' 
+    code_="600293" 
+    start_='2016-12-01'
+    end_='2018-01-26' 
     plt.figure(1)
     VW=VWAP(code_,start_,end_) 
     draw_VWAP(VW)

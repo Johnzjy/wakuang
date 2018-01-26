@@ -62,18 +62,20 @@ def list_input(mode='sh'):
 def get_all_magic():
     CodeList=list_input('all')
     
-    print(CodeList)
-    df=get_magic(CodeList.code[0])
+    #print(CodeList)
+    i=2
+    df=get_magic(CodeList.code[i*50])
     df=df.sort_index(ascending =False)
-    for code_ in tqdm.tqdm_gui(CodeList.code[1:100]):
+    for code_ in tqdm.tqdm_gui(CodeList.code[i*50+1:i*50+50]):
         time.sleep(3)
+        print(code_)
         mg=get_magic(code_)
 
         mg.name=code_
         df=pd.concat([df,mg],axis=1)
-        #print(df)
+    df.to_csv('..\\report\\magic_%s.csv'%CodeList.code[i*50])
     return df
 if __name__=="__main__":
     x=get_all_magic()
-    x.to_csv('..\\report\\magic_600001.csv')
+    #x.to_csv('..\\report\\magic_600001.csv')
     #x=get_magic('600760')

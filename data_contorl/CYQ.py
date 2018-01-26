@@ -162,9 +162,9 @@ def Draw_CYQ(code_j,start_j,end_j):
 
     
 if __name__ == "__main__":
-    code_='601163'
+    code_='002093'
     start_='2016-12-31'
-    end_='2017-12-07'
+    end_='2018-01-09'
     log_CYQ.info('%s：from %s to %s'%(code_,start_,end_))
     Draw_CYQ(code_,start_,end_)
     plt.show()
