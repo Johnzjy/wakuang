@@ -301,8 +301,10 @@ def draw_SAR(df): # 画加权平均指数
     plt.plot(df.index,df.SAR,'r',label='Parabolic SAR')    
     plt.legend(loc='best')
     plt.grid(True)
+    
+
 if __name__=="__main__":
-    plt.close()
+    #plt.close()
    #399006 
     '''
    INDEX_LIST = {'sh': 'sh000001', 
@@ -315,9 +317,9 @@ if __name__=="__main__":
                  000976 000929 000911 000639 601139
                  'zh500':'sh000905'}
     '''
-    code_="600098" 
+    code_="600200" 
     start_='2016-12-01'
-    end_='2018-01-26' 
+    end_='2018-03-01' 
 
     plt.figure(1)
     VW=VWAP(code_,start_,end_) 
@@ -338,7 +340,7 @@ if __name__=="__main__":
   #  ADX_IDEX=ADX(code_,start_,end_)
   #  draw_ADX(ADX_IDEX)#ADX 非相关重要信息
   #  plt.figure(6)
-  #  ADOSC_IDEX=ADOSC(code_,start_,end_)
+  #  ADOSC_IDEX=ADOSC(code_,start_,end_)v
   #  draw_ADOSC(ADOSC_IDEX)
      
     plt.show()
