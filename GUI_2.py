@@ -155,6 +155,7 @@ class mywindow(QMainWindow):
         LOG.logger.info('drawing_window for stock')
         self.ui.pbar.reset()
         code_input=Action_main.check_code(self.ui.code_edit.text())
+        print (code_input)
         self.SetLable(code_input)
         #code_input=self.ui.code_edit.text()
 
@@ -163,6 +164,7 @@ class mywindow(QMainWindow):
             print(code_input)
             self.ui.code_edit.clear()
             self.ui.code_edit.setPlaceholderText('请重新输入code')
+            pass
         else:
 
             
@@ -170,8 +172,8 @@ class mywindow(QMainWindow):
             try:
                 self.K_graph.setCodeDate(code=code_input,start='%s'%self.startdate,end='%s'%self.enddate)
             except ValueError:
-                    print('Input code is wrong/输入代码错误.')
-                    top10flag=False
+                print('Input code is wrong/输入代码错误.')
+                top10flag=False
             
             else:
                 self.ui.pbar.setRange(0,5)

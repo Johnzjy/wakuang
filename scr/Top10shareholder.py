@@ -73,6 +73,9 @@ def Top10Holder(codenumber,startdate='2014-10-10'):
                         legend_top=25,
                         legend_text_size=12,
                         label_text_size=10,
+                        label_text_color="#100",
+                        tooltip_text_color="#F0F",
+                        #is_label_emphasis=False,#是否显示高亮
                         
                         label_formatter = "{b}:\n {c}万股\n{d}%")
           
@@ -92,7 +95,7 @@ if __name__=="__main__":
         os.remove(os.getcwd()+'/top10.html')
     except:
         pass
-    x=Top10Holder('600111')
+    x=Top10Holder('000852')
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "top10.html")) 
 
         #pietimeline.show_config()
