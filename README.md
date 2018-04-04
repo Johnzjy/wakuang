@@ -15,7 +15,7 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 ##### 所需要的第三方库：  
     .. `tushare`
     .. `pyqtgraph` 绘图工具
-    .. `TA-lib`  
+    .. `TA-lib`  （TA-Lib 通过pip直接安装可能会出错，需要下载.whl格式文件）
     .. `pyecharts` 图表绘图工具
     .. `pandas`  
     .. `PYQT5`  
@@ -26,6 +26,13 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
     
 ## 功能介绍
 --------
+####KLIN ,MACD ，RSI 等基本指
+```目前在GUI可以调用，Kline，MACD，布林线，RSI等常用指标。在technical_indicators中用户还可以完成，自由的算法设定。目前痛过迭代运算，回测A股3000多只股票过去三年的交易情况，优化了常规算法的参数。```	
+# ![k][kline]
+
+####十大股东排行榜
+```输入股票code之后，软件会自动计算设定区域内的大股东排行。方便大家查询证金等国家队动向。```
+# ![t][charts]
 [x] 已完成 [ ] 未完成
 ## data_contorl
  
@@ -37,7 +44,8 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 * [x] stock_unblocked.py ：下载解禁股票
 * [ ] DuPontAnalysis:杜邦分析法
 * [ ] forecast:现金流评估
-* [ ] GUI_2: 软件界面  调用 technical_indicators2 
+* [x] GUI_2: 软件界面   
+* [x] GUI_2: top 10 股东排行榜
 
 
 
@@ -138,7 +146,7 @@ GARP的核心主要是PEG
 ```
 版本             
 ---
-**1.0**
+**1.1**
 =======
 [![email](https://img.shields.io/badge/email-aprzephyr%40163.com-ff69b4.svg)](http://shields.io/)  
 
@@ -147,3 +155,5 @@ GARP的核心主要是PEG
 
 
 [WK]:https://github.com/Johnzjy/wakuang/blob/master/scr/ico/title.jpg
+[charts]:https://github.com/Johnzjy/wakuang/blob/master/scr/ico/top10charts.PNG
+[kline]:https://github.com/Johnzjy/wakuang/blob/master/scr/ico/kline.PNG

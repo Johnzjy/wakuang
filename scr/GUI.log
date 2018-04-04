@@ -3908,3 +3908,336 @@
 [01-26 16:09:22]-[line:35]-FuncName:wrapped_function-(time:64184)-INFO: RUNNING <check_code>
 [01-26 16:09:22]-[line:35]-FuncName:wrapped_function-(time:64184)-INFO: RUNNING <check_code>
 [01-26 16:09:22]-[line:35]-FuncName:wrapped_function-(time:64184)-INFO: RUNNING <check_code>
+[01-29 15:18:49]-[line:411]-FuncName:<module>-(time:9186)-INFO: ===============  start  ============
+[01-29 15:18:49]-[line:411]-FuncName:<module>-(time:9186)-INFO: ===============  start  ============
+[01-29 15:18:49]-[line:411]-FuncName:<module>-(time:9186)-INFO: ===============  start  ============
+[01-29 15:18:49]-[line:35]-FuncName:wrapped_function-(time:9514)-INFO: RUNNING <create_kline_page>
+[01-29 15:18:49]-[line:35]-FuncName:wrapped_function-(time:9514)-INFO: RUNNING <create_kline_page>
+[01-29 15:18:49]-[line:35]-FuncName:wrapped_function-(time:9514)-INFO: RUNNING <create_kline_page>
+[01-29 15:18:53]-[line:238]-FuncName:initUI-(time:13673)-INFO: show the UI
+[01-29 15:18:53]-[line:238]-FuncName:initUI-(time:13673)-INFO: show the UI
+[01-29 15:18:53]-[line:238]-FuncName:initUI-(time:13673)-INFO: show the UI
+[01-29 15:19:09]-[line:155]-FuncName:ClickedSearchButton-(time:29701)-INFO: drawing_window for stock
+[01-29 15:19:09]-[line:155]-FuncName:ClickedSearchButton-(time:29701)-INFO: drawing_window for stock
+[01-29 15:19:09]-[line:155]-FuncName:ClickedSearchButton-(time:29701)-INFO: drawing_window for stock
+[01-29 15:19:09]-[line:35]-FuncName:wrapped_function-(time:29702)-INFO: RUNNING <check_code>
+[01-29 15:19:09]-[line:35]-FuncName:wrapped_function-(time:29702)-INFO: RUNNING <check_code>
+[01-29 15:19:09]-[line:35]-FuncName:wrapped_function-(time:29702)-INFO: RUNNING <check_code>
+[01-30 09:01:23]-[line:411]-FuncName:<module>-(time:6506)-INFO: ===============  start  ============
+[01-30 09:01:23]-[line:411]-FuncName:<module>-(time:6506)-INFO: ===============  start  ============
+[01-30 09:01:23]-[line:411]-FuncName:<module>-(time:6506)-INFO: ===============  start  ============
+[01-30 09:01:24]-[line:35]-FuncName:wrapped_function-(time:6866)-INFO: RUNNING <create_kline_page>
+[01-30 09:01:24]-[line:35]-FuncName:wrapped_function-(time:6866)-INFO: RUNNING <create_kline_page>
+[01-30 09:01:24]-[line:35]-FuncName:wrapped_function-(time:6866)-INFO: RUNNING <create_kline_page>
+[01-30 09:01:26]-[line:238]-FuncName:initUI-(time:9573)-INFO: show the UI
+[01-30 09:01:26]-[line:238]-FuncName:initUI-(time:9573)-INFO: show the UI
+[01-30 09:01:26]-[line:238]-FuncName:initUI-(time:9573)-INFO: show the UI
+[01-30 09:01:42]-[line:155]-FuncName:ClickedSearchButton-(time:25383)-INFO: drawing_window for stock
+[01-30 09:01:42]-[line:155]-FuncName:ClickedSearchButton-(time:25383)-INFO: drawing_window for stock
+[01-30 09:01:42]-[line:155]-FuncName:ClickedSearchButton-(time:25383)-INFO: drawing_window for stock
+[01-30 09:01:42]-[line:35]-FuncName:wrapped_function-(time:25383)-INFO: RUNNING <check_code>
+[01-30 09:01:42]-[line:35]-FuncName:wrapped_function-(time:25383)-INFO: RUNNING <check_code>
+[01-30 09:01:42]-[line:35]-FuncName:wrapped_function-(time:25383)-INFO: RUNNING <check_code>
+[01-30 09:06:42]-[line:411]-FuncName:<module>-(time:3077)-INFO: ===============  start  ============
+[01-30 09:06:42]-[line:411]-FuncName:<module>-(time:3077)-INFO: ===============  start  ============
+[01-30 09:06:42]-[line:411]-FuncName:<module>-(time:3077)-INFO: ===============  start  ============
+[01-30 09:06:43]-[line:35]-FuncName:wrapped_function-(time:3139)-INFO: RUNNING <create_kline_page>
+[01-30 09:06:43]-[line:35]-FuncName:wrapped_function-(time:3139)-INFO: RUNNING <create_kline_page>
+[01-30 09:06:43]-[line:35]-FuncName:wrapped_function-(time:3139)-INFO: RUNNING <create_kline_page>
+[01-30 09:06:45]-[line:238]-FuncName:initUI-(time:5539)-INFO: show the UI
+[01-30 09:06:45]-[line:238]-FuncName:initUI-(time:5539)-INFO: show the UI
+[01-30 09:06:45]-[line:238]-FuncName:initUI-(time:5539)-INFO: show the UI
+[01-30 09:06:51]-[line:155]-FuncName:ClickedSearchButton-(time:11716)-INFO: drawing_window for stock
+[01-30 09:06:51]-[line:155]-FuncName:ClickedSearchButton-(time:11716)-INFO: drawing_window for stock
+[01-30 09:06:51]-[line:155]-FuncName:ClickedSearchButton-(time:11716)-INFO: drawing_window for stock
+[01-30 09:06:51]-[line:35]-FuncName:wrapped_function-(time:11716)-INFO: RUNNING <check_code>
+[01-30 09:06:51]-[line:35]-FuncName:wrapped_function-(time:11716)-INFO: RUNNING <check_code>
+[01-30 09:06:51]-[line:35]-FuncName:wrapped_function-(time:11716)-INFO: RUNNING <check_code>
+[01-30 09:07:07]-[line:155]-FuncName:ClickedSearchButton-(time:27228)-INFO: drawing_window for stock
+[01-30 09:07:07]-[line:155]-FuncName:ClickedSearchButton-(time:27228)-INFO: drawing_window for stock
+[01-30 09:07:07]-[line:155]-FuncName:ClickedSearchButton-(time:27228)-INFO: drawing_window for stock
+[01-30 09:07:07]-[line:35]-FuncName:wrapped_function-(time:27229)-INFO: RUNNING <check_code>
+[01-30 09:07:07]-[line:35]-FuncName:wrapped_function-(time:27229)-INFO: RUNNING <check_code>
+[01-30 09:07:07]-[line:35]-FuncName:wrapped_function-(time:27229)-INFO: RUNNING <check_code>
+[01-30 09:12:57]-[line:411]-FuncName:<module>-(time:3057)-INFO: ===============  start  ============
+[01-30 09:12:57]-[line:411]-FuncName:<module>-(time:3057)-INFO: ===============  start  ============
+[01-30 09:12:57]-[line:411]-FuncName:<module>-(time:3057)-INFO: ===============  start  ============
+[01-30 09:12:57]-[line:35]-FuncName:wrapped_function-(time:3121)-INFO: RUNNING <create_kline_page>
+[01-30 09:12:57]-[line:35]-FuncName:wrapped_function-(time:3121)-INFO: RUNNING <create_kline_page>
+[01-30 09:12:57]-[line:35]-FuncName:wrapped_function-(time:3121)-INFO: RUNNING <create_kline_page>
+[01-30 09:13:00]-[line:238]-FuncName:initUI-(time:5628)-INFO: show the UI
+[01-30 09:13:00]-[line:238]-FuncName:initUI-(time:5628)-INFO: show the UI
+[01-30 09:13:00]-[line:238]-FuncName:initUI-(time:5628)-INFO: show the UI
+[01-30 09:13:07]-[line:155]-FuncName:ClickedSearchButton-(time:12572)-INFO: drawing_window for stock
+[01-30 09:13:07]-[line:155]-FuncName:ClickedSearchButton-(time:12572)-INFO: drawing_window for stock
+[01-30 09:13:07]-[line:155]-FuncName:ClickedSearchButton-(time:12572)-INFO: drawing_window for stock
+[01-30 09:13:07]-[line:35]-FuncName:wrapped_function-(time:12572)-INFO: RUNNING <check_code>
+[01-30 09:13:07]-[line:35]-FuncName:wrapped_function-(time:12572)-INFO: RUNNING <check_code>
+[01-30 09:13:07]-[line:35]-FuncName:wrapped_function-(time:12572)-INFO: RUNNING <check_code>
+[01-30 09:13:57]-[line:155]-FuncName:ClickedSearchButton-(time:62570)-INFO: drawing_window for stock
+[01-30 09:13:57]-[line:155]-FuncName:ClickedSearchButton-(time:62570)-INFO: drawing_window for stock
+[01-30 09:13:57]-[line:155]-FuncName:ClickedSearchButton-(time:62570)-INFO: drawing_window for stock
+[01-30 09:13:57]-[line:35]-FuncName:wrapped_function-(time:62571)-INFO: RUNNING <check_code>
+[01-30 09:13:57]-[line:35]-FuncName:wrapped_function-(time:62571)-INFO: RUNNING <check_code>
+[01-30 09:13:57]-[line:35]-FuncName:wrapped_function-(time:62571)-INFO: RUNNING <check_code>
+[03-20 11:11:19]-[line:411]-FuncName:<module>-(time:41914)-INFO: ===============  start  ============
+[03-20 11:11:19]-[line:411]-FuncName:<module>-(time:41914)-INFO: ===============  start  ============
+[03-20 11:11:19]-[line:411]-FuncName:<module>-(time:41914)-INFO: ===============  start  ============
+[03-20 11:11:19]-[line:35]-FuncName:wrapped_function-(time:42014)-INFO: RUNNING <create_kline_page>
+[03-20 11:11:19]-[line:35]-FuncName:wrapped_function-(time:42014)-INFO: RUNNING <create_kline_page>
+[03-20 11:11:19]-[line:35]-FuncName:wrapped_function-(time:42014)-INFO: RUNNING <create_kline_page>
+[03-20 11:11:25]-[line:238]-FuncName:initUI-(time:48103)-INFO: show the UI
+[03-20 11:11:25]-[line:238]-FuncName:initUI-(time:48103)-INFO: show the UI
+[03-20 11:11:25]-[line:238]-FuncName:initUI-(time:48103)-INFO: show the UI
+[03-20 11:12:16]-[line:155]-FuncName:ClickedSearchButton-(time:98970)-INFO: drawing_window for stock
+[03-20 11:12:16]-[line:155]-FuncName:ClickedSearchButton-(time:98970)-INFO: drawing_window for stock
+[03-20 11:12:16]-[line:155]-FuncName:ClickedSearchButton-(time:98970)-INFO: drawing_window for stock
+[03-20 11:12:16]-[line:35]-FuncName:wrapped_function-(time:98971)-INFO: RUNNING <check_code>
+[03-20 11:12:16]-[line:35]-FuncName:wrapped_function-(time:98971)-INFO: RUNNING <check_code>
+[03-20 11:12:16]-[line:35]-FuncName:wrapped_function-(time:98971)-INFO: RUNNING <check_code>
+[03-20 11:13:25]-[line:411]-FuncName:<module>-(time:3802)-INFO: ===============  start  ============
+[03-20 11:13:25]-[line:411]-FuncName:<module>-(time:3802)-INFO: ===============  start  ============
+[03-20 11:13:25]-[line:411]-FuncName:<module>-(time:3802)-INFO: ===============  start  ============
+[03-20 11:13:25]-[line:35]-FuncName:wrapped_function-(time:3865)-INFO: RUNNING <create_kline_page>
+[03-20 11:13:25]-[line:35]-FuncName:wrapped_function-(time:3865)-INFO: RUNNING <create_kline_page>
+[03-20 11:13:25]-[line:35]-FuncName:wrapped_function-(time:3865)-INFO: RUNNING <create_kline_page>
+[03-20 11:13:34]-[line:238]-FuncName:initUI-(time:12865)-INFO: show the UI
+[03-20 11:13:34]-[line:238]-FuncName:initUI-(time:12865)-INFO: show the UI
+[03-20 11:13:34]-[line:238]-FuncName:initUI-(time:12865)-INFO: show the UI
+[03-20 11:13:39]-[line:155]-FuncName:ClickedSearchButton-(time:17526)-INFO: drawing_window for stock
+[03-20 11:13:39]-[line:155]-FuncName:ClickedSearchButton-(time:17526)-INFO: drawing_window for stock
+[03-20 11:13:39]-[line:155]-FuncName:ClickedSearchButton-(time:17526)-INFO: drawing_window for stock
+[03-20 11:13:39]-[line:35]-FuncName:wrapped_function-(time:17527)-INFO: RUNNING <check_code>
+[03-20 11:13:39]-[line:35]-FuncName:wrapped_function-(time:17527)-INFO: RUNNING <check_code>
+[03-20 11:13:39]-[line:35]-FuncName:wrapped_function-(time:17527)-INFO: RUNNING <check_code>
+[03-20 11:13:52]-[line:411]-FuncName:<module>-(time:3810)-INFO: ===============  start  ============
+[03-20 11:13:52]-[line:411]-FuncName:<module>-(time:3810)-INFO: ===============  start  ============
+[03-20 11:13:52]-[line:411]-FuncName:<module>-(time:3810)-INFO: ===============  start  ============
+[03-20 11:13:52]-[line:35]-FuncName:wrapped_function-(time:3888)-INFO: RUNNING <create_kline_page>
+[03-20 11:13:52]-[line:35]-FuncName:wrapped_function-(time:3888)-INFO: RUNNING <create_kline_page>
+[03-20 11:13:52]-[line:35]-FuncName:wrapped_function-(time:3888)-INFO: RUNNING <create_kline_page>
+[03-20 11:14:01]-[line:238]-FuncName:initUI-(time:13561)-INFO: show the UI
+[03-20 11:14:01]-[line:238]-FuncName:initUI-(time:13561)-INFO: show the UI
+[03-20 11:14:01]-[line:238]-FuncName:initUI-(time:13561)-INFO: show the UI
+[03-20 11:14:06]-[line:155]-FuncName:ClickedSearchButton-(time:18629)-INFO: drawing_window for stock
+[03-20 11:14:06]-[line:155]-FuncName:ClickedSearchButton-(time:18629)-INFO: drawing_window for stock
+[03-20 11:14:06]-[line:155]-FuncName:ClickedSearchButton-(time:18629)-INFO: drawing_window for stock
+[03-20 11:14:06]-[line:35]-FuncName:wrapped_function-(time:18629)-INFO: RUNNING <check_code>
+[03-20 11:14:06]-[line:35]-FuncName:wrapped_function-(time:18629)-INFO: RUNNING <check_code>
+[03-20 11:14:06]-[line:35]-FuncName:wrapped_function-(time:18629)-INFO: RUNNING <check_code>
+[03-20 11:14:17]-[line:155]-FuncName:ClickedSearchButton-(time:29222)-INFO: drawing_window for stock
+[03-20 11:14:17]-[line:155]-FuncName:ClickedSearchButton-(time:29222)-INFO: drawing_window for stock
+[03-20 11:14:17]-[line:155]-FuncName:ClickedSearchButton-(time:29222)-INFO: drawing_window for stock
+[03-20 11:14:17]-[line:35]-FuncName:wrapped_function-(time:29222)-INFO: RUNNING <check_code>
+[03-20 11:14:17]-[line:35]-FuncName:wrapped_function-(time:29222)-INFO: RUNNING <check_code>
+[03-20 11:14:17]-[line:35]-FuncName:wrapped_function-(time:29222)-INFO: RUNNING <check_code>
+[03-20 11:14:35]-[line:155]-FuncName:ClickedSearchButton-(time:47564)-INFO: drawing_window for stock
+[03-20 11:14:35]-[line:155]-FuncName:ClickedSearchButton-(time:47564)-INFO: drawing_window for stock
+[03-20 11:14:35]-[line:155]-FuncName:ClickedSearchButton-(time:47564)-INFO: drawing_window for stock
+[03-20 11:14:35]-[line:35]-FuncName:wrapped_function-(time:47565)-INFO: RUNNING <check_code>
+[03-20 11:14:35]-[line:35]-FuncName:wrapped_function-(time:47565)-INFO: RUNNING <check_code>
+[03-20 11:14:35]-[line:35]-FuncName:wrapped_function-(time:47565)-INFO: RUNNING <check_code>
+[03-20 11:16:29]-[line:411]-FuncName:<module>-(time:3803)-INFO: ===============  start  ============
+[03-20 11:16:29]-[line:411]-FuncName:<module>-(time:3803)-INFO: ===============  start  ============
+[03-20 11:16:29]-[line:411]-FuncName:<module>-(time:3803)-INFO: ===============  start  ============
+[03-20 11:16:30]-[line:35]-FuncName:wrapped_function-(time:3881)-INFO: RUNNING <create_kline_page>
+[03-20 11:16:30]-[line:35]-FuncName:wrapped_function-(time:3881)-INFO: RUNNING <create_kline_page>
+[03-20 11:16:30]-[line:35]-FuncName:wrapped_function-(time:3881)-INFO: RUNNING <create_kline_page>
+[03-20 11:16:38]-[line:238]-FuncName:initUI-(time:12005)-INFO: show the UI
+[03-20 11:16:38]-[line:238]-FuncName:initUI-(time:12005)-INFO: show the UI
+[03-20 11:16:38]-[line:238]-FuncName:initUI-(time:12005)-INFO: show the UI
+[03-20 11:16:40]-[line:155]-FuncName:ClickedSearchButton-(time:14127)-INFO: drawing_window for stock
+[03-20 11:16:40]-[line:155]-FuncName:ClickedSearchButton-(time:14127)-INFO: drawing_window for stock
+[03-20 11:16:40]-[line:155]-FuncName:ClickedSearchButton-(time:14127)-INFO: drawing_window for stock
+[03-20 11:16:40]-[line:35]-FuncName:wrapped_function-(time:14141)-INFO: RUNNING <check_code>
+[03-20 11:16:40]-[line:35]-FuncName:wrapped_function-(time:14141)-INFO: RUNNING <check_code>
+[03-20 11:16:40]-[line:35]-FuncName:wrapped_function-(time:14141)-INFO: RUNNING <check_code>
+[03-20 11:19:01]-[line:412]-FuncName:<module>-(time:3842)-INFO: ===============  start  ============
+[03-20 11:19:01]-[line:412]-FuncName:<module>-(time:3842)-INFO: ===============  start  ============
+[03-20 11:19:01]-[line:412]-FuncName:<module>-(time:3842)-INFO: ===============  start  ============
+[03-20 11:19:01]-[line:35]-FuncName:wrapped_function-(time:3904)-INFO: RUNNING <create_kline_page>
+[03-20 11:19:01]-[line:35]-FuncName:wrapped_function-(time:3904)-INFO: RUNNING <create_kline_page>
+[03-20 11:19:01]-[line:35]-FuncName:wrapped_function-(time:3904)-INFO: RUNNING <create_kline_page>
+[03-20 11:19:12]-[line:239]-FuncName:initUI-(time:14263)-INFO: show the UI
+[03-20 11:19:12]-[line:239]-FuncName:initUI-(time:14263)-INFO: show the UI
+[03-20 11:19:12]-[line:239]-FuncName:initUI-(time:14263)-INFO: show the UI
+[03-20 11:19:14]-[line:155]-FuncName:ClickedSearchButton-(time:16667)-INFO: drawing_window for stock
+[03-20 11:19:14]-[line:155]-FuncName:ClickedSearchButton-(time:16667)-INFO: drawing_window for stock
+[03-20 11:19:14]-[line:155]-FuncName:ClickedSearchButton-(time:16667)-INFO: drawing_window for stock
+[03-20 11:19:14]-[line:35]-FuncName:wrapped_function-(time:16667)-INFO: RUNNING <check_code>
+[03-20 11:19:14]-[line:35]-FuncName:wrapped_function-(time:16667)-INFO: RUNNING <check_code>
+[03-20 11:19:14]-[line:35]-FuncName:wrapped_function-(time:16667)-INFO: RUNNING <check_code>
+[03-20 11:19:36]-[line:412]-FuncName:<module>-(time:3968)-INFO: ===============  start  ============
+[03-20 11:19:36]-[line:412]-FuncName:<module>-(time:3968)-INFO: ===============  start  ============
+[03-20 11:19:36]-[line:412]-FuncName:<module>-(time:3968)-INFO: ===============  start  ============
+[03-20 11:19:36]-[line:35]-FuncName:wrapped_function-(time:4030)-INFO: RUNNING <create_kline_page>
+[03-20 11:19:36]-[line:35]-FuncName:wrapped_function-(time:4030)-INFO: RUNNING <create_kline_page>
+[03-20 11:19:36]-[line:35]-FuncName:wrapped_function-(time:4030)-INFO: RUNNING <create_kline_page>
+[03-20 11:19:44]-[line:239]-FuncName:initUI-(time:12928)-INFO: show the UI
+[03-20 11:19:44]-[line:239]-FuncName:initUI-(time:12928)-INFO: show the UI
+[03-20 11:19:44]-[line:239]-FuncName:initUI-(time:12928)-INFO: show the UI
+[03-20 11:19:46]-[line:155]-FuncName:ClickedSearchButton-(time:14674)-INFO: drawing_window for stock
+[03-20 11:19:46]-[line:155]-FuncName:ClickedSearchButton-(time:14674)-INFO: drawing_window for stock
+[03-20 11:19:46]-[line:155]-FuncName:ClickedSearchButton-(time:14674)-INFO: drawing_window for stock
+[03-20 11:19:46]-[line:35]-FuncName:wrapped_function-(time:14688)-INFO: RUNNING <check_code>
+[03-20 11:19:46]-[line:35]-FuncName:wrapped_function-(time:14688)-INFO: RUNNING <check_code>
+[03-20 11:19:46]-[line:35]-FuncName:wrapped_function-(time:14688)-INFO: RUNNING <check_code>
+[03-20 11:20:11]-[line:412]-FuncName:<module>-(time:3531)-INFO: ===============  start  ============
+[03-20 11:20:11]-[line:412]-FuncName:<module>-(time:3531)-INFO: ===============  start  ============
+[03-20 11:20:11]-[line:412]-FuncName:<module>-(time:3531)-INFO: ===============  start  ============
+[03-20 11:20:11]-[line:35]-FuncName:wrapped_function-(time:3594)-INFO: RUNNING <create_kline_page>
+[03-20 11:20:11]-[line:35]-FuncName:wrapped_function-(time:3594)-INFO: RUNNING <create_kline_page>
+[03-20 11:20:11]-[line:35]-FuncName:wrapped_function-(time:3594)-INFO: RUNNING <create_kline_page>
+[03-20 11:20:18]-[line:239]-FuncName:initUI-(time:11002)-INFO: show the UI
+[03-20 11:20:18]-[line:239]-FuncName:initUI-(time:11002)-INFO: show the UI
+[03-20 11:20:18]-[line:239]-FuncName:initUI-(time:11002)-INFO: show the UI
+[03-20 11:20:23]-[line:155]-FuncName:ClickedSearchButton-(time:15874)-INFO: drawing_window for stock
+[03-20 11:20:23]-[line:155]-FuncName:ClickedSearchButton-(time:15874)-INFO: drawing_window for stock
+[03-20 11:20:23]-[line:155]-FuncName:ClickedSearchButton-(time:15874)-INFO: drawing_window for stock
+[03-20 11:20:23]-[line:35]-FuncName:wrapped_function-(time:15875)-INFO: RUNNING <check_code>
+[03-20 11:20:23]-[line:35]-FuncName:wrapped_function-(time:15875)-INFO: RUNNING <check_code>
+[03-20 11:20:23]-[line:35]-FuncName:wrapped_function-(time:15875)-INFO: RUNNING <check_code>
+[03-20 11:20:32]-[line:412]-FuncName:<module>-(time:3484)-INFO: ===============  start  ============
+[03-20 11:20:32]-[line:412]-FuncName:<module>-(time:3484)-INFO: ===============  start  ============
+[03-20 11:20:32]-[line:412]-FuncName:<module>-(time:3484)-INFO: ===============  start  ============
+[03-20 11:20:32]-[line:35]-FuncName:wrapped_function-(time:3546)-INFO: RUNNING <create_kline_page>
+[03-20 11:20:32]-[line:35]-FuncName:wrapped_function-(time:3546)-INFO: RUNNING <create_kline_page>
+[03-20 11:20:32]-[line:35]-FuncName:wrapped_function-(time:3546)-INFO: RUNNING <create_kline_page>
+[03-20 11:20:41]-[line:239]-FuncName:initUI-(time:13259)-INFO: show the UI
+[03-20 11:20:41]-[line:239]-FuncName:initUI-(time:13259)-INFO: show the UI
+[03-20 11:20:41]-[line:239]-FuncName:initUI-(time:13259)-INFO: show the UI
+[03-20 11:20:45]-[line:155]-FuncName:ClickedSearchButton-(time:16325)-INFO: drawing_window for stock
+[03-20 11:20:45]-[line:155]-FuncName:ClickedSearchButton-(time:16325)-INFO: drawing_window for stock
+[03-20 11:20:45]-[line:155]-FuncName:ClickedSearchButton-(time:16325)-INFO: drawing_window for stock
+[03-20 11:20:45]-[line:35]-FuncName:wrapped_function-(time:16325)-INFO: RUNNING <check_code>
+[03-20 11:20:45]-[line:35]-FuncName:wrapped_function-(time:16325)-INFO: RUNNING <check_code>
+[03-20 11:20:45]-[line:35]-FuncName:wrapped_function-(time:16325)-INFO: RUNNING <check_code>
+[03-20 11:21:14]-[line:413]-FuncName:<module>-(time:3498)-INFO: ===============  start  ============
+[03-20 11:21:14]-[line:413]-FuncName:<module>-(time:3498)-INFO: ===============  start  ============
+[03-20 11:21:14]-[line:413]-FuncName:<module>-(time:3498)-INFO: ===============  start  ============
+[03-20 11:21:14]-[line:35]-FuncName:wrapped_function-(time:3561)-INFO: RUNNING <create_kline_page>
+[03-20 11:21:14]-[line:35]-FuncName:wrapped_function-(time:3561)-INFO: RUNNING <create_kline_page>
+[03-20 11:21:14]-[line:35]-FuncName:wrapped_function-(time:3561)-INFO: RUNNING <create_kline_page>
+[03-20 11:21:22]-[line:240]-FuncName:initUI-(time:11796)-INFO: show the UI
+[03-20 11:21:22]-[line:240]-FuncName:initUI-(time:11796)-INFO: show the UI
+[03-20 11:21:22]-[line:240]-FuncName:initUI-(time:11796)-INFO: show the UI
+[03-20 11:21:36]-[line:155]-FuncName:ClickedSearchButton-(time:25378)-INFO: drawing_window for stock
+[03-20 11:21:36]-[line:155]-FuncName:ClickedSearchButton-(time:25378)-INFO: drawing_window for stock
+[03-20 11:21:36]-[line:155]-FuncName:ClickedSearchButton-(time:25378)-INFO: drawing_window for stock
+[03-20 11:21:36]-[line:35]-FuncName:wrapped_function-(time:25379)-INFO: RUNNING <check_code>
+[03-20 11:21:36]-[line:35]-FuncName:wrapped_function-(time:25379)-INFO: RUNNING <check_code>
+[03-20 11:21:36]-[line:35]-FuncName:wrapped_function-(time:25379)-INFO: RUNNING <check_code>
+[03-20 11:21:57]-[line:413]-FuncName:<module>-(time:3699)-INFO: ===============  start  ============
+[03-20 11:21:57]-[line:413]-FuncName:<module>-(time:3699)-INFO: ===============  start  ============
+[03-20 11:21:57]-[line:413]-FuncName:<module>-(time:3699)-INFO: ===============  start  ============
+[03-20 11:21:57]-[line:35]-FuncName:wrapped_function-(time:3761)-INFO: RUNNING <create_kline_page>
+[03-20 11:21:57]-[line:35]-FuncName:wrapped_function-(time:3761)-INFO: RUNNING <create_kline_page>
+[03-20 11:21:57]-[line:35]-FuncName:wrapped_function-(time:3761)-INFO: RUNNING <create_kline_page>
+[03-20 11:22:00]-[line:240]-FuncName:initUI-(time:7514)-INFO: show the UI
+[03-20 11:22:00]-[line:240]-FuncName:initUI-(time:7514)-INFO: show the UI
+[03-20 11:22:00]-[line:240]-FuncName:initUI-(time:7514)-INFO: show the UI
+[03-20 11:22:09]-[line:155]-FuncName:ClickedSearchButton-(time:16014)-INFO: drawing_window for stock
+[03-20 11:22:09]-[line:155]-FuncName:ClickedSearchButton-(time:16014)-INFO: drawing_window for stock
+[03-20 11:22:09]-[line:155]-FuncName:ClickedSearchButton-(time:16014)-INFO: drawing_window for stock
+[03-20 11:22:09]-[line:35]-FuncName:wrapped_function-(time:16014)-INFO: RUNNING <check_code>
+[03-20 11:22:09]-[line:35]-FuncName:wrapped_function-(time:16014)-INFO: RUNNING <check_code>
+[03-20 11:22:09]-[line:35]-FuncName:wrapped_function-(time:16014)-INFO: RUNNING <check_code>
+[04-04 08:42:28]-[line:413]-FuncName:<module>-(time:28772)-INFO: ===============  start  ============
+[04-04 08:42:28]-[line:413]-FuncName:<module>-(time:28772)-INFO: ===============  start  ============
+[04-04 08:42:28]-[line:413]-FuncName:<module>-(time:28772)-INFO: ===============  start  ============
+[04-04 08:42:28]-[line:35]-FuncName:wrapped_function-(time:29199)-INFO: RUNNING <create_kline_page>
+[04-04 08:42:28]-[line:35]-FuncName:wrapped_function-(time:29199)-INFO: RUNNING <create_kline_page>
+[04-04 08:42:28]-[line:35]-FuncName:wrapped_function-(time:29199)-INFO: RUNNING <create_kline_page>
+[04-04 08:42:34]-[line:240]-FuncName:initUI-(time:34764)-INFO: show the UI
+[04-04 08:42:34]-[line:240]-FuncName:initUI-(time:34764)-INFO: show the UI
+[04-04 08:42:34]-[line:240]-FuncName:initUI-(time:34764)-INFO: show the UI
+[04-04 08:43:23]-[line:155]-FuncName:ClickedSearchButton-(time:84266)-INFO: drawing_window for stock
+[04-04 08:43:23]-[line:155]-FuncName:ClickedSearchButton-(time:84266)-INFO: drawing_window for stock
+[04-04 08:43:23]-[line:155]-FuncName:ClickedSearchButton-(time:84266)-INFO: drawing_window for stock
+[04-04 08:43:23]-[line:35]-FuncName:wrapped_function-(time:84267)-INFO: RUNNING <check_code>
+[04-04 08:43:23]-[line:35]-FuncName:wrapped_function-(time:84267)-INFO: RUNNING <check_code>
+[04-04 08:43:23]-[line:35]-FuncName:wrapped_function-(time:84267)-INFO: RUNNING <check_code>
+[04-04 08:43:38]-[line:413]-FuncName:<module>-(time:4251)-INFO: ===============  start  ============
+[04-04 08:43:38]-[line:413]-FuncName:<module>-(time:4251)-INFO: ===============  start  ============
+[04-04 08:43:38]-[line:413]-FuncName:<module>-(time:4251)-INFO: ===============  start  ============
+[04-04 08:43:38]-[line:35]-FuncName:wrapped_function-(time:4314)-INFO: RUNNING <create_kline_page>
+[04-04 08:43:38]-[line:35]-FuncName:wrapped_function-(time:4314)-INFO: RUNNING <create_kline_page>
+[04-04 08:43:38]-[line:35]-FuncName:wrapped_function-(time:4314)-INFO: RUNNING <create_kline_page>
+[04-04 08:43:40]-[line:240]-FuncName:initUI-(time:6743)-INFO: show the UI
+[04-04 08:43:40]-[line:240]-FuncName:initUI-(time:6743)-INFO: show the UI
+[04-04 08:43:40]-[line:240]-FuncName:initUI-(time:6743)-INFO: show the UI
+[04-04 08:44:11]-[line:155]-FuncName:ClickedSearchButton-(time:37308)-INFO: drawing_window for stock
+[04-04 08:44:11]-[line:155]-FuncName:ClickedSearchButton-(time:37308)-INFO: drawing_window for stock
+[04-04 08:44:11]-[line:155]-FuncName:ClickedSearchButton-(time:37308)-INFO: drawing_window for stock
+[04-04 08:44:11]-[line:35]-FuncName:wrapped_function-(time:37309)-INFO: RUNNING <check_code>
+[04-04 08:44:11]-[line:35]-FuncName:wrapped_function-(time:37309)-INFO: RUNNING <check_code>
+[04-04 08:44:11]-[line:35]-FuncName:wrapped_function-(time:37309)-INFO: RUNNING <check_code>
+[04-04 08:46:01]-[line:155]-FuncName:ClickedSearchButton-(time:147741)-INFO: drawing_window for stock
+[04-04 08:46:01]-[line:155]-FuncName:ClickedSearchButton-(time:147741)-INFO: drawing_window for stock
+[04-04 08:46:01]-[line:155]-FuncName:ClickedSearchButton-(time:147741)-INFO: drawing_window for stock
+[04-04 08:46:01]-[line:35]-FuncName:wrapped_function-(time:147742)-INFO: RUNNING <check_code>
+[04-04 08:46:01]-[line:35]-FuncName:wrapped_function-(time:147742)-INFO: RUNNING <check_code>
+[04-04 08:46:01]-[line:35]-FuncName:wrapped_function-(time:147742)-INFO: RUNNING <check_code>
+[04-04 08:46:15]-[line:413]-FuncName:<module>-(time:3428)-INFO: ===============  start  ============
+[04-04 08:46:15]-[line:413]-FuncName:<module>-(time:3428)-INFO: ===============  start  ============
+[04-04 08:46:15]-[line:413]-FuncName:<module>-(time:3428)-INFO: ===============  start  ============
+[04-04 08:46:15]-[line:35]-FuncName:wrapped_function-(time:3490)-INFO: RUNNING <create_kline_page>
+[04-04 08:46:15]-[line:35]-FuncName:wrapped_function-(time:3490)-INFO: RUNNING <create_kline_page>
+[04-04 08:46:15]-[line:35]-FuncName:wrapped_function-(time:3490)-INFO: RUNNING <create_kline_page>
+[04-04 08:46:18]-[line:240]-FuncName:initUI-(time:5935)-INFO: show the UI
+[04-04 08:46:18]-[line:240]-FuncName:initUI-(time:5935)-INFO: show the UI
+[04-04 08:46:18]-[line:240]-FuncName:initUI-(time:5935)-INFO: show the UI
+[04-04 08:46:27]-[line:155]-FuncName:ClickedSearchButton-(time:15707)-INFO: drawing_window for stock
+[04-04 08:46:27]-[line:155]-FuncName:ClickedSearchButton-(time:15707)-INFO: drawing_window for stock
+[04-04 08:46:27]-[line:155]-FuncName:ClickedSearchButton-(time:15707)-INFO: drawing_window for stock
+[04-04 08:46:27]-[line:35]-FuncName:wrapped_function-(time:15729)-INFO: RUNNING <check_code>
+[04-04 08:46:27]-[line:35]-FuncName:wrapped_function-(time:15729)-INFO: RUNNING <check_code>
+[04-04 08:46:27]-[line:35]-FuncName:wrapped_function-(time:15729)-INFO: RUNNING <check_code>
+[04-04 08:54:02]-[line:413]-FuncName:<module>-(time:4038)-INFO: ===============  start  ============
+[04-04 08:54:02]-[line:413]-FuncName:<module>-(time:4038)-INFO: ===============  start  ============
+[04-04 08:54:02]-[line:413]-FuncName:<module>-(time:4038)-INFO: ===============  start  ============
+[04-04 08:54:02]-[line:35]-FuncName:wrapped_function-(time:4132)-INFO: RUNNING <create_kline_page>
+[04-04 08:54:02]-[line:35]-FuncName:wrapped_function-(time:4132)-INFO: RUNNING <create_kline_page>
+[04-04 08:54:02]-[line:35]-FuncName:wrapped_function-(time:4132)-INFO: RUNNING <create_kline_page>
+[04-04 08:54:04]-[line:240]-FuncName:initUI-(time:6920)-INFO: show the UI
+[04-04 08:54:04]-[line:240]-FuncName:initUI-(time:6920)-INFO: show the UI
+[04-04 08:54:04]-[line:240]-FuncName:initUI-(time:6920)-INFO: show the UI
+[04-04 08:54:18]-[line:155]-FuncName:ClickedSearchButton-(time:20231)-INFO: drawing_window for stock
+[04-04 08:54:18]-[line:155]-FuncName:ClickedSearchButton-(time:20231)-INFO: drawing_window for stock
+[04-04 08:54:18]-[line:155]-FuncName:ClickedSearchButton-(time:20231)-INFO: drawing_window for stock
+[04-04 08:54:18]-[line:35]-FuncName:wrapped_function-(time:20252)-INFO: RUNNING <check_code>
+[04-04 08:54:18]-[line:35]-FuncName:wrapped_function-(time:20252)-INFO: RUNNING <check_code>
+[04-04 08:54:18]-[line:35]-FuncName:wrapped_function-(time:20252)-INFO: RUNNING <check_code>
+[04-04 08:54:30]-[line:413]-FuncName:<module>-(time:4790)-INFO: ===============  start  ============
+[04-04 08:54:30]-[line:413]-FuncName:<module>-(time:4790)-INFO: ===============  start  ============
+[04-04 08:54:30]-[line:413]-FuncName:<module>-(time:4790)-INFO: ===============  start  ============
+[04-04 08:54:30]-[line:35]-FuncName:wrapped_function-(time:4868)-INFO: RUNNING <create_kline_page>
+[04-04 08:54:30]-[line:35]-FuncName:wrapped_function-(time:4868)-INFO: RUNNING <create_kline_page>
+[04-04 08:54:30]-[line:35]-FuncName:wrapped_function-(time:4868)-INFO: RUNNING <create_kline_page>
+[04-04 08:54:33]-[line:240]-FuncName:initUI-(time:7577)-INFO: show the UI
+[04-04 08:54:33]-[line:240]-FuncName:initUI-(time:7577)-INFO: show the UI
+[04-04 08:54:33]-[line:240]-FuncName:initUI-(time:7577)-INFO: show the UI
+[04-04 08:54:40]-[line:155]-FuncName:ClickedSearchButton-(time:15259)-INFO: drawing_window for stock
+[04-04 08:54:40]-[line:155]-FuncName:ClickedSearchButton-(time:15259)-INFO: drawing_window for stock
+[04-04 08:54:40]-[line:155]-FuncName:ClickedSearchButton-(time:15259)-INFO: drawing_window for stock
+[04-04 08:54:40]-[line:35]-FuncName:wrapped_function-(time:15260)-INFO: RUNNING <check_code>
+[04-04 08:54:40]-[line:35]-FuncName:wrapped_function-(time:15260)-INFO: RUNNING <check_code>
+[04-04 08:54:40]-[line:35]-FuncName:wrapped_function-(time:15260)-INFO: RUNNING <check_code>
+[04-04 08:55:23]-[line:155]-FuncName:ClickedSearchButton-(time:58235)-INFO: drawing_window for stock
+[04-04 08:55:23]-[line:155]-FuncName:ClickedSearchButton-(time:58235)-INFO: drawing_window for stock
+[04-04 08:55:23]-[line:155]-FuncName:ClickedSearchButton-(time:58235)-INFO: drawing_window for stock
+[04-04 08:55:23]-[line:35]-FuncName:wrapped_function-(time:58236)-INFO: RUNNING <check_code>
+[04-04 08:55:23]-[line:35]-FuncName:wrapped_function-(time:58236)-INFO: RUNNING <check_code>
+[04-04 08:55:23]-[line:35]-FuncName:wrapped_function-(time:58236)-INFO: RUNNING <check_code>
+[04-04 08:55:25]-[line:155]-FuncName:ClickedSearchButton-(time:59483)-INFO: drawing_window for stock
+[04-04 08:55:25]-[line:155]-FuncName:ClickedSearchButton-(time:59483)-INFO: drawing_window for stock
+[04-04 08:55:25]-[line:155]-FuncName:ClickedSearchButton-(time:59483)-INFO: drawing_window for stock
+[04-04 08:55:25]-[line:35]-FuncName:wrapped_function-(time:59483)-INFO: RUNNING <check_code>
+[04-04 08:55:25]-[line:35]-FuncName:wrapped_function-(time:59483)-INFO: RUNNING <check_code>
+[04-04 08:55:25]-[line:35]-FuncName:wrapped_function-(time:59483)-INFO: RUNNING <check_code>
+[04-04 08:57:26]-[line:155]-FuncName:ClickedSearchButton-(time:180652)-INFO: drawing_window for stock
+[04-04 08:57:26]-[line:155]-FuncName:ClickedSearchButton-(time:180652)-INFO: drawing_window for stock
+[04-04 08:57:26]-[line:155]-FuncName:ClickedSearchButton-(time:180652)-INFO: drawing_window for stock
+[04-04 08:57:26]-[line:35]-FuncName:wrapped_function-(time:180653)-INFO: RUNNING <check_code>
+[04-04 08:57:26]-[line:35]-FuncName:wrapped_function-(time:180653)-INFO: RUNNING <check_code>
+[04-04 08:57:26]-[line:35]-FuncName:wrapped_function-(time:180653)-INFO: RUNNING <check_code>

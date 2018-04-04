@@ -155,13 +155,13 @@ class mywindow(QMainWindow):
         LOG.logger.info('drawing_window for stock')
         self.ui.pbar.reset()
         code_input=Action_main.check_code(self.ui.code_edit.text())
-        print (code_input)
+        #print (code_input)
         self.SetLable(code_input)
         #code_input=self.ui.code_edit.text()
 
       
         if code_input == False:
-            print(code_input)
+            #print(code_input)
             self.ui.code_edit.clear()
             self.ui.code_edit.setPlaceholderText('请重新输入code')
             pass

@@ -267,7 +267,7 @@ class Ui_MainWindow(object):
         self.codelabel.setSizePolicy(sizePolicy)
         self.codelabel.setObjectName(_fromUtf8("label"))
         self.codelabel.setText(_translate("MainWindow", "上海", None))
-        self.topGrid.addWidget(self.codelabel, 0,0)
+        self.topGrid.addWidget(self.codelabel, 0,1)
         #进程
         self.pbar=QtWidgets.QProgressBar()
         self.topGrid.addWidget(self.pbar,0,5)
