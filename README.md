@@ -22,15 +22,16 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
     .. `wechat-sdk`  
     .. `tqdm`  
     .. `wechat-sdk`  
+    .. `html5lib`  HTML 协议 lib
     .. `gmsdk-2.9.9-py3-none-any`(http://www.myquant.cn/gm2/downloads/)  
     
 ## 功能介绍
 --------
-####KLIN ,MACD ，RSI 等基本指
+####KLIN ,MACD ，RSI 等基本指  
 ```目前在GUI可以调用，Kline，MACD，布林线，RSI等常用指标。在technical_indicators中用户还可以完成，自由的算法设定。目前痛过迭代运算，回测A股3000多只股票过去三年的交易情况，优化了常规算法的参数。```	
 # ![k][kline]
 
-####十大股东排行榜
+####十大股东排行榜  
 ```输入股票code之后，软件会自动计算设定区域内的大股东排行。方便大家查询证金等国家队动向。```
 # ![t][charts]
 [x] 已完成 [ ] 未完成

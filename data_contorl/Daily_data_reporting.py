@@ -88,7 +88,7 @@ def download_Orgday(time ):
     Datas_b.to_csv(files_path+'/%s_Orgday_csv.csv'%(time))
     with pd.ExcelWriter(files_path+'/%s_Orgday_xlx.xlsx'%(time)) as writer:
         Datas_b.to_excel(writer, sheet_name='Sheet1')
-    print('\n%s %s机构席位一天 have been saved'%(time,i))
+    print('\n%s机构席位一天 have been saved'%(time))
         
 def download_top_list(time):
 
@@ -127,8 +127,8 @@ if __name__ == "__main__":
      #   download_datas_ST1D('600221',ladays)
     #todaytime=
 
-  #  download_brokerage(todaytime)
-    #download_org_top(todaytime)
+    download_brokerage(todaytime)
+    download_org_top(todaytime)
     download_Orgday(todaytime)
  
  #   download_top_list(None)
