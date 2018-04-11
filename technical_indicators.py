@@ -8,9 +8,11 @@ import time
 
 #import st_imformation as sti
 
-today=datetime.date.today()   
+today=datetime.date.today()   # setup date
 
-
+'''
+funcation : download the stock datas as pandas Dataforms
+'''
 
 def get_date_ts(Code,startDate,endDate):#获取开始数据
         
@@ -26,7 +28,9 @@ def get_date_ts(Code,startDate,endDate):#获取开始数据
         #print('当前价格：%s'%realtime_price)
         df.loc['%s'%today,'close']=realtime_price
     return df
-
+'''
+funcdation : 
+'''
 def myMACD(price, fastperiod=10, slowperiod=20, signalperiod=9):
     ewma12 = pd.ewma(price,span=fastperiod)
     ewma60 = pd.ewma(price,span=slowperiod)
@@ -34,9 +38,6 @@ def myMACD(price, fastperiod=10, slowperiod=20, signalperiod=9):
     dea = pd.ewma(dif,span=signalperiod)
     bar = (dif-dea) #有些地方的bar = (dif-dea)*2，但是talib中MACD的计算是bar = (dif-dea)*1
     return dif,dea,bar
-
-
-
 
 def draw_macd(code,starttime,endtime):
 
@@ -100,7 +101,7 @@ def ST_bands (code,startday,enday,tp=14):
     
     df=get_date_ts(code,startday,enday)
     
-    upperband, middleband, lowerband = talib.BBANDS(df.close.values, timeperiod=tp, nbdevup=2, nbdevdn=2, matype=0)
+    upperband, middleband, lowerband = talib.func.BBANDS(df.close.values, timeperiod=tp, nbdevup=2, nbdevdn=2, matype=0)
 
     df['upperband']=upperband
     df['middleband']=middleband
@@ -164,7 +165,7 @@ def RSI(code='sh',startday='2015-01-05',enday='2016-12-21',timeperiod=10):# pric
     if code == 'sh':
         timeperiod=10
     df=get_date_ts(code,startday,enday)
-    df['RSI']=talib.RSI(df.close.values,timeperiod)#调用RSI函数计算RSI  因子设为10
+    df['RSI']=talib.func.RSI(df.close.values,timeperiod)#调用RSI函数计算RSI  因子设为10
     
     return df
 
@@ -188,7 +189,7 @@ def draw_RSI(df): # 画加权平均指数
 def ADX(code='sh',startday='2015-01-05',enday='2016-12-21'):# ADX  多空占比   
     df=get_date_ts(code,startday,enday)
     #print(df)
-    df['ADX']=talib.ADX(high=df.high.values,low=df.low.values,close=df.close.values,timeperiod=10)
+    df['ADX']=talib.func.ADX(high=df.high.values,low=df.low.values,close=df.close.values,timeperiod=10)
     #多空比率净额= [（收盘价－最低价）－（最高价-收盘价）] ÷（ 最高价－最低价）×V
     return df
 def draw_ADX(df): # 画加权平均指数
@@ -205,7 +206,7 @@ def ADOSC(code='sh',startday='2015-01-05',enday='2016-12-21',f=5,s=30):# 量价�
     #    timeperiod=10
     df=get_date_ts(code,startday,enday)
 
-    df['ADOSC']=talib.ADOSC(high=df.high.values,
+    df['ADOSC']=talib.func.ADOSC(high=df.high.values,
                           low=df.low.values,
                           close=df.close.values,
                           volume=df.volume.values,
@@ -232,7 +233,7 @@ CCI
 '''
 def CCI(code='sh',startday='2015-01-05',enday='2016-12-21',day=14):#顺势指标
     df=get_date_ts(code,startday,enday)
-    df['CCI']=talib.CCI(high=df.high.values,
+    df['CCI']=talib.func.CCI(high=df.high.values,
                           low=df.low.values,
                           close=df.close.values,
                           timeperiod=day)
@@ -252,7 +253,7 @@ Such as RSI, to comput the volume.
 '''
 def MFI(code='sh',startday='2015-01-05',enday='2016-12-21',day=14):# MFI - Money Flow Index 
     df=get_date_ts(code,startday,enday)
-    df['MFI']=talib.MFI(high=df.high.values,
+    df['MFI']=talib.func.MFI(high=df.high.values,
                           low=df.low.values,
                           close=df.close.values,
                           volume=df.volume.values,
@@ -274,7 +275,7 @@ Such as K LINE, to comput the volume.
 '''
 def Hilbert(code='sh',startday='2015-01-05',enday='2016-12-21'):# MFI - Money Flow Index 
     df=get_date_ts(code,startday,enday)
-    df['Hilbert']=talib.HT_TRENDMODE(df.close.values)
+    df['Hilbert']=talib.func.HT_TRENDMODE(df.close.values)
     return df
 def draw_Hilbert(df): # 画加权平均指数
     ax1=plt.subplot(111)
@@ -291,7 +292,7 @@ Such as K LINE, to comput the volume.
 '''
 def SAR(code='sh',startday='2015-01-05',enday='2016-12-21'):# MFI - Money Flow Index 
     df=get_date_ts(code,startday,enday)
-    df['SAR']=talib.SAR(df.high.values,df.low.values,acceleration=0.02, maximum=0.2)
+    df['SAR']=talib.func.SAR(df.high.values,df.low.values,acceleration=0.02, maximum=0.2)
     return df
 def draw_SAR(df): # 画加权平均指数
     ax1=plt.subplot(111)
@@ -317,9 +318,9 @@ if __name__=="__main__":
                  000976 000929 000911 000639 601139
                  'zh500':'sh000905'}
     '''
-    code_="002044"
+    code_="600200"
     start_='2017-06-01'
-    end_='2018-03-20' 
+    end_='2018-03-10' 
 
     plt.figure(1) 
     VW=VWAP(code_,start_,end_) 
@@ -335,7 +336,7 @@ if __name__=="__main__":
     RSI_IDEX=RSI(code_,start_,end_)
     draw_RSI(RSI_IDEX)
 
-
+  
   #  plt.figure(5)
   #  ADX_IDEX=ADX(code_,start_,end_)
   #  draw_ADX(ADX_IDEX)#ADX 非相关重要信息
