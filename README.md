@@ -12,27 +12,30 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 通过大数据处理，分析和挖掘二级市场波动变化。亦可以编写量化交易策略，引入Decision Tree等机器学习算法。
 
 
-##### 所需要的第三方库：  
-    .. `tushare`
-    .. `pyqtgraph` 绘图工具
-    .. `TA-lib`  （TA-Lib 通过pip直接安装可能会出错，需要下载.whl格式文件）
-    .. `pyecharts` 图表绘图工具
-    .. `pandas`  
-    .. `PYQT5`  
-    .. `wechat-sdk`  
-    .. `tqdm`  
-    .. `wechat-sdk`  
-    .. `html5lib`  HTML 协议 lib
-    .. `gmsdk-2.9.9-py3-none-any`(http://www.myquant.cn/gm2/downloads/)  
+
+##### 所需要的第三方库：
+|Lib | 描述 |版本|
+|:----:| :----: |:----|
+|tushare|股票数据接口|
+|pyqtgraph| 绘图工具|
+|TA-lib|  （TA-Lib 通过pip直接安装可能会出错，需要下载.whl格式文件。[Ta-lib](/doc/ta-lib.md) 查询）|0.4.10
+|pyecharts| 图表绘图工具|0.1.4|
+|pandas|数据格式处理|  0.20.3|
+|PYQT5|GUI绘制功能，还需要qtpy支持|5.9.2|  
+|wechat-sdk|微信接口|  
+|tqdm|进度条小工具|4.14.0
+|html5lib| HTML 协议 lib
+|gmsdk|回测框架（选项）|gmsdk-2.9.9-py3-none-any`(http://www.myquant.cn/gm2/downloads/) 
+|rqalpha|回测机制框架（选项）| 
     
 ## 功能介绍
 --------
 ####KLIN ,MACD ，RSI 等基本指  
-```目前在GUI可以调用，Kline，MACD，布林线，RSI等常用指标。在technical_indicators中用户还可以完成，自由的算法设定。目前痛过迭代运算，回测A股3000多只股票过去三年的交易情况，优化了常规算法的参数。```	
+```  目前在GUI可以调用，Kline，MACD，布林线，RSI等常用指标。在technical_indicators中用户还可以完成，自由的算法设定。目前痛过迭代运算，回测A股3000多只股票过去三年的交易情况，优化了常规算法的参数。```  	
 # ![k][kline]
 
 ####十大股东排行榜  
-```输入股票code之后，软件会自动计算设定区域内的大股东排行。方便大家查询证金等国家队动向。```
+```  输入股票code之后，软件会自动计算设定区域内的大股东排行。方便大家查询证金等国家队动向。```  
 # ![t][charts]
 [x] 已完成 [ ] 未完成
 ## data_contorl
@@ -156,5 +159,5 @@ GARP的核心主要是PEG
 
 
 [WK]:https://github.com/Johnzjy/wakuang/blob/master/scr/ico/title.jpg
-[charts]:https://github.com/Johnzjy/wakuang/blob/master/scr/ico/top10charts.PNG
-[kline]:https://github.com/Johnzjy/wakuang/blob/master/scr/ico/kline.PNG
+[charts]:/scr/ico/top10charts.PNG
+[kline]:/scr/ico/kline.PNG
