@@ -5,12 +5,11 @@ TA-lib（Technical Analysis Library）
 | Item |Function|Description| 
 |----|----|----|
 |Part One|Overlap Studies
-|~~~~~~~|~~~~~~~~~~~~~
-| 1 | BBANDS|bollinger bands
-| 2 |DEMA|Double EXponential Moving Average
-|3|EMA|Exponentail Moving Average|
-|4|HT_TRENDLINE|Hilbert Transform -Instantaneous Trendline|
-|5|KAMA|Kaufman Adaptive Moving Average|
+| 1 | [BBANDS](#BBANDS)|bollinger bands
+| 2 |[DEMA](#DEMA)|Double EXponential Moving Average
+|3|[EMA](#EMA)|Exponentail Moving Average|
+|4|[HT_TRENDLINE](#HT_TRENDLINE)|Hilbert Transform -Instantaneous Trendline|
+|5|[KAMA](#KAMA)|Kaufman Adaptive Moving Average|
 |6|MA|Moving Average|
 |7|MAMA|MESA Adaptive Moving Average|
 |8|MAVP|Moving Average with veriable period|
@@ -23,10 +22,47 @@ TA-lib（Technical Analysis Library）
 |15|TEMA| Triple Exponential Moving Average
 |16|TRIMA|Triangular Moving Average
 |17|WMA| Weighted Moving Average
+|Part Two|Momentum Indicators|趋势动量指标|
+|1|ADX|                  Average Directional Movement Index
+|2|ADXR|                 Average Directional Movement Index Rating
+|3|APO|                  Absolute Price Oscillator
+|4|AROON|                Aroon
+|5|AROONOSC|             Aroon Oscillator
+|6|BOP|                  Balance Of Power
+|7|CCI|                  Commodity Channel Index
+|8|CMO|                  Chande Momentum Oscillator
+|9|DX|                   Directional Movement Index
+|10|MACD|                 Moving Average Convergence/Divergence
+|11|MACDEXT|              MACD with controllable MA type
+|12|MACDFIX|              Moving Average Convergence/Divergence Fix 12/26
+|13|MFI|                  Money Flow Index
+|14|MINUS_DI|             Minus Directional Indicator
+|15|MINUS_DM|             Minus Directional Movement
+|16|MOM|                  Momentum
+|17|PLUS_DI|              Plus Directional Indicator
+|18|PLUS_DM|              Plus Directional Movement
+|19|PPO|                  Percentage Price Oscillator
+|20|ROC|                  Rate of change : ((price/prevPrice)-1)*100
+|21|ROCP|                 Rate of change Percentage: (price-prevPrice)/prevPrice
+|22|ROCR|                 Rate of change ratio: (price/prevPrice)
+|23|ROCR100|              Rate of change ratio 100 scale: (price/prevPrice)*100
+|24|RSI|                  Relative Strength Index
+|25|STOCH|                Stochastic
+|26|STOCHF|               Stochastic Fast
+|27|STOCHRSI|             Stochastic Relative Strength Index
+|28|TRIX|                 1-day Rate-Of-Change (ROC) of a Triple Smooth EMA
+|29|ULTOSC|               Ultimate Oscillator
+|30|WILLR|                Williams' %R
+|Part Three|Volume Indicators|交易量指数
+|1|[AD](#AD)|                   Chaikin A/D Line
+|2|[ADOSC](#ADOSC) |               Chaikin A/D Oscillator
+|3|[OBV](#OBV)|                  On Balance Volume
+|Part Four|Volatility Indicators|波动指数
+|1|[ATR](#ATR)|                  Average True Range
+|2|[NATR](#NATR)|                 Normalized Average True Range
+|3|[TRANGE](#TRANGE)|               True Range
 
-
-
- #### 函数名：AD
+ #### AD
 * 名称：Chaikin A/D Line 累积/派发线（Accumulation/Distribution Line） 
 * 简介：  ```Marc Chaikin提出的一种平衡交易量指标，以当日的收盘价位来估算成交流量，用于估定一段时间内该证券累积的资金流量。``` 
 * 计算公式：
@@ -38,14 +74,14 @@ TA-lib（Technical Analysis Library）
 2、A/D与价格的背离可视为买卖信号，即底背离考虑买入，顶背离考虑卖出　   　
 3、应当注意A/D忽略了缺口的影响，事实上，跳空缺口的意义是不能轻易忽略的  
 ```A/D指标无需设置参数，但在应用时，可结合指标的均线进行分析* 例子：real = AD(high, low, close, volume)```
-    #### 函数名：ADOSC
+#### ADOSC
 * 名称：Chaikin A/D Oscillator Chaikin震荡指标
 * 简介：将资金流动情况与价格行为相对比，检测市场中资金流入和流出的情况计算公式：fastperiod A/D - slowperiod A/D
 研判：
 1、交易信号是背离：看涨背离做多，看跌背离做空
 2、股价与90天移动平均结合，与其他指标结合         
 3、由正变负卖出，由负变正买进* 例子：real = ADOSC(high, low, close, volume, fastperiod=3, slowperiod=10) 
-    #### 函数名：OBV 
+#### OBV 
 * 名称：On Balance Volume 能量潮
 * 简介：Joe Granville提出，通过统计成交量变动的趋势推测股价趋势计算公式：以某日为基期，逐日累计每日上市股票总成交量，若隔日指数或股票上涨，则基期OBV加上本日成交量为本日OBV。隔日指数或股票下跌，则基期OBV减去本日成交量为本日OBV
 * 研判：
@@ -55,7 +91,7 @@ TA-lib（Technical Analysis Library）
 ```多空比率净额= [（收盘价－最低价）－（最高价-收盘价）] ÷（ 最高价－最低价）×成交量* 例子：real = OBV(close, volume)``` 
 
 
- #### 函数名：CDL2CROWS
+#### CDL2CROWS
 
 * 名称：Two Crows 两只乌鸦
 
@@ -64,8 +100,7 @@ TA-lib（Technical Analysis Library）
 * 例子：integer = CDL2CROWS(open, high, low, close)
 
 
-
- #### 函数名：CDL3BLACKCROWS
+#### CDL3BLACKCROWS
 
 * 名称：Three Black Crows 三只乌鸦
 
@@ -75,7 +110,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDL3INSIDE
+#### CDL3INSIDE
 
 * 名称： Three Inside Up/Down 三内部上涨和下跌
 
@@ -85,7 +120,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDL3LINESTRIKE
+#### CDL3LINESTRIKE
 
 * 名称： Three-Line Strike 三线打击
 
@@ -95,7 +130,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDL3OUTSIDE
+#### CDL3OUTSIDE
 
 * 名称：Three Outside Up/Down 三外部上涨和下跌
 
@@ -105,7 +140,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDL3STARSINSOUTH
+ ####  CDL3STARSINSOUTH
 
 * 名称：Three Stars In The South 南方三星
 
@@ -115,7 +150,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDL3WHITESOLDIERS
+####  CDL3WHITESOLDIERS
 
 * 名称：Three Advancing White Soldiers 三个白兵
 
@@ -125,7 +160,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLABANDONEDBABY
+####  CDLABANDONEDBABY
 
 * 名称：Abandoned Baby 弃婴
 
@@ -135,7 +170,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLADVANCEBLOCK
+####  CDLADVANCEBLOCK
 
 * 名称：Advance Block 大敌当前
 
@@ -145,7 +180,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLBELTHOLD
+####  CDLBELTHOLD
 
 * 名称：Belt-hold 捉腰带线
 
@@ -155,7 +190,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLBREAKAWAY
+ ####  CDLBREAKAWAY
 
 * 名称：Breakaway 脱离
 
@@ -165,7 +200,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLCLOSINGMARUBOZU
+ ####  CDLCLOSINGMARUBOZU
 
 * 名称：Closing Marubozu 收盘缺影线
 
@@ -175,7 +210,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLCONCEALBABYSWALL
+ ####  CDLCONCEALBABYSWALL
 
 * * 名称： Concealing Baby Swallow 藏婴吞没
 
@@ -185,7 +220,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLCOUNTERATTACK
+ ####  CDLCOUNTERATTACK
 
 * 名称：Counterattack 反击线
 
@@ -195,7 +230,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLDARKCLOUDCOVER
+ ####  CDLDARKCLOUDCOVER
 
 * 名称：Dark Cloud Cover 乌云压顶
 
@@ -205,7 +240,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLDOJI
+ ####  CDLDOJI
 
 * 名称：Doji 十字
 
@@ -215,7 +250,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLDOJISTAR
+ ####  CDLDOJISTAR
 
 * 名称：Doji Star 十字星
 
@@ -225,7 +260,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLDRAGONFLYDOJI
+ ####  CDLDRAGONFLYDOJI
 
 * 名称：Dragonfly Doji 蜻蜓十字/T形十字
 
@@ -235,7 +270,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLENGULFING
+ ####  CDLENGULFING
 
 * 名称：Engulfing Pattern 吞噬模式
 
@@ -245,7 +280,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLEVENINGDOJISTAR
+ ####  CDLEVENINGDOJISTAR
 
 * 名称：Evening Doji Star 十字暮星
 
@@ -255,7 +290,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLEVENINGSTAR
+ ####  CDLEVENINGSTAR
 
 * 名称：Evening Star 暮星
 
@@ -265,7 +300,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLGAPSIDESIDEWHITE
+ ####  CDLGAPSIDESIDEWHITE
 
 * 名称：Up/Down-gap side-by-side white lines 向上/下跳空并列阳线
 
@@ -275,7 +310,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLGRAVESTONEDOJI
+ ####  CDLGRAVESTONEDOJI
 
 * 名称：Gravestone Doji 墓碑十字/倒T十字
 
@@ -285,7 +320,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLHAMMER
+ ####  CDLHAMMER
 
 * 名称：Hammer 锤头
 
@@ -295,7 +330,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLHANGINGMAN
+ ####  CDLHANGINGMAN
 
 * 名称：Hanging Man 上吊线
 
@@ -305,7 +340,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLHARAMI
+ ####  CDLHARAMI
 
 * 名称：Harami Pattern 母子线
 
@@ -315,7 +350,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLHARAMICROSS
+ ####  CDLHARAMICROSS
 
 * 名称：Harami Cross Pattern 十字孕线
 
@@ -325,7 +360,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLHIGHWAVE
+ ####  CDLHIGHWAVE
 
 * 名称：High-Wave Candle 风高浪大线
 
@@ -335,7 +370,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLHIKKAKE
+ ####  CDLHIKKAKE
 
 * 名称：Hikkake Pattern 陷阱
 
@@ -345,7 +380,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLHIKKAKEMOD
+ ####  CDLHIKKAKEMOD
 
 * 名称：Modified Hikkake Pattern 修正陷阱
 
@@ -355,7 +390,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLHOMINGPIGEON
+ ####  CDLHOMINGPIGEON
 
 * 名称：Homing Pigeon 家鸽
 
@@ -365,7 +400,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLIDENTICAL3CROWS
+ ####  CDLIDENTICAL3CROWS
 
 * 名称：Identical Three Crows 三胞胎乌鸦
 
@@ -375,7 +410,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLINNECK
+ ####  CDLINNECK
 
 * 名称：In-Neck Pattern 颈内线
 
@@ -385,7 +420,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLINVERTEDHAMMER
+ ####  CDLINVERTEDHAMMER
 
 * 名称：Inverted Hammer 倒锤头
 
@@ -395,7 +430,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLKICKING
+ ####  CDLKICKING
 
 * 名称：Kicking 反冲形态
 
@@ -405,7 +440,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLKICKINGBYLENGTH
+ ####  CDLKICKINGBYLENGTH
 
 * 名称：Kicking - bull/bear determined by the longer marubozu 由较长缺影线决定的反冲形态
 
@@ -415,7 +450,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLLADDERBOTTOM
+ ####  CDLLADDERBOTTOM
 
 * 名称：Ladder Bottom 梯底
 
@@ -425,7 +460,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLLONGLEGGEDDOJI
+ ####  CDLLONGLEGGEDDOJI
 
 * 名称：Long Legged Doji 长脚十字
 
@@ -435,7 +470,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLLONGLINE
+ ####  CDLLONGLINE
 
 * 名称：Long Line Candle 长蜡烛
 
@@ -445,7 +480,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLMARUBOZU
+ ####  CDLMARUBOZU
 
 * 名称：Marubozu 光头光脚/缺影线
 
@@ -455,7 +490,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLMATCHINGLOW
+ ####  CDLMATCHINGLOW
 
 * 名称：Matching Low 相同低价
 
@@ -465,7 +500,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLMATHOLD
+ ####  CDLMATHOLD
 
 * 名称：Mat Hold 铺垫
 
@@ -475,7 +510,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLMORNINGDOJISTAR
+ ####  CDLMORNINGDOJISTAR
 
 * 名称：Morning Doji Star 十字晨星
 
@@ -485,7 +520,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLMORNINGSTAR
+ ####  CDLMORNINGSTAR
 
 * 名称：Morning Star 晨星
 
@@ -495,7 +530,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLONNECK
+ ####  CDLONNECK
 
 * 名称：On-Neck Pattern 颈上线
 
@@ -505,7 +540,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLPIERCING
+ ####  CDLPIERCING
 
 * 名称：Piercing Pattern 刺透形态
 
@@ -515,7 +550,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLRICKSHAWMAN
+ ####  CDLRICKSHAWMAN
 
 * 名称：Rickshaw Man 黄包车夫
 
@@ -525,7 +560,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLRISEFALL3METHODS
+ ####  CDLRISEFALL3METHODS
 
 * 名称：Rising/Falling Three Methods 上升/下降三法
 
@@ -535,7 +570,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLSEPARATINGLINES
+ ####  CDLSEPARATINGLINES
 
 * 名称：Separating Lines 分离线
 
@@ -545,7 +580,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLSHOOTINGSTAR
+ ####  CDLSHOOTINGSTAR
 
 * 名称：Shooting Star 射击之星
 
@@ -555,7 +590,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLSHORTLINE
+ ####  CDLSHORTLINE
 
 * 名称：Short Line Candle 短蜡烛
 
@@ -565,7 +600,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLSPINNINGTOP
+ ####  CDLSPINNINGTOP
 
 * 名称：Spinning Top 纺锤
 
@@ -575,7 +610,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLSTALLEDPATTERN
+ ####  CDLSTALLEDPATTERN
 
 * 名称：Stalled Pattern 停顿形态
 
@@ -585,7 +620,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLSTICKSANDWICH
+ ####  CDLSTICKSANDWICH
 
 * 名称：Stick Sandwich 条形三明治
 
@@ -595,7 +630,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLTAKURI
+ ####  CDLTAKURI
 
 * 名称：Takuri (Dragonfly Doji with very long lower shadow) 探水竿
 
@@ -605,7 +640,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLTASUKIGAP
+ ####  CDLTASUKIGAP
 
 * 名称：Tasuki Gap 跳空并列阴阳线
 
@@ -615,7 +650,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLTHRUSTING
+ ####  CDLTHRUSTING
 
 * 名称：Thrusting Pattern 插入
 
@@ -625,7 +660,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLTRISTAR
+ ####  CDLTRISTAR
 
 * 名称：Tristar Pattern 三星
 
@@ -635,7 +670,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLUNIQUE3RIVER
+ ####  CDLUNIQUE3RIVER
 
 * 名称：Unique 3 River 奇特三河床
 
@@ -645,7 +680,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLUPSIDEGAP2CROWS
+ ####  CDLUPSIDEGAP2CROWS
 
 * 名称：Upside Gap Two Crows 向上跳空的两只乌鸦
 
@@ -655,7 +690,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- #### 函数名：CDLXSIDEGAP3METHODS
+ ####  CDLXSIDEGAP3METHODS
 
 * 名称：Upside/Downside Gap Three Methods 上升/下降跳空三法
 
