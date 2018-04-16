@@ -61,8 +61,92 @@ TA-lib（Technical Analysis Library）
 |1|[ATR](#ATR)|                  Average True Range
 |2|[NATR](#NATR)|                 Normalized Average True Range
 |3|[TRANGE](#TRANGE)|               True Range
+|Part Five|Price Transform|价格
+|1|AVGPRICE|             Average Price
+|2|MEDPRICE|             Median Price
+|3|TYPPRICE|             Typical Price
+|4|WCLPRICE|             Weighted Close Price
+|Part Six|Cycle Indicators
+|1|HT_DCPERIOD|          Hilbert Transform - Dominant Cycle Period
+|2|HT_DCPHASE |          Hilbert Transform - Dominant Cycle Phase
+|3|HT_PHASOR  |          Hilbert Transform - Phasor Components
+|4|HT_SINE    |          Hilbert Transform - SineWave
+|5|HT_TRENDMODE|         Hilbert Transform - Trend vs Cycle Mode
+|Part Seven|Pattern Recognition
+|1|CDL2CROWS           | Two Crows
+|2|CDL3BLACKCROWS      | Three Black Crows
+|3|CDL3INSIDE          |Three Inside Up/Down
+|4|CDL3LINESTRIKE      | Three-Line Strike
+|5|CDL3OUTSIDE          |Three Outside Up/Down
+|6|CDL3STARSINSOUTH   |  Three Stars In The South
+|7|CDL3WHITESOLDIERS   | Three Advancing White Soldiers
+|8|CDLABANDONEDBABY     |Abandoned Baby
+|9|CDLADVANCEBLOCK      |Advance Block
+|10|CDLBELTHOLD       |   Belt-hold
+|11|CDLBREAKAWAY       |  Breakaway
+|12|CDLCLOSINGMARUBOZU  | Closing Marubozu
+|13|CDLCONCEALBABYSWALL | Concealing Baby Swallow
+|14|CDLCOUNTERATTACK    | Counterattack
+|15|CDLDARKCLOUDCOVER   | Dark Cloud Cover
+|16|CDLDOJI           |   Doji
+|17|CDLDOJISTAR        |  Doji Star
+|18|CDLDRAGONFLYDOJI   |  Dragonfly Doji
+|19|CDLENGULFING       |  Engulfing Pattern
+|20|CDLEVENINGDOJISTAR  | Evening Doji Star
+|21|CDLEVENINGSTAR     |  Evening Star
+|22|CDLGAPSIDESIDEWHITE | Up/Down-gap side-by-side white lines
+|23|CDLGRAVESTONEDOJI   | Gravestone Doji
+|24|CDLHAMMER           | Hammer
+|25|CDLHANGINGMAN       | Hanging Man
+|26|CDLHARAMI           | Harami Pattern
+|27|CDLHARAMICROSS      | Harami Cross Pattern
+|28|CDLHIGHWAVE         | High-Wave Candle
+|29|CDLHIKKAKE          | Hikkake Pattern
+|30|CDLHIKKAKEMOD       | Modified Hikkake Pattern
+|31|CDLHOMINGPIGEON     | Homing Pigeon
+|32|CDLIDENTICAL3CROWS   |Identical Three Crows
+|33|CDLINNECK           | In-Neck Pattern
+|34|CDLINVERTEDHAMMER   | Inverted Hammer
+|35|CDLKICKING          | Kicking
+|36|CDLKICKINGBYLENGTH  | Kicking - bull/bear determined by the longer marubozu
+|37|CDLLADDERBOTTOM     | Ladder Bottom
+|38|CDLLONGLEGGEDDOJI   | Long Legged Doji
+|39|CDLLONGLINE         | Long Line Candle
+|40|CDLMARUBOZU         | Marubozu
+|41|CDLMATCHINGLOW      | Matching Low
+|42|CDLMATHOLD          | Mat Hold
+|43|CDLMORNINGDOJISTAR  | Morning Doji Star
+|44|CDLMORNINGSTAR      | Morning Star
+|45|CDLONNECK           | On-Neck Pattern
+|46|CDLPIERCING         | Piercing Pattern
+|47|CDLRICKSHAWMAN      | Rickshaw Man
+|48|CDLRISEFALL3METHODS | Rising/Falling Three Methods
+|49|CDLSEPARATINGLINES  | Separating Lines
+|50|CDLSHOOTINGSTAR     | Shooting Star
+|51|CDLSHORTLINE        | Short Line Candle
+|52|CDLSPINNINGTOP      | Spinning Top
+|53|CDLSTALLEDPATTERN   | Stalled Pattern
+|54|CDLSTICKSANDWICH    | Stick Sandwich
+|55|CDLTAKURI           | Takuri (Dragonfly Doji with very long lower shadow)
+|56|CDLTASUKIGAP        | Tasuki Gap
+|57|CDLTHRUSTING        | Thrusting Pattern
+|58|CDLTRISTAR          | Tristar Pattern
+|59|CDLUNIQUE3RIVER     | Unique 3 River
+|60|CDLUPSIDEGAP2CROWS  | Upside Gap Two Crows
+|61|CDLXSIDEGAP3METHODS | Upside/Downside Gap Three Methods
+|Part Eight|Statistic Functions
+|1|BETA|                 Beta
+|2|CORREL|               Pearson's Correlation Coefficient (r)
+|3|LINEARREG|            Linear Regression
+|4|LINEARREG_ANGLE|      Linear Regression Angle
+|5|LINEARREG_INTERCEPT|  Linear Regression Intercept
+|6|LINEARREG_SLOPE|      Linear Regression Slope
+|7|STDDEV  |             Standard Deviation
+|8|TSF  |                Time Series Forecast
+|9|VAR  |                Variance
 
  #### AD
+ -----
 * 名称：Chaikin A/D Line 累积/派发线（Accumulation/Distribution Line） 
 * 简介：  ```Marc Chaikin提出的一种平衡交易量指标，以当日的收盘价位来估算成交流量，用于估定一段时间内该证券累积的资金流量。``` 
 * 计算公式：
@@ -75,6 +159,7 @@ TA-lib（Technical Analysis Library）
 3、应当注意A/D忽略了缺口的影响，事实上，跳空缺口的意义是不能轻易忽略的  
 ```A/D指标无需设置参数，但在应用时，可结合指标的均线进行分析* 例子：real = AD(high, low, close, volume)```
 #### ADOSC
+ -----
 * 名称：Chaikin A/D Oscillator Chaikin震荡指标
 * 简介：将资金流动情况与价格行为相对比，检测市场中资金流入和流出的情况计算公式：fastperiod A/D - slowperiod A/D
 研判：
@@ -690,7 +775,7 @@ TA-lib（Technical Analysis Library）
 
 
 
- ####  CDLXSIDEGAP3METHODS
+####  CDLXSIDEGAP3METHODS
 
 * 名称：Upside/Downside Gap Three Methods 上升/下降跳空三法
 
