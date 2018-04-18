@@ -6,30 +6,31 @@ TA-lib（Technical Analysis Library）
 |----|----|----|
 |Part One|Overlap Studies
 | 1 | [BBANDS](#BBANDS)|bollinger bands
-| 2 |[DEMA](#DEMA)|Double EXponential Moving Average
-|3|[EMA](#EMA)|Exponentail Moving Average|
+| 2 |DEMA|Double EXponential Moving Average
+|3|EMA|Exponentail Moving Average|
 |4|[HT_TRENDLINE](#HT_TRENDLINE)|Hilbert Transform -Instantaneous Trendline|
-|5|[KAMA](#KAMA)|Kaufman Adaptive Moving Average|
+|5|KAMA|Kaufman Adaptive Moving Average|
 |6|MA|Moving Average|
 |7|MAMA|MESA Adaptive Moving Average|
 |8|MAVP|Moving Average with veriable period|
 |9|MIDPOINT|MidPoint Over Period|
 |10|MIDPRICE|MidPoint Pice over period|
-|11|SAR |Parabolic SAR|
+|11|[SAR]() |Parabolic SAR|
 |12|SAREXT|Parabolic SAR -Extended|
 |13|SMA|Simple Moving Average|
 |14|T3|Triple Expon|
 |15|TEMA| Triple Exponential Moving Average
 |16|TRIMA|Triangular Moving Average
 |17|WMA| Weighted Moving Average
+|18|VWAP|平均加权指数（TODO）
 |Part Two|Momentum Indicators|趋势动量指标|
-|1|ADX|                  Average Directional Movement Index
+|1|[ADX]()|                  Average Directional Movement Index
 |2|ADXR|                 Average Directional Movement Index Rating
 |3|APO|                  Absolute Price Oscillator
 |4|AROON|                Aroon
 |5|AROONOSC|             Aroon Oscillator
 |6|BOP|                  Balance Of Power
-|7|CCI|                  Commodity Channel Index
+|7|[CCI](#CCI)|                  Commodity Channel Index
 |8|CMO|                  Chande Momentum Oscillator
 |9|DX|                   Directional Movement Index
 |10|MACD|                 Moving Average Convergence/Divergence
@@ -46,7 +47,7 @@ TA-lib（Technical Analysis Library）
 |21|ROCP|                 Rate of change Percentage: (price-prevPrice)/prevPrice
 |22|ROCR|                 Rate of change ratio: (price/prevPrice)
 |23|ROCR100|              Rate of change ratio 100 scale: (price/prevPrice)*100
-|24|RSI|                  Relative Strength Index
+|24|[RSI]()|                  Relative Strength Index
 |25|STOCH|                Stochastic
 |26|STOCHF|               Stochastic Fast
 |27|STOCHRSI|             Stochastic Relative Strength Index
@@ -55,12 +56,12 @@ TA-lib（Technical Analysis Library）
 |30|WILLR|                Williams' %R
 |Part Three|Volume Indicators|交易量指数
 |1|[AD](#AD)|                   Chaikin A/D Line
-|2|[ADOSC](#ADOSC) |               Chaikin A/D Oscillator
-|3|[OBV](#OBV)|                  On Balance Volume
+|2|ADOSC |               Chaikin A/D Oscillator
+|3|OBV|                  On Balance Volume
 |Part Four|Volatility Indicators|波动指数
-|1|[ATR](#ATR)|                  Average True Range
-|2|[NATR](#NATR)|                 Normalized Average True Range
-|3|[TRANGE](#TRANGE)|               True Range
+|1|#ATR|                  Average True Range
+|2|#NATR|                 Normalized Average True Range
+|3|#TRANGE|               True Range
 |Part Five|Price Transform|价格
 |1|AVGPRICE|             Average Price
 |2|MEDPRICE|             Median Price
@@ -158,6 +159,20 @@ TA-lib（Technical Analysis Library）
 2、A/D与价格的背离可视为买卖信号，即底背离考虑买入，顶背离考虑卖出　   　
 3、应当注意A/D忽略了缺口的影响，事实上，跳空缺口的意义是不能轻易忽略的  
 ```A/D指标无需设置参数，但在应用时，可结合指标的均线进行分析* 例子：real = AD(high, low, close, volume)```
+#### CCI
+* 名称：Commodity Channel Index 顺势指标
+* 简介：  ```类似RSI 的一种判定超买超卖的指标，目前没有确定出比较有效的区间范围（暂时定+/-100,timeperiod =11）,波动于正无限大和负无限小之间。``` 
+* 计算公式：
+> 
+     CCI(n) = (TP－ MA) ÷MD ÷0.015
+     TP = (最高价 + 最低价 + 收盘价) ÷ 3
+     MA = 最近n日收盘价的累计和÷n
+     MD = 最近n日 (MA - 收盘价)的绝对值的累计和 ÷ n
+     系统默认n为14
+* 研判： 
+1、如果CCI指标一直上行突破了100的话,表示此时的股市进入了异常波动的阶段,可能伴随着较大的成交量,可以进行中短线的投资者,此时的买入信号比较明显.
+2、反之如果CCI指标向下突破了-100,则代表此时的股市进入了新一轮的下跌趋势,此时可以选择不要操作,保持观望的态度面对市场.
+3、如果CCI指标从上行突破100又回到100之内的正常范围,则代表股价这一阶段的上涨行情已经疲软,投资者可以在此时选择卖出.反之CCI突破-100又回到正常范围,则代表下跌趋势已经结束,观察一段时间可能有转折的信号出现,可以先少量买入
 #### ADOSC
  -----
 * 名称：Chaikin A/D Oscillator Chaikin震荡指标

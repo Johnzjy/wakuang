@@ -7,7 +7,7 @@ import datetime
 import time
 
 #import st_imformation as sti
-
+#TODO:S
 today=datetime.date.today()   # setup date
 
 '''
@@ -157,7 +157,6 @@ def draw_VWAP(df): # 画加权平均指数
     
 '''
 RSI强弱指标
-
 '''
     
 def RSI(code='sh',startday='2015-01-05',enday='2016-12-21',timeperiod=10):# price 加权平均指标    
@@ -226,31 +225,7 @@ def draw_ADOSC(df): # 画加权平均指数
     plt.legend(loc='best')
     plt.grid(True)
     
-'''
-CCI
-顺势指标，不明确
-有效，不明确
-'''
-def CCI(code='sh',startday='2015-01-05',enday='2016-12-21',day=14):#顺势指标
-    df=get_date_ts(code,startday,enday)
-    df['CCI']=talib.func.CCI(high=df.high.values,
-                          low=df.low.values,
-                          close=df.close.values,
-                          timeperiod=day)
-    return df
-def draw_CCI(df): # 画加权平均指数
-    ax1=plt.subplot(111)
-      
-    plt.plot(df.index,df.close,"b")
-    x2=ax1.twinx()#设立爽坐标
-    plt.plot(df.index,df.CCI,'r',label='CCI')    
-    plt.legend(loc='best')
-    plt.grid(True)
-'''
-MFI - Money Flow Index
-Such as RSI, to comput the volume. 
-有效，不明确
-'''
+#TODO:  this funcation is not adjust the timeperiod . 
 def MFI(code='sh',startday='2015-01-05',enday='2016-12-21',day=14):# MFI - Money Flow Index 
     df=get_date_ts(code,startday,enday)
     df['MFI']=talib.func.MFI(high=df.high.values,
@@ -273,7 +248,8 @@ Hilbert Transform - HT_TRENDLINE
 Such as K LINE, to comput the volume. 
 有效，不明确
 '''
-def Hilbert(code='sh',startday='2015-01-05',enday='2016-12-21'):# MFI - Money Flow Index 
+#TODO:  this funcation is not adjust the timeperiod . 
+def Hilbert(code='sh',startday='2015-01-05',enday='2016-12-21'):
     df=get_date_ts(code,startday,enday)
     df['Hilbert']=talib.func.HT_TRENDMODE(df.close.values)
     return df
@@ -290,7 +266,8 @@ Parabolic SAR
 Such as K LINE, to comput the volume. 
 有效，不明确
 '''
-def SAR(code='sh',startday='2015-01-05',enday='2016-12-21'):# MFI - Money Flow Index 
+#TODO:  this funcation is not adjust the timeperiod . 
+def SAR(code='sh',startday='2015-01-05',enday='2016-12-21'):
     df=get_date_ts(code,startday,enday)
     df['SAR']=talib.func.SAR(df.high.values,df.low.values,acceleration=0.02, maximum=0.2)
     return df
@@ -302,7 +279,26 @@ def draw_SAR(df): # 画加权平均指数
     plt.plot(df.index,df.SAR,'r',label='Parabolic SAR')    
     plt.legend(loc='best')
     plt.grid(True)
-    
+
+'''
+funcdation : CCI 顺势指标 并不是很准
+'''
+#TODO: this funcation is not adjust the timeperiod . 
+def CCI(code='sh',startday='2015-01-05',enday='2016-12-21',tp=11):
+    df=get_date_ts(code,startday,enday)
+    df['CCI']=talib.func.CCI(df.high.values,df.low.values,df.close.values,timeperiod=tp)
+    return df
+def draw_CCI(df): # 画加权平均指数
+    ax1=plt.subplot(111)
+      
+    plt.plot(df.index,df.close,"g")
+    ax2=ax1.twinx()#设立爽坐标
+    plt.plot(df.index,df.CCI,'r',label='Commodity channel index') 
+
+    plt.plot(df.index,df.CCI.values*0+100,"B",label="+") 
+    plt.plot(df.index,df.CCI.values*0-100,"B",label="-")     
+    plt.legend(loc='best')
+    plt.grid(True)   
 
 if __name__=="__main__":
     plt.close()
@@ -318,9 +314,9 @@ if __name__=="__main__":
                  000976 000929 000911 000639 601139
                  'zh500':'sh000905'}
     '''
-    code_="600200"
+    code_="sh"
     start_='2017-06-01'
-    end_='2018-03-10' 
+    end_='2018-04-18' 
 
     plt.figure(1) 
     VW=VWAP(code_,start_,end_) 
