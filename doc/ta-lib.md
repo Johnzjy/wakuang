@@ -22,12 +22,12 @@ TA-lib（Technical Analysis Library）
 |15|TEMA| Triple Exponential Moving Average
 |16|TRIMA|Triangular Moving Average
 |17|WMA| Weighted Moving Average
-|18|VWAP|平均加权指数（TODO）
+|18|VWAP|平均加权指数（TODO 未做在现在的list 中）
 |Part Two|Momentum Indicators|趋势动量指标|
 |1|[ADX]()|                  Average Directional Movement Index
 |2|ADXR|                 Average Directional Movement Index Rating
 |3|APO|                  Absolute Price Oscillator
-|4|AROON|                Aroon
+|4|[AROON]()|                Aroon
 |5|AROONOSC|             Aroon Oscillator
 |6|BOP|                  Balance Of Power
 |7|[CCI](#CCI)|                  Commodity Channel Index
@@ -173,6 +173,15 @@ TA-lib（Technical Analysis Library）
 1、如果CCI指标一直上行突破了100的话,表示此时的股市进入了异常波动的阶段,可能伴随着较大的成交量,可以进行中短线的投资者,此时的买入信号比较明显.
 2、反之如果CCI指标向下突破了-100,则代表此时的股市进入了新一轮的下跌趋势,此时可以选择不要操作,保持观望的态度面对市场.
 3、如果CCI指标从上行突破100又回到100之内的正常范围,则代表股价这一阶段的上涨行情已经疲软,投资者可以在此时选择卖出.反之CCI突破-100又回到正常范围,则代表下跌趋势已经结束,观察一段时间可能有转折的信号出现,可以先少量买入
+#### ARONN
+* 名称：aroon
+* 简介：  ```该指标是通过计算自价格达到近期最高值和最低值以来所经过的期间数，阿隆指标帮助你预测价格趋势到趋势区域（或者反过来，从趋势区域到趋势）的变化。``` 
+* 计算公式：
+> 
+     aroon up   =[(计算天数-最高价后的天数)/计算天数]*100
+     aroon down =[(计算天数-最低价后的天数)/计算天数]*100
+* 研判： 
+    Aroonup 超过Aroondown的时候，多头趋势明显，买入，反之卖出。短的交易2天，一买一卖，长的有一周以上，由于Aroonup一直压制着Aroondown导致。
 #### ADOSC
  -----
 * 名称：Chaikin A/D Oscillator Chaikin震荡指标
