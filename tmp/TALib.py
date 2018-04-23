@@ -16,12 +16,7 @@ funcation : download the stock datas as pandas Dataforms
 '''
 
 def get_date_ts(Code,startDate,endDate):#获取开始数据
-    """
-    docstring here
-        :param Code: 
-        :param startDate: 
-        :param endDate: 
-    """   
+
     df=ts.get_k_data(Code,startDate,end=endDate)
     
     df=df.reset_index()
@@ -30,9 +25,6 @@ def get_date_ts(Code,startDate,endDate):#获取开始数据
     df=df.set_index('date')
     if endDate == '%s'%today:
         RealTimeList=ts.get_realtime_quotes(Code)
-
-        #print(ts.get_realtime_quotes(Code))
-        #print('当前价格：%s'%realtime_price)
         df.loc['%s'%today,'close']=float(RealTimeList.price)
         df.loc['%s'%today,'open']=float(RealTimeList.open)
         df.loc['%s'%today,'high']=float(RealTimeList.high)
@@ -41,11 +33,11 @@ def get_date_ts(Code,startDate,endDate):#获取开始数据
     return df
 
 #TODO: timeperiod need adjusts
-def AROON(code='sh',startday='2015-01-05',enday='2016-12-21',tp=25):
+def AROONOSC(code='sh',startday='2015-01-05',enday='2016-12-21',tp=25):
     """
-    AROON is like RSI
+    AROONOSC is like RSI
     docstring here
-        :param code:  stock code
+        :param code:  stock code of 
         :param startday: start of date
         :param enday: end of date
         :param tp: tp is timeperiod 
@@ -54,18 +46,18 @@ def AROON(code='sh',startday='2015-01-05',enday='2016-12-21',tp=25):
     """
     
     df=get_date_ts(code,startday,enday)
-    
-    aroonup,aroondown=talib.AROON(df.high.values,df.low.values,timeperiod=tp)
-    df['aroondown']=aroondown
-    df['aroonup']=aroonup
+    df['aroondown']=talib.AROONOSC(df.high.values,df.low.values,tp)
     print (df)
     return df
-def draw_AROON(df): 
+def draw_AROONOSC(df): 
+    """
+    docstring here
+        :param df: the data form is pandas 
+    """
     ax1=plt.subplot(111)
     plt.plot(df.index,df.close,"g")
     ax2=ax1.twinx()#设立爽坐标
-    plt.plot(df.index,df.aroondown,'r',label='DOWN')
-    plt.plot(df.index,df.aroonup,'b',label='UP')  
+    plt.plot(df.index,df.aroondown,'r',label='DOWN') 
     plt.legend(loc='best')
     plt.grid(True)
     
@@ -86,11 +78,11 @@ if __name__=="__main__":
     '''
     code_="sh"
     start_='2016-06-01'
-    end_='2018-04-17' 
+    end_='2018-04-23' 
 
-    for i in range(3,25,2):
+    for i in range(24,36,1):
         plt.figure(i) 
-        VW=AROON(code_,start_,end_,i) 
+        VW=AROONOSC(code_,start_,end_,i) 
     #print (VW.AD)
-        draw_AD(VW) 
+        draw_AROON(VW) 
     plt.show()

@@ -28,7 +28,7 @@ TA-lib（Technical Analysis Library）
 |2|ADXR|                 Average Directional Movement Index Rating
 |3|APO|                  Absolute Price Oscillator
 |4|[AROON]()|                Aroon
-|5|AROONOSC|             Aroon Oscillator
+|5|[AROONOSC]()|             Aroon Oscillator
 |6|BOP|                  Balance Of Power
 |7|[CCI](#CCI)|                  Commodity Channel Index
 |8|CMO|                  Chande Momentum Oscillator
@@ -182,6 +182,16 @@ TA-lib（Technical Analysis Library）
      aroon down =[(计算天数-最低价后的天数)/计算天数]*100
 * 研判： 
     Aroonup 超过Aroondown的时候，多头趋势明显，买入，反之卖出。短的交易2天，一买一卖，长的有一周以上，由于Aroonup一直压制着Aroondown导致。
+#### Aroonosc
+* 名称：Aroon Oscillator
+* 简介：  ```该指标是通过计算自价格达到近期最高值和最低值以来所经过的期间数，阿隆指标帮助你预测价格趋势到趋势区域（或者反过来，从趋势区域到趋势）的变化。``` 
+* 计算公式：
+> 
+
+* 研判： 
+    Aroon 超过 75 即可认为买入点 TODO (需要回测 测试出关键系数)
+
+
 #### ADOSC
  -----
 * 名称：Chaikin A/D Oscillator Chaikin震荡指标
@@ -190,6 +200,8 @@ TA-lib（Technical Analysis Library）
 1、交易信号是背离：看涨背离做多，看跌背离做空
 2、股价与90天移动平均结合，与其他指标结合         
 3、由正变负卖出，由负变正买进* 例子：real = ADOSC(high, low, close, volume, fastperiod=3, slowperiod=10) 
+
+Aroon Oscillator
 #### OBV 
 * 名称：On Balance Volume 能量潮
 * 简介：Joe Granville提出，通过统计成交量变动的趋势推测股价趋势计算公式：以某日为基期，逐日累计每日上市股票总成交量，若隔日指数或股票上涨，则基期OBV加上本日成交量为本日OBV。隔日指数或股票下跌，则基期OBV减去本日成交量为本日OBV

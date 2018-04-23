@@ -7,17 +7,10 @@ import datetime
 import time
 
 #import st_imformation as sti
-#TODO:S
 today=datetime.date.today()   # setup date
 
 def get_date_ts(Code,startDate,endDate):#获取开始数据
-    """
-    docstring here
-        get download the datas from the web as match the Pandas
-        :param Code: 
-        :param startDate: 
-        :param endDate: 
-    """   
+
     df=ts.get_k_data(Code,startDate,end=endDate)
     
     df=df.reset_index()
@@ -32,10 +25,9 @@ def get_date_ts(Code,startDate,endDate):#获取开始数据
         df.loc['%s'%today,'low']=float(RealTimeList.low)
         df.loc['%s'%today,'volume']=float(RealTimeList.volume)
     return df
-'''
-funcdation : 
-'''
+
 def myMACD(price, fastperiod=10, slowperiod=20, signalperiod=9):
+
     ewma12 = pd.ewma(price,span=fastperiod)
     ewma60 = pd.ewma(price,span=slowperiod)
     dif = ewma12-ewma60
@@ -330,6 +322,35 @@ def draw_AROON(df):
     ax2=ax1.twinx()#设立爽坐标
     plt.plot(df.index,df.aroondown,'r',label='DOWN')
     plt.plot(df.index,df.aroonup,'b',label='UP')  
+    plt.legend(loc='best')
+    plt.grid(True)
+
+#TODO: timeperiod need adjusts ;AROONOSC 比 AROON更加有效，可以结合RSi使用
+def AROONOSC(code='sh',startday='2015-01-05',enday='2016-12-21',tp=25):
+    """
+    AROONOSC is like RSI
+    docstring here
+        :param code:  stock code of 
+        :param startday: start of date
+        :param enday: end of date
+        :param tp: tp is timeperiod 
+    out put:
+        dateform as df
+    """
+    
+    df=get_date_ts(code,startday,enday)
+    df['aroon']=talib.AROONOSC(df.high.values,df.low.values,tp)
+    print (df)
+    return df
+def draw_AROONOSC(df): 
+    """
+    docstring here
+        :param df: the data form is pandas 
+    """
+    ax1=plt.subplot(111)
+    plt.plot(df.index,df.close,"g")
+    ax2=ax1.twinx()#设立爽坐标
+    plt.plot(df.index,df.aroon,'r',label='DOWN') 
     plt.legend(loc='best')
     plt.grid(True)
     
