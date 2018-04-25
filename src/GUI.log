@@ -4241,3 +4241,12 @@
 [04-04 08:57:26]-[line:35]-FuncName:wrapped_function-(time:180653)-INFO: RUNNING <check_code>
 [04-04 08:57:26]-[line:35]-FuncName:wrapped_function-(time:180653)-INFO: RUNNING <check_code>
 [04-04 08:57:26]-[line:35]-FuncName:wrapped_function-(time:180653)-INFO: RUNNING <check_code>
+[04-10 16:04:01]-[line:8]-FuncName:<module>-(time:49030)-INFO: ===============  start  ============
+[04-10 16:04:01]-[line:8]-FuncName:<module>-(time:49030)-INFO: ===============  start  ============
+[04-10 16:04:01]-[line:8]-FuncName:<module>-(time:49030)-INFO: ===============  start  ============
+[04-10 16:04:02]-[line:35]-FuncName:wrapped_function-(time:49343)-INFO: RUNNING <create_kline_page>
+[04-10 16:04:02]-[line:35]-FuncName:wrapped_function-(time:49343)-INFO: RUNNING <create_kline_page>
+[04-10 16:04:02]-[line:35]-FuncName:wrapped_function-(time:49343)-INFO: RUNNING <create_kline_page>
+[04-10 16:04:12]-[line:240]-FuncName:initUI-(time:59629)-INFO: show the UI
+[04-10 16:04:12]-[line:240]-FuncName:initUI-(time:59629)-INFO: show the UI
+[04-10 16:04:12]-[line:240]-FuncName:initUI-(time:59629)-INFO: show the UI

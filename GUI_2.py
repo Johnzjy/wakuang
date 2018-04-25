@@ -5,10 +5,10 @@ from datetime import datetime,timedelta
 from qtpy.QtWidgets import QTreeWidgetItem,QMenu,QApplication,QAction,QMainWindow
 from qtpy import QtGui,QtWidgets,QtCore
 from qtpy.QtCore import Qt,QUrl,QDate
-from scr import Graph,layout
+from src import Graph,layout
 #from scr.Graph import graphpage
-from scr.layout import Ui_MainWindow
-from scr import Action_main,logd,Top10shareholder
+from src.layout import Ui_MainWindow
+from src import Action_main,logd,Top10shareholder
 from pandas import DataFrame as df
 import MACD_RUNNING_ALL as ma
 import technical_indicators2 as t2

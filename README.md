@@ -53,7 +53,7 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 
 
 
-## scr           
+## src (source file)          
 
 * [x] Action_main.py   		：GUI下的执行文件  
 * [x] main_loop.py   		：文本式菜单

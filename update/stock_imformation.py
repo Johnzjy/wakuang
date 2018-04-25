@@ -14,7 +14,7 @@ import datetime
 import sys
 from numpy import nan as NaN
 sys.path.append("..")
-from scr import logd
+from src import logd
 import json
 
 today=datetime.date.today()

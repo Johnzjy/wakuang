@@ -6,7 +6,7 @@ Created on Tue May  2 13:39:17 2017
 """
 import technical_indicators as ti
 import matplotlib.pyplot as plt
-from scr import colors
+from src import colors
 import configparser
 import warnings
 import time

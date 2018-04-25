@@ -33,7 +33,8 @@ def Top10Holder(codenumber,startdate='2014-10-10'):
         thing = df_ready.loc[idxlist]
         thing =pd.DataFrame(thing)
     
-        thing = thing.sort_values(["quarter", "name"])
+        thing = thing.sort_values(["quarter", "name"])#排序所有流通股股东
+ 
         quarterlist=thing.quarter.value_counts()
         quarterlist=quarterlist.index.sort_values()
         pietimeline = Timeline(height=600,
