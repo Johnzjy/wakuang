@@ -15,6 +15,7 @@ def get_date_ts(Code,startDate,endDate):#获取开始数据
     
     df=df.reset_index()
     df=df.sort_index(ascending=True)# 从后倒序
+    
     df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
     df=df.set_index('date')
     if endDate == '%s'%today:# deal today datas
@@ -326,7 +327,7 @@ def draw_AROON(df):
     plt.grid(True)
 
 #TODO: timeperiod need adjusts ;AROONOSC 比 AROON更加有效，可以结合RSi使用
-def AROONOSC(code='sh',startday='2015-01-05',enday='2016-12-21',tp=25):
+def AROONOSC(code='sh',startday='2015-01-05',enday='2016-12-21',tp=20):
     """
     AROONOSC is like RSI
     docstring here
@@ -368,9 +369,9 @@ if __name__=="__main__":
                  000976 000929 000911 000639 601139
                  'zh500':'sh000905'}
     '''
-    code_="sh"
+    code_="601163"
     start_='2017-06-01'
-    end_='2018-04-18' 
+    end_='2018-04-25' 
 
     plt.figure(1) 
     VW=VWAP(code_,start_,end_) 
@@ -385,8 +386,9 @@ if __name__=="__main__":
     plt.figure(4)
     RSI_IDEX=RSI(code_,start_,end_)
     draw_RSI(RSI_IDEX)
-
-  
+    plt.figure(5)
+    ARC_INDEX=AROONOSC(code_,start_,end_)
+    draw_AROONOSC(ARC_INDEX)
   #  plt.figure(5)
   #  ADX_IDEX=ADX(code_,start_,end_)
   #  draw_ADX(ADX_IDEX)#ADX 非相关重要信息
