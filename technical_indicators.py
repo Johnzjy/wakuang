@@ -9,17 +9,32 @@ import time
 #import st_imformation as sti
 today=datetime.date.today()   # setup date
 
-def get_date_ts(Code,startDate,endDate):#获取开始数据
+def get_date_ts(_code = None,start_date= None,end_date= None):#获取开始数据
+    """
+    docstring here
+    Args
+        :param Code:  stock code 
+        :param startDate:  start date 'yyyy-mm-dd' 
+        :param endDate: end date 'yyyy-mm-dd'
+    Return
+        :df  :pandas DF 
+    Raises
+        : None
+    """
+    if _code is None:
+        _code ='sh'
+    if start_date is None:
+        start_date ='2000-01-01'
+    if end_date is None:
+        end_date = '%s'%today
 
-    df=ts.get_k_data(Code,startDate,end=endDate)
-    
+    df=ts.get_k_data(_code,start_date,end=end_date)
     df=df.reset_index()
     df=df.sort_index(ascending=True)# 从后倒序
-    
     df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
     df=df.set_index('date')
-    if endDate == '%s'%today:# deal today datas
-        RealTimeList=ts.get_realtime_quotes(Code)
+    if end_date == '%s'%today:# add today datas in df
+        RealTimeList=ts.get_realtime_quotes(_code)
         df.loc['%s'%today,'close']=float(RealTimeList.price)
         df.loc['%s'%today,'open']=float(RealTimeList.open)
         df.loc['%s'%today,'high']=float(RealTimeList.high)
@@ -369,9 +384,9 @@ if __name__=="__main__":
                  000976 000929 000911 000639 601139
                  'zh500':'sh000905'}
     '''
-    code_="601163"
+    code_="600200"
     start_='2017-06-01'
-    end_='2018-04-25' 
+    end_='2018-04-27' 
 
     plt.figure(1) 
     VW=VWAP(code_,start_,end_) 
