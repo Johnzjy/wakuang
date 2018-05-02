@@ -9,32 +9,31 @@ import time
 #import st_imformation as sti
 today=datetime.date.today()   # setup date
 
-def get_date_ts(_code = None,start_date= None,end_date= None):#获取开始数据
+def get_date_ts(Code,startDate,endDate):#获取开始数据
     """
-    docstring here
-    Args
-        :param Code:  stock code 
-        :param startDate:  start date 'yyyy-mm-dd' 
-        :param endDate: end date 'yyyy-mm-dd'
-    Return
-        :df  :pandas DF 
-    Raises
-        : None
-    """
-    if _code is None:
-        _code ='sh'
-    if start_date is None:
-        start_date ='2000-01-01'
-    if end_date is None:
-        end_date = '%s'%today
+    get code date from web.Use tushare get_k_data fuction.
 
-    df=ts.get_k_data(_code,start_date,end=end_date)
+
+    Parameters
+    ----------
+    Code: 
+    startDate: 
+    endDate: 
+
+    Returns
+    ------- 
+    df: DateForm 
+    index   open   close   high  low  volume  code  
+    date                                                            
+
+    """
+    df=ts.get_k_data(Code,startDate,end=endDate)
     df=df.reset_index()
     df=df.sort_index(ascending=True)# 从后倒序
     df.date=df.date.apply(lambda x:datetime.datetime.strptime(x,"%Y-%m-%d"))
-    df=df.set_index('date')
-    if end_date == '%s'%today:# add today datas in df
-        RealTimeList=ts.get_realtime_quotes(_code)
+    df=df.set_index('date') # 设置 index 成 date
+    if endDate == '%s'%today:# deal today datas
+        RealTimeList=ts.get_realtime_quotes(Code)
         df.loc['%s'%today,'close']=float(RealTimeList.price)
         df.loc['%s'%today,'open']=float(RealTimeList.open)
         df.loc['%s'%today,'high']=float(RealTimeList.high)
@@ -330,7 +329,7 @@ def AROON(code='sh',startday='2015-01-05',enday='2016-12-21',tp=25):
     aroonup,aroondown=talib.AROON(df.high.values,df.low.values,timeperiod=tp)
     df['aroondown']=aroondown
     df['aroonup']=aroonup
-    print (df)
+
     return df
 def draw_AROON(df): 
     ax1=plt.subplot(111)
@@ -342,9 +341,9 @@ def draw_AROON(df):
     plt.grid(True)
 
 #TODO: timeperiod need adjusts ;AROONOSC 比 AROON更加有效，可以结合RSi使用
-def AROONOSC(code='sh',startday='2015-01-05',enday='2016-12-21',tp=20):
+def AROONOSC(code='sh',startday='2015-01-05',enday='2016-12-21',tp=15):
     """
-    AROONOSC is like RSI
+    AROONOSC is like RSI 阿隆正当指数  +/- 100 上下波动
     docstring here
         :param code:  stock code of 
         :param startday: start of date
@@ -356,7 +355,7 @@ def AROONOSC(code='sh',startday='2015-01-05',enday='2016-12-21',tp=20):
     
     df=get_date_ts(code,startday,enday)
     df['aroon']=talib.AROONOSC(df.high.values,df.low.values,tp)
-    print (df)
+   
     return df
 def draw_AROONOSC(df): 
     """
@@ -384,9 +383,10 @@ if __name__=="__main__":
                  000976 000929 000911 000639 601139
                  'zh500':'sh000905'}
     '''
-    code_="600200"
+    code_="600027"
     start_='2017-06-01'
-    end_='2018-04-27' 
+    end_='%s'%today 
+    print(end_)
 
     plt.figure(1) 
     VW=VWAP(code_,start_,end_) 

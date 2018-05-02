@@ -12,15 +12,31 @@ import numpy as np
 import pandas as pd
 #TODO: 需要增加code title and 同期大股东进出原因
 def Top10Holder(codenumber,startdate='2014-10-10'):
-    if len(codenumber) !=6: 
+    """
+    Top10 holde 是将top10 股东用Pie 图进行可视化，其中包含一年股东变化的河流图.
+    
+
+    Parameters
+    ----------
+    codenumber: stock 代码
+    startdate='2014-10-10': 起始时间 
+
+    Returns
+    -------
+    输出为 当前文件夹下 html ：top10.html
+
+    """
+
+    
+    if len(codenumber) !=6: #检查 code 长度 不符合6位全部错误
         return False
     elif len(codenumber) == 6:
         datestr = startdate.split("-")
         thisyear = datestr[0]
     
-        df2 = ts.top10_holders(code=codenumber, gdtype="1")
+        df2 = ts.top10_holders(code=codenumber, gdtype="1")# 下载数据
     
-        test = df2[1]["quarter"].tolist()
+        test = df2[1]["quarter"].tolist() #获取季度列表
     
         df_ready = df2[1]
         idxlist = []
@@ -46,13 +62,13 @@ def Top10Holder(codenumber,startdate='2014-10-10'):
                                timeline_bottom=0,
                                timeline_symbol='diamond',
                                )
-        year_index=thing.quarter.apply(lambda x: x[0:4])
+        year_index=thing.quarter.apply(lambda x: x[0:4]) # year list ('20xx')
         yearlist=year_index.value_counts()
         yearlist= yearlist.index.sort_values()
 
 
         #print(quarterlist,year)
-        for quarters in list(quarterlist):
+        for quarters in list(quarterlist): # 将每个季度画成PIE 加入TIMELINE
             df=thing[thing["quarter"]==quarters]
             df.h_pro=df.h_pro.apply(lambda x : float(x))
             df.hold=df.hold.apply(lambda x : float(x))
@@ -111,7 +127,7 @@ def Top10Holder(codenumber,startdate='2014-10-10'):
         #for y in list(yearlist):
             
         datas_index=[]
-        for i, _year in enumerate(year_index):
+        for i, _year in enumerate(year_index): #获取datas_index 
             if _year in list(yearlist)[-1:]:
                 datas_index.append(i)
             else:
@@ -155,7 +171,7 @@ if __name__=="__main__":
         os.remove(os.getcwd()+'/top10.html')
     except:
         pass
-    x=Top10Holder('600200')
+    x=Top10Holder('600027')
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "top10.html")) 
 
         #pietimeline.show_config()
