@@ -4,18 +4,19 @@ Created on Wed Nov  8 09:47:46 2017
 
 @author: 310128142
 """
-import talib
-import tushare as ts
-import pandas as pd
+import datetime
+import sys
+import time
+
 import matplotlib
 import matplotlib.pyplot as plt
-from matplotlib.widgets import Slider, Button, RadioButtons
-import pyqtgraph as pg
-from pyqtgraph.Qt import QtGui, QtCore
-import datetime
-import time
 import numpy as np
-import sys
+import pandas as pd
+import pyqtgraph as pg
+import talib
+import tushare as ts
+from matplotlib.widgets import Button, RadioButtons, Slider
+from pyqtgraph.Qt import QtCore, QtGui
 
 
 class My_index(object):
@@ -103,7 +104,7 @@ class My_index(object):
         self.df['hist'] = bar
         return dif, dea, bar
 
-    def sma(self, tp=None):
+    def sma(self, tp=None): #SMA index . default  tp  is 5 days
         if tp is None:
             tp = 5
         else:

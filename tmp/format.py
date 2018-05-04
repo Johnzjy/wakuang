@@ -24,4 +24,6 @@ def format_sizeof(number, suffix='', divisor=1000):
             return '{0:3.0f}'.format(number) + unit + suffix
         number /= divisor
     return '{0:3.1f}Y'.format(number) + suffix
-a
+
+a=format_sizeof(1000000000000)
+print(a)

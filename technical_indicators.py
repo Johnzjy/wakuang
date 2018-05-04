@@ -1,10 +1,12 @@
-import talib
-import tushare as ts
-import pandas as pd
-import matplotlib.pyplot as plt
 import datetime
 import time
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import talib
+import tushare as ts
 from talib import MA_Type
+
 #import st_imformation as sti
 today = datetime.date.today()  # setup date
 

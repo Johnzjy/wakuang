@@ -1,0 +1,37 @@
+{
+    "python.pythonPath": "C:\\Anaconda3\\pythonw.exe",
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": "vscode-great-icons",
+    "git.autofetch": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "expand",
+    "editor.cursorWidth": 1,
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "vsicons.presets.hideExplorerArrows": true,
+    "pydocs.style": "numpy",
+    "todohighlight.keywords": [        "REVIEW:",
+        {
+            "text": "NOTE:",
+            "color": "#ff0000",
+            "backgroundColor": "blue",
+            "overviewRulerColor": "grey"
+        },
+        {
+            "text": "TODO:",
+            "color": "red",
+            "border": "1px solid red",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,.2)",
+            //other styling properties goes here ... 
+        }
+    ],
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    "code-runner.runInTerminal": true,
+    "python.formatting.provider": "yapf",
+
+
+}
