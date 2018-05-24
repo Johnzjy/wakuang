@@ -5,6 +5,8 @@ import pytdx
 from pytdx.hq import TdxHq_API
 from pytdx.params import TDXParams
 from tqdm import tqdm
+from functools import reduce
+import numpy as np
 
 
 class TDX(object):
@@ -32,7 +34,7 @@ class TDX(object):
     def __str__(self):
         return 'TDX object (code : %s)' % self.code
     @property
-    def IP(self):  # IP
+    def IP(self):  # self.IP
         return self._ip
 
     @property
@@ -95,8 +97,8 @@ class TDX(object):
         self._enddate = date_input
 
     def get_day_data_tdx(self):  #获取K line
-        with tdx_api.connect(IP, PORT):
-            data = tdx_api.get_k_data(self.code, self.startdate, self.enddate)
+        with self.tdx_api.connect(self.IP, self.PORT):
+            data = self.tdx_api.get_k_data(self.code, self.startdate, self.enddate)
             data = pandas.DataFrame(data)
             data.date = data.date.apply(
                 lambda x: datetime.datetime.strptime(x, "%Y-%m-%d"))
@@ -126,7 +128,7 @@ class TDX(object):
         -------
 
         """
-        with self.tdx_api.connect(self.IP, self.PORT):
+        with self.tdx_api.connect(self.self.IP, self.self.PORT):
             data = self.tdx_api.get_security_bars(k_mode, self._market,
                                                   self.code, 0, 800)
 
@@ -136,8 +138,8 @@ class TDX(object):
         return data
 
     def len_market(self):  #市场有多少只股票
-        with tdx_api.connect(IP, PORT):
-            _len = tdx_api.get_security_count(self._market)
+        with self.tdx_api.connect(self.IP, self.PORT):
+            _len = self.tdx_api.get_security_count(self._market)
         return _len
 
     def get_page_tdx(self, block=None):
@@ -159,25 +161,25 @@ class TDX(object):
         else:
             pass
         code_list_df = pandas.DataFrame()
-        with tdx_api.connect(IP, PORT):
+        with self.tdx_api.connect(self.IP, self.PORT):
             for pn in page:
-                data = tdx_api.get_security_list(market, pn * 1000)
+                data = self.tdx_api.get_security_list(market, pn * 1000)
                 data = pandas.DataFrame(data)
                 print(data)
                 code_list_df = code_list_df.append(data, ignore_index=True)
         return code_list_df
 
     def get_base_finace_tdx(self):
-        with tdx_api.connect(IP, PORT):
-            data = tdx_api.get_finance_info(0, '000001')
+        with self.tdx_api.connect(self.IP, self.PORT):
+            data = self.tdx_api.get_finance_info(0, '000001')
             data = pandas.Series(data)
             print(data)
 
     def get_min_data(self):
         from pytdx.params import TDXParams
-        with tdx_api.connect(IP, PORT):
-            data = tdx_api.get_history_minute_time_data(
-                TDXParams.MARKET_SH, '600300', 20161209)
+        with self.tdx_api.connect(self.IP, self.PORT):
+            data = self.tdx_api.get_history_minute_time_data(
+                TDXParams.MARKET_SH, self.code, 20161209)
             data = pandas.DataFrame(data)
             print(data)
 
@@ -196,11 +198,10 @@ class TDX(object):
         -------
 
         """
-        print('start ')
         data = pandas.DataFrame()
-        with tdx_api.connect(IP, PORT):
+        with self.tdx_api.connect(self.IP, self.PORT):
             for i in [2000, 0000]:
-                df = tdx_api.get_history_transaction_data(
+                df = self.tdx_api.get_history_transaction_data(
                     TDXParams.MARKET_SH, "600547", i, 2000, 20160308)
                 df = pandas.DataFrame(df)
 
@@ -221,19 +222,19 @@ class TDX(object):
 
         """
 
-        with tdx_api.connect(IP, PORT):
+        with self.tdx_api.connect(self.IP, self.PORT):
             data = pandas.DataFrame()
             for i in [0, 2000]:
-                df = tdx_api.get_transaction_data(TDXParams.MARKET_SZ,
-                                                  '000001', i, 2000)
+                df = self.tdx_api.get_transaction_data(self._market,
+                                                  self.code, i, 2000)
                 df = pandas.DataFrame(df)
                 data = data.append(df, ignore_index=True)
-            print(data)
+            
         return data
 
     def get_block(self):
-        with tdx_api.connect(IP, PORT):
-            data = tdx_api.get_and_parse_block_info("block.dat")
+        with self.tdx_api.connect(self.IP, self.PORT):
+            data = self.tdx_api.get_and_parse_block_info("block.dat")
             data = pandas.DataFrame(data)
             print(data)
 
@@ -258,8 +259,36 @@ class TDX(object):
     def get_cyb_list(self):
         return self.get_market_segment_list('cyb')
 
+class TDX_analyze(TDX):
+    def __init__(self):
+        super(TDX_analyze,self).__init__()
+    def each_deal_today(self):
+        data=self.get_tick_today()
+        data['buy']=0
+        data['sell']=0
+        data['buy']=np.where(data.buyorsell==0,data.price *data.vol *100,0)
+        data['sell']=np.where(data.buyorsell==0,data.price *data.vol *100,0)
+        '''
+        for i in data.index:         
+            if data.loc[i,'buyorsell'] == 1:
+                data.loc[i,'buy']=0
+                data.loc[i,'sell']=data.loc[i,'price'] *data.loc[i,'vol']  *100
+                data.loc[i,'buyorsell'] = -1
+            elif data.loc[i,'buyorsell'] == 0:
+                data.loc[i,'sell']=0
+                data.loc[i,'buy']=data.loc[i,'price'] *data.loc[i,'vol']  *100
+                data.loc[i,'buyorsell']=1
+            else:
+                data.loc[i,'buyorsell']=0
+        data['entry_exit']= data.price *data.buyorsell *data.vol*100 #单价为元
+        '''
+        return data
+    def sum_money_flow(self):
+        data= self.each_deal_today()
 
+        return data
 if __name__ == "__main__":
-    a = TDX()
-    x = a.get_data_tdx()
-    print(x)
+    a = TDX_analyze()
+    a.code='002092'
+    x = a.sum_money_flow()
+    

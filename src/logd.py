@@ -4,7 +4,7 @@ import logging, os
 from functools import wraps
  
 class Logger(object):
-    def __init__(self, path='../scr/logfiles.log',clevel = logging.WARNING,Flevel = logging.DEBUG):
+    def __init__(self, path='../src/logfiles.log',clevel = logging.WARNING,Flevel = logging.DEBUG):
         self.logger = logging.getLogger(path)
         self.logger.setLevel(logging.DEBUG)
         #prt_fmt = logging.Formatter('[%(asctime)s] [%(levelname)s]\n %(message)s', '%Y-%m-%d %H:%M:%S')

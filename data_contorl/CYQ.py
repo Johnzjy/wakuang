@@ -7,10 +7,10 @@ import os
 import datetime
 import sys
 sys.path.append("..")
-from scr import logd
+from src import logd
 import time
 
-log_CYQ=logd.Logger('../scr/logfiles.log')
+log_CYQ=logd.Logger('../logfiles.log')
 log_CYQ.info('%s计算筹码分布模块%s'%('='*16,'='*16))
 
 #date='2016-12-29'
@@ -59,7 +59,7 @@ def CYQ(code,start,end,download= False,CYQ_rate=1,files_path='../report/'):
     
     i =1
     for date in tqdm.tqdm(datas.index[1:]):
-        time.sleep(2)
+        time.sleep(2.5)
         try:
             tem_cyq=PQ(code,date)
             
@@ -162,9 +162,9 @@ def Draw_CYQ(code_j,start_j,end_j):
 
     
 if __name__ == "__main__":
-    code_='002093'
-    start_='2016-12-31'
-    end_='2018-01-09'
+    code_='600339'
+    start_='2017-05-31'
+    end_='2018-05-16'
     log_CYQ.info('%s：from %s to %s'%(code_,start_,end_))
     Draw_CYQ(code_,start_,end_)
     plt.show()

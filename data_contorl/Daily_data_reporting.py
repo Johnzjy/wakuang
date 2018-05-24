@@ -15,7 +15,7 @@ def download__today_alldata():
     files_path= '../report/Daily_database'
     if os.path.exists(files_path) == False: # 判断文件是不是存在
         os.mkdir(files_path)                # 创建目录
-    ALL_datas.to_csv('../report/Daily_database/%s_full_stock_csv.csv'%todaytime) #存储到CSV
+    ALL_datas.to_csv('../report/Daily_database/%s_full_stock_csv.csv'%todaytime,encoding='gbk') #存储到CSV
     #存储到xlsx文件中
     with pd.ExcelWriter('../report/Daily_database/%s_full_stock_xlx.xlsx'%todaytime) as writer:
         ALL_datas.to_excel(writer, sheet_name='Sheet1')
@@ -35,7 +35,7 @@ def download_datas_ST1D(code,time):
     files_path = '../report/Daily_database/%s/funding'%code
     if os.path.exists(files_path) == False: # 判断文件是不是存在
         os.mkdir(files_path)                # 创建目录
-    ALL_datas.to_csv(files_path+'/%s_sum_amount_csv.csv'%(time))
+    ALL_datas.to_csv(files_path+'/%s_sum_amount_csv.csv'%(time),encoding='gbk')
     with pd.ExcelWriter(files_path+'/%s_sum_amount_xlx.xlsx'%(time)) as writer:
         ALL_datas.to_excel(writer, sheet_name='Sheet1')
     print('%s data base to save >>> '%time+files_path)
@@ -47,7 +47,7 @@ def download_Large_amount(time,code,vols):
     files_path = '../report/Daily_database/big_amu'+code
     if os.path.exists(files_path) == False: # 判断文件是不是存在
         os.mkdir(files_path)                # 创建目录5
-    data_L.to_csv(files_path+'/%s_LGamount%s_csv.csv'%(time,vols))
+    data_L.to_csv(files_path+'/%s_LGamount%s_csv.csv'%(time,vols),encoding='gbk')
     with pd.ExcelWriter(files_path+'/%s_LGamount%s_xlx.xlsx'%(time,vols)) as writer:
         data_L.to_excel(writer, sheet_name='Sheet1')
     print('\n%s 大单 have been saved'%time)
@@ -57,9 +57,10 @@ def download_brokerage(time ):
     for i in list:
         Datas_b=  ts.broker_tops(days= i)
         files_path = '../report/Brokerage/%s'%time
+        
         if os.path.exists(files_path) == False: # 判断文件是不是存在
             os.mkdir(files_path)                # 创建目录
-        Datas_b.to_csv(files_path+'/%s_Brokerage%sD_csv.csv'%(time,i))
+        Datas_b.to_csv(files_path+'/%s_Brokerage%sD_csv.csv'%(time,i),encoding='gbk')
         with pd.ExcelWriter(files_path+'/%s_Brokerage%sD_xlx.xlsx'%(time,i)) as writer:
             Datas_b.to_excel(writer, sheet_name='Sheet1')
         print('\n%s %s营业厅数据 have been saved'%(time,i))
@@ -71,7 +72,7 @@ def download_org_top(time ):
         files_path = '../report/Brokerage/%s'%time
         if os.path.exists(files_path) == False: # 判断文件是不是存在
             os.mkdir(files_path)                # 创建目录
-        Datas_b.to_csv(files_path+'/%s_org_top%sD_csv.csv'%(time,i))
+        Datas_b.to_csv(files_path+'/%s_org_top%sD_csv.csv'%(time,i),encoding='gbk')
         with pd.ExcelWriter(files_path+'/%s_org_top%sD_xlx.xlsx'%(time,i)) as writer:
             Datas_b.to_excel(writer, sheet_name='Sheet1')
         print('\n%s %s机构席位 have been saved'%(time,i))
@@ -85,7 +86,7 @@ def download_Orgday(time ):
     files_path = '../report/Brokerage/%s'%time
     if os.path.exists(files_path) == False: # 判断文件是不是存在
         os.mkdir(files_path)                # 创建目录
-    Datas_b.to_csv(files_path+'/%s_Orgday_csv.csv'%(time))
+    Datas_b.to_csv(files_path+'/%s_Orgday_csv.csv'%(time),encoding='gbk')
     with pd.ExcelWriter(files_path+'/%s_Orgday_xlx.xlsx'%(time)) as writer:
         Datas_b.to_excel(writer, sheet_name='Sheet1')
     print('\n%s机构席位一天 have been saved'%(time))
@@ -97,7 +98,7 @@ def download_top_list(time):
     files_path = '../report/Brokerage/%s'%todaytime
     if os.path.exists(files_path) == False: # 判断文件是不是存在
         os.mkdir(files_path)                # 创建目录
-    Datas_b.to_csv(files_path+'/%s_top_list_csv.csv'%(todaytime))
+    Datas_b.to_csv(files_path+'/%s_top_list_csv.csv'%(todaytime),encoding='gbk')
     with pd.ExcelWriter(files_path+'/%s_top_list_xlx.xlsx'%(todaytime)) as writer:
         Datas_b.to_excel(writer, sheet_name='Sheet1')
     print('\n%s龙虎have been saved'%(todaytime))
