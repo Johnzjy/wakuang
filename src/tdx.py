@@ -1,5 +1,4 @@
 import datetime
-
 import pandas
 import pytdx
 from pytdx.hq import TdxHq_API
@@ -18,15 +17,15 @@ class TDX(object):
     '''
     def __init__(self):
         self.tdx_api = TdxHq_API()
-        self._ip = '119.147.212.81'  #输入IP
-        self._port = 7709  #端口
-        self._code = '600200'
-        self._market = 1  #市场代码 0:深圳，1:上海
+        self.__ip = '119.147.212.81'  #输入IP
+        self.__port = 7709  #端口
+        self.__code = '600200'
+        self.__market = 1  #市场代码 0:深圳，1:上海
         self._startdate = "2017-01-01"
         self.today = datetime.date.today()
         self._enddate = datetime.datetime.strftime(self.today, '%Y-%m-%d')
 
-        self.mkt_segment = {
+        self.__mkt_segment = {
             'sh': '60',
             "sz": '00',
             "cyb": "30",
@@ -35,15 +34,15 @@ class TDX(object):
         return 'TDX object (code : %s)' % self.code
     @property
     def IP(self):  # self.IP
-        return self._ip
+        return self.__ip
 
     @property
     def PORT(self):
-        return self._port
+        return self.__port
 
     @property
     def code(self):  #定义stock code 属性
-        return self._code
+        return self.__code
 
     @code.setter  #设定code
     def code(self, code_input):
@@ -55,14 +54,14 @@ class TDX(object):
         if not len(code_input) == 6:  #确定长度
             raise ValueError('the code value error,the len must SIX !')
         if code_input.startswith('60'):  #确定表头
-            self._market = 1
+            self.__market = 1
         elif code_input.startswith('00'):
-            self._market = 0
+            self.__market = 0
         elif code_input.startswith('30'):
-            self._market = 0
+            self.__market = 0
         else:
             raise ValueError('this code is not stock code')
-        self._code = code_input
+        self.__code = code_input
 
     @property
     def startdate(self):  #开始日期
@@ -129,7 +128,7 @@ class TDX(object):
 
         """
         with self.tdx_api.connect(self.self.IP, self.self.PORT):
-            data = self.tdx_api.get_security_bars(k_mode, self._market,
+            data = self.tdx_api.get_security_bars(k_mode, self.__market,
                                                   self.code, 0, 800)
 
             data = pandas.DataFrame(data)
@@ -139,7 +138,7 @@ class TDX(object):
 
     def len_market(self):  #市场有多少只股票
         with self.tdx_api.connect(self.IP, self.PORT):
-            _len = self.tdx_api.get_security_count(self._market)
+            _len = self.tdx_api.get_security_count(self.__market)
         return _len
 
     def get_page_tdx(self, block=None):
@@ -225,7 +224,7 @@ class TDX(object):
         with self.tdx_api.connect(self.IP, self.PORT):
             data = pandas.DataFrame()
             for i in [0, 2000]:
-                df = self.tdx_api.get_transaction_data(self._market,
+                df = self.tdx_api.get_transaction_data(self.__market,
                                                   self.code, i, 2000)
                 df = pandas.DataFrame(df)
                 data = data.append(df, ignore_index=True)
@@ -243,9 +242,9 @@ class TDX(object):
         self.code_list = pandas.DataFrame()
         pbar = tqdm(total=len(data.code))
         mkt_hard = self.mkt_segment[mkt]
-        for idx, _code in enumerate(data.code):
+        for idx, __code in enumerate(data.code):
             pbar.update(1)
-            if _code.startswith(mkt_hard, 0, 2):
+            if __code.startswith(mkt_hard, 0, 2):
                 self.code_list = self.code_list.append(
                     data.loc[idx], ignore_index=True)
         return self.code_list
@@ -285,10 +284,12 @@ class TDX_analyze(TDX):
         return data
     def sum_money_flow(self):
         data= self.each_deal_today()
-
         return data
 if __name__ == "__main__":
+    '''
     a = TDX_analyze()
     a.code='002092'
     x = a.sum_money_flow()
-    
+    '''
+    z=TDX()
+    z.get_base_finace_tdx()
