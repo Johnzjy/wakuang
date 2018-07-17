@@ -12,14 +12,49 @@ import os
 import sys
 import tqdm
 
+'''
+建立临时
+'''
+class Statements(object):
+    def __init__(self,):
+        self.filetype=["profit","cash","balance"]
+        self.code= "600002"
+        
+    def get_path(self):
+        __path= os.getcwd()
+        return __path
+ 
+    def get_statement(self,down= True):
+        self.profit_sheet=ts.get_profit_statement(self.code)
+        self.cash_sheet=ts.get_cash_flow(self.code)
+        self.balance_sheet=ts.get_balance_sheet(self.code)
+        
+        if down is True:
+            for __tpye in self.filetype:
+                __path = self.get_path()+"\\"+__tpye+"%s.csv"%self.code
+                if __tpye is "profit":
+                    self.profit_sheet.to_csv(__path)
+                elif  __tpye is "cash":
+                    self.cash_sheet.to_csv(__path)
+                elif  __tpye is "balance":
+                    self.balance_sheet.to_csv(__path)
+                    
 
-class FudAnalysis(object):
+class FudAnalysis(Statements):
+    '''
+    获取所有金融数据
+    '''
     def __init__(self, code_input=None):
+        Statements.__init__(self)
+        self.get_statement(down=False)
         self.code = code_input
         self.today = datetime.date.today()
         self._date = str(self.today)
         self.base_datas = ts.get_stock_basics()
-
+    
+    @property
+    def profit_xx(self):
+        return self.profit
 
     @property
     def date(self):
