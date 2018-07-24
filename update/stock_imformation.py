@@ -58,6 +58,7 @@ def downloading_information(time=3,SAVE=False):
     except:
         log_STI.error('\n>>basics没有计算成功')
     print (ST_basics.head(9))
+    '''
     for year in range(2015,2017):
         print(year)
         for Q in range(1,5):
@@ -68,6 +69,7 @@ def downloading_information(time=3,SAVE=False):
         import os
         path=os.path.dirname(os.getcwd())+'\\report\\base_information\\' # 存储路径
         ST_basics.to_csv(path+'Stock_Information.csv',encoding='gbk',header=True)
+    '''
     return ST_basics
 
 def download_ACH_Q(year,quarter,df):#按照季度获取信息
@@ -138,8 +140,7 @@ def trade_calendar(year=today.year):#获取一年交易日期 默认为今年
     return data
     
 if __name__ == "__main__":
-    #x=downloading_information(SAVE=True)
+    x=downloading_information()
     #x=downloading_trade_date()
-    print(trade_calendar())
-    
+
     

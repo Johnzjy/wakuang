@@ -6,7 +6,7 @@
     "editor.renderWhitespace": "boundary",
     "editor.cursorStyle": "line",
     "editor.cursorBlinking": "expand",
-    "editor.cursorWidth": 1,
+    "editor.cursorWidth": 2,
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "vsicons.presets.hideExplorerArrows": true,
     "pydocs.style": "numpy",
@@ -32,6 +32,9 @@
     ],
     "code-runner.runInTerminal": true,
     "python.formatting.provider": "yapf",
+    "python.autoComplete.addBrackets": true,
+    "python.autoComplete.showAdvancedMembers": true,
+    "python.disableInstallationCheck": true,
 
 
 }
