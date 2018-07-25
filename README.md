@@ -160,6 +160,6 @@ GARP的核心主要是PEG
 2017年12月29日16:58:06 对README.MD 框架完成修订  @author: John zhang 
 
 
-[WK]:https://github.com/Johnzjy/wakuang/blob/master/scr/ico/title.jpg
+[WK]:/src/ico/title.jpg
 [charts]:/scr/ico/top10charts.PNG
 [kline]:/scr/ico/kline.PNG
