@@ -16,6 +16,7 @@ from numpy import nan as NaN
 sys.path.append("..")
 from src import logd
 import json
+from src import code_list
 
 today=datetime.date.today()
 
@@ -23,54 +24,116 @@ today=datetime.date.today()
 log_STI=logd.Logger('downloading_information.log')
 
 log_STI.info('%s开始下载基本数据信息%s'%('='*16,'='*16))
-
-information_dict={"code"    :"代码",
-                  "name"    :"名称",
-                  "industry":"所属行业",
-                  "area"    :"地区",
-                  "pe"      :"市盈率",
-                  "outstanding":"流通股本(亿)",
-                  "totals":"总股本(亿)",
-                  "totalAssets":"总资产(万)",
-                   "liquidAssets":"流动资产",
-                   "fixedAssets":"固定资产",
-                   "reserved":"公积金",
-                   "reservedPerShare":"每股公积金",
-                   "esp":"每股收益",
-                   "bvps":"每股净资",
-                   "pb":"市净率",
-                   "timeToMarket":"上市日期",
-                   "undp":"未分利润",
-                   "perundp":"每股未分配",
-                   "rev":"收入同比(%)",
-                   "profit":"利润同比(%)",
-                   "gpr":"毛利率(%)",
-                   "npr":"净利润率(%)",
-                   "holders":"股东人数"
-                   
-
+#todo:完成字典
+information_dict={  "base"     :
+                    {"code"    :"代码",
+                      "name"    :"名称",
+                      "industry":"所属行业",
+                      "area"    :"地区",
+                      "pe"      :"市盈率",
+                      "outstanding":"流通股本(亿)",
+                      "totals":"总股本(亿)",
+                      "totalAssets":"总资产(万)",
+                       "liquidAssets":"流动资产",
+                       "fixedAssets":"固定资产",
+                       "reserved":"公积金",
+                       "reservedPerShare":"每股公积金",
+                       "esp":"每股收益",
+                       "bvps":"每股净资",
+                       "pb":"市净率",
+                       "timeToMarket":"上市日期",
+                       "undp":"未分利润",
+                       "perundp":"每股未分配",
+                       "rev":"收入同比(%)",
+                       "profit":"利润同比(%)",
+                       "gpr":"毛利率(%)",
+                       "npr":"净利润率(%)",
+                       "holders":"股东人数",
+                       },
+                     "predict"  :   
+                         {
+                            "code"   :    "代码"          ,
+                            "name"   :    "名称"          ,
+                            "predict_eps"    :    "每股收益"      ,
+                            "predict_eps_yoy":"每股收益同比(%)"   ,
+                            "predict_bvps"   :"每股净资产"        ,
+                            "predict_roe":"净资产收益率(%)"       ,
+                            "predict_epcf":"每股现金流量(元)"      ,
+                            "predict_net_profits":"净利润(万元)" ,
+                            "predict_profits_yoy":"净利润同比(%)",
+                            "predict_distrib":"分配方案"         ,
+                            "predict_report_date":"发布日期"     ,
+                                 },
                    }
 
-def downloading_information(time=3,SAVE=False):
-    try :
-        ST_basics=ts.get_stock_basics()
-        ST_basics=pd.DataFrame(ST_basics)
-    except:
-        log_STI.error('\n>>basics没有计算成功')
-    print (ST_basics.head(9))
+def downloading_information(time=3,SAVE=True):
+    """
+    获取全STOCK 数据
+    """
+    year =2018
+    quarter= 1
+    df=pd.read_csv("../list/stock_code_all.csv",encoding='gbk')
+    df["code"]=df['code'].map(lambda x:str(x).zfill(6))
+    
+    
+    ST_basics=ts.get_stock_basics()
+    ST_basics=ST_basics.drop(["name"],axis=1)
+    ST_basics=ST_basics.reset_index()
+    print(ST_basics)
+    df=pd.merge(df,ST_basics,how ="left",on = "code")
+    print("\n\n process downloading the pre-announcement datas for %s -Q%s"%(year,quarter))
+    pre_announcement= ts.get_report_data(year,quarter+1)
+    pre_announcement.columns=information_dict["predict"]
+    pre_announcement=pre_announcement.drop(["name"],axis=1)
+    #pre_announcement=pre_announcement.set_index("code")
+    df=pd.merge(df,pre_announcement,how ="left",on = "code")
+
+    print("\n\n process downloading the profit datas           for %s -Q%s"%(year,quarter))
+    profit_df=ts.get_profit_data(year,quarter)
+    profit_df=profit_df.drop(["name"],axis=1)
+    
+    df=pd.merge(df,profit_df,how ="left",on = "code")
+    print("\n\n process downloading the operation datas        for %s -Q%s"%(year,quarter))
+    op_df=ts.get_operation_data(year,quarter)
+    op_df=op_df.drop(["name"],axis=1)
+    df=pd.merge(df,op_df,how ="left",on = "code")
+    
+    print("\n\n process downloading the growth datas           for %s -Q%s"%(year,quarter))
+    growth_df=ts.get_growth_data(year,quarter)
+    growth_df=growth_df.drop(["name"],axis=1)
+    df=pd.merge(df,growth_df,how ="left",on = "code")
+    
+    
+    print("\n\n process downloading the debt datas           for %s -Q%s"%(year,quarter))
+    debt_df=ts.get_debtpaying_data(year,quarter)
+    debt_df=debt_df.drop(["name"],axis=1)
+    df=pd.merge(df,debt_df,how ="left",on = "code")
+    
+    
+    print("\n\n process downloading the cashflow datas        for %s -Q%s"%(year,quarter))
+    cashflow_df=ts.get_cashflow_data(year,quarter)
+    cashflow_df=cashflow_df.drop(["name"],axis=1)
+    df=pd.merge(df,cashflow_df,how ="left",on = "code")
+
+    df=df.set_index("code")
+    #profit_df=profit_df.set_index("code")
+    #df=pd.concat([df,profit_df],axis=1,join_axes=[df.index])
+    #df.columns=df.columns +information_dict["predict"].keys[2:]
+
+    #print (pre_announcement)
     '''
     for year in range(2015,2017):
         print(year)
         for Q in range(1,5):
             print(Q)
             ST_basics=download_ACH_Q(year,Q,ST_basics)
-    
+    '''
     if SAVE== True:
         import os
-        path=os.path.dirname(os.getcwd())+'\\report\\base_information\\' # 存储路径
-        ST_basics.to_csv(path+'Stock_Information.csv',encoding='gbk',header=True)
-    '''
-    return ST_basics
+        path=os.path.dirname(os.getcwd())+'\\report\\' # 存储路径
+        df.to_csv(path+'Stock_Information.csv',encoding='gbk',header=True)
+
+    return df,cashflow_df
 
 def download_ACH_Q(year,quarter,df):#按照季度获取信息
     Data=df
@@ -140,7 +203,7 @@ def trade_calendar(year=today.year):#获取一年交易日期 默认为今年
     return data
     
 if __name__ == "__main__":
-    x=downloading_information()
+    x,y=downloading_information()
     #x=downloading_trade_date()
 
     

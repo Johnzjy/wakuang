@@ -1,6 +1,6 @@
 {
     "python.pythonPath": "C:\\Anaconda3\\pythonw.exe",
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "vscode-great-icons",
     "git.autofetch": true,
     "editor.renderWhitespace": "boundary",
@@ -10,21 +10,31 @@
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "vsicons.presets.hideExplorerArrows": true,
     "pydocs.style": "numpy",
+
+    "todohighlight.isCaseSensitive": false,
     "todohighlight.keywords": [        "REVIEW:",
         {
+            "text": "ZJY",
+            "backgroundColor": "#00E5EE",
+            "color": "#473C8B",
+            "isWholeLine": true,
+
+        },
+        {
             "text": "NOTE:",
-            "color": "#ff0000",
+            "color": "#ffdf00",
             "backgroundColor": "blue",
             "overviewRulerColor": "grey"
         },
         {
             "text": "TODO:",
-            "color": "red",
-            "border": "1px solid red",
-            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
-            "backgroundColor": "rgba(0,0,0,.2)",
+            "color": "#222",
+            "borderRadius": "3px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "#ffd700",
+            "isWholeLine": true,
             //other styling properties goes here ... 
         }
+
     ],
     "python.linting.pylintArgs": [
         "--load-plugins",
@@ -35,6 +45,6 @@
     "python.autoComplete.addBrackets": true,
     "python.autoComplete.showAdvancedMembers": true,
     "python.disableInstallationCheck": true,
-
+    "python.linting.enabled": true,
 
 }

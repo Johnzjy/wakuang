@@ -17,8 +17,8 @@ try :
     import logd
     LOG= logd.Logger('GUI.log')
 except:
-    from scr import logd
-    LOG= logd.Logger('./scr/GUI.log')
+    from src import logd
+    LOG= logd.Logger('./src/GUI.log')
 
 import technical_indicators2 as ti
 
