@@ -12,6 +12,7 @@ import tushare as ts
 import pandas as pd
 import datetime
 import sys
+import os
 from numpy import nan as NaN
 sys.path.append("..")
 from src import logd
@@ -88,7 +89,7 @@ def downloading_information(time=3, SAVE=True):
     year = 2018
     quarter = 1
     df = pd.read_csv("../list/stock_code_all.csv", encoding='gbk')
-    rt_df=df
+    rt_df = df
     df["code"] = df['code'].map(lambda x: str(x).zfill(6))
 
     ST_basics = ts.get_stock_basics()
@@ -102,7 +103,7 @@ def downloading_information(time=3, SAVE=True):
     pre_announcement.columns = information_dict["predict"]
     pre_announcement = pre_announcement.drop(["name"], axis=1)
     df = pd.merge(df, pre_announcement, how="left", on="code")
- 
+
     print("\n\n process downloading the profit datas           for %s -Q%s" %
           (year, quarter))
     profit_df = ts.get_profit_data(year, quarter)
@@ -150,9 +151,9 @@ def downloading_information(time=3, SAVE=True):
         },
         inplace=True)
     df = pd.merge(df, fund_df, how="left", on="code")
-    df =df.drop_duplicates("code",keep='first',inplace=False)
+    df = df.drop_duplicates("code", keep='first', inplace=False)
     df = df.set_index("code")
- 
+
     #profit_df=profit_df.set_index("code")
     #df=pd.concat([df,profit_df],axis=1,join_axes=[df.index])
     #df.columns=df.columns +information_dict["predict"].keys[2:]
@@ -166,12 +167,18 @@ def downloading_information(time=3, SAVE=True):
             ST_basics=download_ACH_Q(year,Q,ST_basics)
     '''
     if SAVE == True:
-        import os
+
         path = os.path.dirname(os.getcwd()) + '\\report\\'  # 存储路径
         df.to_csv(path + 'Stock_Information.csv', encoding='gbk', header=True)
 
-    return df,rt_df
-
+    return df
+#TODO: 
+def read_stock_inoformation_csv():
+    path = os.path.dirname(os.getcwd())+ '\\report\\Stock_Information.csv'
+    print (path)
+    df= pd.read_csv(path, encoding='gbk')
+    return df
+    
 
 def download_ACH_Q(year, quarter, df):  #按照季度获取信息
     Data = df
@@ -251,5 +258,5 @@ def trade_calendar(year=today.year):  #获取一年交易日期 默认为今年
 
 
 if __name__ == "__main__":
-    x,y = downloading_information()
+    x= read_stock_inoformation_csv()
     #x=downloading_trade_date()
