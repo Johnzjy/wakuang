@@ -325,16 +325,18 @@ class ThreeCashFlows(StockFolder):
             _code =self.code
         df =self.read_cashcsv_data(_code)
         
-        nifoa_ind= df.get("经营活动产生的现金流量净额")
-        print(nifoa_ind)
+        nifoa_v=df[ df["报表日期"]=="经营活动产生的现金流量净额"]
+        cffia_v=df[ df["报表日期"]=="投资活动产生的现金流量净额"]
+        cfffa_v=df[ df["报表日期"]=="筹资活动产生的现金流量净额"]
         
-        tcf={ " nifoa" : df["%s"%_date][14], #经营业务收入净额 NET INCOME FROM OPERATING ACTIVITIES
-              " cffia" : df["%s"%_date][26], #投资活动产生的现金流量净额 cash flow from investment activities
-              " cfffa" : df["%s"%_date][40], #筹资活动产生的现金流量净额 Cash flows from financing activities
+       
+        tcf={ " nifoa" : nifoa_v[_date].get_values()[0], #经营业务收入净额 NET INCOME FROM OPERATING ACTIVITIES
+              " cffia" : cffia_v[_date].get_values()[0], #投资活动产生的现金流量净额 cash flow from investment activities
+              " cfffa" : cfffa_v[_date].get_values()[0], #筹资活动产生的现金流量净额 Cash flows from financing activities
                 }
-        print(tcf)
+        return tcf
             
-        
+    
     def read_cashcsv_data(self,_code=None):
         if _code is None :
             _code =self.code
@@ -349,11 +351,51 @@ class ThreeCashFlows(StockFolder):
             return df.drop(['Unnamed: 0'],axis=1)
         else:
             return None
+    def check_cash_status(self,_code=None,_date=None):
+        """
+        检查现金流状态
+        """
+        if _date is None:
+            _date = "20180630"
+        if _code is None:
+            _code =self.code
+        df =self.get_TCF(_code,_date)
+        _v=df.values()
+        _v=list(_v)
+        if (_v[0] >= 0) and (_v[1] >= 0) and(_v[2] >= 0) : # +++
+            return "status_1"
+        elif _v[0] >= 0 and _v[1] >= 0 and _v[2] < 0 :# ++-
+            return "status_2"
+        elif _v[0] >= 0 and _v[1] < 0 and _v[2] >= 0 :#+-+
+            return "status_3"        
+        elif _v[0] >= 0 and _v[1] < 0 and _v[2] < 0 :#+--
+            return "status_4"
+        elif _v[0] < 0 and _v[1] >= 0 and _v[2] >= 0 :#-++
+            return "status_5"
+        elif _v[0] < 0 and _v[1] >= 0 and _v[2] < 0 :#-+-
+            return "status_6"
+        elif _v[0] < 0 and _v[1] < 0 and _v[2] >= 0 :#--+
+            return "status_7"
+        elif _v[0] < 0 and _v[1] >= 0 and _v[2] < 0 :#---
+            return "status_8"
+        else:
+            return None
+    def get_cash_status_all(self,code_list,date_list):
+        df=pd.DataFrame(index=code_list,columns=date_list)
         
+        for c in code_list:
+            for d in date_list:
+                df.at[c,d]=self.check_cash_status(_code=c,_date=d)
         
+        return df
+        
+
+
 if __name__ == "__main__":
 
     creat = ThreeCashFlows()
-    creat.code="000010"
-    x=creat.get_TCF()
+    creat.code="000021"
+    c_l=["000021","000001","000011","000010","000005","000007"]
+    d_l=["20180630","20180331","20170630"]
+    x=creat.get_cash_status_all(c_l,d_l)
     #creat.cal_tree_all()
