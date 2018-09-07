@@ -18,6 +18,7 @@ import os
 import sys
 import numpy as np
 import time
+import tqdm
 PATH = os.path.dirname(os.path.abspath(__file__))  #利用__file__找到当前路径
 os.chdir(PATH)
 sys.path.append('..')
@@ -46,12 +47,15 @@ stock_3s = {
     }
 }
 
+Statement_date=["20180630","20180331","20171231","20170930","20170630","20170331"]
+
+
 
 #zjy
 #TODO:
 class StockFolder():
     """
-    建立stock 数据库文件夹
+    建立stock 数据库文件夹，为父类
     """
 
     def __init__(self):
@@ -192,7 +196,6 @@ class StockStatement(StockFolder):
         按照code 存储在report  StockDate 中
         """
         __list = code_list.list_all()
-        import tqdm
         for c in tqdm.tqdm(__list):
             self.download_statement(_code=c)
 
@@ -293,8 +296,6 @@ class StockStatement(StockFolder):
 
             self.mode = i
             self.calculate_yoy()
-            print("process : calculat %s Year-on-year growth for %s\n" %
-                  (i, self.code))
         self.mode = __mode_temp
         return True
 
@@ -304,18 +305,18 @@ class StockStatement(StockFolder):
         if the report has not the stock finance statements, will download before calculate.
         """
         __list = code_list.list_all()
-        import tqdm
+
         for c in tqdm.tqdm(__list):
             self.code = c
             self.cal_tree_statement()
             
-class ThreeCashFlows(StockFolder):
+class ThreeCashFlows(StockStatement):
     """
     获取财务报表，并处理数据。
     """
 
     def __init__(self):
-        StockFolder.__init__(self)
+        StockStatement.__init__(self)
    
         self.fl=list(self.folders_list())
     def get_TCF(self,_code=None,_date=None):# get Three Cash Flows from folders
@@ -353,49 +354,95 @@ class ThreeCashFlows(StockFolder):
             return None
     def check_cash_status(self,_code=None,_date=None):
         """
-        检查现金流状态
+        检查现金流状态 
+        return：str （cash status）
+
+        
         """
         if _date is None:
             _date = "20180630"
         if _code is None:
             _code =self.code
-        df =self.get_TCF(_code,_date)
-        _v=df.values()
-        _v=list(_v)
+        try:
+            df =self.get_TCF(_code,_date)
+        except:
+            return None
+        else:    
+            _v=df.values()
+            _v=list(_v)
         if (_v[0] >= 0) and (_v[1] >= 0) and(_v[2] >= 0) : # +++
-            return "status_1"
+            return "妖精"
         elif _v[0] >= 0 and _v[1] >= 0 and _v[2] < 0 :# ++-
-            return "status_2"
+            return "母鸡"
         elif _v[0] >= 0 and _v[1] < 0 and _v[2] >= 0 :#+-+
-            return "status_3"        
+            return "蛮牛"        
         elif _v[0] >= 0 and _v[1] < 0 and _v[2] < 0 :#+--
-            return "status_4"
+            return "奶牛"
         elif _v[0] < 0 and _v[1] >= 0 and _v[2] >= 0 :#-++
-            return "status_5"
+            return "小鬼"
         elif _v[0] < 0 and _v[1] >= 0 and _v[2] < 0 :#-+-
-            return "status_6"
+            return "僵尸"
         elif _v[0] < 0 and _v[1] < 0 and _v[2] >= 0 :#--+
-            return "status_7"
-        elif _v[0] < 0 and _v[1] >= 0 and _v[2] < 0 :#---
-            return "status_8"
+            return "赌徒"
+        elif _v[0] < 0 and _v[1] < 0 and _v[2] < 0 :#---
+            return "瘫痪"
         else:
             return None
-    def get_cash_status_all(self,code_list,date_list):
+    def get_cash_status_list(self,code_list,date_list):
+        """
+        检查现金状态，返回一个dateform  
+
+        Parameters
+        ----------
+        
+        code_list: index 
+        date_list: columns
+
+        Returns
+        -------
+
+        """
+        
         df=pd.DataFrame(index=code_list,columns=date_list)
         
-        for c in code_list:
+        for c in tqdm.tqdm(code_list):
             for d in date_list:
                 df.at[c,d]=self.check_cash_status(_code=c,_date=d)
         
         return df
-        
+    def get_CS_all(self):
+        #获取所有的类型
+        __list = code_list.list_all()
+        CS_df=self.get_cash_status_list(__list,Statement_date)
 
+        return CS_df
+    def get_CS_one(self,_code=None):
+        if _code is None:
+            _code =self.code
+        try:  #尝试读取一遍文件，不行，重新下载再读
 
+            _df = self.read_files(mode=self.mode)  #尝试读取文件 如果没有信息则下载
+
+        except:
+            self.download_statement()
+            _df = self.read_files(mode=self.mode)
+        col_name = _df.columns.tolist()
+        print(col_name)
+        _col=[]
+        for i in col_name[2:]:
+            print(i[-4:] )
+            if len(i)==8:
+                _col.append(i)
+            else:
+                pass
+    
+        _=self.get_cash_status_list([self.code],_col)
+        return _
 if __name__ == "__main__":
 
     creat = ThreeCashFlows()
-    creat.code="000021"
-    c_l=["000021","000001","000011","000010","000005","000007"]
-    d_l=["20180630","20180331","20170630"]
-    x=creat.get_cash_status_all(c_l,d_l)
+    creat.code="600519"
+    #c_l=["600519"]#,"000001","000011","000010","000005","000007"]
+    #d_l=["20180630","20180331","20171231","20170630","20161231","20151231","20141231",]
+    x=creat.get_CS_one()
     #creat.cal_tree_all()
