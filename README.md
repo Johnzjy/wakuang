@@ -16,7 +16,7 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 ##### 所需要的第三方库：
 |Lib | 描述 |版本|
 |:----:| :----: |:----|
-|tushare|股票数据接口|
+|tushare|股票数据接口|1.2.12(2018-9-3 update)
 |pytdx|tdx数据接口|v1.67
 |pyqtgraph| 绘图工具|
 |TA-lib|  （TA-Lib 通过pip直接安装可能会出错，需要下载.whl格式文件。[Ta-lib](/doc/ta-lib.md) 查询）|0.4.10

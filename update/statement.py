@@ -10,6 +10,9 @@
                                                                       ███ ░███
                                                                      ░░██████ 
                                                                       ░░░░░░  
+
+下载报表，处理报表数据
+
 """
 
 import pandas as pd
@@ -18,6 +21,7 @@ import os
 import sys
 import numpy as np
 import time
+import tqdm
 PATH = os.path.dirname(os.path.abspath(__file__))  #利用__file__找到当前路径
 os.chdir(PATH)
 sys.path.append('..')
@@ -46,22 +50,26 @@ stock_3s = {
     }
 }
 
+Statement_date=["20180630","20180331","20171231","20170930","20170630","20170331"]
+
+
 
 #zjy
 #TODO:
 class StockFolder():
     """
-    建立stock 数据库文件夹
+    建立stock 数据库文件夹，为父类
     """
 
     def __init__(self):
         self.code = "000001"
         self.__sys_dir = os.path.dirname(os.getcwd())
         self.mode = "profit"
-
+        self.def_path=self.__sys_dir + "\\report\\StockData"
+    
     def stock_dirs(self, path=None):  # 获取现在的stock的目录
         if path is None:
-            path = self.__sys_dir + "\\report\\StockData"
+            path =self.def_path
         pass
         return path + "\\%s" % self.code
 
@@ -69,7 +77,7 @@ class StockFolder():
         """
         创建code 目录
         """
-        path = self.__sys_dir + "\\report\\StockData"
+        path = self.def_path
         if os.path.exists(path) is True:
             if os.path.exists(path + "\\%s" % self.code) is True:
                 pass
@@ -103,7 +111,27 @@ class StockFolder():
         else:
             pass
         return os.stat(_path)
-
+    def folder_and_files(self):
+        """
+        return report folders list
+        [path,[files1,files2,file3]],[]......
+        """
+        
+        f_list=[]
+        for root, dirs, files in os.walk(self.def_path):
+            dir_list=[root,files]
+            if len(files) == 3:
+               f_list.append(dir_list)
+        
+            else:
+                pass
+        return f_list
+    
+    def folders_list(self):
+        
+        x=pd.DataFrame(self.folder_and_files())
+        return x[0]
+    
 
 class StockStatement(StockFolder):
     """
@@ -144,12 +172,12 @@ class StockStatement(StockFolder):
         self.cash = self.cash.drop([0])
         time.sleep(1)
         #print (">>>",end="")
-        self.profit.to_csv(_path + "\\%s_cash.csv" % self.code, encoding="gbk")
+        self.cash.to_csv(_path + "\\%s_cash.csv" % self.code, encoding="gbk")
         #print (">>>",end="")
         self.balance = ts.get_balance_sheet(self.code)
         time.sleep(1)
         #print (">>>",end="")
-        self.profit.to_csv(
+        self.balance.to_csv(
             _path + "\\%s_balance.csv" % self.code, encoding="gbk")
         #print (">\n")
         print("  completed downloading!")
@@ -171,9 +199,17 @@ class StockStatement(StockFolder):
         按照code 存储在report  StockDate 中
         """
         __list = code_list.list_all()
-        import tqdm
         for c in tqdm.tqdm(__list):
             self.download_statement(_code=c)
+    def dwld_fs_sh(self):
+        """
+        Download shanghai financial statements
+        下载上海的财务
+        """
+        __list = code_list.get_sh_list()
+        for c in tqdm.tqdm(__list):
+            self.download_statement(_code=c)
+
 
     def read_files(self, _code=None, mode="profit"):
         """
@@ -218,12 +254,15 @@ class StockStatement(StockFolder):
         else:
             pass
         col_name = df.columns.tolist()
+        
         col_name.insert(col_name.index("%s" % year_1) + 1, "%s_yoy" % year_1)
         df = df.reindex(columns=col_name)
-
-        df["%s_yoy" % year_1] = (
-            df["%s" % year_1].astype(np.float) - df["%s" % year_2].astype(
-                np.float)) / df["%s" % year_2].astype(np.float)  #计算并返还Datafram
+        try:
+            df["%s_yoy" % year_1] = (
+                df["%s" % year_1].astype(np.float) - df["%s" % year_2].astype(
+                    np.float)) / df["%s" % year_2].astype(np.float)  #计算并返还Datafram
+        except:
+            df["%s_yoy" % year_1] = None
         return df
 
     def calculate_yoy(self, save=True):
@@ -269,24 +308,155 @@ class StockStatement(StockFolder):
 
             self.mode = i
             self.calculate_yoy()
-            print("process : calculat %s Year-on-year growth for %s\n" %
-                  (i, self.code))
         self.mode = __mode_temp
         return True
 
     def cal_all_yoy(self):
         """
         Calculate all stock statements year - on - year data
-        if the report has not the stock finance statements, download before calculate.
+        if the report has not the stock finance statements, will download before calculate.
         """
         __list = code_list.list_all()
-        import tqdm
+
         for c in tqdm.tqdm(__list):
             self.code = c
             self.cal_tree_statement()
+            
+class ThreeCashFlows(StockStatement):
+    """
+    获取财务报表，并处理数据。
+    """
 
+    def __init__(self):
+        StockStatement.__init__(self)
+   
+        self.fl=list(self.folders_list())
+    def get_TCF(self,_code=None,_date=None):# get Three Cash Flows from folders
+        if _date is None:
+            _date = "20180630"
+        if _code is None:
+            _code =self.code
+        df =self.read_cashcsv_data(_code)
+        
+        nifoa_v=df[ df["报表日期"]=="经营活动产生的现金流量净额"]
+        cffia_v=df[ df["报表日期"]=="投资活动产生的现金流量净额"]
+        cfffa_v=df[ df["报表日期"]=="筹资活动产生的现金流量净额"]
+        
+       
+        tcf={ " nifoa" : nifoa_v[_date].get_values()[0], #经营业务收入净额 NET INCOME FROM OPERATING ACTIVITIES
+              " cffia" : cffia_v[_date].get_values()[0], #投资活动产生的现金流量净额 cash flow from investment activities
+              " cfffa" : cfffa_v[_date].get_values()[0], #筹资活动产生的现金流量净额 Cash flows from financing activities
+                }
+        return tcf
+            
+    
+    def read_cashcsv_data(self,_code=None):
+        if _code is None :
+            _code =self.code
+        _path =self.def_path +"\\%s"%_code
+          
+        if len(_code) is 6 and _path in self.fl:
+      
+            file_path=_path+"\\%s_cash.csv"%_code
+
+            df=pd.read_csv(file_path,encoding="gbk")
+  
+            return df.drop(['Unnamed: 0'],axis=1)
+        else:
+            return None
+    def check_cash_status(self,_code=None,_date=None):
+        """
+        检查现金流状态 
+        return：str （cash status）
+
+        
+        """
+        if _date is None:
+            _date = "20180630"
+        if _code is None:
+            _code =self.code
+        try:
+            df =self.get_TCF(_code,_date)
+        except:
+            return None
+        else:    
+            _v=df.values()
+            _v=list(_v)
+        if (_v[0] >= 0) and (_v[1] >= 0) and(_v[2] >= 0) : # +++
+            return "妖精"
+        elif _v[0] >= 0 and _v[1] >= 0 and _v[2] < 0 :# ++-
+            return "母鸡"
+        elif _v[0] >= 0 and _v[1] < 0 and _v[2] >= 0 :#+-+
+            return "蛮牛"        
+        elif _v[0] >= 0 and _v[1] < 0 and _v[2] < 0 :#+--
+            return "奶牛"
+        elif _v[0] < 0 and _v[1] >= 0 and _v[2] >= 0 :#-++
+            return "小鬼"
+        elif _v[0] < 0 and _v[1] >= 0 and _v[2] < 0 :#-+-
+            return "僵尸"
+        elif _v[0] < 0 and _v[1] < 0 and _v[2] >= 0 :#--+
+            return "赌徒"
+        elif _v[0] < 0 and _v[1] < 0 and _v[2] < 0 :#---
+            return "瘫痪"
+        else:
+            return None
+    def get_cash_status_list(self,code_list,date_list):
+        """
+        检查现金状态，返回一个dateform  
+
+        Parameters
+        ----------
+        
+        code_list: index 
+        date_list: columns
+
+        Returns
+        -------
+
+        """
+        
+        df=pd.DataFrame(index=code_list,columns=date_list)
+        
+        for c in tqdm.tqdm(code_list):
+            for d in date_list:
+                df.at[c,d]=self.check_cash_status(_code=c,_date=d)
+        
+        return df
+    def get_CS_all(self):
+        #获取所有的类型
+        __list = code_list.list_all()
+        CS_df=self.get_cash_status_list(__list,Statement_date)
+
+        return CS_df
+    def get_CS_one(self,_code=None):
+        """
+        查找一个现金流状态
+        """
+        if _code is None:
+            _code =self.code
+        try:  #尝试读取一遍文件，不行，重新下载再读
+
+            _df = self.read_files(mode=self.mode)  #尝试读取文件 如果没有信息则下载
+
+        except:
+            self.download_statement()
+            _df = self.read_files(mode=self.mode)
+        col_name = _df.columns.tolist()
+        _col=[]
+        for i in col_name[2:]:
+
+            if len(i)==8:
+                _col.append(i)
+            else:
+                pass
+    
+        _=self.get_cash_status_list([self.code],_col)
+        return _
 if __name__ == "__main__":
 
     creat = StockStatement()
-    creat.cal_tree_all()
+    creat.code="600519"
+    #c_l=["600519"]#,"000001","000011","000010","000005","000007"]
+    #d_l=["20180630","20180331","20171231","20170630","20161231","20151231","20141231",]
+    x=creat.cal_all_yoy()()
     #creat.cal_tree_all()
