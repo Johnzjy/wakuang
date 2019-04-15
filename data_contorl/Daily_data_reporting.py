@@ -108,9 +108,9 @@ def download_Orgday(time ):
     if os.path.exists(files_path) == False: # 判断文件是不是存在
         os.makedirs(files_path)                # 创建目录
     if Datas_b is None: #data cant download from WEB
-            continue
-        else:
-            pass
+        return None
+    else:
+        pass
     Datas_b.to_csv(files_path+'/%s_Orgday_csv.csv'%(time),encoding='gbk')
     with pd.ExcelWriter(files_path+'/%s_Orgday_xlx.xlsx'%(time)) as writer:
         Datas_b.to_excel(writer, sheet_name='Sheet1')
@@ -124,9 +124,9 @@ def download_top_list(time):
     if os.path.exists(files_path) == False: # 判断文件是不是存在
         os.makedirs(files_path)                # 创建目录
     if Datas_b is None: #data cant download from WEB
-            continue
-        else:
-            pass
+         return None
+    else:
+        pass
     Datas_b.to_csv(files_path+'/%s_top_list_csv.csv'%(todaytime),encoding='gbk')
     with pd.ExcelWriter(files_path+'/%s_top_list_xlx.xlsx'%(todaytime)) as writer:
         Datas_b.to_excel(writer, sheet_name='Sheet1')
