@@ -1,5 +1,5 @@
 
-"""WK Live:
+"""Wakuang 挖矿:
  
 
 Usage:
@@ -11,10 +11,10 @@ Usage:
 
 
 Tips:
-    Please hit Ctrl-C on the keyborad when you want to interrupt the game live.
+    Please hit Ctrl-C on the keyborad when you want to interrupt the wakuang.
 
 Arguments:
-    gameNumber     The key number contact to the specific game.
+    StockCode     The key code to stock code like： sh 600352 etc.
 
 Options:
     -h --help        Show this help message and exit.
@@ -25,26 +25,24 @@ from docopt import docopt
 import datetime
 import os
 import sys
-print("the curPath path:",os.getcwd())
-sys.path.append(os.getcwd())
+sys.path.append(os.getcwd()) # when it install for OS ,it will install to the c: disk .the path need change to the file name 
 import macd_all
 import technical_indicators as ti
 
 class WK():
     def __init__(self, **kwargs):
-        self._args = kwargs
+        self._args = kwargs  #the input key
         self._namelst = []
         self._hreflst = []
         self._datalst = []
-        self._currenttime="%s"%datetime.date.today()
+        self._currenttime="%s"%datetime.date.today() #get the current date
        # self._headers = self.__headers__
         #self.get_gamelist()
     def get_command(self):
         """ 处理命令行参数 """
-        if self._args.get('-m') or self._args.get('--macdsh'):
+        if self._args.get('-m') or self._args.get('--macdsh'): #MACD will be download and save to png
             try:
-                mode_=self._args.get('<StockCode>')
-                #mode_='sh'
+                mode_=self._args.get('<StockCode>')# the input from the key broad
                 start_='2016-10-01'
                 end_=self._currenttime
                 macd_all.save_MACD_all(mode_,start_,end_)
@@ -52,7 +50,7 @@ class WK():
             except Exception:
                 print(">>  测试不通过")
 
-        if self._args.get('-i') or self._args.get('--index'):
+        if self._args.get('-i') or self._args.get('--index'): # run TI file in CMD like : WK -index 600352
 
             code_=self._args.get('<StockCode>')
 
@@ -94,13 +92,10 @@ class WK():
             except Exception:
                 print(">>  测试不通过")
  '''       
-    def test(self,code):
+    def test(self,code): #test
         print(code)
         
-
-def run_macd():
-    print(os.getcwd())
-def cli():
+def cli():#the in port function
     """ 入口方法 """
     args = docopt(__doc__, version='wakuang Live 0.1')
     WK(**args).get_command()
