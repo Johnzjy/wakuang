@@ -94,7 +94,7 @@ x=real_datas('600362')
 #df[['code','name','price','bid','ask','volume','amount','time']]
 #x=real_datas('600362')
 #y=real_datas('600781')
-#z=real_datas('600361')
+#z=real_datas('600361')F
 #x.draw_color()
 #print(x.FIG)
 #y.draw_color()

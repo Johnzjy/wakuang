@@ -3,7 +3,7 @@ import talib
 import tushare as ts
 import pandas as pd
 import matplotlib.pyplot as plt
-import datetime
+import datetime 
 import time
 
 #import st_imformation as sti
@@ -12,7 +12,7 @@ today=datetime.date.today()   # setup date
 def get_date_ts(Code,startDate,endDate):#获取开始数据
     """
     get code date from web.Use tushare get_k_data fuction.
-
+    
 
     Parameters
     ----------
@@ -369,6 +369,34 @@ def draw_AROONOSC(df):
     plt.plot(df.index,df.aroon,'r',label='DOWN') 
     plt.legend(loc='best')
     plt.grid(True)
+def index_run(code_,start_,end_):
+
+    print(end_)
+
+    plt.figure(1) 
+    VW=VWAP(code_,start_,end_) 
+    draw_VWAP(VW)
+    
+    plt.figure(2)
+    brand=ST_bands(code_,start_,end_)
+    draw_bands(brand)
+    
+    plt.figure(3)
+    draw_macd(code_,start_,end_)
+    plt.figure(4)
+    RSI_IDEX=RSI(code_,start_,end_)
+    draw_RSI(RSI_IDEX)
+    plt.figure(5)
+    ARC_INDEX=AROONOSC(code_,start_,end_)
+    draw_AROONOSC(ARC_INDEX)
+ #   plt.figure(5)
+ #   ADX_IDEX=ADX(code_,start_,end_)
+ #   draw_ADX(ADX_IDEX)#ADX 非相关重要信息
+    plt.figure(6)
+    ADOSC_IDEX=ADOSC(code_,start_,end_)
+    
+    draw_ADOSC(ADOSC_IDEX)
+    plt.show()
     
 if __name__=="__main__":
     plt.close()

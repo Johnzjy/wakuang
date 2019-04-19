@@ -110,8 +110,8 @@ def RSI_sorting(mode):
     return RSI_df
 if __name__=="__main__":
 
-    mode_='sh'
+    mode_='sz'
     start_='2016-10-01'
-    end_='2018-09-03'
+    end_='2019-04-09'
     save_MACD_all(mode_,start_,end_)
     RSI_sorting(mode_)
