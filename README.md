@@ -28,7 +28,11 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 |html5lib| HTML 协议 lib
 |gmsdk|回测框架（选项）|gmsdk-2.9.9-py3-none-any`(http://www.myquant.cn/gm2/downloads/) 
 |rqalpha|回测机制框架（选项）| 
-    
+
+##### 安装步骤：
+1. git clone https://github.com/Johnzjy/wakuang
+2. python setup.py install 
+3. wk -i sh
 ## 功能介绍
 --------
 ####KLIN ,MACD ，RSI 等基本指  
@@ -57,7 +61,8 @@ Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 [掘金
 
 * [x] code_list_csv.py		:code 列表清单
 * [x] statement.py			:利润 现金 负债 三重报表
-
+* [x] setup.py : 安装文件
+* [x] wk.py : CMD 命令行接入
 
 ## src (source file)          
 
