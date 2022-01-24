@@ -1,43 +1,6 @@
 {
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-{
-    "name": "Python: Current File",
-    "type": "python",
-    "request": "launch",
-    "program": "${file}"
-},
-        {
-            "name": "External Terminal/Console",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "externalTerminal",
-            "stopOnEntry": false,
-        
-        },
-    {
-        "name": "Python Experimental: Terminal (external)",
-        "type": "pythonExperimental",
-        "request": "launch",
-        "program": "${file}",
-        "console": "externalTerminal",
-        
-    },
-    {  
-        "name": "External Terminal/Console",  
-        "type": "python",  
-        "request": "launch",  
-        "stopOnEntry": true,  
-        "program": "${file}",  
-        "console": "externalTerminal",  
-        "envFile": "${workspaceRoot}/.env",  
-        "debugOptions": [  
-            "WaitOnAbnormalExit",  
-            "WaitOnNormalExit"  
-        ]  
-    },  
-    ]
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "yapf",
+    "python.linting.flake8Args": ["--max-line-length=248"],
+    "python.linting.pylintEnabled": false
+}

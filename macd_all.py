@@ -38,7 +38,7 @@ def list_input(mode='sh'):
         print('can not find files,please change mode.')
         print(os.listdir('list'))
     '''
-    if mode == 'sh': 
+    if mode == 'sh':
         LIST_=pd.read_csv('list/stock_code_sh.csv',encoding='gbk')
     elif mode == 'sz':
         LIST_=pd.read_csv('list/stock_code_sz.csv',encoding='gbk')
@@ -84,7 +84,7 @@ def RSI_sorting(mode):
     list_code =list(DataFame_list.values)
     RSI_df=DataFame_list.set_index('code')
     RSI_df['RSI']=0
-   
+    
     endtime='%s'%datetime.date.today()
     starttime='2016-01-01'
     for code_name in tqdm.tqdm(list_code):
@@ -111,7 +111,7 @@ def RSI_sorting(mode):
 if __name__=="__main__":
 
     mode_='sz'
-    start_='2016-10-01'
-    end_='2019-04-09'
+    start_='2021-01-01'
+    end_='2021-12-27'
     save_MACD_all(mode_,start_,end_)
     RSI_sorting(mode_)

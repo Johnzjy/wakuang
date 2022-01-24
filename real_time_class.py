@@ -10,8 +10,6 @@ import tushare as ts
 import pandas as pd
 import datetime
 code = '600871'
-
-
 class real_datas(object):
     def __init__(self, ax, code):
         #mpl.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
@@ -36,7 +34,7 @@ class real_datas(object):
         yticks = mtick.FormatStrFormatter(fmt)
         self.ax2.set_ylim(-10, 10)  #设置第二轴百分比
         self.ax.set_title("%s" % code)  #设置title
-        del self.xdata[:]
+        del self.xdata[:]  # 时间
         del self.ydata[:]
         self.ax.grid()
         self.ax.set_aspect('auto', 'datalim')

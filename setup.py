@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="wakuang",  #the project name   
+    name="wakuang",  #the project name
     version="0.1",  #version
     author="johnzjy",
     description="python to stock data analysis by johnzjy",

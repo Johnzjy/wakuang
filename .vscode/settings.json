@@ -1,11 +1,10 @@
 {
     "python.pythonPath": "C:\\Anaconda3\\pythonw.exe",
-    "workbench.colorTheme": "Monokai",
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "material-icon-theme",
     "git.autofetch": true,
     "editor.renderWhitespace": "boundary",
-    "editor.cursorStyle": "line",
-    "editor.cursorBlinking": "expand",
+    "editor.cursorStyle": "line-thin",
     "editor.cursorWidth": 2,
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "vsicons.presets.hideExplorerArrows": true,
@@ -46,5 +45,10 @@
     "python.autoComplete.showAdvancedMembers": true,
     "python.disableInstallationCheck": true,
     "python.linting.enabled": true,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSurroundingLines": 2,
+    "workbench.activityBar.iconClickBehavior": "focus",
+    "python.analysis.completeFunctionParens": true,
 
 }

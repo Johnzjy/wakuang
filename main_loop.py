@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue May  2 13:39:17 2017
-
 @author: 310128142
 """
 import technical_indicators as ti
@@ -81,7 +80,7 @@ def set_index(index):
      #   print('quit')
         go_back(get_trp)
         
-    conf.write( open(ini_filename, 'r+') ) 
+    conf.write( open(ini_filename, 'r+') )
 
 def set_macd():#设置macd
     set_index('macd')
@@ -130,7 +129,7 @@ def set_startime():
         set_startime()
     time = Y+'-'+ M +'-'+D
     conf.set('INI','start',time)
-    conf.write( open(ini_filename, 'r+') ) 
+    conf.write( open(ini_filename, 'r+') )
     print(color.High_BG('——'*19))
     print(color.High_BG('|设置成功，当前开始日期为： %s |'%time))
     print(color.High_BG('——'*19))
@@ -161,7 +160,7 @@ def set_endtime():
         set_endtime()
     time = Y+'-'+ M +'-'+D
     conf.set('INI','end',time)
-    conf.write( open(ini_filename, 'r+') ) 
+    conf.write( open(ini_filename, 'r+') )
     print(color.High_BG('——'*19))
     print(color.High_BG('|设置成功，当前结束日期为： %s |'%time))
     print(color.High_BG('——'*19))
@@ -195,7 +194,7 @@ def running():#开始画图
                 ST_IDEX=ti.ST_bands(code_,start_,end_)
                 ti.draw_bands(ST_IDEX)
     plt.show()
-          
+            
 memu = {    "开始":{
                     '画图':running,
                     },
@@ -226,7 +225,7 @@ memu = {    "开始":{
 def quit_code(input_str):
     if input_str== '':
         exit_strip=input(color.Red_nor("按Y退出：")).strip()
-       
+        
         if exit_strip in ('y','Y','yes') :
             print ('QUIT')
             global flag
@@ -277,7 +276,7 @@ def loop_memu():
             for num_f in enumerate(memu.keys()):
                 if get_trp_1 == '%s'%num_f[0]:
                     memu_1,key=get_next(memu,get_trp_1)
-                    print_memu(memu_1) 
+                    print_memu(memu_1)
                     len_memu= len(memu_1)
                     list_str=['0','1','2','3','4','5','6','7','8','9']
                     list_trp=list_str[0:len_memu]

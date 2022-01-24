@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="wakuang"><img src="/src/ico/title.jpg" alt="wakuang"></h1>
+<h1 id="wakuang%E6%8C%96%E7%9F%BF-by-john-zhang">WaKuang(挖矿 by John zhang)</h1>
+<p><a href="https://travis-ci.org/meolu/walle-web"><img src="https://travis-ci.org/meolu/walle-web.svg?branch=master" alt="Build Status"></a>
+<a href="http://www.yiiframework.com/"><img src="https://img.shields.io/badge/Powered_by-John_Zhang-green.svg?style=flat" alt="John.zhang"></a>
+<a href="http://shields.io/"><img src="https://img.shields.io/pypi/pyversions/Django.svg" alt="PY Version"></a>
+<a href="http://shields.io/"><img src="https://img.shields.io/badge/code size-355k-orange.svg" alt="code size"></a></p>
+<h3 id="installation">Installation</h3>
+<hr>
+<p>Wakuang 是一个量化平台，支持python3.6.引入掘金回测机制 <a href="https://www.myquant.cn/">掘金官方主页</a>
+通过大数据处理，分析和挖掘二级市场波动变化。亦可以编写量化交易策略，引入Decision Tree等机器学习算法。</p>
+<h5 id="%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93">所需要的第三方库：</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Lib</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:left">版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">tushare</td>
+<td style="text-align:center">股票数据接口</td>
+<td style="text-align:left">1.2.12(2018-9-3 update)</td>
+</tr>
+<tr>
+<td style="text-align:center">pytdx</td>
+<td style="text-align:center">tdx数据接口</td>
+<td style="text-align:left">v1.67</td>
+</tr>
+<tr>
+<td style="text-align:center">pyqtgraph</td>
+<td style="text-align:center">绘图工具</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">TA-lib</td>
+<td style="text-align:center">（TA-Lib 通过pip直接安装可能会出错，需要下载.whl格式文件。<a href="/doc/ta-lib.md">Ta-lib</a> 查询）</td>
+<td style="text-align:left">0.4.10</td>
+</tr>
+<tr>
+<td style="text-align:center">pyecharts</td>
+<td style="text-align:center">图表绘图工具</td>
+<td style="text-align:left">0.1.4</td>
+</tr>
+<tr>
+<td style="text-align:center">pandas</td>
+<td style="text-align:center">数据格式处理</td>
+<td style="text-align:left">0.20.3</td>
+</tr>
+<tr>
+<td style="text-align:center">PYQT5</td>
+<td style="text-align:center">GUI绘制功能，还需要qtpy支持</td>
+<td style="text-align:left">5.9.2</td>
+</tr>
+<tr>
+<td style="text-align:center">wechat-sdk</td>
+<td style="text-align:center">微信接口</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">tqdm</td>
+<td style="text-align:center">进度条小工具</td>
+<td style="text-align:left">4.14.0</td>
+</tr>
+<tr>
+<td style="text-align:center">html5lib</td>
+<td style="text-align:center">HTML 协议 lib</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">gmsdk</td>
+<td style="text-align:center">回测框架（选项）</td>
+<td style="text-align:left">gmsdk-2.9.9-py3-none-any`(http://www.myquant.cn/gm2/downloads/)</td>
+</tr>
+<tr>
+<td style="text-align:center">rqalpha</td>
+<td style="text-align:center">回测机制框架（选项）</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4">安装步骤：</h5>
+<ol>
+<li>git clone https://github.com/Johnzjy/wakuang</li>
+<li>python setup.py install</li>
+<li>wk -i sh</li>
+</ol>
+<h2 id="%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D">功能介绍</h2>
+<hr>
+<p>####KLIN ,MACD ，RSI 等基本指<br>
+<code>  目前在GUI可以调用，Kline，MACD，布林线，RSI等常用指标。在technical_indicators中用户还可以完成，自由的算法设定。目前痛过迭代运算，回测A股3000多只股票过去三年的交易情况，优化了常规算法的参数。</code></p>
+<h1 id="k"><img src="/scr/ico/kline.PNG" alt="k"></h1>
+<p>####十大股东排行榜<br>
+<code>  输入股票code之后，软件会自动计算设定区域内的大股东排行。方便大家查询证金等国家队动向。</code></p>
+<h1 id="t"><img src="/scr/ico/top10charts.PNG" alt="t"></h1>
+<p><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">已完成 [ ] 未完成</label></p>
+<h2 id="datacontorl">data_contorl</h2>
+<p></p>
+<ul>
+<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1"></label><a href="#technical_indicators">technical_indicators</a>：技术指标</li>
+<li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2"></label><a href="#CYQ">CYQ</a> : 计算筹码分布</li>
+<li><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">Daily_data_reporting.py : 统计每天龙虎榜，机构大单 买入卖出情况 分5 日，15日，30日</label></li>
+<li><input type="checkbox" id="checkbox4" checked="true"><label for="checkbox4">Daily business hall.py ：处理Daily_data_reporting中的数据</label></li>
+<li><input type="checkbox" id="checkbox5" checked="true"><label for="checkbox5">Top10shareholder.py ：查询个股top10流通股持有率</label></li>
+<li><input type="checkbox" id="checkbox6" checked="true"><label for="checkbox6">stock_unblocked.py ：下载解禁股票</label></li>
+<li><input type="checkbox" id="checkbox7"><label for="checkbox7">DuPontAnalysis:杜邦分析法</label></li>
+<li><input type="checkbox" id="checkbox8"><label for="checkbox8">forecast:现金流评估</label></li>
+<li><input type="checkbox" id="checkbox9" checked="true"><label for="checkbox9">GUI_2: 软件界面</label></li>
+<li><input type="checkbox" id="checkbox10" checked="true"><label for="checkbox10">GUI_2: top 10 股东排行榜</label></li>
+<li><input type="checkbox" id="checkbox11" checked="true"><label for="checkbox11"></label><a href="/doc/tdx.md">tdx</a> : 通达信数据下载</li>
+</ul>
+<h2 id="update-datas-source-update">update (datas source update)</h2>
+<ul>
+<li><input type="checkbox" id="checkbox12" checked="true"><label for="checkbox12">code_list_csv.py		:code 列表清单</label></li>
+<li><input type="checkbox" id="checkbox13" checked="true"><label for="checkbox13">statement.py			:利润 现金 负债 三重报表</label></li>
+<li><input type="checkbox" id="checkbox14" checked="true"><label for="checkbox14">setup.py : 安装文件</label></li>
+<li><input type="checkbox" id="checkbox15" checked="true"><label for="checkbox15">wk.py : CMD 命令行接入</label></li>
+</ul>
+<h2 id="src-source-file">src (source file)</h2>
+<ul>
+<li><input type="checkbox" id="checkbox16" checked="true"><label for="checkbox16">Action_main.py   		：GUI下的执行文件</label></li>
+<li><input type="checkbox" id="checkbox17" checked="true"><label for="checkbox17">main_loop.py   		：文本式菜单</label></li>
+<li><input type="checkbox" id="checkbox18" checked="true"><label for="checkbox18">colors.py       		：</label><code>字体颜色文件</code></li>
+<li><input type="checkbox" id="checkbox19" checked="true"><label for="checkbox19">config.py       		：config文件</label></li>
+<li><input type="checkbox" id="checkbox20" checked="true"><label for="checkbox20">email_163.py    		：邮箱文件</label></li>
+<li><input type="checkbox" id="checkbox21" checked="true"><label for="checkbox21">wechat_tuling.py 		：微信和图灵机</label></li>
+<li><input type="checkbox" id="checkbox22" checked="true"><label for="checkbox22">Graph.py       		：GUI绘图</label></li>
+<li><input type="checkbox" id="checkbox23" checked="true"><label for="checkbox23">layout.py      		：GUIlayout</label></li>
+<li><input type="checkbox" id="checkbox24" checked="true"><label for="checkbox24">logd.py       		：log文件 建立装饰包</label></li>
+</ul>
+<p>##Fun</p>
+<h3 id="technicalindicators">technical_indicators</h3>
+<p>技术指标计算，利用传统的指标算法构建有效符合A股。</p>
+<pre class="hljs"><code><div></div></code></pre>
+<ul>
+<li>get_date_ts(Code,startDate,endDate):获取数据
+<ul>
+<li>parameter
+<blockquote>
+<p>Return:Dateframe
+Code:代码
+startDate:开始日期
+endDate:结束日期</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="cyq-%E7%AD%B9%E7%A0%81%E5%88%86%E6%9E%90">CYQ  筹码分析</h3>
+<p>对股票每个价位的交易进行统计计算，已完成对庄家和主要压力点的测算</p>
+<h5 id="pq">PQ</h5>
+<pre class="hljs"><code><div>计算每天筹码交易 单位（手，100股）
+返回每天交易量，交易次数
+</div></code></pre>
+<ul>
+<li>PQ(code,date)
+<ul>
+<li>parameter
+<blockquote>
+<p>Return:list
+Code:代码
+Date:开始日期</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="cyq">CYQ</h5>
+<pre class="hljs"><code><div>计算一段日期内的筹码分布
+</div></code></pre>
+<ul>
+<li>CYQ
+<ul>
+<li>parameter
+<blockquote>
+<p>Return:</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="drawcyq">Draw_CYQ</h5>
+<pre class="hljs"><code><div>画出一段时间内的筹码 价格 量  时间，存图路径../report/CYQ/
+</div></code></pre>
+<ul>
+<li>Draw_CYQ
+<ul>
+<li>parameter
+<blockquote>
+<p>Return:list
+Code:代码
+Date:开始日期</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="to-do-list">To Do List</h2>
+<ul>
+<li><input type="checkbox" id="checkbox25" checked="true"><label for="checkbox25">已做</label></li>
+<li><input type="checkbox" id="checkbox26"><label for="checkbox26">未做做</label></li>
+<li><input type="checkbox" id="checkbox27"><label for="checkbox27">build cash flow display</label></li>
+<li><input type="checkbox" id="checkbox28" checked="true"><label for="checkbox28">completed GUI_2 （the frist version compeled，add RSI）</label></li>
+<li><input type="checkbox" id="checkbox29"><label for="checkbox29">Mail events：specify kinds of events</label></li>
+<li><input type="checkbox" id="checkbox30"><label for="checkbox30">Wechat events</label></li>
+<li><input type="checkbox" id="checkbox31"><label for="checkbox31">Open api</label></li>
+<li><input type="checkbox" id="checkbox32"><label for="checkbox32">Command line</label></li>
+<li><input type="checkbox" id="checkbox33"><label for="checkbox33">准备调研的接口</label><a href="http://smartanni.com/">安妮信息</a></li>
+</ul>
+<pre class="hljs"><code><div>神奇公式
+- [ ]核心指标之一：选取便宜的股票，也就是选取息税前盈余／企业价值（EBIT/EV）高的股票，其中EV = market value of equity + net interest-bearing debt，即企业价值=市值+净有息债务
+
+- [x]核心指标之二：选取好的业务，也就是选取有形资本回报率（Return on Capital）高的股票，其中Return on Capital = EBIT / (Net WorkingCapital + Net Fixed Assets)，即资本回报率 = 息税前利润 /（净流动资本 + 净固定资产）
+
+GARP的核心主要是PEG
+
+策略说明：
+
+1、公司的资产负债率小于等于 25%
+这一条对公司的负债水平做出了要求。较低的资产负债率可以让公司灵活的应对各种突发事件可能对公司带来的冲击。
+
+2、公司每股净现金大于 0
+公司的每股现金流为正值，表示公司处于建康的营运状态中，每股收益的含金量很高。
+
+3、当前股价与每股自由现金流量比小于 10(市现率)
+这一规则对股票的估值水平提出了要求，并以公司的财务灵活性指标作为估值的基准。
+
+4、市盈率在所有股票中在30%以下(首先PE必须大于0)
+
+5、PEG=市盈率/盈利增长率&lt;0.5
+这一规则说明市盈率的增长不及盈利的增长，股票价格处于相对低位，体现了彼得.林奇偏好成长兼具价值股票的
+
+
+----------------------------------------------------------------------------------------------
+计算资金流向
+</div></code></pre>
+<h2 id="%E7%89%88%E6%9C%AC">版本</h2>
+<h1 id="11"><strong>1.1</strong></h1>
+<p><a href="http://shields.io/"><img src="https://img.shields.io/badge/email-aprzephyr@163.com-ff69b4.svg" alt="email"></a></p>
+<h3 id="history">history</h3>
+<p>2017年12月29日16:58:06 对README.MD 框架完成修订  @author: John zhang</p>
+
+</body>
+</html>
